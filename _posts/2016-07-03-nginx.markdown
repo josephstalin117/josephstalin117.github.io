@@ -2,10 +2,11 @@
 layout: post
 title:  "nginx"
 date:   2016-07-03 21:35:35 +0800
-categories: jekyll update
+categories: command
 ---
 
-sd
+#### nginx命令
+
 ```
 nginx -t #测试nginx配置文件
 nginx -s reload #重载nginx服务

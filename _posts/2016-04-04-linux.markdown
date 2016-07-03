@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "linux"
+date:   2016-04-04 21:35:35 +0800
+categories: command
+---
+
+#### 用户权限
+
+```
+分配用户组
+usermod -a -G groupA user
+
+显示文件最后5行内容
+tail -n 5 test.log
+
+循环查看文件内容
+tail -f test.log
+```
+
+#### centos 系统命令
+
+```
+sudo systemctl start mysql
+```
+
+#### grep 命令
+
+```
+find . -name "*.php" | xargs grep
+```

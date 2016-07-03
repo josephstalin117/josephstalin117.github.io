@@ -2,7 +2,7 @@
 layout: post
 title:  "git"
 date:   2016-06-03 16:35:35 +0800
-categories: jekyll update
+categories: command
 ---
 
 初始化本地git仓库（创建新仓库）

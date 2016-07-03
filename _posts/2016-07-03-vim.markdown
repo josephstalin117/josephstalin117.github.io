@@ -2,7 +2,7 @@
 layout: post
 title:  "vim"
 date:   2016-07-03 16:35:35 +0800
-categories: jekyll update
+categories: command
 ---
 
 ### 移动

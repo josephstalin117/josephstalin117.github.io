@@ -2,7 +2,7 @@
 layout: post
 title:  "mac"
 date:   2016-06-03 20:35:35 +0800
-categories: jekyll update
+categories: command
 ---
 
 #### scp命令
