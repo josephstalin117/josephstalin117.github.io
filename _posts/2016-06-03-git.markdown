@@ -1,0 +1,156 @@
+---
+layout: post
+title:  "git"
+date:   2016-06-03 16:35:35 +0800
+categories: jekyll update
+---
+
+初始化本地git仓库（创建新仓库）
+
+```
+git init
+```
+
+配置用户名
+
+```
+git config --global user.name "xxx"
+```
+
+配置邮件
+
+```
+git config --global user.email "xxx@xxx.com"
+```
+
+***
+
+#### 版本回退
+
+回退到指定版本
+
+```
+git reset --hard 3628164
+```
+
+回退到上一版本
+
+```
+git reset --hard HEAD^
+```
+
+单个文件恢复之前的版本
+
+```
+git reset commit 版本号 filename
+```
+
+重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
+
+```
+git reset [commit]
+```
+
+***
+
+新建一个commit，用来撤销指定commit，后者的所有变化都将被前者抵消，并且应用到当前分支
+
+```
+git revert [commit]
+```
+
+取回远程仓库的变化，并与本地分支合并
+
+```
+git pull [remote] [branch]
+```
+
+上传本地指定分支到远程仓库
+
+```
+git push [remote] [branch]
+```
+
+添加指定文件到暂存区
+
+```
+git add [file1] [file2] ...
+```
+
+改名文件，并且将这个改名放入暂存区
+
+```
+git mv [file-original] [file-renamed]
+```
+
+删除工作区文件，并且将这次删除放入暂存区
+
+```
+git rm [file1] [file2] ...
+```
+
+停止追踪指定文件，但该文件会保留在工作区
+
+```
+git rm --cached [file]
+```
+
+提交暂存区到仓库区
+
+```
+git commit -m [message]
+```
+
+***
+
+#### 提交文件
+
+提交暂存区的指定文件到仓库区
+
+```
+git commit [file1] [file2] ... -m [message]
+```
+
+***
+
+#### 版本控制
+
+显示工作区与当前分支最新commit之间的差异
+
+```
+git diff HEAD
+```
+
+显示当前分支的版本历史
+
+```
+git log
+```
+
+显示暂存区和工作区的差异
+
+```
+git diff
+```
+
+***  
+
+#### 查看记录
+
+显示文件的历史修改
+
+```
+git log -p filename
+```
+
+查看提交记录
+
+```
+git log filename
+```
+
+显示提交的记录
+
+```
+git log —pretty=oneline filename
+```

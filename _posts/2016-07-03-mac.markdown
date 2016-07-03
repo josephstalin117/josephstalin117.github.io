@@ -1,0 +1,124 @@
+---
+layout: post
+title:  "mac"
+date:   2016-06-03 20:35:35 +0800
+categories: jekyll update
+---
+
+#### scp命令
+
+```
+scp <local file> <remote user>@<remote machine>:<remote path>
+```
+
+#### shell 脚本
+
+```
+#!/bin/sh
+```
+
+#### 启动Apache
+
+```
+启动：sudo apachectl start
+
+停止：sudo apachectl stop
+
+重启：sudo apachectl restart
+```
+
+```
+cd -          #回到上次所在目录
+
+cd !$        #把上个命令的参数作为输入。
+
+cd           #回到主目录
+
+cd ~         #同样也是回到主目录
+```
+
+#### 查找进程
+
+```
+ps aux | grep ssh
+ps -ef
+```
+
+#### 建立ssh
+
+```
+ssh -p 29093 root@45.78.42.114
+```
+
+#### 列出网络端口号
+
+```
+netstat -an | grep 3306
+lsof -i:80
+```
+
+#### 解压
+
+```
+tar -xvf file.tar
+tar -zxvf data.tar.gz
+```
+
+#### PANDOC
+
+```
+pandoc test1.md -f markdown -t html -s -o test1.html
+```
+
+#### HOMEBREW
+
+```
+brew search xxxx #查找软件包
+
+brew install xxxx #安装软件包
+brew list #列出已安装的软件包
+brew remove xxxx #删除软件包
+brew info xxxx #查看软件包信息
+brew deps xxxx #列出软件包的依赖关系
+brew update #更新brew
+brew outdated #列出过时的软件包，已安装但不是最新版
+brew upgrade #更新全部过时的软件包
+brew upgrade xxxx #更新指定的软件包
+
+brew tap                   # list tapped repositories
+brew tap tapname           # add tap
+brew untap tapname         # remove a tap
+```
+
+#### 添加日志文件到console中
+
+```
+cd ~/Library/Logs
+ln -s /opt/local/apache2/logs/ apache2
+```
+
+#### 重启 php-fpm
+
+```
+launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist
+
+launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist
+```
+
+#### jdk位置
+
+```
+/Library/Java/JavaVirtualMachines/
+```
+
+#### 加载memcached
+
+```
+launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist
+```
+
+#### 查看当前文件大小
+
+```
+du -sh *
+```
