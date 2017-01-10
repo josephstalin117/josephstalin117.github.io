@@ -16,3 +16,5 @@ github_username:  josephstalin117
 
 # Build settings
 markdown: kramdown
+
+theme: jekyll-theme-cayman
