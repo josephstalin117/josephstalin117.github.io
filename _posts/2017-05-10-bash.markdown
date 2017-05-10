@@ -1,0 +1,35 @@
+---
+layout: post
+title:  "bash"
+date:   2017-05-10 16:35:35 +0800
+categories: command
+---
+
+### Basic moves
+
+```
+Ctrl+b    #Move back one character.
+Ctrl+f    #Move forward one character
+Ctrl+d    #Delete current character
+Ctrl+-    #Undo
+
+Ctrl+a    #Move to the start of line
+Ctrl+e    #Move to the end of line
+Meta+f    #Move forward a word
+Meta+b    #Move backward a word
+Ctrl+l    #Clear the screen
+```
+
+### Cut and paste
+
+```
+Ctrl+k    #Cut from cursor to the end of line.
+Meta+d    #Cut from cursor to the end of word.
+Meta+Backspace    #Cut from cursor to the start of word.
+Ctrl+w    #Cut from cursor to previous whitespace.
+Ctrl+y    #Paste the last cut text.
+Meta+y    #Loop through and paste previously cut text.
+Meta+.    #Loop through and paste the last argument of previous commands.
+
+Ctrl+r    #Search as you type
+```
