@@ -13,6 +13,7 @@ Ctrl+f    #上一页
 Ctrl+b    #下一页
 w, e, W, E    #跳到单词的后面，小写包括标点
 b, B    #以单词为单位往前跳动光标，小写包含标点
+f/F  #command is used to search through the current line
 O    #开启新的一行
 ^    #一行的开始
 $    #一行的结尾
