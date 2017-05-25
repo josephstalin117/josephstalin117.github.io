@@ -16,6 +16,9 @@ tail -n 5 test.log
 
 循环查看文件内容
 tail -f test.log
+
+查看特定行内容
+sed -n 5p output.txt
 ```
 
 #### centos 系统命令
@@ -28,4 +31,27 @@ sudo systemctl start mysql
 
 ```
 find . -name "*.php" | xargs grep
+```
+
+#### 网络ip设置
+
+```
+ifconfig eth0 up
+sudo /etc/init.d/networking restart
+sudo ip route add default via 192.168.1.1
+
+sudo nano /etc/network/interfaces
+
+sudo ifconfig eth0 192.168.0.1 netmask 255.255.255.0
+
+auto eth0
+iface eth0 inet static
+address 192.168.1.2
+netmask 255.255.255.0
+network 192.168.1.0
+broadcast 192.168.1.255
+gateway 192.168.1.1
+dns-nameservers 8.8.8.8
+
+ping -c 4 google.com
 ```
