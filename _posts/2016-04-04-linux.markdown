@@ -33,6 +33,11 @@ sudo systemctl start mysql
 find . -name "*.php" | xargs grep
 ```
 
+#### Find Linux Files by Name or Extension
+```
+find . -name "*.err"
+```
+
 #### 网络ip设置
 
 ```
