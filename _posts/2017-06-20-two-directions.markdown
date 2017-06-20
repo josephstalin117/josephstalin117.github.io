@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Two directions"
+title:  "[转]两个方向"
 date:   2017-06-20 21:35:35 +0800
 categories: command
 ---
