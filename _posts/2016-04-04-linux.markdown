@@ -60,3 +60,35 @@ dns-nameservers 8.8.8.8
 
 ping -c 4 google.com
 ```
+
+tcpdump
+
+```
+# FILTERING BY SOURCE AND DESTINATION
+
+tcpdump src 2.3.4.5
+tcpdump dst 3.4.5.6
+
+# FIND TRAFFIC BY IP
+tcpdump host 1.2.3.4
+
+# SHOW TRAFFIC RELATED TO A SPECIFIC PORT
+tcpdump port 3389
+tcpdump src port 1025
+
+```
+
+dd
+
+```
+dd if=<source file name> of=<target file name> [Options]
+```
+
+du
+```
+#Size of a directory
+du -sh /tmp
+
+#Size of a file
+du -h /tmp/xyz
+```

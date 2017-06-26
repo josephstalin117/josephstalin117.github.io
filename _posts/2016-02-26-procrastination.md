@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "procrastination"
+title:  "论拖延症"
 date:   2016-02-26 20:35:35 +0800
 categories: essay
 ---

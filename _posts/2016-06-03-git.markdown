@@ -29,8 +29,6 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 git config --global user.email "xxx@xxx.com"
 ```
 
-***
-
 #### 版本回退
 
 回退到指定版本
@@ -56,8 +54,6 @@ git reset commit 版本号 filename
 ```
 git reset [commit]
 ```
-
-***
 
 新建一个commit，用来撤销指定commit，后者的所有变化都将被前者抵消，并且应用到当前分支
 
@@ -107,8 +103,6 @@ git rm --cached [file]
 git commit -m [message]
 ```
 
-***
-
 #### 提交文件
 
 提交暂存区的指定文件到仓库区
@@ -116,8 +110,6 @@ git commit -m [message]
 ```
 git commit [file1] [file2] ... -m [message]
 ```
-
-***
 
 #### 版本控制
 
@@ -138,8 +130,6 @@ git log
 ```
 git diff
 ```
-
-***  
 
 #### 查看记录
 
