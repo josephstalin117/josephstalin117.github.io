@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "centos"
+date:   2017-06-27 20:35:35 +0800
+categories: essay
+---
+
+网络配置
+```
+cat /etc/resolv.conf
+route -n #路由表
+```
+
+yum
+```
+yum clean all
+yum update
+yum install xx
+```
+
+systemctl
+
+```
+systemctl restart vsftpd
+systemctl status vsftpd
+```

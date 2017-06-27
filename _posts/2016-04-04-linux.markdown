@@ -92,3 +92,13 @@ du -sh /tmp
 #Size of a file
 du -h /tmp/xyz
 ```
+
+tee
+```
+#Tee command is used to store and view (both at the same time) the output of any other command.
+
+ls | tee file
+```
+
+
+
