@@ -16,6 +16,7 @@ yum
 yum clean all
 yum update
 yum install xx
+yum install epel-release
 ```
 
 systemctl
