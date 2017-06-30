@@ -2,7 +2,7 @@
 layout: post
 title:  "centos"
 date:   2017-06-27 20:35:35 +0800
-categories: essay
+categories: command
 ---
 
 网络配置

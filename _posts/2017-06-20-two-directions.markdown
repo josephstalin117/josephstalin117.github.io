@@ -2,7 +2,7 @@
 layout: post
 title:  "[转]两个方向"
 date:   2017-06-20 21:35:35 +0800
-categories: command
+categories: essay
 ---
 
 作者：大表姐  
