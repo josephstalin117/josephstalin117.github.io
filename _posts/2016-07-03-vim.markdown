@@ -82,8 +82,10 @@ p    #粘贴
 ### 窗口操作
 
 ```
+:new
 :split    #水平方向分割出一个窗口
 :vsplit    #垂直方向分割出一个窗口
+:vs       #垂直分割
 :close    #关闭窗口
 Ctrl+W    #切换窗口, h到左边窗口，j到下方窗口，k到上方窗口，l到右边窗口
 ```
@@ -100,4 +102,10 @@ Ctrl+W    #切换窗口, h到左边窗口，j到下方窗口，k到上方窗口�
 
 ```
 vimdiff file1 file2
+zo #打开折叠 
+zc #关闭折叠
+dp #puts changes under the cursor into the other file
+do #The change under the cursor is replaced
+]c #jump to the new diff
+[c #jump to the pervious diff
 ```
