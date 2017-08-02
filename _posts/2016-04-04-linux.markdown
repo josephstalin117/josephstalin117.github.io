@@ -41,22 +41,17 @@ find . -name "*.err"
 #### 网络ip设置
 
 ```
-ifconfig eth0 up
+ifconfig eth0 up #启动以太网卡
+
 sudo /etc/init.d/networking restart
-sudo ip route add default via 192.168.1.1
 
-sudo nano /etc/network/interfaces
+route -n #查看所有路由
 
-sudo ifconfig eth0 192.168.0.1 netmask 255.255.255.0
+ifconfig eh0 0.0.0.0 #去除IP地址
 
-auto eth0
-iface eth0 inet static
-address 192.168.1.2
-netmask 255.255.255.0
-network 192.168.1.0
-broadcast 192.168.1.255
-gateway 192.168.1.1
-dns-nameservers 8.8.8.8
+ip addr add 目的/网关 dev eth0 #添加ip
+
+sudo ip route add 目的ip/netmask via 192.168.1.1 #添加路由
 
 ping -c 4 google.com
 ```
