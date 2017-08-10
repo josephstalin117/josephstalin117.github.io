@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "python"
+date:   2017-08-10 20:35:35 +0800
+categories: python
+---
+
+
+python2 编码
+```
+def to_unicode(unicode_or_str):
+    ''' 将str字符串转换为unicode类型
+    '''
+    if isinstance(unicode_or_str, str):
+        value = unicode_or_str.decode('utf-8')
+    else:
+        value = unicode_or_str
+    return value
+
+def to_str(unicode_or_str):
+    ''' 将unicode字符串转换为str类型
+    '''
+    if isinstance(unicode_or_str, unicode):
+        value = unicode_or_str.encode('utf-8')
+    else:
+        value = unicode_or_str
+    return value    
+```
+
