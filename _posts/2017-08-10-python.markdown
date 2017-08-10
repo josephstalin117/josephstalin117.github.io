@@ -6,7 +6,7 @@ categories: python
 ---
 
 
-python2 编码
+python2 编码修改
 ```
 def to_unicode(unicode_or_str):
     ''' 将str字符串转换为unicode类型
