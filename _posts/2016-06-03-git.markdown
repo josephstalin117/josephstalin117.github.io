@@ -52,6 +52,7 @@ git pull [remote] [branch]
 
 #上传本地指定分支到远程仓库
 git push [remote] [branch]
+git push origin master
 
 #添加指定文件到暂存区
 git add [file1] [file2] ...
