@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Gettysburg-Address"
+title:  "Gettysburg Address"
 date:   2017-08-14 16:35:35 +0800
 categories: essay
 ---
