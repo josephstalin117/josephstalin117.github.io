@@ -38,6 +38,11 @@ find . -name "*.php" | xargs grep
 find . -name "*.err"
 ```
 
+#### finding out where a program is located
+```
+which firefox
+```
+
 #### 网络ip设置
 
 ```
@@ -88,7 +93,7 @@ du -sh /tmp
 du -h /tmp/xyz
 ```
 
-tee
+tree
 ```
 #Tee command is used to store and view (both at the same time) the output of any other command.
 
