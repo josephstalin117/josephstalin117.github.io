@@ -71,7 +71,7 @@ tar -zxvf data.tar.gz
 PANDOC
 
 ```
-pandoc -s -c doc.docx test.md
+pandoc -s -o doc.docx test.md
 ```
 
 HOMEBREW
