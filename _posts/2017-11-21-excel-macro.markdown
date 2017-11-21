@@ -31,3 +31,28 @@ Sub Macro()
 End Sub
 
 ```
+
+#### 2.判断
+
+```
+Sub Macro2()
+
+'Dim lastrow As Long
+Dim xWs As Worksheet
+
+For Each xWs In ThisWorkbook.Worksheets
+
+    Dim lastrow As Long
+    If xWs.Name <> "Sheet1" Then
+        Range("A3:AP3").Select
+        Selection.Copy
+        Sheets("Sheet1").Select
+        'lastrow = ActiveSheet.Cells(Rows.Count, "A").End(xlUp).Row + 1
+        ActiveSheet.Paste
+        'ActiveSheet.Cells(lastrow, "A").Value = "test"
+        'ActiveSheet.Cells(lastrow, "A").Select
+   End If
+Next xWs
+
+End Sub
+```
