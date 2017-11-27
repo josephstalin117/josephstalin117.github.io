@@ -41,6 +41,16 @@ cd           #回到主目录
 cd ~         #同样也是回到主目录
 ```
 
+jobs control  
+```
+Ctrl+z #will suspend the currently forgrounded program
+bg #
+fg jobID #place job in the foreground, and make it the current job.
+jobs #show the following job running in the background.
+
+```
+
+
 查找进程
 
 ```
@@ -64,6 +74,8 @@ lsof -i:80
 解压
 
 ```
+tar -x #extract
+tar -z #if the tar file also compressed with .tar.gz or tgz extension
 tar -xvf file.tar
 tar -zxvf data.tar.gz
 ```
