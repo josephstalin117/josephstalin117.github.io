@@ -70,6 +70,10 @@ ssh -p 29093 root@45.78.42.114
 netstat -an | grep 3306
 lsof -i:80
 ```
+格式化json数据
+```
+cat data | python -m json.tool 
+```
 
 解压
 
