@@ -100,6 +100,13 @@ tree
 ls | tee file
 ```
 
+环境变量添加
+```
+vim .profile
+export PATH=$PATH:/home/jeremie/Downloads/pycharm-community-2016.3.2/bin
+source .profile
+```
+
 crontab
 ```
 sudo vim /etc/crontab
