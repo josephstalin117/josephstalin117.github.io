@@ -27,3 +27,7 @@ def to_str(unicode_or_str):
     return value    
 ```
 
+python 执行bash命令
+```
+os.system("some_command with args")
+```
