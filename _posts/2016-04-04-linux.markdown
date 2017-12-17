@@ -31,6 +31,9 @@ sudo systemctl start mysql
 
 ```
 find . -name "*.php" | xargs grep
+
+只输出文件中匹配到的部分 -o
+grep -o 'matchcontent=[]'
 ```
 
 #### Find Linux Files by Name or Extension
