@@ -31,3 +31,8 @@ python 执行bash命令
 ```
 os.system("some_command with args")
 ```
+
+python 默认执行
+```
+if __name__ == '__main__':
+```
