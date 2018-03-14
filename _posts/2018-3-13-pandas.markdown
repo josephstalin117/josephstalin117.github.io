@@ -29,7 +29,7 @@ pd.options.display.float_format = '{:,.3f}'.format # Limit output to 3 decimal p
 df.describe()
 ```
 
-#### 行数据处理
+#### 列数据处理
 
 ```
 # Getting a column by label
@@ -54,7 +54,7 @@ df[df.water_year.str.startswith('199')]
 df[df.water_year.str.startswith('199')]
 ```
 
-#### 列数据处理
+#### 行数据处理
 ```
 # Getting a row via a numerical index
 df.iloc[30]
