@@ -115,3 +115,34 @@ uk_jpn_rain.head(5)
 # Saving your data to a csv
 df.to_csv('uk_rain.csv')
 ```
+
+## data cleaning
+
+Add default values
+```
+#replace nan with an empty string or some other default value.
+data.country = data.country.fillna('')
+
+#a calculation like taking the mean duration can help us even the dataset out. It’s not a great measure, but it’s an estimate of what the duration could be based on the other data.
+data.duration = data.duration.fillna(data.duration.mean())
+```
+Remove incomplete rows
+```
+#Dropping all rows with any NA values is easy:
+data.dropna()
+
+#we can also drop rows that have all NA value
+data.dropna(how=’all’)
+
+#We can also put a limitation on how many non-null values need to be in a row in order to keep it (in this example, the data needs to have at least 5 non-null values):
+data.dropna(thresh=5)
+
+#Let’s say for instance that we don’t want to include any movie that doesn’t have information on when the movie came out:
+data.dropna(subset=[‘title_year’])
+
+#Drop the columns with that are all NA values:
+data.dropna(axis=1, how=’all’)
+
+#Drop all columns with any NA values:
+data.dropna(axis=1, how=’any’)
+```
