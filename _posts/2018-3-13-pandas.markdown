@@ -1,0 +1,117 @@
+---
+layout: post
+title:  "pandas"
+date:   2018-3-13 20:35:35 +0800
+categories: python
+---
+
+#### 数据读取
+
+```
+# Reading a csv into Pandas.
+df = pd.read_csv('uk_rain_2014.csv', header=0)
+
+# Getting first x rows.
+df.head(5)
+
+# Getting last x rows.
+df.tail(5)
+
+# Changing column labels.
+df.columns = ['water_year','rain_octsep', 'outflow_octsep','rain_decfeb', 'outflow_decfeb', 'rain_junaug', 'outflow_junaug']
+df.head(5)
+
+# Finding out how many rows dataset has.
+len(df)
+
+# Finding out basic statistical information on your dataset.
+pd.options.display.float_format = '{:,.3f}'.format # Limit output to 3 decimal places.
+df.describe()
+```
+
+#### 行数据处理
+
+```
+# Getting a column by label
+df['rain_octsep']
+
+# Getting a column by label using .
+df.rain_octsep
+
+# Creating a series of booleans based on a conditional
+df.rain_octsep < 1000 # Or df['rain_octsep] < 1000
+
+# Using a series of booleans to filter
+df[df.rain_octsep < 1000]
+
+# Filtering by multiple conditionals
+df[(df.rain_octsep < 1000) & (df.outflow_octsep < 4000)] # Can't use the keyword 'and'
+
+# Filtering by string methods
+df[df.water_year.str.startswith('199')]
+
+# Filtering by string methods
+df[df.water_year.str.startswith('199')]
+```
+
+#### 列数据处理
+```
+# Getting a row via a numerical index
+df.iloc[30]
+
+# Setting a new index from an existing column
+df = df.set_index(['water_year'])
+df.head(5)
+
+# Returning an index to data
+df = df.reset_index('water_year')
+df.head(5)
+
+# Getting a row via a label-based index
+df.loc['2000/01']
+
+# Getting a row via a label-based or numerical index
+df.ix['1999/00'] # Label based with numerical index fallback *Not recommended
+
+
+```
+
+#### 应用函数
+
+```
+# Applying a function to a column
+def base_year(year):
+    base_year = year[:4]
+    base_year= pd.to_datetime(base_year).year
+    return base_year
+
+df['year'] = df.water_year.apply(base_year)
+df.head(5)
+```
+
+#### 操作数据结构
+```
+#Manipulating structure (groupby, unstack, pivot)
+# Grouby
+df.groupby(df.year // 10 *10).max()
+
+decade_rain = df.groupby([df.year // 10 * 10, df.rain_octsep // 1000 * 1000])[['outflow_octsep','outflow_decfeb','outflow_junaug']].mean()
+decade_rain
+```
+
+#### COMBINING DATASETS
+
+```
+rain_jpn = pd.read_csv('notebook_playground/data/jpn_rain.csv')
+rain_jpn.columns = ['year', 'jpn_rainfall']
+
+uk_jpn_rain = df.merge(rain_jpn, on='year')
+uk_jpn_rain.head(5)
+```
+
+#### SAVING YOUR DATASETS
+
+```
+# Saving your data to a csv
+df.to_csv('uk_rain.csv')
+```
