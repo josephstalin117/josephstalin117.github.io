@@ -22,6 +22,12 @@ sed -n 5p output.txt
 
 添加用户
 sudo adduser user1
+
+删除用户
+sudo userdel username
+
+添加用户到sudo组
+adduser username sudo
 ```
 
 #### centos 系统命令
