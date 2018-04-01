@@ -28,6 +28,9 @@ sudo userdel username
 
 添加用户到sudo组
 adduser username sudo
+
+添加环境变量
+export PATH="/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:$PATH"
 ```
 
 #### centos 系统命令
