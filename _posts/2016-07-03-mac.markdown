@@ -73,7 +73,7 @@ lsof -i:80
 ```
 格式化json数据
 ```
-cat data | python -m json.tool 
+cat data | python -m json.tool
 ```
 
 解压
@@ -142,4 +142,9 @@ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.memcached.plist
 
 ```
 du -sh *
+```
+
+添加ss例外
+```
+||ads.example.com^
 ```

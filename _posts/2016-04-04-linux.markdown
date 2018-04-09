@@ -143,3 +143,8 @@ sudo vim /etc/crontab
 30 8 * * 1 user command （周的范围为0-7,0和7代表周日）
 
 ```
+
+nohup 确保这个进程在断开 ssh 连接后依旧运行，& 让进程在后台运行
+```
+nohup jupyter notebook &
+```
