@@ -148,3 +148,17 @@ nohup 确保这个进程在断开 ssh 连接后依旧运行，& 让进程在后�
 ```
 nohup jupyter notebook &
 ```
+
+库的软链接指令速查
+```
+#1. locate 定位库的信息  
+locate libcurl.so.4  
+#2. ls -l  查看链接  
+ls -l /usr/local/lib/libcurl.so.4  
+#3. sudo rm -rf 删除软连接  
+sudo rm -rf /usr/lib/x86_64-linux-gnu/libcurl.so.4  
+#4. sudo ln -s 重建软连接  
+sudo ln -s /home/anaconda2/lib/libcurl.so.4.4.0 /home/anaconda2/lib/libcurl.so.4  
+#5. cmake --version 使用cmake时的链接库，如果有冲突则会报错。没有冲突，会输出版本信息  
+cmake --version  
+```
