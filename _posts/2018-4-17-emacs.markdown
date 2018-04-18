@@ -4,7 +4,19 @@ title:  "emacs"
 date:   2018-4-17 20:35:35 +0800
 categories: emacs
 ---
+#### 基本操作
 
+```
+C-x C-f      打开/新建文件
+C-x C-s     保存当前缓冲区
+C-x C-w    当前缓冲区另存为
+C-x C-v     关闭当前Buffer并打开新文件
+C-x i          光标处插入文件
+C-x b         切换Buffer
+C-x C-b     显示Buffer列表
+C-x k         关闭当前Buffer
+C-x C-c     关闭Emacs
+```
 #### 编辑操作
 
 ```
