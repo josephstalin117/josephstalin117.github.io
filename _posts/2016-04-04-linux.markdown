@@ -76,7 +76,7 @@ sudo ip route add 目的ip/netmask via 192.168.1.1 #添加路由
 ping -c 4 google.com
 ```
 
-tcpdump
+#### tcpdump
 
 ```
 # FILTERING BY SOURCE AND DESTINATION
@@ -93,13 +93,13 @@ tcpdump src port 1025
 
 ```
 
-dd
+#### dd
 
 ```
 dd if=<source file name> of=<target file name> [Options]
 ```
 
-du
+#### du
 ```
 #Size of a directory
 du -sh /tmp
@@ -108,21 +108,21 @@ du -sh /tmp
 du -h /tmp/xyz
 ```
 
-tree
+#### tree
 ```
 #Tee command is used to store and view (both at the same time) the output of any other command.
 
 ls | tee file
 ```
 
-环境变量添加
+#### 环境变量添加
 ```
 vim .profile
 export PATH=$PATH:/home/jeremie/Downloads/pycharm-community-2016.3.2/bin
 source .profile
 ```
 
-crontab
+#### crontab
 ```
 sudo vim /etc/crontab
 #每隔两分钟执行一次脚本
@@ -144,21 +144,31 @@ sudo vim /etc/crontab
 
 ```
 
-nohup 确保这个进程在断开 ssh 连接后依旧运行，& 让进程在后台运行
+#### nohup 确保这个进程在断开 ssh 连接后依旧运行，& 让进程在后台运行
 ```
 nohup jupyter notebook &
 ```
 
-库的软链接指令速查
+#### 库的软链接指令速查
 ```
-#1. locate 定位库的信息  
+# locate 定位库的信息  
 locate libcurl.so.4  
-#2. ls -l  查看链接  
+# ls -l  查看链接  
 ls -l /usr/local/lib/libcurl.so.4  
-#3. sudo rm -rf 删除软连接  
+# sudo rm -rf 删除软连接  
 sudo rm -rf /usr/lib/x86_64-linux-gnu/libcurl.so.4  
-#4. sudo ln -s 重建软连接  
+# sudo ln -s 重建软连接  
 sudo ln -s /home/anaconda2/lib/libcurl.so.4.4.0 /home/anaconda2/lib/libcurl.so.4  
-#5. cmake --version 使用cmake时的链接库，如果有冲突则会报错。没有冲突，会输出版本信息  
+# cmake --version 使用cmake时的链接库，如果有冲突则会报错。没有冲突，会输出版本信息  
 cmake --version  
+```
+
+#### 文件挂载
+```
+#Type this command to list the devices that are accessible on the computer:
+fdisk -l
+# 挂载文件
+mount /dev/cdrom /mnt/cdrom
+# 取消挂载
+umount /mnt/cdrom
 ```
