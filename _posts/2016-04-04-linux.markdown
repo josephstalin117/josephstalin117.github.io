@@ -108,6 +108,7 @@ dd if=<source file name> of=<target file name> [Options]
 df -h
 
 # 查看当前目录每个文件夹的情况
+du --max-depth=1 -h
 du -sh *
 
 # 查看硬盘情况
