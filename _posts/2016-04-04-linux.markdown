@@ -102,12 +102,21 @@ tcpdump src port 1025
 dd if=<source file name> of=<target file name> [Options]
 ```
 
-#### du
+#### 文件管理
 ```
-#Size of a directory
+# 统计挂载磁盘的整体情况
+df -h
+
+# 查看当前目录每个文件夹的情况
+du -sh *
+
+# 查看硬盘情况
+fdisk -l
+
+# Size of a directory
 du -sh /tmp
 
-#Size of a file
+# Size of a file
 du -h /tmp/xyz
 ```
 
