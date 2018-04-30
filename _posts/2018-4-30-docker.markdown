@@ -1,0 +1,64 @@
+---
+layout: post
+title:  "docker"
+date:   2018-4-30 20:35:35 +0800
+categories: docker
+---
+
+基本操作
+```
+验证是否安装成功
+docker info
+
+启动docker服务
+sudo service docker start
+or
+sudo systemctl start docker
+
+```  
+
+images文件管理
+```
+列出本机的所有 image 文件。
+docker image ls -l
+
+删除 image 文件
+docker image rm [imageName]
+
+image 文件从仓库抓取到本地
+docker image pull library/hello-world
+
+运行 image 其中-i启动交互式，-t是分配一个tty
+docker container run -it ubuntu bash
+
+--rm停止运行后，自动删除容器文件, --name容器的名字叫做wordpress,--volume将当前目录（$PWD）映射到容器的/var/www/html（Apache 对外访问的默认目录）。因此，当前目录的任何修改，都会反映到容器里面，进而被外部访问到。
+docker container run \
+  --rm \
+  --name wordpress \
+  --volume "$PWD/":/var/www/html \
+  php:5.6-apache
+
+终止容器
+docker container kill [containID]
+
+删除容器
+docker container rm [containerID]
+
+启动已经存在的容器
+docker container start [containerID]
+
+终止容器运行
+bash container stop [containerID]
+
+查看docker容器的输出
+docker container logs [containerID]
+
+进入一个正在运行的 docker 容器
+docker container exec -it [containerID] /bin/bash
+
+从正在运行的 Docker 容器里面，将文件拷贝到本机
+docker container cp [containID]:[/path/to/file] ~/your/local/path
+
+```
+
+
