@@ -56,7 +56,7 @@ docker container rm [containerID]
 docker container start [containerID]
 
 终止容器运行
-bash container stop [containerID]
+docker container stop [containerID]
 
 查看docker容器的输出
 docker container logs [containerID]
