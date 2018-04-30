@@ -27,7 +27,10 @@ docker image rm [imageName]
 
 image 文件从仓库抓取到本地
 docker image pull library/hello-world
+```
+container 容器管理
 
+```
 运行 image 其中-i启动交互式，-t是分配一个tty
 docker container run -it ubuntu bash
 
