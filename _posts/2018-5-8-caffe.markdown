@@ -9,5 +9,9 @@ categories: python
 
 ```
 $CAFFE_ROOT/build/tools/caffe train -solver data/deepocr/solver.prototxt --gpu=1
+
+继续之前的snapshot训练
+
+caffe train -solver solver.prototxt -snapshot train_190000.solverstate
 ```  
 
