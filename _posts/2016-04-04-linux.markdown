@@ -170,6 +170,9 @@ sudo vim /etc/crontab
 #### nohup 确保这个进程在断开 ssh 连接后依旧运行，& 让进程在后台运行
 ```
 nohup jupyter notebook &
+
+# 后台文件写入log
+command >& file.txt(或者file.log) &
 ```
 
 #### 库的软链接指令速查
