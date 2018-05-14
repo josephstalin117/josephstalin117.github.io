@@ -43,6 +43,11 @@ for x in [-1, 0, 1]:
 
 ```
 
+SimpleServer
+```
+python -m http.server 8080
+```
+
 Classes
 ```
 class Greeter(object):
@@ -138,7 +143,7 @@ anaconda2
 conda create -n tensorflow pip python=2.7
 
 #Activate the conda environment by issuing the following command:
-conda activate tensorflow
+source activate tensorflow
 
 #deactivate
 source deactivate
