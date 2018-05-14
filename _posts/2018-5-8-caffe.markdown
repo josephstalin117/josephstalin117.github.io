@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "caffe"
+date:   2018-5-8 20:35:35 +0800
+categories: python
+---
+
+训练网络
+
+```
+$CAFFE_ROOT/build/tools/caffe train -solver data/deepocr/solver.prototxt --gpu=1
+
+继续之前的snapshot训练
+
+caffe train -solver solver.prototxt -snapshot train_190000.solverstate
+```  
+
