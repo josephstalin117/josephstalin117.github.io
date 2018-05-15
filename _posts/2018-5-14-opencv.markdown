@@ -29,10 +29,19 @@ img.dtype
 # show the img
 img.show()
 
+# 复制原有的图片
+emptyImage2 = img.copy()
+```
+
+图像处理
+```
 # 转换成灰度图
 im_gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
 
-# 复制原有的图片
-emptyImage2 = img.copy()
-```  
+# 固定阈值二值化
+ret, dst = cv2.threshold(src, thresh, maxval, type)
+
+# 轮廓检测
+cv2.findContours()
+```
 
