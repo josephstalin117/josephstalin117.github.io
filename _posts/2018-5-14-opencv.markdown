@@ -43,5 +43,9 @@ ret, dst = cv2.threshold(src, thresh, maxval, type)
 
 # 轮廓检测
 cv2.findContours()
+
+# 直方图对比度增强算法
+clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+
 ```
 
