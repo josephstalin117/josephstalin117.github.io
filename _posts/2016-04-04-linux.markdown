@@ -46,6 +46,21 @@ groups user1
 
 ```
 
+#### ubuntu 软件管理
+```
+# list the installed software packages on your machine 
+sudo apt list --installed | grep -i gnome
+
+# 清理安装gnome时候留下的缓存程序软件包
+apt-get clean
+
+# 删除gnome的相关配置文件
+apt-get purge gnome
+
+# 卸载掉gnome
+sudo apt-get remove gnome
+```
+
 #### centos 系统命令
 
 ```
