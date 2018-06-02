@@ -148,3 +148,8 @@ source activate tensorflow
 #deactivate
 source deactivate
 ```
+
+pip
+```
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple gevent
+```
