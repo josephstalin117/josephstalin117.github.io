@@ -246,3 +246,12 @@ ssserver -c /etc/shadowsocks/config.json -d stop
 "fast_open":false
 }
 ```
+
+#### 显卡驱动
+```
+# 显示显卡驱动状态
+nvidia-smi
+
+# cuda 版本
+nvcc --version
+```
