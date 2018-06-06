@@ -200,12 +200,19 @@ command >& file.txt(或者file.log) &
 ```
 # locate 定位库的信息  
 locate libcurl.so.4  
+
 # ls -l  查看链接  
 ls -l /usr/local/lib/libcurl.so.4  
+
 # sudo rm -rf 删除软连接  
 sudo rm -rf /usr/lib/x86_64-linux-gnu/libcurl.so.4  
+
 # sudo ln -s 重建软连接  
 sudo ln -s /home/anaconda2/lib/libcurl.so.4.4.0 /home/anaconda2/lib/libcurl.so.4  
+
+# 文件夹软连接
+ln -s /opt/linux/rootfs_dir  /home/jyg/rootfs_dir
+
 # cmake --version 使用cmake时的链接库，如果有冲突则会报错。没有冲突，会输出版本信息  
 cmake --version  
 ```
