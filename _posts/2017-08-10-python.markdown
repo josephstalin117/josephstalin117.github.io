@@ -145,6 +145,9 @@ conda create -n tensorflow pip python=2.7
 #Activate the conda environment by issuing the following command:
 source activate tensorflow
 
+# win activate
+activate tensorflow
+
 #deactivate
 source deactivate
 
@@ -158,4 +161,33 @@ pip
 ```
 # 换源
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple gevent
+```
+
+jupyter
+```
+# 添加核
+sourca activate tensorflow
+pip install ipykernel
+
+# list kernel
+jupyter kernelspec list
+
+# add kernel
+python -m ipykernel install --name tensorflow --user
+
+# remove kernel
+jupyter kernelspec remove kernelname
+
+# 生成配置文件
+jupyter notebook --generate-config
+
+# 生成密码
+jupyter notebook password
+
+# 修改文件
+c.NotebookApp.ip='*'
+c.NotebookApp.password = u'sha:ce...刚才复制的那个密文'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port =8888 #可自行指定一个端口, 访问时使用该端口
+
 ```
