@@ -28,12 +28,14 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 版本提交
 
 ```
+# 添加远端配置
+git remote add origin git@github.com:josephstalin117/time_series_forecast.git
+
 # 取回远程仓库的变化，并与本地分支合并
 git pull [remote] [branch]
 
 #添加指定文件到暂存区
 git add [file1] [file2] ...
-
 
 # 提交暂存区到仓库区
 git commit -m [message]
