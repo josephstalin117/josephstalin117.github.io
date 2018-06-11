@@ -234,12 +234,17 @@ xdg-open $file
 
 #### ss
 ```
-#open
+# open
 ssserver -c /etc/shadowsocks.json --log-file=/tmp/shadowsocks.log -d start
+
 # 后台启动
 ssserver -c /etc/shadowsocks/config.json -d start
+
 # 后台停止
 ssserver -c /etc/shadowsocks/config.json -d stop
+
+# 本地启动
+sslocal -c /home/mudao/shadowsocks.json
 
 # 配置文件
 {
