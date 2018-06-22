@@ -70,6 +70,9 @@ df.head(5)
 df = df.reset_index('water_year')
 df.head(5)
 
+# remove all duplicates and keep one
+df.drop_duplicates(keep=False, inplace=True)
+
 # reset index
 df = df.reset_index(drop=True)
 
