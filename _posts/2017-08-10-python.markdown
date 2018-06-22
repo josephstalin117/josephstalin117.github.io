@@ -193,3 +193,45 @@ c.NotebookApp.port =8888 #可自行指定一个端口, 访问时使用该端口
 # 后台挂起
 nohup jupyter notebook > jupyter.log &
 ```
+
+yield
+```
+def createGenerator():
+    mylist = range(3)
+    for i in mylist:
+        yield i*i
+
+# create a generator
+mygenerator = createGenerator() 
+
+# mygenerator is an object!
+print(mygenerator) 
+# <generator object createGenerator at 0xb7555c34>
+
+for i in mygenerator:
+    print(i)
+# 0
+# 1
+# 4
+```
+
+itertools
+```
+import itertools
+
+# groupby1
+groups = []
+uniquekeys = []
+data = sorted(data, key=keyfunc)
+for k, g in groupby(data, keyfunc):
+    groups.append(list(g))      # Store group iterator as a list
+    uniquekeys.append(k)
+
+# groupby2
+for (uid, group) in itertools.groupby(iter([(yield line.strip().split('\t')) for line in sys.stdin]),lambda item: item[0]):
+    try:
+        if not uid or len(uid) > 20 or uid == 'null':
+            continue
+    except:
+        continue
+```
