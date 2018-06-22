@@ -93,13 +93,43 @@ df.head(5)
 ```
 
 #### 操作数据结构
+
 ```
-#Manipulating structure (groupby, unstack, pivot)
+# Manipulating structure (groupby, unstack, pivot)
 # Grouby
 df.groupby(df.year // 10 *10).max()
 
 decade_rain = df.groupby([df.year // 10 * 10, df.rain_octsep // 1000 * 1000])[['outflow_octsep','outflow_decfeb','outflow_junaug']].mean()
 decade_rain
+
+# View Groups
+ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
+         'kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+         'Rank': [1, 2, 2, 3, 3,4 ,1 ,1,2 , 4,1,2],
+         'Year': [2014,2015,2014,2015,2014,2015,2016,2017,2016,2014,2015,2017],           
+         'Points':[876,789,863,673,741,812,756,788,694,701,804,690]}
+df = pd.DataFrame(ipl_data)
+
+print df.groupby('Team').groups
+
+# multiple columns
+print df.groupby(['Team','Year']).groups
+
+# Iterating through Groups
+grouped = df.groupby('Year')
+
+for name,group in grouped:
+    print name
+    print group
+
+# Select a Group
+grouped = df.groupby('Year')
+print grouped.get_group(2014)
+
+# Aggregations
+grouped = df.groupby('Year')
+print grouped['Points'].agg(np.mean)
+
 ```
 
 #### COMBINING DATASETS
