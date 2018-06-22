@@ -5,7 +5,7 @@ date:   2018-3-13 20:35:35 +0800
 categories: python
 ---
 
-#### 数据读取
+data read
 
 ```
 # Reading a csv into Pandas.
@@ -32,7 +32,7 @@ df.describe()
 df2 = pd.DataFrame(np.random.randint(low=0, high=10, size=(5, 5)),columns=['a', 'b', 'c', 'd', 'e'])
 ```
 
-#### 列数据处理
+column
 
 ```
 # Getting a column by label
@@ -57,7 +57,7 @@ df[df.water_year.str.startswith('199')]
 df[df.water_year.str.startswith('199')]
 ```
 
-#### 行数据处理
+row
 ```
 # Getting a row via a numerical index
 df.iloc[30]
@@ -70,16 +70,18 @@ df.head(5)
 df = df.reset_index('water_year')
 df.head(5)
 
+# reset index
+df = df.reset_index(drop=True)
+
 # Getting a row via a label-based index
 df.loc['2000/01']
 
 # Getting a row via a label-based or numerical index
 df.ix['1999/00'] # Label based with numerical index fallback *Not recommended
 
-
 ```
 
-#### 应用函数
+apply function
 
 ```
 # Applying a function to a column
@@ -92,7 +94,7 @@ df['year'] = df.water_year.apply(base_year)
 df.head(5)
 ```
 
-#### groupby
+groupby
 
 ```
 # Manipulating structure (groupby, unstack, pivot)
@@ -132,7 +134,7 @@ print grouped['Points'].agg(np.mean)
 
 ```
 
-#### COMBINING DATASETS
+COMBINING DATASETS
 
 ```
 rain_jpn = pd.read_csv('notebook_playground/data/jpn_rain.csv')
@@ -142,7 +144,7 @@ uk_jpn_rain = df.merge(rain_jpn, on='year')
 uk_jpn_rain.head(5)
 ```
 
-#### SAVING YOUR DATASETS
+SAVING YOUR DATASETS
 
 ```
 # Saving your data to a csv
