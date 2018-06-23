@@ -47,6 +47,9 @@ df.rain_octsep < 1000 # Or df['rain_octsep] < 1000
 # Using a series of booleans to filter
 df[df.rain_octsep < 1000]
 
+# line replaces None with NaN
+df['column'].replace('None', np.nan, inplace=True)
+
 # Filtering by multiple conditionals
 df[(df.rain_octsep < 1000) & (df.outflow_octsep < 4000)] # Can't use the keyword 'and'
 
