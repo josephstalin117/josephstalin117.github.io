@@ -157,7 +157,7 @@ SAVING YOUR DATASETS
 
 ```
 # Saving your data to a csv
-df.to_csv('uk_rain.csv')
+df.to_csv('uk_rain.csv',index=False)
 ```
 
 ## data cleaning
