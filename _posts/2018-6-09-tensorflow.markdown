@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "tensorflow"
-date:   2018-5-16 20:35:35 +0800
+date:   2018-6-09 20:35:35 +0800
 categories: command
 ---
 

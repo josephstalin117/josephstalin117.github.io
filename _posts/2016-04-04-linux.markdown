@@ -5,7 +5,7 @@ date:   2016-04-04 21:35:35 +0800
 categories: command
 ---
 
-#### 用户权限
+## 用户权限
 
 ```
 user添加到groupA用户组
@@ -52,7 +52,8 @@ groups user1
 
 ```
 
-#### ubuntu 软件管理
+## ubuntu apt
+
 ```
 # list the installed software packages on your machine 
 sudo apt list --installed | grep -i gnome
@@ -67,13 +68,7 @@ apt-get purge gnome
 sudo apt-get remove gnome
 ```
 
-#### centos 系统命令
-
-```
-sudo systemctl start mysql
-```
-
-#### grep 命令
+#### grep
 
 ```
 find . -name "*.php" | xargs grep
@@ -92,7 +87,7 @@ find . -name "*.err"
 which firefox
 ```
 
-#### 网络ip设置
+#### network
 
 ```
 ifconfig eth0 up #启动以太网卡

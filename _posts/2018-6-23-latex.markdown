@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "latex"
+date:   2018-6-23 20:35:35 +0800
+categories: command
+---
+
+Hello, world!
+```
+\documentclass{article}
+%这里是导言区
+\begin{document}
+Hello, world!
+\end{document}
+```
+
