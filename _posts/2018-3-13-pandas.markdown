@@ -23,6 +23,7 @@ df.head(5)
 
 # Finding out how many rows dataset has.
 len(df)
+df.shape
 
 # Finding out basic statistical information on your dataset.
 pd.options.display.float_format = '{:,.3f}'.format # Limit output to 3 decimal places.
