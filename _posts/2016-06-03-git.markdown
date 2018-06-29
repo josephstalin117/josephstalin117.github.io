@@ -97,6 +97,9 @@ git log filename
 
 #显示提交的记录
 git log —pretty=oneline filename
+
+#查看某次提交中的某个文件变化
+git show 999e31080f96c29d84e11a82e87bfa175976fe0e README.md
 ```
 
 代理
