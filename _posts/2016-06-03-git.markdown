@@ -52,6 +52,17 @@ git push origin master
 版本控制
 
 ```
+# 撤销文件a的修改(没有被git add)
+git checkout a
+
+# 撤销文件a的修改(已经被git add，但没有commit)
+git reset HEAD a
+git checkout a
+
+# 撤销文件a的修改(已经被commit)
+git reset HEAD^
+git checkout a
+
 # 回退到指定版本
 git reset --hard 3628164
 
@@ -59,7 +70,7 @@ git reset --hard 3628164
 git reset --hard HEAD^
 
 # 单个文件恢复之前的版本
-git reset commit 版本号 filename
+git reset 版本号 filename
 
 # 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
 git reset [commit]
@@ -91,6 +102,7 @@ git diff
 ```
 #显示文件的历史修改
 git log -p filename
+git log --graph
 
 #查看提交记录
 git log filename
