@@ -235,3 +235,9 @@ for (uid, group) in itertools.groupby(iter([(yield line.strip().split('\t')) for
     except:
         continue
 ```
+
+enumerate
+```
+for counter, value in enumerate(some_list):
+    print(counter, value)
+```
