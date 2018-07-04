@@ -33,7 +33,16 @@ df.describe()
 df2 = pd.DataFrame(np.random.randint(low=0, high=10, size=(5, 5)),columns=['a', 'b', 'c', 'd', 'e'])
 ```
 
-column & row
+insert
+```
+# append
+df.append(df2, ignore_index=True)
+
+# string to datetime object
+pd.to_datetime(df['dateTime'])
+```
+
+get data from column & row
 
 ```
 # Getting a column by label
@@ -101,6 +110,9 @@ df.loc[~df['column_name'].isin(some_values)]
 # Getting a row via a label-based or numerical index
 df.ix['1999/00'] # Label based with numerical index fallback *Not recommended
 
+# loop iterate over rows in a DataFrame
+for index, row in df.iterrows():
+    print(row['dateTime'], row['CODMn'])
 ```
 
 apply function
