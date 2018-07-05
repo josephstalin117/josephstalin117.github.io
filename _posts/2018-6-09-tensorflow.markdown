@@ -14,7 +14,8 @@ sess = tf.Session()
 print(sess.run(hello))
 ```
 
-keras
+tensorboard
 ```
+tensorboard --logdir ./_logs
 ```
 
