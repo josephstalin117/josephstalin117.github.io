@@ -68,7 +68,6 @@ g.greet()            # Call an instance method; prints "Hello, Fred"
 g.greet(loud=True)   # Call an instance method; prints "HELLO, FRED!"
 ```
 
-
 python 执行bash命令
 ```
 os.system("some_command with args")
@@ -85,6 +84,7 @@ nums = [0, 1, 2, 3, 4]
 even_squares = [x ** 2 for x in nums if x % 2 == 0]
 print(even_squares)  # Prints "[0, 4, 16]"
 ```
+
 zip() in conjunction with the * operator can be used to unzip a list:
 ```
 >>> x = [1, 2, 3]
@@ -240,4 +240,9 @@ enumerate
 ```
 for counter, value in enumerate(some_list):
     print(counter, value)
+```
+
+path
+```
+os.path.join('/home/build/test/sandboxes/', todaystr, '/new_sandbox/')
 ```
