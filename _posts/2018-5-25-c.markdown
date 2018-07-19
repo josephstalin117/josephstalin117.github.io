@@ -23,3 +23,59 @@ categories: command
 
 ```
 
+STL::vector
+```
+// 导入
+#include <vector>
+
+//init
+//声明一个int型向量a
+vector<int> a ;
+//声明一个初始大小为10的向量
+vector<int> a(10) ;
+//声明一个初始大小为10且初始值都为1的向量
+vector<int> a(10, 1) ;
+//声明并用向量a初始化向量b
+vector<int> b(a) ;
+//将a向量中从第0个到第2个(共3个)作为向量b的初始值
+vector<int> b(a.begin(), a.begin()+3) ;
+
+//对其中部分元素进行输入
+cin >>a[2];
+cin >>a[5];
+cin >>a[6];
+
+//全部输出
+int i ;
+for(i=0; i<a.size(); i++) cout<<a[i]<<" " ;
+
+//遍历器
+//全部输出
+vector<int>::iterator t ;
+for(t=a.begin(); t!=a.end(); t++)
+	cout<<*t<<" " ;
+
+//获取向量中的元素个数
+a.size()
+//判断向量是否为空
+a.empty()
+//清空向量中的元素
+a.clear()
+//将1000插入到向量a的起始位置前
+a.insert(a.begin(), 1000);
+//将1000分别插入到向量元素位置的0-2处
+a.insert(a.begin(), 3, 1000);
+//a向量与b向量进行交换
+b.swap(a);
+//删除最后一个元素
+v5.pop_back();
+//加入一个元素并把它放在最后
+v5.push_back(6);
+//删除第四个元素
+v5.erase(v5.begin() + 3);
+
+//创建一个10*5的int型二维
+vector< vector<int> > b(10, vector<int>(5)); 
+
+```
+
