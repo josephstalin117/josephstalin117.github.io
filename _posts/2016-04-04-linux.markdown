@@ -145,6 +145,9 @@ du -sh /tmp
 
 # Size of a file
 du -h /tmp/xyz
+
+# 查询设备类型和文件系统
+blkid
 ```
 
 #### tree
