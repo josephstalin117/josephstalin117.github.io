@@ -8,49 +8,64 @@ categories: command
 ## 用户权限
 
 ```
-user添加到groupA用户组
+# user添加到groupA用户组
 usermod -aG groupA user
 
-锁定newuser1
+# 锁定newuser1
 usermod -L newuser1
 
-解除对newuser1的锁定
+# 解除对newuser1的锁定
 usermod -U newuser1
 
-显示文件最后5行内容
+# 显示文件最后5行内容
 tail -n 5 test.log
 
-循环查看文件内容
+# 循环查看文件内容
 tail -f test.log
 
-查看特定行内容
+# 查看特定行内容
 sed -n 5p output.txt
 
-添加用户
+# 添加用户
 sudo adduser user1
 
-删除用户
+# 删除用户
 sudo userdel username
 
-添加用户到sudo组
+# 添加用户到sudo组
 adduser username sudo
 
-追加用户到sudo组
+# 追加用户到sudo组
 sudo  usermod -aG sudo username
 
-将用户从sudo组删除，并添加到其他组
+# 将用户从sudo组删除，并添加到其他组
 sudo usermod -G 用户组名  用户名
 
-添加环境变量
+# 添加环境变量
 export PATH="/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:$PATH"
 
-改变文件拥有者和群组
+# 改变文件拥有者和群组
 chown root: log2012.log
 
-查看用户所在组
+# 查看用户所在组
 groups user1
 
+# 查看用户在线情况
+who
+
+# 查看自己是哪个终端
+who am i
+
+# 单向发送消息
+write root pts/20
+Hello, World!
+Ctrl+d #发送并退出
+
+# 群发消息
+wall "hello, world!"
+
 ```
+
 
 ## ubuntu apt
 
