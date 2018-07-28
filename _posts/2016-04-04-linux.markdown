@@ -165,6 +165,14 @@ du -h /tmp/xyz
 blkid
 ```
 
+#### 解压
+```
+tar -x #extract
+tar -z #if the tar file also compressed with .tar.gz or tgz extension
+tar -xvf file.tar
+tar -zxvf data.tar.gz
+```
+
 #### tree
 ```
 #Tee command is used to store and view (both at the same time) the output of any other command.
