@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "价值观的重塑"
-date:   2018-6-26 20:35:35 +0800
+date:   2018-7-15 20:35:35 +0800
 categories: essay
 ---
 
