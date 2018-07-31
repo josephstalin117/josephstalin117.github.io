@@ -50,6 +50,9 @@ chown root: log2012.log
 # 查看用户所在组
 groups user1
 
+# 修改密码
+sudo passwd user
+
 # 查看用户在线情况
 who
 
