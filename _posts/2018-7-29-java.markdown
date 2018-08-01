@@ -83,3 +83,8 @@ public class cin_txt {
 }
 ```
 
+编码
+```
+String str2 = new String(s.getBytes("gbk"), "utf-8");//默认字符集为utf-8
+```
+
