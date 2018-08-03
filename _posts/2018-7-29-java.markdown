@@ -88,3 +88,41 @@ public class cin_txt {
 String str2 = new String(s.getBytes("gbk"), "utf-8");//默认字符集为utf-8
 ```
 
+set
+```
+Set<Integer> s; //contains your Integers
+Set<Integer> temp = new Set<Integer>();
+for(Integer i : s)
+    temp.add(i+1);
+s.clear();
+s.addAll(temp);
+```
+
+iterator
+```
+//good way:
+Iterator<Integer> iterator = set.iterator();
+while(iterator.hasNext()) {
+	Integer setElement = iterator.next();
+    if(setElement==2) {
+    	iterator.remove();
+    }
+}
+```
+
+for
+```
+List<Integer> list = new ArrayList<Integer>();
+Integer lastValue = null;
+for (Integer i : list) {
+    // do stuff
+    lastValue = i;
+}
+// do stuff with last value
+```
+
+Checking if a string is empty or null
+```
+System.out.println(Strings.isNullOrEmpty("")); // true
+```
+
