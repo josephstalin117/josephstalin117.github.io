@@ -98,15 +98,22 @@ s.clear();
 s.addAll(temp);
 ```
 
-iterator
+List
 ```
-//good way:
+//iterator
 Iterator<Integer> iterator = set.iterator();
 while(iterator.hasNext()) {
 	Integer setElement = iterator.next();
     if(setElement==2) {
     	iterator.remove();
     }
+}
+
+//add
+List<String> copy = new ArrayList<String>(list);
+for (String s : copy) {
+    // And if you have to add an element to the list, add it to the original one:
+    list.add("some element");
 }
 ```
 
