@@ -124,5 +124,9 @@ for (Integer i : list) {
 Checking if a string is empty or null
 ```
 System.out.println(Strings.isNullOrEmpty("")); // true
+
+//compare strings
+new String("test").equals("test") // --> true 
 ```
+
 
