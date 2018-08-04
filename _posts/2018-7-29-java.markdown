@@ -134,6 +134,11 @@ System.out.println(Strings.isNullOrEmpty("")); // true
 
 //compare strings
 new String("test").equals("test") // --> true 
+
+//int2string
+String.valueOf(number)
+"" + number
+Integer.toString(number)
 ```
 
 
