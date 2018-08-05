@@ -139,6 +139,9 @@ new String("test").equals("test") // --> true
 String.valueOf(number)
 "" + number
 Integer.toString(number)
+
+//check somethin in list
+if( Arrays.asList("a","b","c").contains("a") )
 ```
 
 
