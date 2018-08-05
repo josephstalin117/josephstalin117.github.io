@@ -141,7 +141,10 @@ String.valueOf(number)
 Integer.toString(number)
 
 //check somethin in list
-if( Arrays.asList("a","b","c").contains("a") )
+if(Arrays.asList("a","b","c").contains("a"))
+
+//get first character of string
+ld.substring(0,1)
 ```
 
 
