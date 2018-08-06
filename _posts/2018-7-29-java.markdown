@@ -43,6 +43,14 @@ maven
 </project>
 ```
 
+maven 命令
+```
+mvn test //运行测试
+mvn -U clean install //强制去远程更新snapshot的插件或依赖
+mvn package //maven 打包
+mvn update //更新
+```
+
 文件读取写入
 ```
 import java.io.File;
