@@ -251,8 +251,9 @@ mount /dev/cdrom /mnt/cdrom
 umount /mnt/cdrom
 ```
 
-#### 查看图片
+#### 使用图形界面打开文件
 ```
+# opens a file or URL in the user's preferred application
 xdg-open $file
 ```
 
