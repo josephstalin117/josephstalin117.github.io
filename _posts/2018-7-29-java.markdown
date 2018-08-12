@@ -123,6 +123,15 @@ for (String s : copy) {
     // And if you have to add an element to the list, add it to the original one:
     list.add("some element");
 }
+
+//ListIterator
+List<String> list = Arrays.asList("zero", "one", "two");
+
+ListIterator iter = list.listIterator();
+
+while (iter.hasNext()) {
+    System.out.println("index: " + iter.nextIndex() + " value: " + iter.next());
+}
 ```
 
 for
@@ -153,6 +162,10 @@ if(Arrays.asList("a","b","c").contains("a"))
 
 //get first character of string
 ld.substring(0,1)
+
+//You can now use a Stream to check whether an array of int, double or long contains a value
+int[] a = {1,2,3,4};
+boolean contains = IntStream.of(a).anyMatch(x -> x == 4);
 ```
 
 java lambda
