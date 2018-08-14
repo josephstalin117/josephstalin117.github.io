@@ -240,4 +240,19 @@ public class CheckKeyExample {
 }
 ```
 
+interface
+```
+public interface Color {
+   void fill();
+}
+```
+
+abstract class
+```
+public abstract class AbstractFactory {
+   public abstract Color getColor(String color);
+   public abstract Shape getShape(String shape) ;
+}
+```
+
 
