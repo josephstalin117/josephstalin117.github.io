@@ -264,3 +264,8 @@ for (Map.Entry<String, String> entry : map.entrySet()){
 
 ```
 
+运行jar程序
+```
+java -jar xx.jar
+```
+
