@@ -168,12 +168,16 @@ du -h /tmp/xyz
 blkid
 ```
 
-#### 解压
+#### 解压压缩
 ```
 tar -x #extract
 tar -z #if the tar file also compressed with .tar.gz or tgz extension
 tar -xvf file.tar
 tar -zxvf data.tar.gz
+
+# 打包
+tar czvf FileName.tar DirName
+zip FileName.zip DirName
 ```
 
 #### tree
