@@ -19,3 +19,12 @@ tensorboard
 tensorboard --logdir ./_logs
 ```
 
+tfdbg
+```
+from tensorflow.python import debug as tf_debug
+
+sess = tf_debug.LocalCLIDebugWrapperSession(sess)
+
+python -m tensorflow.python.debug.examples.debug_mnist --debug
+```
+
