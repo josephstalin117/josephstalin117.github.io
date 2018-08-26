@@ -69,6 +69,15 @@ wall "hello, world!"
 
 ```
 
+## 进程管理
+```
+# 查看进程
+ps -ef |grep vsftpd
+
+# 查看服务
+service vsftpd
+```
+
 
 ## ubuntu apt
 
