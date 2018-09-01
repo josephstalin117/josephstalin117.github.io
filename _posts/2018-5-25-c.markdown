@@ -28,6 +28,9 @@ STL::vector
 // 导入
 #include <vector>
 
+//get vector size
+nums.size()
+
 //init
 //声明一个int型向量a
 vector<int> a ;
