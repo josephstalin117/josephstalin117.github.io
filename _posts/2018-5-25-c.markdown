@@ -23,6 +23,11 @@ categories: language
 
 ```
 
+print
+```
+printf("ASCII value = %d, Character = %c\n", ch , ch );
+```
+
 STL的vector用法
 ```
 // 导入
