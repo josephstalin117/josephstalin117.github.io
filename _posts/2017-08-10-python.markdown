@@ -166,13 +166,13 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple gevent
 jupyter
 ```
 # 添加核
-sourca activate tensorflow
+source activate tensorflow
 pip install ipykernel
 
 # list kernel
 jupyter kernelspec list
 
-# add kernel
+# add kernel(处在想添加kernel的环境中)
 python -m ipykernel install --name tensorflow --user
 
 # remove kernel
