@@ -247,4 +247,9 @@ for counter, value in enumerate(some_list):
 path
 ```
 os.path.join('/home/build/test/sandboxes/', todaystr, '/new_sandbox/')
+
+# create dir if not exist
+import os
+if not os.path.exists(directory):
+    os.makedirs(directory)
 ```
