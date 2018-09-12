@@ -23,9 +23,20 @@ categories: language
 
 ```
 
+极大值，极小值的初始化
+```
+min = INT_MIN;
+max = INT_MAX;
+```
+
 print
 ```
 printf("ASCII value = %d, Character = %c\n", ch , ch );
+```
+
+数组
+```
+double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};
 ```
 
 STL的vector用法
