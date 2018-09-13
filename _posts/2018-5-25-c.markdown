@@ -23,6 +23,15 @@ categories: language
 
 ```
 
+数据类型
+```
+char 1字节 -128～127 或 0～255
+int 4字节
+short int 2字节
+float 4字节
+double 8字节
+```
+
 极大值，极小值的初始化
 ```
 min = INT_MIN;
