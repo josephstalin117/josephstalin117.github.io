@@ -227,3 +227,118 @@ void main(){
 }
 ```
 
+C 风格字符串
+```
+#include <iostream>
+#include <cstring>
+ 
+using namespace std;
+ 
+int main ()
+{
+   char str1[11] = "Hello";
+   char str2[11] = "World";
+   char str3[11];
+   int  len ;
+ 
+   // 复制 str1 到 str3
+   strcpy( str3, str1);
+   cout << "strcpy( str3, str1) : " << str3 << endl;
+ 
+   // 连接 str1 和 str2
+   strcat( str1, str2);
+   cout << "strcat( str1, str2): " << str1 << endl;
+ 
+   // 连接后，str1 的总长度
+   len = strlen(str1);
+   cout << "strlen(str1) : " << len << endl;
+ 
+   return 0;
+}
+```
+
+c class
+```
+#include <iostream>
+ 
+using namespace std;
+ 
+class Box
+{
+   public:
+      double length;         // 长度
+      double breadth;        // 宽度
+      double height;         // 高度
+ 
+      // 成员函数声明
+      double getVolume(void);
+      void setLength( double len );
+      void setBreadth( double bre );
+      void setHeight( double hei );
+      Box();   // 这是构造函数声明
+      ~Box();  // 这是析构函数声明
+};
+ 
+// 成员函数定义
+double Box::getVolume(void)
+{
+    return length * breadth * height;
+}
+ 
+void Box::setLength( double len )
+{
+    length = len;
+}
+ 
+void Box::setBreadth( double bre )
+{
+    breadth = bre;
+}
+ 
+void Box::setHeight( double hei )
+{
+    height = hei;
+}
+ 
+// 程序的主函数
+int main( )
+{
+   Box Box1;                // 声明 Box1，类型为 Box
+   Box Box2;                // 声明 Box2，类型为 Box
+   double volume = 0.0;     // 用于存储体积
+ 
+   // box 1 详述
+   Box1.setLength(6.0); 
+   Box1.setBreadth(7.0); 
+   Box1.setHeight(5.0);
+ 
+   // box 2 详述
+   Box2.setLength(12.0); 
+   Box2.setBreadth(13.0); 
+   Box2.setHeight(10.0);
+ 
+   // box 1 的体积
+   volume = Box1.getVolume();
+   cout << "Box1 的体积：" << volume <<endl;
+ 
+   // box 2 的体积
+   volume = Box2.getVolume();
+   cout << "Box2 的体积：" << volume <<endl;
+   return 0;
+}
+```
+
+使用初始化列表来初始化字段
+```
+Line::Line( double len): length(len)
+{
+    cout << "Object is being created, length = " << len << endl;
+}
+//上面的语法等同于如下语法：
+Line::Line( double len)
+{
+    length = len;
+    cout << "Object is being created, length = " << len << endl;
+}
+```
+
