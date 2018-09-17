@@ -7,7 +7,6 @@ categories: python
 #### Arrays
 
 We can initialize numpy arrays from nested Python lists, and access elements using square brackets:
-
 ```
 import numpy as np
 
@@ -22,6 +21,7 @@ b = np.array([[1,2,3],[4,5,6]])    # Create a rank 2 array
 print(b.shape)                     # Prints "(2, 3)"
 print(b[0, 0], b[0, 1], b[1, 0])   # Prints "1 2 4"
 ```
+
 Numpy also provides many functions to create arrays:
 ```
 import numpy as np
@@ -70,6 +70,7 @@ print(a[0, 1])   # Prints "2"
 b[0, 0] = 77     # b[0, 0] is the same piece of data as a[0, 1]
 print(a[0, 1])   # Prints "77"
 ```
+
 You can also mix integer indexing with slice indexing. However, doing so will yield an array of lower rank than the original array. Note that this is quite different from the way that MATLAB handles array slicing:
 ```
 import numpy as np
@@ -98,8 +99,8 @@ print(col_r2, col_r2.shape)  # Prints "[[ 2]
                              #          [10]] (3, 1)"
 
 ```
-Integer array indexing: When you index into numpy arrays using slicing, the resulting array view will always be a subarray of the original array. In contrast, integer array indexing allows you to construct arbitrary arrays using the data from another array. Here is an example:
 
+Integer array indexing: When you index into numpy arrays using slicing, the resulting array view will always be a subarray of the original array. In contrast, integer array indexing allows you to construct arbitrary arrays using the data from another array. Here is an example:
 ```
 import numpy as np
 
@@ -119,8 +120,8 @@ print(a[[0, 0], [1, 1]])  # Prints "[2 2]"
 # Equivalent to the previous integer array indexing example
 print(np.array([a[0, 1], a[0, 1]]))  # Prints "[2 2]"
 ```
-One useful trick with integer array indexing is selecting or mutating one element from each row of a matrix:
 
+One useful trick with integer array indexing is selecting or mutating one element from each row of a matrix:
 ```
 import numpy as np
 
@@ -146,6 +147,7 @@ print(a)  # prints "array([[11,  2,  3],
           #                [17,  8,  9],
           #                [10, 21, 12]])
 ```
+
 Boolean array indexing: Boolean array indexing lets you pick out arbitrary elements of an array. Frequently this type of indexing is used to select the elements of an array that satisfy some condition. Here is an example:
 ```
 import numpy as np
@@ -169,7 +171,9 @@ print(a[bool_idx])  # Prints "[3 4 5 6]"
 # We can do all of the above in a single concise statement:
 print(a[a > 2])     # Prints "[3 4 5 6]"
 ```
+
 #### Datatypes
+
 Every numpy array is a grid of elements of the same type. Numpy provides a large set of numeric datatypes that you can use to construct arrays. Numpy tries to guess a datatype when you create an array, but functions that construct arrays usually also include an optional argument to explicitly specify the datatype. Here is an example:
 ```
 import numpy as np
@@ -183,7 +187,9 @@ print(x.dtype)             # Prints "float64"
 x = np.array([1, 2], dtype=np.int64)   # Force a particular datatype
 print(x.dtype)                         # Prints "int64"
 ```
+
 #### Array math
+
 Basic mathematical functions operate elementwise on arrays, and are available both as operator overloads and as functions in the numpy module:
 ```
 import numpy as np
@@ -221,6 +227,7 @@ print(np.divide(x, y))
 print(np.sqrt(x))
 
 ```
+
 Note that unlike MATLAB, * is elementwise multiplication, not matrix multiplication. We instead use the dot function to compute inner products of vectors, to multiply a vector by a matrix, and to multiply matrices. dot is available both as a function in the numpy module and as an instance method of array objects:
 ```
 import numpy as np
@@ -258,8 +265,8 @@ print(np.sum(x, axis=0))  # Compute sum of each column; prints "[4 6]"
 print(np.sum(x, axis=1))  # Compute sum of each row; prints "[3 7]"
 
 ```
-Apart from computing mathematical functions using arrays, we frequently need to reshape or otherwise manipulate data in arrays. The simplest example of this type of operation is transposing a matrix; to transpose a matrix, simply use the T attribute of an array object:
 
+Apart from computing mathematical functions using arrays, we frequently need to reshape or otherwise manipulate data in arrays. The simplest example of this type of operation is transposing a matrix; to transpose a matrix, simply use the T attribute of an array object:
 ```
 import numpy as np
 
@@ -275,3 +282,26 @@ print(v)    # Prints "[1 2 3]"
 print(v.T)  # Prints "[1 2 3]"
 
 ```
+
+numpy.linspace
+```
+# Return evenly spaced numbers over a specified interval.
+>>> np.linspace(2.0, 3.0, num=5)
+array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ])
+```
+
+numpy.reshape
+```
+# Gives a new shape to an array without changing its data.
+>>> a = np.array([[1,2,3], [4,5,6]])
+>>> np.reshape(a, 6)
+array([1, 2, 3, 4, 5, 6])
+>>> np.reshape(a, 6, order='F')
+array([1, 4, 2, 5, 3, 6])
+
+>>> np.reshape(a, (3,-1))       # the unspecified value is inferred to be 2
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+```
+
