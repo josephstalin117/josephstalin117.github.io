@@ -17,6 +17,9 @@ usermod -L newuser1
 # 解除对newuser1的锁定
 usermod -U newuser1
 
+# 踢掉用户
+pkill -kill -t tty
+
 # 显示文件最后5行内容
 tail -n 5 test.log
 
