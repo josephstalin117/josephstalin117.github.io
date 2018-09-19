@@ -9,8 +9,6 @@ categories: command
 
 ```
 h,j,k,l    #h表示往左，j表示往下，k表示往右，l表示往上
-Ctrl+f    #上一页
-Ctrl+b    #下一页
 w, e, W, E    #跳到单词的后面，小写包括标点
 b, B    #以单词为单位往前跳动光标，小写包含标点
 f/F  #command is used to search through the current line
@@ -21,6 +19,16 @@ gg    #文档的第一行
 [N]G    #文档的第N行或者最后一行
 Ctrl+o  #jump back to the previous (older) location
 Ctrl+i  #to jump forward to the next location
+```
+
+#### 滚屏
+```
+Ctrl+f    #上一页
+Ctrl+b    #下一页
+Ctrl+E    #屏幕向下滚动一行
+Ctrl+Y    #屏幕向上滚动一行
+Ctrl+D    #屏幕向下滚动半屏
+Ctrl+U    #屏幕向上滚动半屏
 ```
 
 ### 插入模式
