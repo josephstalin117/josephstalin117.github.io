@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "windows"
+date:   2018-9-21 20:35:35 +0800
+categories: command
+---
+
+开机自启动文件目录
+```
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
+```
+
+常用操作
+```
+//创建目录
+md dir
+//删除目录
+rd dir
+
+//复制文件
+copy path/file path/file
+//移动文件
+move path/file path/file
+
+//查看文件内容
+type c.txt
+
+//查看端口占用
+netstat -ano|findstr "8080"
+//据进程号寻找进程名称
+tasklist | findstr 2000
+//强制关闭某个进程
+taskkill -PID <进程号> -F
+```
