@@ -79,6 +79,9 @@ ps -ef |grep vsftpd
 
 # 查看服务
 service vsftpd
+
+# 查看端口
+lsof -i:80
 ```
 
 
