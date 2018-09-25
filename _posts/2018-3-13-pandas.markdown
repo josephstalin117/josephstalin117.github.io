@@ -2,7 +2,7 @@
 layout: post
 title:  "pandas"
 date:   2018-3-13 20:35:35 +0800
-categories: python
+categories: command
 ---
 
 data read

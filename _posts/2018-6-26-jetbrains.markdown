@@ -2,7 +2,7 @@
 layout: post
 title:  "jetbrains"
 date:   2018-6-26 20:35:35 +0800
-categories: python
+categories: command
 ---
 
 keymap

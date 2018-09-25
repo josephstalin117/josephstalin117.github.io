@@ -2,7 +2,7 @@
 layout: post
 title:  "docker"
 date:   2018-4-30 20:35:35 +0800
-categories: docker
+categories: command
 ---
 
 基本操作

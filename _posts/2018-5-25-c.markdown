@@ -2,7 +2,7 @@
 layout: post
 title:  "c"
 date:   2018-5-25 20:35:35 +0800
-categories: language
+categories: command
 ---
 
 位运算符

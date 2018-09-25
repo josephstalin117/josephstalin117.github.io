@@ -2,7 +2,7 @@
 layout: post
 title:  "opencv"
 date:   2018-5-14 20:35:35 +0800
-categories: python
+categories: command
 ---
 
 基本用法

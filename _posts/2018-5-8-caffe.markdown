@@ -2,7 +2,7 @@
 layout: post
 title:  "caffe"
 date:   2018-5-8 20:35:35 +0800
-categories: python
+categories: command
 ---
 
 训练网络

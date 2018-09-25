@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "excel"
+title:  "excle"
 date:   2017-11-21 20:35:35 +0800
-categories: vba
+categories: command
 ---
 
 

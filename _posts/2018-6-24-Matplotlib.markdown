@@ -2,7 +2,7 @@
 layout: post
 title:  "Matplotlib"
 date:   2018-6-24 20:35:35 +0800
-categories: python
+categories: command
 ---
 
 导入

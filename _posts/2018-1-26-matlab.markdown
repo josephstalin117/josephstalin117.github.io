@@ -2,7 +2,7 @@
 layout: post
 title:  "matlab"
 date:   2018-1-26 20:35:35 +0800
-categories: matlab
+categories: command
 ---
 
 ```
