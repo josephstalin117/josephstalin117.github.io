@@ -125,3 +125,27 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 
 ```
+
+分支管理
+```
+# 创建分支
+git branch <branchname>
+
+# 显示分支列表
+git branch
+
+# 切换分支
+git checkout <branchname>
+
+# 创建分支并切换
+git checkout -b <branch>
+
+# 合并分支
+## 先切换master分支
+git checkout master
+## 合并分支
+git merge <branch>
+
+# 删除分支
+git branch -d <branchname>
+```
