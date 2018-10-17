@@ -42,6 +42,11 @@ for x in [-1, 0, 1]:
 # Prints "negative", "zero", "positive"
 
 ```
+range
+```
+range(start, stop, step)
+```
+
 
 Extended Slices
 ```
