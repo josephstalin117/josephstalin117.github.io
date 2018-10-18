@@ -2,7 +2,7 @@
 layout: post
 title:  "python"
 date:   2017-08-10 20:35:35 +0800
-categories: python
+categories: command
 ---
 
 
@@ -42,6 +42,11 @@ for x in [-1, 0, 1]:
 # Prints "negative", "zero", "positive"
 
 ```
+range
+```
+range(start, stop, step)
+```
+
 
 Extended Slices
 ```
@@ -176,6 +181,12 @@ activate tensorflow
 
 # deactivate
 source deactivate
+
+# 列出所有环境
+conda info --envs
+
+# 当前环境
+conda info -envis
 
 # 换源
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
