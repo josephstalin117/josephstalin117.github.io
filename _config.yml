@@ -19,4 +19,4 @@ markdown: kramdown
 
 theme: jekyll-theme-cayman
 # permalink: none
-permalink: /:title/
+permalink: /:title:output_ext
