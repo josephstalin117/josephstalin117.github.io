@@ -18,4 +18,5 @@ github_username:  josephstalin117
 markdown: kramdown
 
 theme: jekyll-theme-cayman
-permalink: none
+# permalink: none
+permalink: /:title/
