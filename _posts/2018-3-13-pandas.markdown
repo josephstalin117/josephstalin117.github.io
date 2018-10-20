@@ -57,6 +57,9 @@ df.rain_octsep < 1000 # Or df['rain_octsep] < 1000
 # Using a series of booleans to filter
 df[df.rain_octsep < 1000]
 
+# convert pandas float series to int and filter
+df = df[df['hour'].astype(int)==0]
+
 # line replaces None with NaN
 df['column'].replace('None', np.nan, inplace=True)
 
@@ -103,6 +106,9 @@ df.loc[df['column_name'].isin(['one','three'])]
 
 # Combine multiple conditions with &
 df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
+
+# or statement
+new_df[(new_df['hour'].astype(int)==0) | (new_df['hour'].astype(int)==8) | (new_df['hour'].astype(int)==16)]
 
 # isin returns a boolean Series, so to select rows whose value is not in some_values
 df.loc[~df['column_name'].isin(some_values)]
