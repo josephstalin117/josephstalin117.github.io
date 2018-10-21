@@ -5,6 +5,11 @@ date:   2018-10-21 20:35:35 +0800
 categories: command
 ---
 
+jupyter notebook 安装 R
+```
+conda install -c r r-essentials
+```
+
 退出命令行
 ```
 q()
