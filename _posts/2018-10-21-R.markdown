@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "R"
+date:   2018-10-21 20:35:35 +0800
+categories: command
+---
+
+退出命令行
+```
+q()
+```
+
+赋值
+```
+myString <- "Hello, World!"
+print (myString)
+```
+
+删除变量
+```
+rm(var.3)
+```
+
+函数
+```
+function_name <- function(arg_1, arg_2, ...) {
+   Function body 
+}
+```
