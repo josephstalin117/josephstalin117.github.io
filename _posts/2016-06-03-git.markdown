@@ -123,17 +123,17 @@ git config --global core.pager 'less'
 
 ```
 #显示文件的历史修改
-git log -p filename
+git log -p [filename]
 git log --graph
 
 #查看提交记录
-git log filename
+git log [filename]
 
 #显示提交的记录
-git log —pretty=oneline filename
+git log —pretty=oneline [filename]
 
 #查看某次提交中的某个文件变化
-git show 999e31080f96c29d84e11a82e87bfa175976fe0e README.md
+git show 999e31080f96c29d84e11a82e87bfa175976fe0e [filename]
 ```
 
 代理
