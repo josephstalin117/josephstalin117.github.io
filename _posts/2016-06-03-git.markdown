@@ -23,6 +23,12 @@ git config --global user.email "xxx@xxx.com"
 # 生成ssh-key
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
+# 查看git config的设置
+git config --list
+
+# 全局配置文件
+~/.gitconfig
+
 ```
 
 版本提交
@@ -87,14 +93,30 @@ git rm [file1] [file2] ...
 #从暂存区删除，但该文件会保留在工作区
 git rm --cached [file]
 
-#显示工作区与当前分支最新commit之间的差异
-git diff HEAD
-
 #显示当前分支的版本历史
 git log
+```
+
+# 文件对比
+```
+#显示工作区与当前分支最新commit之间的差异
+git diff HEAD [filename]
+
+#显示工作区与比较上次的提交
+git diff HEAD^ [filename]
+
+#比较暂存区与最新本地版本库
+git diff --cached [filename]
 
 #显示暂存区和工作区的差异
-git diff
+git diff [file]
+
+#查看工作目录同Git仓库指定 commit 的内容的差异
+git diff [commit] [filename]
+
+#git diff 不输出的处理
+git --no-pager diff
+git config --global core.pager 'less'
 ```
 
 查看记录
