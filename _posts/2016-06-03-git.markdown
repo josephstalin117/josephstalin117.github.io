@@ -70,13 +70,13 @@ git reset HEAD^
 git checkout a
 
 # 回退到指定版本
-git reset --hard 3628164
+git reset --hard [版本号]
 
 # 回退到上一版本
 git reset --hard HEAD^
 
 # 单个文件恢复之前的版本
-git reset 版本号 filename
+git reset 版本号 [filename]
 
 # 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
 git reset [commit]
@@ -133,7 +133,7 @@ git log [filename]
 git log —pretty=oneline [filename]
 
 #查看某次提交中的某个文件变化
-git show 999e31080f96c29d84e11a82e87bfa175976fe0e [filename]
+git show [版本号] [filename]
 ```
 
 代理
@@ -160,14 +160,14 @@ git branch
 git checkout <branchname>
 
 # 创建分支并切换
-git checkout -b <branch>
+git checkout -b [branch]
 
 # 合并分支
 ## 先切换master分支
 git checkout master
 ## 合并分支
-git merge <branch>
+git merge [branch]
 
 # 删除分支
-git branch -d <branchname>
+git branch -d [branchname]
 ```
