@@ -173,6 +173,9 @@ anaconda2
 # Create a conda environment named tensorflow to run a version of Python by invoking the following command:
 conda create -n tensorflow pip python=2.7
 
+# remove conda environment
+conda remove -n tensorflow --all
+
 # Activate the conda environment by issuing the following command:
 source activate tensorflow
 
