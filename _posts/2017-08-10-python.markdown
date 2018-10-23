@@ -185,9 +185,6 @@ source deactivate
 # 列出所有环境
 conda info --envs
 
-# 当前环境
-conda info -envis
-
 # 换源
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
