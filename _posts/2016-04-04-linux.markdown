@@ -106,7 +106,7 @@ sudo apt-get remove gnome
 ```
 find . -name "*.php" | xargs grep
 
-只输出文件中匹配到的部分 -o
+# 只输出文件中匹配到的部分 -o
 grep -o 'matchcontent=[]'
 ```
 
@@ -123,18 +123,23 @@ which firefox
 #### network
 
 ```
-ifconfig eth0 up #启动以太网卡
-
+# 启动以太网卡
+ifconfig eth0 up
 sudo /etc/init.d/networking restart
 
-route -n #查看所有路由
+# 查看所有路由
+route -n
 
-ifconfig eh0 0.0.0.0 #去除IP地址
+# 去除IP地址
+ifconfig eh0 0.0.0.0
 
-ip addr add 目的/网关 dev eth0 #添加ip
+# 添加ip
+ip addr add 目的/网关 dev eth0
 
-sudo ip route add 目的ip/netmask via 192.168.1.1 #添加路由
+# 添加路由
+sudo ip route add 目的ip/netmask via 192.168.1.1
 
+# ping4次
 ping -c 4 google.com
 ```
 
@@ -142,7 +147,6 @@ ping -c 4 google.com
 
 ```
 # FILTERING BY SOURCE AND DESTINATION
-
 tcpdump src 2.3.4.5
 tcpdump dst 3.4.5.6
 
@@ -185,8 +189,10 @@ blkid
 
 #### 解压压缩
 ```
-tar -x #extract
-tar -z #if the tar file also compressed with .tar.gz or tgz extension
+#extract
+tar -x
+#if the tar file also compressed with .tar.gz or tgz extension
+tar -z
 tar -xvf file.tar
 tar -zxvf data.tar.gz
 
@@ -198,7 +204,6 @@ zip FileName.zip DirName
 #### tree
 ```
 #Tee command is used to store and view (both at the same time) the output of any other command.
-
 ls | tee file
 ```
 
@@ -264,8 +269,10 @@ cmake --version
 ```
 #Type this command to list the devices that are accessible on the computer:
 fdisk -l
+
 # 挂载文件
 mount /dev/cdrom /mnt/cdrom
+
 # 取消挂载
 umount /mnt/cdrom
 ```
@@ -301,13 +308,4 @@ sslocal -c /home/mudao/shadowsocks.json
 "method":"aes-256-cfb",
 "fast_open":false
 }
-```
-
-#### 显卡驱动
-```
-# 显示显卡驱动状态
-nvidia-smi
-
-# cuda 版本
-nvcc --version
 ```
