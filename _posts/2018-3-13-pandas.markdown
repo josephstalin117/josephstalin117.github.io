@@ -201,6 +201,7 @@ data.country = data.country.fillna('')
 #a calculation like taking the mean duration can help us even the dataset out. It’s not a great measure, but it’s an estimate of what the duration could be based on the other data.
 data.duration = data.duration.fillna(data.duration.mean())
 ```
+
 Remove incomplete rows
 ```
 #Dropping all rows with any NA values is easy:
@@ -214,6 +215,9 @@ data.dropna(thresh=5)
 
 #Let’s say for instance that we don’t want to include any movie that doesn’t have information on when the movie came out:
 data.dropna(subset=[‘title_year’])
+
+#update data with drop nan
+data = data.dropna(subset=[water_column])
 
 #Drop the columns with that are all NA values:
 data.dropna(axis=1, how=’all’)
