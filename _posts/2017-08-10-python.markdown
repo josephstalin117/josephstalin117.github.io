@@ -215,23 +215,23 @@ pip show -f <包名>
 pip search <搜索关键字>
 
 # 换源
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple gevent
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple <包名>
 ```
 
 jupyter
 ```
 # 添加核
-source activate tensorflow
+source activate <tensorflow>
 pip install ipykernel
 
 # list kernel
 jupyter kernelspec list
 
 # add kernel(处于想添加kernel的环境中)
-python -m ipykernel install --name tensorflow --user
+python -m ipykernel install --name <tensorflow> --user
 
 # remove kernel
-jupyter kernelspec remove kernelname
+jupyter kernelspec remove <kernelname>
 
 # 生成配置文件
 jupyter notebook --generate-config
