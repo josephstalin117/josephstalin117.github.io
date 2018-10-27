@@ -29,3 +29,8 @@ A.^2 和 A^2 点乘是数组的运算，不加点是矩阵的运算
 {} 大括号，用于cell型的数组的分配或引用。
 () 小括号，用于引用数组的元素。
 ```
+
+matlab 后台运行
+```
+nohup /user/matlab/bin/matlab <fill.m> <fill.out> &
+```
