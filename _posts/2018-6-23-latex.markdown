@@ -8,6 +8,7 @@ categories: command
 Hello, world!
 ```
 \documentclass{article}
+\usepackage[UTF8]{ctex}
 %这里是导言区
 \begin{document}
 Hello, world!
