@@ -9,9 +9,50 @@ Hello, world!
 ```
 \documentclass{article}
 \usepackage[UTF8]{ctex}
+    \title{XIDIAN UNIVERSITY} %———总标题
+    \author{YanTaTaiBai}
 %这里是导言区
 \begin{document}
+% —— 显示标题
+\maketitle
+%—— 制作目录(目录是根据标题自动生成的)
+\tableofcontents
+%——一号子标题
+\section{China}
+%——二号子标题
+\subsection{Shannxi}
+%——三号子标题
+\subsubsection{Xian}
+%{}中的内容加粗显示
+\paragraph{XIDIAN UNIVERSITY}is a famous university.
+\subparagraph{School of telecommunication engineering} is in the best institute of XDU.
+\subsection{State Key Laboratory of ISN }
+\paragraph{XiDian University} is the best university in communications industry. 
 Hello, world!
 \end{document}
+```
+
+换行
+```
+\\
+```
+
+分段
+```
+This paper reflects on the history and development of the LaTeX Project Public License (LPPL) .\par %此处为分段
+
+\noindent(此处不首行缩进)In late June, the TUG 2010 conference was held in San Francisco to great success. 
+```
+
+添加图片
+```
+\documentclass{article}
+\usepackage{graphicx}
+\begin{document}
+\includegraphics{a.jpg}
+\end{document}
+
+%修改图片大小缩放80%
+\includegraphics[width = .8\textwidth]{a.jpg}
 ```
 
