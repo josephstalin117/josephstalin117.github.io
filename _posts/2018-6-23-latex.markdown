@@ -96,8 +96,6 @@ a_1 %a1
 \sum_{i=1}^{10}
 ```
 
-$$\sum_{i=1}^{10}$$
-
 流程图
 ```
 % texlive2015, pdflatex
@@ -137,4 +135,4 @@ $$\sum_{i=1}^{10}$$
 \end{document}
 ```
 
-![images]('http://josephstalin117.github.io/source/latex.png')
+![images]('http://josephlin.org/source/latex.png')
