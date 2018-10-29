@@ -1,9 +1,22 @@
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
 ---
 layout: post
 title:  "latex"
 date:   2018-6-23 20:35:35 +0800
 categories: command
 ---
+
+
 
 Hello, world!
 ```
@@ -124,4 +137,4 @@ a_1 %a1
 \end{document}
 ```
 
-![Alt text]('../includes/images/latex.png' "Optional title")
+![images]('source/latex.png' "Optional title")
