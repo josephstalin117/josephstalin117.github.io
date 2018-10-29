@@ -135,4 +135,4 @@ a_1 %a1
 \end{document}
 ```
 
-![images]('http://josephlin.org/source/latex.png')
+![images](/source/latex.png)
