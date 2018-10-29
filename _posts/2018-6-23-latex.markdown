@@ -67,7 +67,7 @@ This paper reflects on the history and development of the LaTeX Project Public L
 \includegraphics[width = .8\textwidth]{a.jpg}
 ```
 
-数学公式
+#### 数学公式
 ```
 %行内公式
 $公式$
@@ -77,22 +77,35 @@ $$行间公司$$
 
 %中间元素结合成一个整体
 {}
+```
 
-%分数 
+分数
+$\frac{a-1}{2}$
+``` 
 \frac{a-1}{2} %a-1/2
+```
 
-%根号
+根号
+$\sqrt{a+b}$
+```
 \sqrt{a+b}
+```
 
-%上标
-^
+上标^
+$a^3$
+```
 a^3 
+```
 
-%下标
-_
-a_1 %a1
+下标_
+$a_1$
+```
+a_1
+```
 
-%累加
+累加
+$\sum_{i=1}^{10}$
+```
 \sum_{i=1}^{10}
 ```
 
