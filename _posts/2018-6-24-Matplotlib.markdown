@@ -26,10 +26,14 @@ plt.show() # 显示图形
 ```
 x = range(len(data))
 plt.figure(figsize=(10,5))
-plt.plot(x,data['close'])
-plt.plot(x,data['high'],color='r')
+plt.plot(x,data['close'],label="actual")
+plt.plot(x,data['high'],color='r',label="prediction")
+# plt.legend()添加图例
+plt.legend(loc="upper left")
 
 plt.title("上证50指数历史最高价、收盘价走势折线图")
 plt.xlabel("时间")
 plt.ylabel("指数")
+
+plt.show()
 ```
