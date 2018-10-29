@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "latex"
+date:   2018-6-23 20:35:35 +0800
+categories: command
+---
 <head>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
     <script type="text/x-mathjax-config">
@@ -9,14 +15,6 @@
         });
     </script>
 </head>
----
-layout: post
-title:  "latex"
-date:   2018-6-23 20:35:35 +0800
-categories: command
----
-
-
 
 Hello, world!
 ```
@@ -98,6 +96,8 @@ a_1 %a1
 \sum_{i=1}^{10}
 ```
 
+$$\sum_{i=1}^{10}$$
+
 流程图
 ```
 % texlive2015, pdflatex
@@ -137,4 +137,4 @@ a_1 %a1
 \end{document}
 ```
 
-![images]('source/latex.png' "Optional title")
+![images]('http://josephstalin117.github.io/source/latex.png')
