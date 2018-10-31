@@ -96,6 +96,7 @@ $$行间公司$$
 \hat{a}
 \bar{a}
 \dot{a}
+\tilde{a} %波浪线
 
 %点乘
 \cdot
@@ -118,6 +119,24 @@ $$行间公司$$
 %公式组合
 \begin{equation*} %带*无编号
 \end{equation*}
+```
+
+希腊字母
+```
+%sigma
+\sigma
+
+%pi
+\pi
+
+%epsilon
+\epsilon
+
+%alpha
+\alpha
+
+%beta
+\beta
 ```
 
 分数
