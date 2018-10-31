@@ -16,7 +16,7 @@ categories: command
     </script>
 </head>
 
-Hello, world!
+基本格式
 ```
 \documentclass{article}
 \usepackage[UTF8]{ctex}
@@ -43,16 +43,17 @@ Hello, world!
 \end{document}
 ```
 
-换行
+
+排版
 ```
+%分段
+This paper.\par
+
+%首行不缩进
+\noindentIn late June, the TUG 2010 conference was held in San Francisco to great success. 
+
+%换行
 \\
-```
-
-分段
-```
-This paper reflects on the history and development of the LaTeX Project Public License (LPPL) .\par %此处为分段
-
-\noindent(此处不首行缩进)In late June, the TUG 2010 conference was held in San Francisco to great success. 
 ```
 
 添加图片
@@ -81,8 +82,15 @@ $$行间公司$$
 %省略号
 \dots
 
+%垂直省略号
+\vdots
+
 %占位或对齐
 &
+
+%公式组合
+\begin{equation*} %带*无编号
+\end{equation*}
 ```
 
 分数
