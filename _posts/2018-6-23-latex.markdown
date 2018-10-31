@@ -90,6 +90,15 @@ $$行间公司$$
 \bar{a}
 \dot{a}
 
+%点乘
+\cdot
+
+%除
+\div
+
+%叉乘
+\times
+
 %向量
 \overrightarrow{AB}
 
@@ -146,6 +155,7 @@ $\prod_\epsilon$
 矩阵转置
 $A^{\mathrm{T}}$
 ```
+%mathrm 指罗马字体
 $A^{\mathrm{T}}$
 ```
 
