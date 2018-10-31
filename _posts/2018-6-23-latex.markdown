@@ -85,6 +85,14 @@ $$行间公司$$
 %垂直省略号
 \vdots
 
+%强调
+\hat{a}
+\bar{a}
+\dot{a}
+
+%向量
+\overrightarrow{AB}
+
 %占位或对齐
 &
 
