@@ -143,6 +143,12 @@ $\prod_\epsilon$
 \prod_\epsilon
 ```
 
+矩阵转置
+$A^{\mathrm{T}}$
+```
+$A^{\mathrm{T}}$
+```
+
 矩阵
 $$\begin{matrix} x&y\\z&v \end{matrix}$$
 $$\begin{vmatrix} x&y\\z&v \end{vmatrix}$$
