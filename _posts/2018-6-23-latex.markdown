@@ -121,7 +121,26 @@ $\prod_\epsilon$
 \prod_\epsilon
 ```
 
-流程图
+#### 编号
+```
+%不带序号
+\begin{itemize}
+\item[-] good morning...
+\item[-] good morning....
+\end{itemize}
+
+%带序号[step 1]序号为1,[step i]序号为i
+\begin{enumerate}[step 1]
+\item good morning...
+\item good morning....
+\end{enumerate}
+
+%数序公式手动编号
+\eqno{(1)}
+$$x^n+y^n=z^n \eqno{(1)}$$
+```
+
+#### 流程图
 ```
 % texlive2015, pdflatex
 \documentclass{article}
