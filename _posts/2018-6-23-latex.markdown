@@ -129,9 +129,9 @@ $\prod_\epsilon$
 
 矩阵
 $$\begin{matrix} x&y\\z&v \end{matrix}$$
-\begin{vmatrix} x&y\\z&v \end{vmatrix}
-\begin{bmatrix} x&y\\z&v \end{bmatrix}
-\begin{pmatrix} x&y\\z&v \end{pmatrix}
+$$\begin{vmatrix} x&y\\z&v \end{vmatrix}$$
+$$\begin{bmatrix} x&y\\z&v \end{bmatrix}$$
+$$\begin{pmatrix} x&y\\z&v \end{pmatrix}$$
 ```
 \begin{matrix} x&y\\z&v \end{matrix}
 \begin{vmatrix} x&y\\z&v \end{vmatrix}
