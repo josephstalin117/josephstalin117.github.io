@@ -80,6 +80,9 @@ $$行间公司$$
 
 %省略号
 \dots
+
+%占位或对齐
+&
 ```
 
 分数
@@ -122,6 +125,18 @@ $\int_{0}^{\frac{\pi}{2}}$
 $\prod_\epsilon$
 ```
 \prod_\epsilon
+```
+
+矩阵
+$$\begin{matrix} x&y\\z&v \end{matrix}$$
+\begin{vmatrix} x&y\\z&v \end{vmatrix}
+\begin{bmatrix} x&y\\z&v \end{bmatrix}
+\begin{pmatrix} x&y\\z&v \end{pmatrix}
+```
+\begin{matrix} x&y\\z&v \end{matrix}
+\begin{vmatrix} x&y\\z&v \end{vmatrix}
+\begin{bmatrix} x&y\\z&v \end{bmatrix}
+\begin{pmatrix} x&y\\z&v \end{pmatrix}
 ```
 
 #### 编号
