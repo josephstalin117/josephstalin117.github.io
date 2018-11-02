@@ -323,3 +323,20 @@ with open(target_file, 'w',encoding='UTF-8') as outfile:
             for line in infile:
                 outfile.write(line)
 ```
+
+date
+```
+import datetime
+
+x = datetime.datetime.now()
+
+# 2020-05-17 00:00:00
+x = datetime.datetime(2020, 5, 17)
+
+x = datetime.datetime(2018, 6, 1, 4)
+#June
+print(x.strftime("%B"))
+
+#3点12分
+x = datetime.time(3,12,0)
+```

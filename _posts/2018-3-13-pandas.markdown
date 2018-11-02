@@ -174,7 +174,7 @@ print grouped['Points'].agg(np.mean)
 
 ```
 
-COMBINING DATASETS
+#### COMBINING DATASETS
 
 ```
 rain_jpn = pd.read_csv('notebook_playground/data/jpn_rain.csv')
@@ -184,7 +184,13 @@ uk_jpn_rain = df.merge(rain_jpn, on='year')
 uk_jpn_rain.head(5)
 ```
 
-SAVING YOUR DATASETS
+append
+```
+result = df1.append(df4)
+```
+![images](/source/pandas_combine.png)
+
+#### SAVING YOUR DATASETS
 
 ```
 # Saving your data to a csv
@@ -224,4 +230,14 @@ data.dropna(axis=1, how=’all’)
 
 #Drop all columns with any NA values:
 data.dropna(axis=1, how=’any’)
+```
+
+date
+```
+# selecting DataFrame rows between two dates 
+start = datetime.datetime(2014,4,2)
+end = datetime.datetime(2017,12,15,4)
+base_df['dateTime'] = pd.to_datetime(base_df['dateTime'])
+base_df = base_df.set_index(['dateTime'])
+new_df = base_df.loc[start:end]
 ```
