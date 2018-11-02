@@ -184,9 +184,10 @@ uk_jpn_rain = df.merge(rain_jpn, on='year')
 uk_jpn_rain.head(5)
 ```
 
-append
+append & concat
 ```
-result = df1.append(df4)
+result = pd.concat(frames)
+result = df1.append(df4, ignore_index=True)
 ```
 ![images](/source/pandas_combine.png)
 
