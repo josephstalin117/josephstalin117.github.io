@@ -307,4 +307,19 @@ os.path.join('/home/build/test/sandboxes/', todaystr, '/new_sandbox/')
 import os
 if not os.path.exists(directory):
     os.makedirs(directory)
+
+# 列出文件夹中的文件
+for filename in os.listdir(csv_dir):
+	if filename.endswith(".csv"): 
+		filenames.append(filename)
+            continue
+        else:
+            continue
+
+# 合并文件
+with open(target_file, 'w',encoding='UTF-8') as outfile:
+	for fname in filenames:
+    	with open(csv_dir+fname, encoding='UTF-8') as infile:
+            for line in infile:
+                outfile.write(line)
 ```
