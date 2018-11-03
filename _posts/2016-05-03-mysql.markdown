@@ -5,6 +5,26 @@ date:   2016-05-03 21:35:35 +0800
 categories: command
 ---
 
+#### 操作
+```
+# install
+sudo apt-get update
+sudo apt-get install mysql-server
+
+# start
+systemctl start mysql
+
+# Launch at reboot
+systemctl enable mysql
+
+# login
+mysql -u root -p
+
+# show status
+service mysql status
+```
+
+
 #### 权限
 
 ```
@@ -67,4 +87,10 @@ SELECT User FROM mysql.user;
 
 取消用户权限
 REVOKE ALL PRIVILEGES ON phpmyadmin.* FROM 'phpmyadmin'@'localhost';
+
+显示数据库
+SHOW DATABASES;
+
+reload
+FLUSH PRIVILEGES;
 ```
