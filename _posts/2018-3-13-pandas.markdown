@@ -202,7 +202,7 @@ concat
 ```
 result = pd.concat([df1, df4], axis=1, sort=False)
 ```
-![images](/source/pandas_mergeing_concat_axis1.png)
+![images](/source/pandas_merging_concat_axis1.png)
 
 
 #### SAVING YOUR DATASETS
