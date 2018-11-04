@@ -195,6 +195,13 @@ result = df1.append(df4, ignore_index=True)
 ```
 ![images](/source/pandas_combine.png)
 
+concat
+```
+result = pd.concat([df1, df4], axis=1, sort=False)
+```
+![images](/source/pandas_mergeing_concat_axis1.png)
+
+
 #### SAVING YOUR DATASETS
 
 ```
