@@ -21,6 +21,9 @@ df.tail(5)
 df.columns = ['water_year','rain_octsep', 'outflow_octsep','rain_decfeb', 'outflow_decfeb', 'rain_junaug', 'outflow_junaug']
 df.head(5)
 
+# Return a Numpy representation of the DataFrame.
+df.values
+
 # Finding out how many rows dataset has.
 len(df)
 df.shape
