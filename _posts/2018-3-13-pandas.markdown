@@ -213,6 +213,25 @@ data.country = data.country.fillna('')
 data.duration = data.duration.fillna(data.duration.mean())
 ```
 
+move column
+```
+a
+#   x1  x2
+#0   0   5
+#1   1   6
+#2   2   7
+#3   3   8
+#4   4   9
+
+a.x2 = a.x2.shift(1)
+#   x1  x2
+#0   0 NaN
+#1   1   5
+#2   2   6
+#3   3   7
+#4   4   8
+```
+
 Remove incomplete rows
 ```
 #Dropping all rows with any NA values is easy:
