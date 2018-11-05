@@ -242,8 +242,15 @@ a.x2 = a.x2.shift(1)
 #4   4   8
 ```
 
-Remove incomplete rows
+Remove rows & columns
 ```
+#Drop columns
+df.drop(['B', 'C'], axis=1)
+df.drop(columns=['B', 'C'])
+
+#Drop a row by index
+df.drop([0, 1])
+
 #Dropping all rows with any NA values is easy:
 data.dropna()
 
