@@ -33,3 +33,68 @@ Meta+.    #Loop through and paste the last argument of previous commands.
 
 Ctrl+r    #Search as you type
 ```
+
+### 脚本
+
+脚本解释器
+```
+#!/bin/sh
+```
+
+循环
+```
+for ((i=0; i<10; i++)); do
+	touch test_$i.txt
+done
+```
+
+变量
+```
+your_name="qinjx"
+echo $your_name
+echo ${your_name}
+
+# 删除变量
+unset variable_name
+
+# 数组
+array_name=(value0 value1 value2 value3)
+
+# 获取字符串长度
+string="abcd"
+echo ${#string} #输出 4
+
+# 读取数组
+valuen=${array_name[n]}
+
+# 获取所有元素
+echo ${array_name[@]}
+
+# 取得数组元素的个数
+length=${#array_name[@]}
+```
+
+关系运算符
+```
+# 检测两个数是否相等，相等返回 true。
+-eq
+
+# 检测左边的数是否大于右边的，如果是，则返回 true
+-gt
+
+# 检测左边的数是否小于右边的，如果是，则返回 true
+-lt
+```
+
+流程判断
+```
+if condition
+then
+    command1 
+    command2
+    ...
+    commandN 
+fi
+
+if [ $(ps -ef | grep -c "ssh") -gt 1 ]; then echo "true"; fi
+```

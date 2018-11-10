@@ -115,7 +115,7 @@ df.head(5)
 df.drop_duplicates()
 
 df = pd.DataFrame({"A":["foo", "foo", "foo", "bar"], "B":[0,1,1,1], "C":["A","A","B","A"]})
-df.drop_duplicates(['A', 'C'], keep=last)
+df.drop_duplicates(subset=['A', 'C'], keep=last)
 
 # reset index
 df = df.reset_index(drop=True)
