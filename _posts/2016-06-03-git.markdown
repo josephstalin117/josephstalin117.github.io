@@ -95,6 +95,11 @@ git rm --cached [file]
 
 #显示当前分支的版本历史
 git log
+
+# 远程强制覆盖本地文件
+git fetch --all
+git reset --hard origin/master
+git pull
 ```
 
 # 文件对比
