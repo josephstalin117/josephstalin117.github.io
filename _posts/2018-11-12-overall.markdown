@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "【转】系统的差距"
+title:  "[转]系统的差距"
 date:   2018-11-12 20:35:35 +0800
 categories: essay
 ---

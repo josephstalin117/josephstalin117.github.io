@@ -127,6 +127,9 @@ which firefox
 ifconfig eth0 up
 sudo /etc/init.d/networking restart
 
+# 网络重启
+sudo /etc/init.d/networking restart
+
 # 查看所有路由
 route -n
 
