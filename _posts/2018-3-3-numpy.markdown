@@ -40,11 +40,24 @@ print(c)               # Prints "[[ 7.  7.]
 d = np.eye(2)         # Create a 2x2 identity matrix
 print(d)              # Prints "[[ 1.  0.]
                       #          [ 0.  1.]]"
+```
 
+np.random
+```
 e = np.random.random((2,2))  # Create an array filled with random values
 print(e)                     # Might print "[[ 0.91940167  0.08143941]
                              #               [ 0.68744134  0.87236687]]"
 
+# 生成正态分布
+np.random.normal(loc=0.0, scale=1.0, size=None)
+
+# Generate a uniform random sample from np.arange(5) of size 3:
+# array([0, 3, 4])
+np.random.choice(5, 3)
+
+# Generate a non-uniform random sample from np.arange(5) of size 3:
+# array([3, 3, 0])
+np.random.choice(5, 3, p=[0.1, 0, 0.3, 0.6, 0])
 ```
 #### Array indexing
 
