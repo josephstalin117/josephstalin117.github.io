@@ -59,3 +59,23 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 ```
 
+math
+```
+# 返回均值
+tf.math.reduce_mean
+
+# Creates a tensor with all elements set to 1.
+# tf.ones_like
+tensor = tf.constant([[1, 2, 3], [4, 5, 6]])
+tf.ones_like(tensor)  # [[1, 1, 1], [1, 1, 1]]
+```
+
+查看变量
+```
+# 返回的是需要训练的变量列表
+tf.trainable_variables
+
+# 返回的是所有变量的列表
+tf.all_variables
+```
+

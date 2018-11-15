@@ -42,23 +42,7 @@ print(d)              # Prints "[[ 1.  0.]
                       #          [ 0.  1.]]"
 ```
 
-np.random
-```
-e = np.random.random((2,2))  # Create an array filled with random values
-print(e)                     # Might print "[[ 0.91940167  0.08143941]
-                             #               [ 0.68744134  0.87236687]]"
 
-# 生成正态分布
-np.random.normal(loc=0.0, scale=1.0, size=None)
-
-# Generate a uniform random sample from np.arange(5) of size 3:
-# array([0, 3, 4])
-np.random.choice(5, 3)
-
-# Generate a non-uniform random sample from np.arange(5) of size 3:
-# array([3, 3, 0])
-np.random.choice(5, 3, p=[0.1, 0, 0.3, 0.6, 0])
-```
 #### Array indexing
 
 Slicing: Similar to Python lists, numpy arrays can be sliced. Since arrays may be multidimensional, you must specify a slice for each dimension of the array:
@@ -183,6 +167,13 @@ print(a[bool_idx])  # Prints "[3 4 5 6]"
 
 # We can do all of the above in a single concise statement:
 print(a[a > 2])     # Prints "[3 4 5 6]"
+```
+
+numpy.all
+```
+# Test whether all array elements along a given axis evaluate to True.
+>>> np.all([[True,False],[True,True]])
+False
 ```
 
 #### Datatypes
@@ -328,5 +319,47 @@ numpy.squeeze
 (3,)
 >>> np.squeeze(x, axis=0).shape
 (3, 1)
+```
+
+np.random
+```
+e = np.random.random((2,2))  # Create an array filled with random values
+print(e)                     # Might print "[[ 0.91940167  0.08143941]
+                             #               [ 0.68744134  0.87236687]]"
+
+# 生成正态分布
+np.random.normal(loc=0.0, scale=1.0, size=None)
+
+# Generate a uniform random sample from np.arange(5) of size 3:
+# array([0, 3, 4])
+np.random.choice(5, 3)
+
+# Generate a non-uniform random sample from np.arange(5) of size 3:
+# array([3, 3, 0])
+np.random.choice(5, 3, p=[0.1, 0, 0.3, 0.6, 0])
+
+# 生成均匀分布
+# Draw samples from a uniform distribution.
+# Samples are uniformly distributed over the half-open interval [low, high) (includes low, but excludes high). In other words, any value within the given interval is equally likely to be drawn by uniform.
+# numpy.random.uniform(low=0.0, high=1.0, size=None)
+>>> s = np.random.uniform(-1,0,1000)
+>>> np.all(s >= -1)
+True
+>>> np.all(s < 0)
+True
+```
+
+np.mean
+```
+# Compute the arithmetic mean along the specified axis.
+# Returns the average of the array elements. The average is taken over the flattened array by default, otherwise over the specified axis. float64 intermediate and return values are used for integer inputs.
+
+>>> a = np.array([[1, 2], [3, 4]])
+>>> np.mean(a)
+2.5
+>>> np.mean(a, axis=0)
+array([ 2.,  3.])
+>>> np.mean(a, axis=1)
+array([ 1.5,  3.5
 ```
 
