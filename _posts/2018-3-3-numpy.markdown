@@ -26,6 +26,18 @@ a = np.zeros((2,2))   # Create an array of all zeros
 print(a)              # Prints "[[ 0.  0.]
                       #          [ 0.  0.]]"
 
+# numpy.zeros_like
+# Return an array of zeros with the same shape and type as a given array.
+numpy.zeros_like(a, dtype=None, order='K', subok=True)
+>>> x = np.arange(6)
+>>> x = x.reshape((2, 3))
+>>> x
+array([[0, 1, 2],
+       [3, 4, 5]])
+>>> np.zeros_like(x)
+array([[0, 0, 0],
+       [0, 0, 0]])
+
 b = np.ones((1,2))    # Create an array of all ones
 print(b)              # Prints "[[ 1.  1.]]"
 
@@ -36,6 +48,8 @@ print(c)               # Prints "[[ 7.  7.]
 d = np.eye(2)         # Create a 2x2 identity matrix
 print(d)              # Prints "[[ 1.  0.]
                       #          [ 0.  1.]]"
+
+
 ```
 
 
@@ -323,6 +337,38 @@ np.random.choice(5, 3, p=[0.1, 0, 0.3, 0.6, 0])
 True
 >>> np.all(s < 0)
 True
+```
+
+np.arange
+```
+numpy.arange([start], stop[, step], dtype=None)
+
+# Return evenly spaced values within a given interval.
+>>> np.arange(3)
+array([0, 1, 2])
+>>> np.arange(3.0)
+array([ 0.,  1.,  2.])
+>>> np.arange(3,7)
+array([3, 4, 5, 6])
+>>> np.arange(3,7,2)
+array([3, 5])
+
+```
+
+numpy.argmax
+```
+numpy.argmax(a, axis=None, out=None)[source]
+# Returns the indices of the maximum values along an axis.
+>>> a = np.arange(6).reshape(2,3)
+>>> a
+array([[0, 1, 2],
+       [3, 4, 5]])
+>>> np.argmax(a)
+5
+>>> np.argmax(a, axis=0)
+array([1, 1, 1])
+>>> np.argmax(a, axis=1)
+array([2, 2])
 ```
 
 np.mean
