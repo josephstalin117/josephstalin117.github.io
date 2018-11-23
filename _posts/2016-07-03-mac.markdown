@@ -148,3 +148,8 @@ du -sh *
 ```
 ||ads.example.com^
 ```
+
+SwitchyOmega 无法登陆谷歌账号
+```
+*.googleapis.com +proxy
+```
