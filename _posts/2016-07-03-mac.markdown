@@ -153,3 +153,10 @@ SwitchyOmega 无法登陆谷歌账号
 ```
 *.googleapis.com +proxy
 ```
+
+unrar
+```
+brew install unrar
+
+unrar x test.rar
+```
