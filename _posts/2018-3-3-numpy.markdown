@@ -311,11 +311,16 @@ numpy.squeeze
 (3, 1)
 ```
 
-np.random
+numpy.random
 ```
 e = np.random.random((2,2))  # Create an array filled with random values
 print(e)                     # Might print "[[ 0.91940167  0.08143941]
                              #               [ 0.68744134  0.87236687]]"
+
+# Return a sample (or samples) from the “standard normal” distribution.
+>>> 2.5 * np.random.randn(2, 4) + 3
+array([[-4.49401501,  4.00950034, -1.81814867,  7.29718677],  #random
+       [ 0.39924804,  4.68456316,  4.99394529,  4.84057254]]) #random
 
 # 生成正态分布
 np.random.normal(loc=0.0, scale=1.0, size=None)
@@ -339,7 +344,7 @@ True
 True
 ```
 
-np.arange
+numpy.arange
 ```
 numpy.arange([start], stop[, step], dtype=None)
 
@@ -353,6 +358,21 @@ array([3, 4, 5, 6])
 >>> np.arange(3,7,2)
 array([3, 5])
 
+```
+
+numpy.stack
+```
+# Join a sequence of arrays along a new axis.
+>>> a = np.array([1, 2, 3])
+>>> b = np.array([2, 3, 4])
+>>> np.stack((a, b))
+array([[1, 2, 3],
+       [2, 3, 4]])
+
+>>> np.stack((a, b), axis=-1)
+array([[1, 2],
+       [2, 3],
+       [3, 4]])
 ```
 
 numpy.argmax
@@ -371,7 +391,7 @@ array([1, 1, 1])
 array([2, 2])
 ```
 
-np.mean
+numpy.mean
 ```
 # Compute the arithmetic mean along the specified axis.
 # Returns the average of the array elements. The average is taken over the flattened array by default, otherwise over the specified axis. float64 intermediate and return values are used for integer inputs.
