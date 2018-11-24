@@ -132,3 +132,12 @@ do #The change under the cursor is replaced
 ]c #jump to the new diff
 [c #jump to the pervious diff
 ```
+
+### 设置鼠标
+```
+# 设置鼠标显示
+:set mouse=a
+
+# 取消鼠标显示
+:set mouse=
+```
