@@ -355,30 +355,76 @@ yum install tmux        # Centos
 # 创建新session
 tmux new -s myname
 
+# 断开当前会话
+tmux detach
+
 # 查看session
 tmux ls
 
-# 利用session名称返回
+# 利用session名称返回，进入之前的会话
 tmux a -t myname 
-at
-attach
+tmux a # 默认进入第一个会话
+
+# 关闭会话
+tmux kill-session -t myname
+tmux kill-server # 关闭所有会话
+
+## window窗口：session 中可以有不同的 window（但是同时只能看到一个 window）
+tmux new-window # 创建新的 window
+tmux list-windows
+tmux select-window -t:0-9 #根据索引跳转 window
+tmux rename-window #重命名当前 window
+
+## pane 面板：window中可以有不同的pane（可以把 window 分成不同的部分）
+tmux split-window #将window垂直划分为两个pane
+tmux split-window -h #将window水平划分为两个pane
+tmux swap-pane -[UDLR] #在指定方向交换pane
+tmux select-pane -[UDLR] #指定方向选择下一个pane 
 
 # 修改prefix键
 # ~/.tmux.conf
 unbing ^b
 set -g prefix 'C-a'
 
-# 快捷键
-:new<CR> # 创建新的 Session，其中 : 是进入 Tmux 命令行的快捷键
-s        # 列出所有 Session，可通过 j, k, 回车切换
-$        # 为当前 Session 命名
-c        # 创建 Window
-<n>      # 切换到第 n 个 Window
-,        # 为当前 Window 命名
-%        # 垂直切分 Pane
-"        # 水平切分 Pane
-<space>  # 切换 Pane 布局
-d        # detach，退出 Tmux Session，回到父级 Shell
-t        # 显示一个时钟，:)
-?        # 快捷键帮助列表
+# 基本操作
+?	#列出所有快捷键；按q返回
+d 	#脱离当前会话,可暂时返回Shell界面
+s 	#选择并切换会话；在同时开启了多个会话时使用
+D 	#选择要脱离的会话；在同时开启了多个会话时使用
+: 	#进入命令行模式；此时可输入支持的命令，例如 kill-server 关闭所有tmux会话
+[ 	#复制模式，光标移动到复制内容位置，空格键开始，方向键选择复制，回车确认，q/Esc退出
+] 	#进入粘贴模式，粘贴之前复制的内容，按q/Esc退出
+~ 	#列出提示信息缓存；其中包含了之前tmux返回的各种提示信息
+t 	#显示当前的时间
+ctrl + z 挂起当前会话
+
+# 窗口操作
+c 	#创建新窗口
+& 	#关闭当前窗口
+[0-9] 	#数字键切换到指定窗口
+p 	#切换至上一窗口
+n 	#切换至下一窗口
+l 	#前后窗口间互相切换
+w 	#通过窗口列表切换窗口
+, 	#重命名当前窗口，便于识别
+. 	#修改当前窗口编号，相当于重新排序
+f 	#在所有窗口中查找关键词，便于窗口多了切换
+
+# 面板操作
+" 		#将当前面板上下分屏
+% 		#将当前面板左右分屏
+x 		#关闭当前分屏
+! 		#将当前面板置于新窗口,即新建一个窗口,其中仅包含当前面板
+ctrl+方向键 #以1个单元格为单位移动边缘以调整当前面板大小
+alt+方向键 	#以5个单元格为单位移动边缘以调整当前面板大小
+q 		#显示面板编号
+o 		#选择当前窗口中下一个面板
+方向键 	#移动光标选择对应面板
+{ 		#向前置换当前面板
+} 		#向后置换当前面板
+alt+o 	#逆时针旋转当前窗口的面板
+ctrl+o 	#顺时针旋转当前窗口的面板
+z 		#最大化当前所在面板
+page up #向上滚动屏幕，q 退出
+page down #向下滚动屏幕，q 退出
 ```
