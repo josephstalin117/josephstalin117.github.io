@@ -162,3 +162,9 @@ def cnn_model_fn(features, labels, mode):
   return tf.estimator.EstimatorSpec(
       mode=mode, loss=loss, eval_metric_ops=eval_metric_ops)
 ```
+
+tf.layers
+```
+# Functional interface for the 2D convolution layer.
+layer1 = tf.layers.conv2d(inputs=inputs_img, filters=128, kernel_size=3, strides=2, padding='same')
+```
