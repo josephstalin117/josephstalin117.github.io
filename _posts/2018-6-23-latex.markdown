@@ -127,6 +127,8 @@ $$行间公司$$
 
 #### 数学符号
 
+![images](/source/operation.png)
+
 分数
 $\frac{a-1}{2}$
 ``` 
