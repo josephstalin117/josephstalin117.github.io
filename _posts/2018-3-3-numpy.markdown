@@ -405,3 +405,13 @@ array([ 2.,  3.])
 array([ 1.5,  3.5
 ```
 
+numpy.load
+```
+# Load arrays or pickled objects from .npy, .npz or pickled files.
+
+>>> np.save('/tmp/123', np.array([[1, 2, 3], [4, 5, 6]]))
+>>> np.load('/tmp/123.npy')
+array([[1, 2, 3],
+       [4, 5, 6]])
+```
+
