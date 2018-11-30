@@ -15,5 +15,8 @@ win: ctrl+alt+l
 ubuntu: ctrl+win+alt+l
 mac: cammand+option+l
 
+# file structure
+ubuntu: ctrl+f12
+mac: cmd+f12
 ```
 
