@@ -182,3 +182,17 @@ with tf.Graph().as_default():
 # 对[1,2]的同一维度上复制3次，multiples参数维度与input维度应一致
 [1 2 1 2 1 2]
 ```
+
+tf.concat
+```
+# Concatenates tensors along one dimension.
+t1 = [[1, 2, 3], [4, 5, 6]]
+t2 = [[7, 8, 9], [10, 11, 12]]
+tf.concat([t1, t2], 0)  # [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
+tf.concat([t1, t2], 1)  # [[1, 2, 3, 7, 8, 9], [4, 5, 6, 10, 11, 12]]
+
+# tensor t3 with shape [2, 3]
+# tensor t4 with shape [2, 3]
+tf.shape(tf.concat([t3, t4], 0))  # [4, 3]
+tf.shape(tf.concat([t3, t4], 1))  # [2, 6]
+```
