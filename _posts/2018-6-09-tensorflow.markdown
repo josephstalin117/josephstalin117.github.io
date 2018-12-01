@@ -181,6 +181,10 @@ with tf.Graph().as_default():
 
 # 对[1,2]的同一维度上复制3次，multiples参数维度与input维度应一致
 [1 2 1 2 1 2]
+
+a = 10*tf.random_normal([3,3,3,3])
+c = tf.tile(a, [2,4,6,8], name=None)
+# c.shape[6,12,18,24]
 ```
 
 tf.concat
