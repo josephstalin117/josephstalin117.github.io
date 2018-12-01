@@ -259,10 +259,10 @@ def createGenerator():
         yield i*i
 
 # create a generator
-mygenerator = createGenerator() 
+mygenerator = createGenerator()
 
 # mygenerator is an object!
-print(mygenerator) 
+print(mygenerator)
 # <generator object createGenerator at 0xb7555c34>
 
 for i in mygenerator:
@@ -310,7 +310,7 @@ if not os.path.exists(directory):
 
 # 列出文件夹中的文件
 for filename in os.listdir(csv_dir):
-	if filename.endswith(".csv"): 
+	if filename.endswith(".csv"):
 		filenames.append(filename)
             continue
         else:
@@ -339,4 +339,20 @@ print(x.strftime("%B"))
 
 #3点12分
 x = datetime.time(3,12,0)
+```
+
+re
+```
+# re.match只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None；而re.search匹配整个字符串，直到找到一个匹配。
+# 使用group(num) 或 groups() 匹配对象函数来获取匹配表达式。
+re.match(pattern, string, flags=0)
+re.search(pattern, string, flags=0)
+
+line = "Cats are smarter than dogs";
+# Python的r前缀，就不用考虑转义的问题了
+searchObj = re.search( r'(.*) are (.*?) .*', line, re.M|re.I)
+
+searchObj.group() #Cats are smarter than dogs
+searchObj.group(1) #Cats
+searchObj.group(2) #smarter
 ```

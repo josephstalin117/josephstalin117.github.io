@@ -157,6 +157,10 @@ SwitchyOmega 无法登陆谷歌账号
 unrar
 ```
 brew install unrar
-
 unrar x test.rar
+```
+
+安装受损文件
+```
+sudo spctl --master-disable
 ```
