@@ -168,3 +168,17 @@ tf.layers
 # Functional interface for the 2D convolution layer.
 layer1 = tf.layers.conv2d(inputs=inputs_img, filters=128, kernel_size=3, strides=2, padding='same')
 ```
+
+
+tf.tile
+```
+# tile() 平铺，用于在同一维度上的复制
+with tf.Graph().as_default():
+    a = tf.constant([1,2],name='a') 
+    b = tf.tile(a,[3])
+    sess = tf.Session()
+    print(sess.run(b))
+
+# 对[1,2]的同一维度上复制3次，multiples参数维度与input维度应一致
+[1 2 1 2 1 2]
+```
