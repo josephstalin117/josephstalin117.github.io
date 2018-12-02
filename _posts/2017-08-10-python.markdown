@@ -317,7 +317,7 @@ for filename in os.listdir(csv_dir):
             continue
 
 # 合并文件
-with open(target_file, 'w',encoding='UTF-8') as outfile:
+with open(target_file, 'w', encoding='UTF-8') as outfile:
 	for fname in filenames:
     	with open(csv_dir+fname, encoding='UTF-8') as infile:
             for line in infile:
@@ -329,7 +329,7 @@ file io
 #'a' is for append, or use
 #'w' to write with truncation
 #'r' to read the content of the file
-with open('somefile.txt', 'a') as the_file:
+with open('somefile.txt', 'a', encoding='UTF-8') as the_file:
     the_file.write('Hello\n')
 
 # return the 5 first characters of the file
@@ -343,7 +343,7 @@ for x in f:
 	print(x)
 
 # or
-f = open('myfile', 'w')
+f = open('myfile', 'w', encoding='UTF-8')
 f.write('hi there\n')  # python will convert \n to os.linesep
 f.close()  # you can omit in most cases as the destructor will call it
 
