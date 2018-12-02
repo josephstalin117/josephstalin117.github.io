@@ -126,6 +126,9 @@ new_df[(new_df['hour'].astype(int)==0) | (new_df['hour'].astype(int)==8) | (new_
 # loop iterate over rows in a DataFrame
 for index, row in df.iterrows():
     print(row['dateTime'], row['CODMn'])
+
+# tolist
+List = df['row1'].tolist()
 ```
 
 apply function
