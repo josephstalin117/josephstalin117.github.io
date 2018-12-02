@@ -189,6 +189,9 @@ rain_jpn.columns = ['year', 'jpn_rainfall']
 
 uk_jpn_rain = df.merge(rain_jpn, on='year')
 uk_jpn_rain.head(5)
+
+# pd.merge
+result = pd.merge(user_usage, user_device[['use_id', 'platform', 'device']], on='use_id')
 ```
 
 append & concat
