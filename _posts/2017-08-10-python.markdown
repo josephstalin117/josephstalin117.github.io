@@ -328,8 +328,19 @@ file io
 ```
 #'a' is for append, or use
 #'w' to write with truncation
+#'r' to read the content of the file
 with open('somefile.txt', 'a') as the_file:
     the_file.write('Hello\n')
+
+# return the 5 first characters of the file
+f.read(5)
+
+# return one line of the file
+print(f.readline())
+
+# looping through the lines of the file
+for x in f:
+	print(x)
 
 # or
 f = open('myfile', 'w')
