@@ -324,6 +324,22 @@ with open(target_file, 'w',encoding='UTF-8') as outfile:
                 outfile.write(line)
 ```
 
+file io
+```
+#'a' is for append, or use
+#'w' to write with truncation
+with open('somefile.txt', 'a') as the_file:
+    the_file.write('Hello\n')
+
+# or
+f = open('myfile', 'w')
+f.write('hi there\n')  # python will convert \n to os.linesep
+f.close()  # you can omit in most cases as the destructor will call it
+
+# create file
+f = open("myfile.txt", "x")
+```
+
 date
 ```
 import datetime
