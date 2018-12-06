@@ -373,6 +373,13 @@ array([[1, 2, 3],
 array([[1, 2],
        [2, 3],
        [3, 4]])
+
+# vstack
+>>> a = np.array([1, 2, 3])
+>>> b = np.array([2, 3, 4])
+>>> np.vstack((a,b))
+array([[1, 2, 3],
+       [2, 3, 4]])
 ```
 
 numpy.argmax
