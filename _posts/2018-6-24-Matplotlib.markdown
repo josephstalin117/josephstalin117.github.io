@@ -83,6 +83,7 @@ plt.subplots(2, 2, sharey='row')
 plt.subplots(2, 2, sharex='all', sharey='all')
 ```
 
+fig and axarr
 ```
 f, axarr = plt.subplots(2, sharex=True)
 f.suptitle('Sharing X axis')
@@ -91,4 +92,23 @@ axarr[1].scatter(x, y)
 ```
 
 ![images](/source/subplots.png)
+
+spines
+```
+an axis spine -- the line noting the data area boundaries
+
+ax = fig.add_subplot(2, 2, 4)
+ax.set_title('spines at data (1, 2)')
+ax.plot(x, y)
+ax.spines['left'].set_position(('data', 1))
+ax.spines['right'].set_color('none')
+ax.spines['bottom'].set_position(('data', 2))
+ax.spines['top'].set_color('none')
+ax.spines['left'].set_smart_bounds(True)
+ax.spines['bottom'].set_smart_bounds(True)
+ax.xaxis.set_ticks_position('bottom')
+ax.yaxis.set_ticks_position('left')
+```
+
+![images](/source/spines.png)
 
