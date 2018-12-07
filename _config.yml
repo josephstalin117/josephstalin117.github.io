@@ -6,9 +6,9 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: josephlin's blog
+title: josephlin
 email: josephlin117@gmail.com
-description: 工人阶级没有祖国。决不能剥夺他们所没有的东西。
+description: josephlin's blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://josephlin.org" # the base hostname & protocol for your site
 twitter_username: josephstalin117 
