@@ -19,6 +19,9 @@ gg    #文档的第一行
 [N]G    #文档的第N行或者最后一行
 Ctrl+o  #jump back to the previous (older) location
 Ctrl+i  #to jump forward to the next location
+H       #光标移动至当前屏幕显示行的行首
+M       #光标移动至当前屏幕中间行的行首
+L       #光标移动至当前屏幕最后一行的行首
 ```
 
 #### 滚屏
