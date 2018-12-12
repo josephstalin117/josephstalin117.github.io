@@ -413,3 +413,11 @@ searchObj.group() #Cats are smarter than dogs
 searchObj.group(1) #Cats
 searchObj.group(2) #smarter
 ```
+
+math
+```
+# Return the ceiling of x as a float, the smallest integer value greater than or equal to x.
+math.ceil(x)
+# Return the floor of x as a float, the largest integer value less than or equal to x.
+math.floor(x)
+```
