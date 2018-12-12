@@ -421,3 +421,26 @@ math.ceil(x)
 # Return the floor of x as a float, the largest integer value less than or equal to x.
 math.floor(x)
 ```
+
+Set
+```
+# A set is a collection which is unordered and unindexed. In Python sets are written with curly brackets.
+thisset = {"apple", "banana", "cherry"}
+print(thisset)
+
+# To add one item to a set use the add() method.
+thisset.add("orange")
+
+# Add multiple items to a set, using the update() method:
+thisset.update(["orange", "mango", "grapes"])
+
+# To remove an item in a set, use the remove(), or the discard() method.
+thisset.remove("banana")
+
+# The intersection() method returns a set that contains the similarity between two or more sets.
+# set.intersection(set1, set2 ... etc)
+y = {"c", "d", "e"}
+z = {"f", "g", "c"}
+#{'c'}
+result = x.intersection(y, z)
+```
