@@ -171,3 +171,15 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 ```
+
+修改mac地址
+```
+# 查看当前所有端口mac地址
+networdsetup -listallhardwareports
+
+# 修改en1的网卡mac地址
+sudo ifconfig en1 ether e4:ce:8f:32:51:82
+
+# 查看是否修改成功
+ifconfig en1 | grep ether
+```
