@@ -200,3 +200,9 @@ tf.concat([t1, t2], 1)  # [[1, 2, 3, 7, 8, 9], [4, 5, 6, 10, 11, 12]]
 tf.shape(tf.concat([t3, t4], 0))  # [4, 3]
 tf.shape(tf.concat([t3, t4], 1))  # [2, 6]
 ```
+
+tf.truncated_normal
+```
+# Outputs random values from a truncated normal distribution.
+# 产生一个截断的正态分布
+```
