@@ -444,3 +444,18 @@ z = {"f", "g", "c"}
 #{'c'}
 result = x.intersection(y, z)
 ```
+
+keyword argument unpacking syntax
+```
+# argument unpacking
+*args
+# keyword argument unpacking
+**kwargs
+# usually a tuple, always an iterable[1]
+args = (1, 2, 3)
+# f(*args) → f(1, 2, 3)
+
+# usually a dict, always a mapping*
+kwargs = {"a": 1, "b": 2, "c": 3}
+# f(**kwargs) -> f(a=1, b=2, c=3)
+```
