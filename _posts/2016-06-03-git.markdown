@@ -90,17 +90,33 @@ git mv [file-original] [file-renamed]
 # 删除工作区文件，并且将这次删除放入暂存区
 git rm [file1] [file2] ...
 
-#从暂存区删除，但该文件会保留在工作区
+# 从暂存区删除，但该文件会保留在工作区
 git rm --cached [file]
 
-#显示当前分支的版本历史
+# 显示当前分支的版本历史
 git log
 
 # 远程强制覆盖本地文件
 git fetch --all
 git reset --hard origin/master
 git pull
+
 ```
+
+回滚commit
+```
+# 版本库回退一个版本，重置Stage
+git reset --hard HEAD~1
+
+# 修改版本库，保留Stage，保留工作区
+git reset --soft HEAD~1
+
+# 创建一个commit来覆盖当前commit
+git revert HEAD
+
+# git revert是用一次新的commit来回滚之前的commit，git reset是直接删除指定的commit
+```
+![images](/source/git_reset.png)
 
 # 文件对比
 ```
