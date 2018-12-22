@@ -374,7 +374,7 @@ pickle.dump(a,fileObject)
 fileObject.close()
 
 # we open the file for reading
-fileObject = open(file_Name,'r')
+fileObject = open(file_Name,'rb')
 # load the object from the file into var b
 b = pickle.load(fileObject)
 b
@@ -412,4 +412,50 @@ searchObj = re.search( r'(.*) are (.*?) .*', line, re.M|re.I)
 searchObj.group() #Cats are smarter than dogs
 searchObj.group(1) #Cats
 searchObj.group(2) #smarter
+```
+
+math
+```
+# Return the ceiling of x as a float, the smallest integer value greater than or equal to x.
+math.ceil(x)
+# Return the floor of x as a float, the largest integer value less than or equal to x.
+math.floor(x)
+```
+
+Set
+```
+# A set is a collection which is unordered and unindexed. In Python sets are written with curly brackets.
+thisset = {"apple", "banana", "cherry"}
+print(thisset)
+
+# To add one item to a set use the add() method.
+thisset.add("orange")
+
+# Add multiple items to a set, using the update() method:
+thisset.update(["orange", "mango", "grapes"])
+
+# To remove an item in a set, use the remove(), or the discard() method.
+thisset.remove("banana")
+
+# The intersection() method returns a set that contains the similarity between two or more sets.
+# set.intersection(set1, set2 ... etc)
+y = {"c", "d", "e"}
+z = {"f", "g", "c"}
+#{'c'}
+result = x.intersection(y, z)
+```
+
+keyword argument unpacking syntax
+```
+# argument unpacking
+*args
+# keyword argument unpacking
+**kwargs
+# usually a tuple, always an iterable[1]
+args = (1, 2, 3)
+# f(*args) → f(1, 2, 3)
+
+# usually a dict, always a mapping*
+kwargs = {"a": 1, "b": 2, "c": 3}
+# f(**kwargs) -> f(a=1, b=2, c=3)
 ```

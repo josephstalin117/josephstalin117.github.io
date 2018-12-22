@@ -19,6 +19,9 @@ gg    #文档的第一行
 [N]G    #文档的第N行或者最后一行
 Ctrl+o  #jump back to the previous (older) location
 Ctrl+i  #to jump forward to the next location
+H       #光标移动至当前屏幕显示行的行首
+M       #光标移动至当前屏幕中间行的行首
+L       #光标移动至当前屏幕最后一行的行首
 ```
 
 #### 滚屏
@@ -101,9 +104,18 @@ Ctrl+W    #切换窗口, h到左边窗口，j到下方窗口，k到上方窗口�
 ### 文件操作
 
 ```
-:e 文件名 打开文件
-:Sex,:Vex,:Tex,:Ex 文件管理
-:ls 显示文件
+# 打开多个文件
+vim a.file b.file
+# 打开文件
+:e 文件名
+# 打开文件管理
+:Sex,:Vex,:Tex,:Ex 
+# 显示文件buffer
+:ls
+# 移动至要修改的文档
+:b 文档名或编号
+# 编辑下一个文档
+:n
 ```
 
 ### 缩进

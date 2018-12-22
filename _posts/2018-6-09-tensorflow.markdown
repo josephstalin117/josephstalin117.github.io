@@ -85,6 +85,30 @@ tf.reshape(t, [3, 3]) ==> [[1, 2, 3],
 # tensor 't' has shape [3, 2, 3]
 # pass '[-1]' to flatten 't'
 reshape(t, [-1]) ==> [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6]
+
+# Outputs random values from a truncated normal distribution.
+# 产生一个截断的正态分布
+tf.truncated_normal
+```
+
+tf.einsum(equation, *inputs,**kwargs)
+```
+# A generalized contraction between tensors of arbitrary dimension.
+# C[i,k] = sum_j A[i,j] * B[j,k]
+# Matrix multiplication
+>>> einsum('ij,jk->ik', m0, m1)  # output[i,k] = sum_j m0[i,j] * m1[j, k]
+
+# Dot product
+>>> einsum('i,i->', u, v)  # output = sum_i u[i]*v[i]
+
+# Outer product
+>>> einsum('i,j->ij', u, v)  # output[i,j] = u[i]*v[j]
+
+# Transpose
+>>> einsum('ij->ji', m)  # output[j,i] = m[i,j]
+
+# Batch matrix multiplication
+>>> einsum('aij,ajk->aik', s, t)  # out[a,i,k] = sum_j s[a,i,j] * t[a, j, k]
 ```
 
 查看变量
