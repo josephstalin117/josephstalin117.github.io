@@ -1,0 +1,26 @@
+---
+layout: post
+title:  svn
+date:   2018-12-26 20:35:35 +0800
+categories: command
+---
+
+上传代码
+```
+svn import ~/Documents/hangge_1268 svn://localhost/hangge/hangge_1268 --username=hangge --password=123 -m "这个是注释"
+```
+
+下载代码
+```
+svn checkout svn://localhost/hangge --username=hangge --password=123 ~/Documents/hangge
+```
+
+提交代码
+```
+svn commit -m "这个是修改操作"
+```
+
+更新代码
+```
+svn update
+```
