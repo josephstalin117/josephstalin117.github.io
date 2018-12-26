@@ -80,8 +80,11 @@ ps -ef |grep vsftpd
 # 查看服务
 service vsftpd
 
+# list stystem opened files，列出系统中打开的所有文件，因为linux上一切都是文件
 # 查看端口
 lsof -i:80
+# 查看程序打开了那些文件
+lsof -p 7876
 ```
 
 
@@ -144,6 +147,36 @@ sudo ip route add 目的ip/netmask via 192.168.1.1
 
 # ping4次
 ping -c 4 google.com
+
+# 修改查看本地路由表
+route
+
+# 添加一条路由信息
+route add -net 10.10.10.0/24 gw 192.168.0.1
+
+# 删除一条路由信息
+route del -net 10.10.10.0/24 gw 192.168.0.1
+
+# 添加默认网关
+route add default gw 192.168.0.1
+
+# 查看路由表
+netstat -r
+
+# 查看tcp链接
+netstat -t
+
+# 查看udp链接
+netstat -u
+
+# 查看对应进程信息
+netstat -ltp
+
+# 每隔5秒展示tcp监听信息
+netstat -tl -c 5
+
+# 展示网卡信息
+netstat -i
 ```
 
 #### tcpdump
@@ -159,13 +192,40 @@ tcpdump host 1.2.3.4
 # SHOW TRAFFIC RELATED TO A SPECIFIC PORT
 tcpdump port 3389
 tcpdump src port 1025
+```
 
+#### nc
+```
+# 将本地文件发送到远程服务器的80端口
+nc 192.168.1.199 80 < data.txt
+
+# 本地端口，将接收的数据重定向到本地文件
+nc -l 8080 > data.txt
+```
+
+#### xargs
+```
+# 使用-I指定一个替换字符串{}，这个字符串在xargs扩展时会被替换掉
+# 将上一个程序的标准输出传给下一个程序的命令行
+echo xx | xargs -I {} command {}
 ```
 
 #### dd
 
 ```
 dd if=<source file name> of=<target file name> [Options]
+```
+
+#### 文件本地上传和下载
+```
+# 安装
+sudo apt install lrzsz
+
+# 上传
+rz
+
+# 下载
+sz
 ```
 
 #### 文件管理
