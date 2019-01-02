@@ -40,9 +40,6 @@ insert
 ```
 # append
 df.append(df2, ignore_index=True)
-
-# string to datetime object
-pd.to_datetime(df['dateTime'])
 ```
 
 get data from column & row
