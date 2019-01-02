@@ -49,6 +49,18 @@ while i < 6:
 
 ```
 
+import
+```
+# /home/el/foo/fox.py
+def what_does_the_fox_say():
+	print('cry')
+
+# /home/el/foo/main.py
+import fox
+
+fox.what_does_the_fox_say()
+```
+
 range
 ```
 range(start, stop, step)
