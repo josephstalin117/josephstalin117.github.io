@@ -76,8 +76,11 @@ df[df.water_year.str.startswith('199')]
 # iloc gets rows (or columns) at particular positions in the index (so it only takes integers).
 # ix usually tries to behave like loc but falls back to behaving like iloc if a label is not present in the index.
 
-# Getting a row via a label-based index
-df.loc['2000/01']
+# Getting a row via a label-based index, 'Andrade' is the index of last_name
+df.loc['Andrade']
+
+# Select columns with .loc using the names of the columns
+df.loc[['Andrade', 'Veness'], ['first_name', 'address', 'city']]
 
 # To select rows whose column value equals a scalar
 df.loc[df['column_name'] == some_value]
@@ -96,6 +99,9 @@ df.loc[~df['column_name'].isin(some_values)]
 
 # Getting a row via a numerical index
 df.iloc[30]
+
+# Getting a columnes
+df.iloc[:, 0]
 
 # Getting a row via a label-based or numerical index
 df.ix['1999/00'] # Label based with numerical index fallback *Not recommended
