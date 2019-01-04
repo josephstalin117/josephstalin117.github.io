@@ -129,6 +129,12 @@ $$行间公司$$
 
 ![images](/source/operation.png)
 
+括号
+```
+% 大括号(加转义)
+\{\}
+```
+
 分数
 $\frac{a-1}{2}$
 ``` 
@@ -176,6 +182,15 @@ $A^{\mathrm{T}}$
 ```
 %mathrm 指罗马字体
 $A^{\mathrm{T}}$
+```
+
+多行公式堆积
+```
+% & 指定位置对齐
+\begin{align}
+	x &= t + \cos{t} + 1\\
+	y &= 2\sin{t}
+\end{align}
 ```
 
 矩阵
