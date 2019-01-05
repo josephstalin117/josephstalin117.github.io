@@ -373,13 +373,7 @@ apt-get install shadowsocks-libev
 pip install shadowsocks
 
 # 服务启动
-ssserver -c /etc/shadowsocks.json --log-file=/tmp/shadowsocks.log -d start
-
-# 后台启动
-ssserver -c /etc/shadowsocks/config.json -d start
-
-# 后台停止
-ssserver -c /etc/shadowsocks/config.json -d stop
+ssserver -c /etc/shadowsocks.json --log-file=/tmp/shadowsocks.log
 
 # 本地启动
 sslocal -c /home/mudao/shadowsocks.json
@@ -395,6 +389,9 @@ sslocal -c /home/mudao/shadowsocks.json
 "method":"aes-256-cfb",
 "fast_open":false
 }
+
+# 后台运行
+nohup ssserver -c /etc/shadowsocks.json > /dev/null & 
 ```
 
 Privoxy
