@@ -129,6 +129,12 @@ $$行间公司$$
 
 ![images](/source/operation.png)
 
+括号
+```
+% 大括号(加转义)
+\{\}
+```
+
 分数
 $\frac{a-1}{2}$
 ``` 
@@ -178,6 +184,15 @@ $A^{\mathrm{T}}$
 $A^{\mathrm{T}}$
 ```
 
+多行公式堆积
+```
+% & 指定位置对齐
+\begin{align}
+	x &= t + \cos{t} + 1\\
+	y &= 2\sin{t}
+\end{align}
+```
+
 矩阵
 $$\begin{matrix} x&y\\z&v \end{matrix}$$
 $$\begin{vmatrix} x&y\\z&v \end{vmatrix}$$
@@ -198,7 +213,8 @@ $$\begin{pmatrix} x&y\\z&v \end{pmatrix}$$
 \item[-] good morning....
 \end{itemize}
 
-%带序号[step 1]序号为1,[step i]序号为i
+%带序号[1]序号为1,[step i]序号为i,[(1)]序号为(1)(2)...
+\usepackage{enumerate}
 \begin{enumerate}[step 1]
 \item good morning...
 \item good morning....
