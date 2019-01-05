@@ -5,6 +5,15 @@ date:   2016-04-04 21:35:35 +0800
 categories: command
 ---
 
+## linux属性
+```
+# 查看linux版本
+lsb_release -a
+
+# 换源
+/etc/apt/sources.list
+```
+
 ## 用户权限
 
 ```
@@ -357,6 +366,12 @@ xdg-open $file
 
 #### ss
 ```
+# apt
+apt-get install shadowsocks-libev
+
+#pip
+pip install shadowsocks
+
 # 服务启动
 ssserver -c /etc/shadowsocks.json --log-file=/tmp/shadowsocks.log -d start
 
