@@ -391,7 +391,7 @@ sslocal -c /home/mudao/shadowsocks.json
 }
 
 # 后台运行
-nohup ssserver -c /etc/shadowsocks.json > /dev/null & 
+nohup ssserver -c /etc/shadowsocks.json > /dev/null 2>&1 & 
 ```
 
 Privoxy
