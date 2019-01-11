@@ -5,6 +5,15 @@ date:   2016-04-04 21:35:35 +0800
 categories: command
 ---
 
+## linux属性
+```
+# 查看linux版本
+lsb_release -a
+
+# 换源
+/etc/apt/sources.list
+```
+
 ## 用户权限
 
 ```
@@ -357,21 +366,21 @@ xdg-open $file
 
 #### ss
 ```
+# apt
+apt-get install shadowsocks
+
+#pip
+pip install shadowsocks
+
 # 服务启动
-ssserver -c /etc/shadowsocks.json --log-file=/tmp/shadowsocks.log -d start
-
-# 后台启动
-ssserver -c /etc/shadowsocks/config.json -d start
-
-# 后台停止
-ssserver -c /etc/shadowsocks/config.json -d stop
+ssserver -c /etc/shadowsocks.json --log-file=/tmp/shadowsocks.log
 
 # 本地启动
 sslocal -c /home/mudao/shadowsocks.json
 
 # 配置文件
 {
-"server":"",  ##填写服务器外网ip地址，ip也可以写内网地址，只要能转发出来即可。
+"server":"::",  ##填写服务器外网ip地址，ip也可以写内网地址，只要能转发出来即可。
 "server_port":8000,
 "local_address":"127.0.0.1",
 "local_port":1080,
@@ -380,6 +389,9 @@ sslocal -c /home/mudao/shadowsocks.json
 "method":"aes-256-cfb",
 "fast_open":false
 }
+
+# 后台运行
+nohup ssserver -c /etc/shadowsocks.json > /dev/null 2>&1 & 
 ```
 
 Privoxy
