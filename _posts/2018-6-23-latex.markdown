@@ -122,6 +122,13 @@ $$行间公司$$
 
 %数学公式空格
 a \qquad b
+
+%公式引用
+\ begin{equation}
+I_{t}=I_{0}+\sum_{i=1}^{t}(Q_{i}-d_{i})\label{con:inventoryflow}
+\ end{equation}
+
+Equation \ ref{con:inventoryflow} is the inventory flow formula.
 ```
 
 #### 希腊字母
