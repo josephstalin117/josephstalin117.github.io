@@ -119,6 +119,9 @@ $$行间公司$$
 %公式组合
 \begin{equation*} %带*无编号
 \end{equation*}
+
+%数学公式空格
+a \qquad b
 ```
 
 #### 希腊字母
