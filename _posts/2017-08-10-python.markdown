@@ -368,6 +368,10 @@ f.close()  # you can omit in most cases as the destructor will call it
 
 # create file
 f = open("myfile.txt", "x")
+
+# format
+with open("results/gen.{}_epoch{}.json".format(config.graph_name, num_epoch), 'w') as fout:
+	fout.write(json.dumps(results))
 ```
 
 pickle
