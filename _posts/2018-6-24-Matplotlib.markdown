@@ -22,6 +22,14 @@ plt.plot(x, np.sin(x))
 plt.show() # 显示图形
 ```
 
+调整label字体大小
+```
+plt.xlabel("time",fontsize=20)
+plt.ylabel("DO",fontsize=20)
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
+```
+
 调整线条颜色
 ```
 x = range(len(data))
