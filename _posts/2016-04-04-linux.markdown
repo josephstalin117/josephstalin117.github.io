@@ -96,6 +96,21 @@ lsof -i:80
 lsof -p 7876
 ```
 
+## 标准输入输出
+```
+echo log > /dev/null 2>&1
+
+代表空设备文件
+/dev/null 
+# 代表重定向到哪里，例如：echo "123" > /home/123.txt
+>
+# 表示stdout标准输出，系统默认值是1，所以">/dev/null"等同于"1>/dev/null"
+1
+# 表示stderr标准错误
+2
+# 表示等同于的意思，2>&1，表示2的输出重定向等同于1
+&
+```
 
 ## ubuntu apt
 
