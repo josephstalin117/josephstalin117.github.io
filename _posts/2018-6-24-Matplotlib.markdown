@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 ```
 
+画图
 ```
 # 简单的绘图
 x = np.linspace(0, 2 * np.pi, 50)
@@ -28,20 +29,37 @@ plt.xlabel("time",fontsize=20)
 plt.ylabel("DO",fontsize=20)
 plt.xticks(fontsize=20)
 plt.yticks(fontsize=20)
+
+# 调整全部字体大小
+matplotlib.rcParams.update({'font.size': 22})
 ```
 
 调整线条颜色
 ```
 x = range(len(data))
+# 调整图像大小
 plt.figure(figsize=(10,5))
-plt.plot(x,data['close'],label="actual")
-plt.plot(x,data['high'],color='r',label="prediction")
-# plt.legend()添加图例
+
+# 绘制曲线
+plt.plot(x, y1, label="actual")
+plt.plot(x, y2, color='r',label="prediction")
+
+# 设置坐标轴范围
+plt.xlim((-5,5))
+plt.ylim((-2,2))
+
+#设置坐标轴刻度
+plt.xticks(np.arange(-5, 5, 0.5))
+plt.yticks(np.arange(-2, 2, 0.3))
+
+# plt.legend()添加标注
 plt.legend(loc="upper left")
+# 自动调整标注位置
+plt.legend(loc="best")
 
 plt.title("上证50指数历史最高价、收盘价走势折线图")
-plt.xlabel("时间")
-plt.ylabel("指数")
+plt.xlabel(Time Slot Count")
+plt.ylabel("value")
 
 plt.show()
 ```
