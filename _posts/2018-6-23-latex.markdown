@@ -54,6 +54,8 @@ This paper.\par
 
 %换行
 \\
+
+
 ```
 
 添加图片
@@ -73,6 +75,14 @@ This paper.\par
 	\includegraphics[]{ch1_architechture.png}
 	\caption{Architechture du système Android}
 \end{figure}
+
+h 当前位置。将图形放置在正文文本中给出该图形环境的地方。如果本页所剩的页面不够，这一参数将不起作用。
+t 顶部。将图形放置在页面的顶部。
+b 底部。将图形放置在页面的底部。
+p 浮动页。将图形放置在一只允许有浮动对象的页面上。
+htb 一般使用
+!h 试图放在当前位置
+ht 
 ```
 
 #### 数学公式
