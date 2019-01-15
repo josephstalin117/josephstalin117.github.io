@@ -297,12 +297,14 @@ $$x^n+y^n=z^n \eqno{(1)}$$
 \Function{function name}{var1, var2}
 \EndFunction
 
-% Input
+%Input
 \Require
 
-% Output
+%Output
 \Ensure
+```
 
+```
 自定义 Initialize
 \algnewcommand{\Initialize}[1]{%
   \State \textbf{Initialize:}
@@ -330,6 +332,7 @@ $$x^n+y^n=z^n \eqno{(1)}$$
 
 ```
 
+函数循环
 ```
 % 循环
 \begin{algorithm}[h]
