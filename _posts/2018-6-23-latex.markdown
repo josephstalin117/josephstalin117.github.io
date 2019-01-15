@@ -297,10 +297,10 @@ $$x^n+y^n=z^n \eqno{(1)}$$
 \Function{function name}{var1, var2}
 \EndFunction
 
-%Input
+Input
 \Require
 
-%Output
+Output
 \Ensure
 ```
 
