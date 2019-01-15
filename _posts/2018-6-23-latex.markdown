@@ -282,3 +282,86 @@ $$x^n+y^n=z^n \eqno{(1)}$$
 ```
 
 ![images](/source/latex.png)
+
+#### 引用
+```
+%添加文件mybibtex.bib
+% bib文件内容
+@article{name1,
+	author = {作者, 多个作者用 and 连接},
+	title = {标题},
+	journal = {期刊名},
+	volume = {卷20},
+	number = {页码},
+	year = {年份},
+	abstract = {摘要, 这个主要是引用的时候自己参考的, 这一行不是必须的}
+}
+@book{name2,
+	author ="作者",	
+	year="年份2008",
+	title="书名",
+	publisher ="出版社名称"
+}
+
+%设置引用文献的类型
+\bibliographystyle{plain}
+
+%引用
+\cite{引用文章名称}
+
+%生成参考文献列表
+\bibliography{mybibfile.bib}
+```
+
+#### vscode 设置
+```
+"latex-workshop.latex.tools": [
+    {
+        // 编译工具和命令
+        "name": "xelatex",
+        "command": "xelatex",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "%DOC%"
+        ]
+    },
+    {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+        ]
+    },
+    {
+        "name": "bibtex",
+        "command": "bibtex",
+        "args": [
+            "%DOCFILE%"
+        ]
+    }
+],
+
+"latex-workshop.latex.recipes": [
+    {
+        "name": "xelatex",
+        "tools": [
+            "xelatex"
+        ]
+    },
+    {
+        "name": "xe->bib->xe->xe",
+        "tools": [
+            "xelatex",
+            "bibtex",
+            "xelatex",
+            "xelatex"
+        ]
+    }
+],
+```
