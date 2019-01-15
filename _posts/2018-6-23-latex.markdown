@@ -283,6 +283,118 @@ $$x^n+y^n=z^n \eqno{(1)}$$
 
 ![images](/source/latex.png)
 
+#### 算法
+```
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+% Use Input in the format of Algorithm
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+% Use Output in the format of Algorithm
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+% 函数
+\Function{function name}{var1, var2}
+\EndFunction
+
+% Input
+\Require
+
+% Output
+\Ensure
+
+自定义 Initialize
+\algnewcommand{\Initialize}[1]{%
+  \State \textbf{Initialize:}
+  \Statex \hspace*{\algorithmicindent}\parbox[t]{.8\linewidth}{\raggedright #1}
+}
+
+% 单纯引用
+\begin{algorithm}[htb]
+\caption{ Framework of ensemble learning for our system.}
+\label{alg:Framwork}
+\begin{algorithmic}[1]
+	\Require
+      The set of positive samples for current batch, $P_n$;
+      The set of unlabelled samples for current batch, $U_n$;
+      Ensemble of classifiers on former batches, $E_{n-1}$;
+    \Ensure
+      Ensemble of classifiers on the current batch, $E_n$;
+    \State Extracting the set of reliable negative and/or positive samples $T_n$ from $U_n$ with help of $P_n$;
+    \label{code:fram:extract}
+    \State Deleting some weak classifiers in $E_n$ so as to keep the capacity of $E_n$;
+    \label{code:fram:select} \\
+    \Return $E_n$;
+  \end{algorithmic}
+\end{algorithm}
+
+```
+
+```
+% 循环
+\begin{algorithm}[h]
+  \caption{An example for format For \& While Loop in Algorithm}
+  \begin{algorithmic}[1]
+    \For{each $i\in [1,9]$}
+      \State initialize a tree $T_{i}$ with only a leaf (the root);
+      \State $T=T\cup T_{i};$
+    \EndFor
+
+    \ForAll {$c$ such that $c\in RecentMBatch(E_{n-1})$}
+      \label{code:TrainBase:getc}
+      \State $T=T\cup PosSample(c)$;
+      \label{code:TrainBase:pos}
+    \EndFor;
+
+    \For{$i=1$; $i<n$; $i++$ }
+      \State $//$ Your source here;
+    \EndFor
+
+    \For{$i=1$ to $n$}
+      \State $//$ Your source here;
+    \EndFor
+
+    \State $//$ Reusing recent base classifiers.
+    \label{code:recentStart}
+
+    \While {$(|E_n| \leq L_1 )and( D \neq \phi)$}
+      \State Selecting the most recent classifier $c_i$ from $D$;
+      \State $D=D-c_i$;
+      \State $E_n=E_n+c_i$;
+    \EndWhile
+    \label{code:recentEnd}
+
+  \end{algorithmic}
+\end{algorithm}
+
+% 判断
+\begin{algorithm}
+\caption{My algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{MyProcedure}{}
+
+\State $\textit{stringlen} \gets \text{length of }\textit{string}$
+\State $i \gets \textit{patlen}$
+
+\BState \emph{top}:
+\If {$i > \textit{stringlen}$} \Return false
+\EndIf
+
+\State $j \gets \textit{patlen}$
+
+\BState \emph{loop}:
+\If {$\textit{string}(i) = \textit{path}(j)$}
+	\State $j \gets j-1$.
+	\State $i \gets i-1$.
+	\State \textbf{goto} \emph{loop}.
+	\State \textbf{close};
+\EndIf
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
+
 #### 引用
 ```
 %添加文件mybibtex.bib
