@@ -120,6 +120,9 @@ $$行间公司$$
 \begin{equation*} %带*无编号
 \end{equation*}
 
+%绝对值
+\left| \frac{a}{b} \right|
+
 %数学公式空格
 a \qquad b
 
