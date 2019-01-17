@@ -183,3 +183,9 @@ sudo ifconfig en1 ether e4:ce:8f:32:51:82
 # 查看是否修改成功
 ifconfig en1 | grep ether
 ```
+
+alfred
+```
+# 放大展示
+cmd+L
+```
