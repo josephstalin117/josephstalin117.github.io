@@ -71,9 +71,10 @@ This paper.\par
 
 %图片说明
 \begin{figure}[!ht]
-	\centering
-	\includegraphics[]{ch1_architechture.png}
-	\caption{Architechture du système Android}
+\centering
+\includegraphics[]{ch1_architechture.png}
+\caption{Architechture du système Android}
+\label{图片的引用标签}
 \end{figure}
 
 h 当前位置。将图形放置在正文文本中给出该图形环境的地方。如果本页所剩的页面不够，这一参数将不起作用。
