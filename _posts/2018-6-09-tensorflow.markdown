@@ -240,7 +240,8 @@ keras
 from keras.models import Sequential
 
 model = Sequential()
-model.add(Dense(units=64, input_dim=(train_X.shape[1], train_X.shape[2]), activation='relu'))
+# model.add(Dense(32, input_dim=784))
+model.add(Dense(units=64, input_shape=(train_X.shape[1], train_X.shape[2]), activation='relu'))
 model.add(Dense(units=10, activation='relu'))
 model.add(Dense(1))
 model.compile(loss='mae', optimizer=keras.optimizers.SGD(lr=0.01, momentum=0.9, nesterov=True))
