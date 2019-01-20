@@ -10,25 +10,72 @@ jupyter notebook 安装 R
 conda install -c r r-essentials
 ```
 
-退出命令行
+基本操作
 ```
+# 退出命令行
 q()
-```
 
-赋值
-```
+# 查看变量类型
+class(var)
+
+# 变量打印
+print(var)
+
+# 赋值
 myString <- "Hello, World!"
 print (myString)
-```
 
-删除变量
-```
+# The $ allows you extract elements by name from a named list
+x <- list(a=1, b=2, c=3)
+x$b
+# [1] 2
+
+#You can find the names of a list using names()
+names(x)
+# [1] "a" "b" "c"
+
+# 删除变量
 rm(var.3)
-```
 
-函数
-```
+# 下载包
+install.packages("lubridate", dependencies=TRUE, repos='http://cran.rstudio.com/')
+
+# 绘图
+plot(data)
+
+# 查看头部数据
+head(data)
+
+# Create a vector.
+apple <- c('red','green',"yellow")
+
+# Create a list.
+list1 <- list(c(2,5,3),21.3,sin)
+
+# 函数定义
+
 function_name <- function(arg_1, arg_2, ...) {
    Function body 
 }
+
+# 循环
+for (value in vector) {
+   statements
+}
+
+# 判断
+x <- 30L
+if(is.integer(x)) {
+   print("X is an Integer")
+}
 ```
+
+时间序列
+```
+# frequency：取值包括1,4,12,分别代表年度,季度,月度数据
+ts(data = NA, start = , end = , frequency = , ...)
+```
+
+
+
+
