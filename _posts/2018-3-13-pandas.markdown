@@ -296,3 +296,11 @@ df = pd.DataFrame({"Date": ["26-12-2007", "27-12-2007", "28-12-2007"]})
 df["Date"] = pd.to_datetime(df["Date"]).dt.strftime('%Y-%m-%d')
 print(df)
 ```
+
+data analysis
+```
+# 时间序列自相关
+series = read_csv('shampoo-sales.csv', header=0, parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)
+autocorrelation_plot(series)
+pyplot.show()
+```

@@ -234,3 +234,24 @@ tf.concat([t1, t2], 1)  # [[1, 2, 3, 7, 8, 9], [4, 5, 6, 10, 11, 12]]
 tf.shape(tf.concat([t3, t4], 0))  # [4, 3]
 tf.shape(tf.concat([t3, t4], 1))  # [2, 6]
 ```
+
+keras
+```
+from keras.models import Sequential
+
+model = Sequential()
+# model.add(Dense(32, input_dim=784))
+model.add(Dense(units=64, input_shape=(train_X.shape[1], train_X.shape[2]), activation='relu'))
+model.add(Dense(units=10, activation='relu'))
+model.add(Dense(1))
+model.compile(loss='mae', optimizer=keras.optimizers.SGD(lr=0.01, momentum=0.9, nesterov=True))
+# show net structure
+print(model.summary())
+
+model.fit(x_train, y_train, epochs=5, batch_size=32)
+# evaluate performance
+loss_and_metrics = model.evaluate(x_test, y_test, batch_size=128)
+
+# prediction new data
+classes = model.predict(x_test, batch_size=128)
+```
