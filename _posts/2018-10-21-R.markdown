@@ -12,6 +12,9 @@ conda install -c r r-essentials
 
 基本操作
 ```
+# 设置工作目录
+setwd("F:/Projects/time_series_forecast/ARIMA")
+
 # 退出命令行
 q()
 
@@ -20,6 +23,9 @@ class(var)
 
 # 变量打印
 print(var)
+
+# 变量长度
+nrow(var)
 
 # 赋值
 myString <- "Hello, World!"
