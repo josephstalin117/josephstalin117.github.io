@@ -43,12 +43,6 @@ names(x)
 # 删除变量
 rm(var.3)
 
-# Data Type Conversion
-# Use is.foo to test for data type foo. Returns TRUE or FALSE
-is.numeric(a)
-# Use as.foo to explicitly convert it.
-a <- as.character(a)
-
 # 下载包
 install.packages("lubridate", dependencies=TRUE, repos='http://cran.rstudio.com/')
 
@@ -80,6 +74,18 @@ x <- 30L
 if(is.integer(x)) {
    print("X is an Integer")
 }
+```
+
+类型转换
+```
+# to int
+as.integer(x)
+
+# Use is.foo to test for data type foo. Returns TRUE or FALSE
+is.numeric(a)
+# Use as.foo to explicitly convert it.
+a <- as.character(a)
+
 ```
 
 时间序列
