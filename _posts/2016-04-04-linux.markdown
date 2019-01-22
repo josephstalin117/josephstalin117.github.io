@@ -79,6 +79,8 @@ Ctrl+d #发送并退出
 # 群发消息
 wall "hello, world!"
 
+# 添加软件权限
+sudo chmod u+s `which ping`
 ```
 
 ## 进程管理
