@@ -28,7 +28,17 @@ categories: command
 -2 –udp UDP 模式
 -8 –scan 扫描模式. (例: hping –scan 1-30,70-90 -S www.target.host)
 -9 –listen 监听模式，会接受指定的信息。侦听指定的信息内容。
+
+# 打icmp包
+hping3 -1 0daysecurity.com
+
+# 打SYN包
+hping3 www.baidu.com -p 80 -c 10 -d 100 -S
+
+# 打ACK包
+hping3 www.httpbin.org -p 80 -c 10 -d 100 -A
 ```
+
 
 #### IP选项：
 
