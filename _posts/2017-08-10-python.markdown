@@ -98,6 +98,11 @@ SimpleServer
 python -m http.server 8080
 ```
 
+nohup
+```
+nohup python -u ./cmd.py > cmd.log 2>&1 &
+```
+
 Classes
 ```
 class Greeter(object):
