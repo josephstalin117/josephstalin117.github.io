@@ -331,12 +331,11 @@ sudo vim /etc/crontab
 30 8 3-6 * * user command （-表示范围）
 # 每个星期一的8:30执行一次
 30 8 * * 1 user command （周的范围为0-7,0和7代表周日）
-
 ```
-
-#### nohup 确保这个进程在断开 ssh 连接后依旧运行，& 让进程在后台运行
+nohup
 ```
-nohup jupyter notebook &
+# nohup 确保这个进程在断开 ssh 连接后依旧运行，& 让进程在后台运行
+nohup jupyter notebook 2>&1 &
 
 # 后台文件写入log
 command >& file.txt(或者file.log) &

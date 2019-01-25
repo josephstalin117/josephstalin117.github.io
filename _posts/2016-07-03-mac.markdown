@@ -61,8 +61,14 @@ ps -ef
 建立ssh
 
 ```
+# 访问端口
 ssh -p 29093 root@45.78.42.114
-ssh -Y root@45.78.42.114 #for X11 forwarding
+# for X11 forwarding
+ssh -Y root@45.78.42.114 
+
+# 端口转发
+ssh -D 7701 root@34.70.102.19
+
 ```
 
 列出网络端口号
