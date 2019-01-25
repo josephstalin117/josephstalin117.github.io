@@ -1,0 +1,26 @@
+---
+layout: post
+title:  sklearn
+date:   2019-1-23 20:35:35 +0800
+categories: command
+---
+
+归一化处理
+```
+from sklearn.preprocessing import MinMaxScaler
+
+# normalize the dataset
+scaler = MinMaxScaler(feature_range=(0, 1))
+dataset = scaler.fit_transform(dataset)
+
+# Scale back the data to the original representation
+inv_y = scaler.inverse_transform(inv_y)
+```
+
+求RMSE
+```
+from sklearn.metrics import mean_squared_error
+
+rmse = sqrt(mean_squared_error(inv_y, inv_yhat))
+```
+
