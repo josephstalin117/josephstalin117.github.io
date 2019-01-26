@@ -296,6 +296,33 @@ for i in mygenerator:
 # 4
 ```
 
+getopt
+```
+def parseArgs(self):
+    try:
+        # 短参数后面跟:代表可以接收值，长参数后面跟=代表接收一个值
+        options, args = getopt.getopt(sys.argv[1:], 'cgf:', ['common', 'sg', 'filename='])
+        for opt, value in options:
+            if opt in ('-c', '--common'):
+                self.water_name = "beijing_do_s"
+                self.csv_file = "../csv/Beijing_DO_s.csv"
+            if opt in ('-g', '--sg'):
+                self.water_name = "beijing_do_s_savgol"
+                self.csv_file = "../csv/Beijing_DO_s_savgol.csv"
+            if opt in ('-f','--filename'):
+                fileName = value
+                print("[*] Filename is ",fileName)
+                # do something
+                exit()
+    except getopt.GetoptError as msg:
+        print(msg)
+        sys.exit(2)
+
+# 调用
+# 短参数使用的时候是参数名[空格]参数值
+# 长参数使用的时候是参数名=参值
+```
+
 itertools
 ```
 import itertools
@@ -480,3 +507,4 @@ args = (1, 2, 3)
 kwargs = {"a": 1, "b": 2, "c": 3}
 # f(**kwargs) -> f(a=1, b=2, c=3)
 ```
+长参数使用的时候是参数名=参数值
