@@ -138,3 +138,26 @@ ax.yaxis.set_ticks_position('left')
 
 ![images](/source/spines.png)
 
+柱状图
+```
+import matplotlib.pyplot as plt
+
+data = [5, 20, 15, 25, 10]
+
+plt.bar(range(len(data)), data)
+plt.show()
+
+# 设置柱体颜色
+plt.bar(range(len(data)), data, fc='g')
+
+# 设置不同的柱体颜色
+plt.bar(range(len(data)), data, color='rgb') # or `color=['r', 'g', 'b']`
+
+# 设置label
+data = [5, 20, 15, 25, 10]
+labels = ['Tom', 'Dick', 'Harry', 'Slim', 'Jim']
+
+plt.bar(range(len(data)), data, tick_label=labels)
+plt.show()
+```
+
