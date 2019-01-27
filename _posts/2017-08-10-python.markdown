@@ -59,6 +59,15 @@ def what_does_the_fox_say():
 import fox
 
 fox.what_does_the_fox_say()
+
+
+# import parent dir py
+import sys
+import os
+
+sys.path.append(os.path.abspath('..'))
+print(sys.path)
+import water_config
 ```
 
 range
