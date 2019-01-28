@@ -5,7 +5,7 @@ date:   2017-05-10 16:35:35 +0800
 categories: command
 ---
 
-### Basic moves
+#### Basic moves
 
 ```
 Ctrl+b    #Move back one character.
@@ -20,7 +20,7 @@ Meta+b    #Move backward a word
 Ctrl+l    #Clear the screen
 ```
 
-### Cut and paste
+#### Cut and paste
 
 ```
 Ctrl+k    #Cut from cursor to the end of line.
@@ -34,7 +34,7 @@ Meta+.    #Loop through and paste the last argument of previous commands.
 Ctrl+r    #Search as you type
 ```
 
-### 脚本
+#### 脚本
 
 脚本解释器
 ```
@@ -146,4 +146,21 @@ funWithParam(){
     echo "作为一个字符串输出所有参数 $* !"
 }
 funWithParam 1 2 3 4 5 6 7 8 9 34 73 
+```
+
+xargs
+```
+# 输出文件名前缀是predict的文件
+ls |grep 'predict*' | xargs echo
+
+# -n 定义多行输出
+cat test.txt|xargs -n3
+
+# -d 自定义一个定界符
+echo "nameXnameX"|xargs -dX
+
+# 读取stdin，将格式化后的参数传递给命令
+# 复制所有图片文件到/data/images 目录下
+ls *.jpg | xargs -n1 -I cp {} /data/images
+
 ```

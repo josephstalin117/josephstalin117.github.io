@@ -234,6 +234,9 @@ nc -l 8080 > data.txt
 # 使用-I指定一个替换字符串{}，这个字符串在xargs扩展时会被替换掉
 # 将上一个程序的标准输出传给下一个程序的命令行
 echo xx | xargs -I {} command {}
+
+# 列出所有文件名前缀是predict的文件
+ls predict*
 ```
 
 #### dd

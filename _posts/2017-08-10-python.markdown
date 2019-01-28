@@ -134,7 +134,12 @@ g.greet(loud=True)   # Call an instance method; prints "HELLO, FRED!"
 
 python 执行bash命令
 ```
-os.system("some_command with args")
+import subprocess
+
+subprocess.call(['ls','-l'])
+
+process = subprocess.Popen(['ls', '-l'])
+(output, err) = process.communicate()
 ```
 
 python 默认执行
@@ -438,7 +443,7 @@ b
 ['test value','test value 2','test value 3']
 ```
 
-date
+datetime
 ```
 import datetime
 
@@ -453,6 +458,9 @@ print(x.strftime("%B"))
 
 #3点12分
 x = datetime.time(3,12,0)
+
+# using - as separator
+datetime.datetime.now().strfttime(%Y-%m-%d-%H-%M-%S)
 ```
 
 re
