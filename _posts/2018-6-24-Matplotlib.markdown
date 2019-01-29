@@ -161,3 +161,17 @@ plt.bar(range(len(data)), data, tick_label=labels)
 plt.show()
 ```
 
+combine multiple line labels in legend
+```
+handles, labels = plt.gca().get_legend_handles_labels()
+i =1
+while i<len(labels):
+    if labels[i] in labels[:i]:
+        del(labels[i])
+        del(handles[i])
+    else:
+        i +=1
+
+plt.legend(handles, labels)
+```
+
