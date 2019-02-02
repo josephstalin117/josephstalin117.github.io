@@ -148,6 +148,21 @@ funWithParam(){
 funWithParam 1 2 3 4 5 6 7 8 9 34 73 
 ```
 
+grep
+```
+# 查找文件中含有xxx的一行
+grep xxx filename
+
+#查找前缀有“test”的文件包含“test”字符串的文件
+grep test test*   
+
+#以递归的方式查找'etc/acpi'下包含'update'的文件  
+grep -r update /etc/acpi 
+
+# 反向查找,查找文件名中包含 test 的文件中不包含test 的行
+grep -v test *test*
+```
+
 xargs
 ```
 # 输出文件名前缀是predict的文件
