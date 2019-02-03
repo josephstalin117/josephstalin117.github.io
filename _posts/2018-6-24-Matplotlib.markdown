@@ -88,6 +88,12 @@ fig, ax = plt.subplots()
 ax.plot(x, y)
 ax.set_title('Simple plot')
 
+# 调整子图大小
+fig, ax = plt.subplots(2,2,figsize=(15,15))
+# or
+f.set_figwidth(20)
+f.set_figheight(15)
+
 #Creates two subplots and unpacks the output array immediately
 f, (ax1, ax2) = plt.subplots(1, 2, sharey=True)
 ax1.plot(x, y)
