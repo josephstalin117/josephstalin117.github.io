@@ -3,7 +3,7 @@ layout: post
 title:  regex
 date:   2019-2-3 20:35:35 +0800
 categories: command
---
+---
 
 非打印字符
 ```
@@ -87,6 +87,3 @@ $
 x|y
 ```
 
-限定符
-```
-```
