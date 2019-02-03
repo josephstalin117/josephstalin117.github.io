@@ -161,6 +161,14 @@ grep -r update /etc/acpi
 
 # 反向查找,查找文件名中包含 test 的文件中不包含test 的行
 grep -v test *test*
+
+# 只显示匹配PATTERN部分
+grep -o 'name="[^"]\+"' your_file
+
+#name="test"
+#name="testa"
+#name="1test2"
+#name="testb"
 ```
 
 xargs
