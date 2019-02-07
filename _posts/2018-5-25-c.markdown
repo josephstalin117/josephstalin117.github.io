@@ -114,7 +114,6 @@ vector< vector<int> > b(10, vector<int>(5));
 
 //C++11 container initializer
 vector<string> vs={"first", "second", "third"};
-map<string,string> singers ={{"Lady Gaga", "+1 (212) 555-7890"},{"Beyonce Knowles", "+1 (212) 555-0987"}};
 ```
 
 STL stack
