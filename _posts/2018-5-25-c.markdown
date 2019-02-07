@@ -63,6 +63,8 @@ vector<int> a ;
 vector<int> a(10) ;
 //声明一个初始大小为10且初始值都为1的向量
 vector<int> a(10, 1) ;
+//声明二维数组， 并初始化
+vector<vector<int>> a(n, vector<int>(n, 0));
 //声明并用向量a初始化向量b
 vector<int> b(a) ;
 //将a向量中从第0个到第2个(共3个)作为向量b的初始值
@@ -81,7 +83,12 @@ for(i=0; i<a.size(); i++) cout<<a[i]<<" " ;
 //全部输出
 vector<int>::iterator t ;
 for(t=a.begin(); t!=a.end(); t++)
-	cout<<*t<<" " ;
+    cout<<*t<<" " ;
+
+//begin( ) 函数返回一个指向向量开头的迭代器。
+a.begin();
+//end( ) 函数返回一个指向向量末尾的迭代器。
+a.end();
 
 //获取向量中的元素个数
 a.size()
@@ -105,6 +112,31 @@ v5.erase(v5.begin() + 3);
 //创建一个10*5的int型二维
 vector< vector<int> > b(10, vector<int>(5)); 
 
+//C++11 container initializer
+vector<string> vs={"first", "second", "third"};
+map<string,string> singers ={{"Lady Gaga", "+1 (212) 555-7890"},{"Beyonce Knowles", "+1 (212) 555-0987"}};
+```
+
+STL stack
+```
+stack <int> s; 
+s.push(10); 
+s.push(30); 
+s.push(20); 
+s.push(5); 
+s.push(1); 
+
+# 1 5 20 30 10
+showstack(s);
+
+# 5
+s.size();
+# 1
+s.top();
+
+s.pop;
+# 5 20 30 10
+showstack(s);
 ```
 
 STL的pair用法 
@@ -341,4 +373,25 @@ Line::Line( double len)
     cout << "Object is being created, length = " << len << endl;
 }
 ```
+lambda 表达式
+```
+[capture](parameters)->return-type{body}
 
+[](int x, int y){ return x < y ; }
+
+//无返回值
+[capture](parameters){body}
+[]{ ++global_x; } 
+
+//指定返回值类型
+[](int x, int y) -> int { int z = x + y; return z + x; }
+
+//C++变量传递有传值和传引用的区别
+[]      // 沒有定义任何变量。使用未定义变量会引发错误。
+[x, &y] // x以传值方式传入（默认），y以引用方式传入。
+[&]     // 任何被使用到的外部变量都隐式地以引用方式加以引用。
+[=]     // 任何被使用到的外部变量都隐式地以传值方式加以引用。
+[&, x]  // x显式地以传值方式加以引用。其余变量以引用方式加以引用。
+[=, &z] // z显式地以引用方式加以引用。其余变量以传值方式加以引用。
+
+```
