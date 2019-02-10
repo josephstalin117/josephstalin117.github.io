@@ -165,6 +165,40 @@ labels = ['Tom', 'Dick', 'Harry', 'Slim', 'Jim']
 
 plt.bar(range(len(data)), data, tick_label=labels)
 plt.show()
+
+# multi bar
+import matplotlib.pyplot as multi_bar_plt
+import numpy as np
+
+N = 4
+# the x locations for the groups
+ind = np.arange(N)
+# the width of the bars
+width = 0.15
+
+fig = multi_bar_plt.figure(figsize=(10,5))
+ax = fig.add_subplot(111)
+
+# ANN, ARIMA, RNN, SG-RNN
+step1 = [0.65, 0.581, 0.164, 0.134]
+step2 = [0.6925, 0.892, 0.27, 0.4077]
+step3 = [0.766, 0.685, 0.226, 0.52]
+step4 = [0.765, 0.7068, 0.295, 0.251]
+step5 = [0.802, 0.733, 0.416, 0.2551]
+
+rects_step1 = ax.bar(ind, step1, width, color='r')
+rects_step2 = ax.bar(ind+width, step2, width, color='g')
+rects_step3 = ax.bar(ind+width*2, step3, width, color='y')
+rects_step4 = ax.bar(ind+width*3, step4, width, color='b')
+rects_step5 = ax.bar(ind+width*4, step5, width, color='k')
+
+ax.set_ylabel('RMSE')
+ax.set_xticks(ind+width)
+ax.set_xticklabels(('ANN', 'ARIMA', 'RNN', 'SG-RNN'))
+ax.legend((rects_step1[0], rects_step2[0], rects_step3[0], rects_step4[0], rects_step5[0]), ('Step1', 'Step2', 'Step3', 'Step4', 'Step5'))
+
+multi_bar_plt.show()
+
 ```
 
 combine multiple line labels in legend
