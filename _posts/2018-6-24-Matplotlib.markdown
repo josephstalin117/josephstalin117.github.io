@@ -52,6 +52,9 @@ plt.ylim((-2,2))
 plt.xticks(np.arange(-5, 5, 0.5))
 plt.yticks(np.arange(-2, 2, 0.3))
 
+# 手动修正坐标轴刻度
+plt.yticks([-0.25, 0, 0.25, 0.50, 0.75],['-0.25', '0', '0.25', '0.50', '0.75'])
+
 # plt.legend()添加标注
 plt.legend(loc="upper left")
 # 自动调整标注位置
