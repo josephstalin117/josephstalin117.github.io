@@ -7,34 +7,38 @@ categories: command
 
 基本操作
 ```
-验证是否安装成功
+# 验证是否安装成功
 docker info
 
-启动docker服务
-sudo service docker start
-or
-sudo systemctl start docker
+# 启动docker服务
+sudo service docker start/sudo systemctl start docker
 
+# List containers
+docker ps
+
+# 普通用户授权docker
+sudo usermod -aG docker user
+sudo service docker restart
 ```  
 
 images文件管理
 ```
-列出本机的所有 image 文件。
+# 列出本机的所有 image 文件。
 docker image ls
 
-删除 image 文件
+# 删除 image 文件
 docker image rm [imageName]
 
-image 文件从仓库抓取到本地
+# image 文件从仓库抓取到本地
 docker image pull library/hello-world
 
-docker 中国官方源加速
+# docker 中国官方源加速
 docker pull registry.docker-cn.com/library/ubuntu:16.04
 ```
-container 容器管理
 
+container 容器管理
 ```
-运行 image 其中-i启动交互式，-t是分配一个tty
+# 运行 image 其中-i启动交互式，-t是分配一个tty
 docker container run -it ubuntu bash
 
 docker container run \
@@ -46,31 +50,31 @@ docker container run \
   --volume "$PWD/":/var/www/html \
   php:5.6-apache
 
-查看正在运行的容器
+# 查看正在运行的容器
 docker container ls -l
 
-查看所有容器
+# 查看所有容器
 docker container ls --all
 
-终止容器
+# 终止容器
 docker container kill [containID]
 
-删除容器
+# 删除容器
 docker container rm [containerID]
 
-启动已经存在的容器
+# 启动已经存在的容器
 docker container start [containerID]
 
-终止容器运行
+# 终止容器运行
 docker container stop [containerID]
 
-查看docker容器的输出
+# 查看docker容器的输出
 docker container logs [containerID]
 
-进入一个正在运行的 docker 容器
+# 进入一个正在运行的 docker 容器
 docker container exec -it [containerID] /bin/bash
 
-从正在运行的 Docker 容器里面，将文件拷贝到本机
+# 从正在运行的 Docker 容器里面，将文件拷贝到本机
 docker container cp [containID]:[/path/to/file] ~/your/local/path
 
 ```

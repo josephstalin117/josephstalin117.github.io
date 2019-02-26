@@ -17,6 +17,12 @@ lsb_release -a
 ## 用户权限
 
 ```
+# 查看所有用户
+cat /etc/passwd
+
+# 查看用户组
+cat /etc/group
+
 # user添加到groupA用户组
 usermod -aG groupA user
 
@@ -42,7 +48,7 @@ sed -n 5p output.txt
 sudo adduser user1
 
 # 删除用户
-sudo userdel username
+sudo userdel -r username
 
 # 添加用户到sudo组
 adduser username sudo
