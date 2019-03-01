@@ -55,6 +55,9 @@ container 容器管理
 # 运行 image 其中-i启动交互式，-t是分配一个tty
 docker run -it --rm ubuntu bash
 
+# 80端口映射
+docker run -p 80:80 -t -i linode/lamp /bin/bash
+
 docker container run \
 # --rm停止运行后，自动删除容器文件
   --rm \
