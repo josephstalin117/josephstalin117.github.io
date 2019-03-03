@@ -48,6 +48,21 @@ docker image pull library/hello-world
 
 # docker 中国官方源加速
 docker pull registry.docker-cn.com/library/ubuntu:16.04
+
+# 修改docker镜像存储位置
+# 停止docker服务
+systemctl stop docker
+# 修改/lib/systemd/system/docker.service
+# FROM:
+ExecStart=/usr/bin/docker daemon -H fd://
+# TO:
+ExecStart=/usr/bin/docker daemon -g /new/path/docker -H fd://
+# reload systemd daemon
+systemctl daemon-reload
+# start docker daemon
+systemctl start docker
+# 使用docker info查看root位置
+docker info
 ```
 
 container 容器管理
