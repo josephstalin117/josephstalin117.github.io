@@ -34,9 +34,6 @@ nvidia-smi -l
 
 # 查看GPU是否可用
 lspci | grep -i nvidia
-
-# 测试nvdia docker运行情况
-docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
 ```
 
 查看CUDA版本信息
@@ -73,6 +70,18 @@ CUDA_VISIBLE_DEVICES=1 python my_script.py
 # python代码中设置使用的GPU
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+```
+
+docker
+```
+# 测试nvdia docker运行情况
+docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
+
+# 测试GPU模式
+docker run --runtime=nvidia -it --rm tensorflow/tensorflow:latest-gpu python -c "import tensorflow as tf; tf.enable_eager_execution(); print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
+
+# 进入docker bash 环境
+docker run --runtime=nvidia -it tensorflow/tensorflow:latest-gpu bash
 ```
 
 math
