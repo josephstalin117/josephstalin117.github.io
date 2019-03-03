@@ -31,6 +31,12 @@ python -m tensorflow.python.debug.examples.debug_mnist --debug
 查看显卡占用
 ```
 nvidia-smi -l
+
+# 查看GPU是否可用
+lspci | grep -i nvidia
+
+# 测试nvdia docker运行情况
+docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
 ```
 
 查看CUDA版本信息
