@@ -227,6 +227,12 @@ in
 code
 ```
 
+STL reverse函数
+```
+//转换0～5下标的元素
+std::reverse(a,a+5);
+```
+
 STL deque 双向数组
 ```
 //创建一个空的deque
