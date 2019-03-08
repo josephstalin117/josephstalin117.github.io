@@ -27,6 +27,17 @@ def to_str(unicode_or_str):
     return value    
 ```
 
+输入
+```
+input([prompt])
+
+# input:
+a=input('input:')
+
+# 以空格输入
+a_list=a.split(' ')
+```
+
 Functions
 ```
 def sign(x):

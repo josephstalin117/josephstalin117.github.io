@@ -227,6 +227,41 @@ in
 code
 ```
 
+STL deque 双向数组
+```
+//创建一个空的deque
+deque<Elem> c
+//复制一个deque
+deque<Elem> c1(c2) 
+//创建一个deque，含有n个数据，数据均已缺省构造产生。
+deque<Elem> c(n) 
+//创建一个含有n个elem拷贝的deque。
+deque<Elem> c(n, elem) 
+//创建一个以[beg;end)区间的deque。
+deque<Elem> c(beg,end) 
+//销毁所有数据，释放内存。
+~deque<Elem>()
+
+//返回指向第一个元素的迭代器
+c.begin()
+//返回指向最后一个元素下一个位置的迭代器
+c.end()
+
+//在末尾位置插入元素
+c.push_back(num)
+//删除末尾位置的元素
+c.pop_back()
+//在开头位置插入元素
+c.push_front(num)
+//删除开头位置的元素
+c.pop_front()
+
+//在pos位置插入元素num
+c.insert(pos,num)
+//删除pos位置的元素
+c.erase(pos)
+```
+
 STL stack
 ```
 stack <int> s; 
