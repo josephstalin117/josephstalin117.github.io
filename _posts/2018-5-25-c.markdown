@@ -194,8 +194,8 @@ int main()
   
     string key = "slow"; 
   
-    //     find returns end iterator if key is not found, 
-    //  else it returns iterator to that key 
+    //find returns end iterator if key is not found, 
+    //else it returns iterator to that key 
     if (stringSet.find(key) == stringSet.end()) 
         cout << key << " not found\n\n"; 
     else
@@ -225,13 +225,58 @@ fast
 c++
 in
 code
+
+//创建空集合,不包含任何元素
+set c:
+//以op为排序准则，产生一个空的set
+set c(op)
+//复制c2中的元素到c1中
+set c1(c2)
+//复制[first, last)之间元素构成新集合
+set c(const value_type *first, const value_type* last)
+//以op为排序准则，复制[first, last)之间元素构成新集合。
+set c(const value_type *first, const value_type* last,op)
+//销毁所有元素，释放内存
+c.~set()
+
+//返回容器元素个数
+int size() const
+//判断容器是否为空，若返回true，表明容器已空
+bool empty() const
+
+//插入元素x
+pair<iterator,bool> insert( x)
+//在迭代器it处插入元素x
+iterator insert(iterator it,x)
+//插入[first, last)之间元素
+void insert(const value_type *first,const value_type *last)
+//删除迭代器指针it处元素
+iterator erase(iterator it)
+//删除[first, last)之间元素
+iterator erase(iterator first,iterator last)
+//删除元素值等于key的元素
+size_type erase(const Key& key)
+
+//返回首元素的迭代器指针
+iterator begin()
+//返回尾元素的迭代器指针
+iterator end()
 ```
+
+
 
 STL reverse函数
 ```
 //转换0～5下标的元素
 std::reverse(a,a+5);
 ```
+
+STL min_element/max_element
+```
+cout<<"min_element: "<<*min_element(myvec.begin(),myvec.end())<<endl;
+cout<<"max_element: "<<*max_element(myvec.begin(),myvec.end())<<endl;
+```
+
 
 STL deque 双向数组
 ```
