@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  pytorch
-date:   2019-2-3 20:35:35 +0800
+date:   2019-3-11 20:35:35 +0800
 categories: command
 ---
 
