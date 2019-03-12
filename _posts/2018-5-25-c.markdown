@@ -5,8 +5,12 @@ date:   2018-5-25 20:35:35 +0800
 categories: command
 ---
 
-位运算符
+g++编译
+```
+g++ Helloworld.cpp -o Hello/g++ Helloworld.cpp
+```
 
+位运算符
 ```
 
 // 位与 两个位都为1时，结果才为1
@@ -21,6 +25,27 @@ categories: command
 // 位取反 0变1，1变0
 ~
 
+```
+
+标准输入输出
+```
+//c风格
+#include <stdio.h>
+int main( ) {
+ 
+   char str[100];
+   int i;
+ 
+   printf( "Enter a value :");
+   //在读取字符串时，只要遇到一个空格，scanf() 就会停止读取，所以 "this is test" 对 scanf() 来说是三个字符串。
+   scanf("%s %d", str, &i);
+ 
+   printf( "\nYou entered: %s %d ", str, i);
+   printf("\n");
+   return 0;
+}
+
+//c++输出输出流
 ```
 
 结构体
@@ -260,7 +285,7 @@ size_type erase(const Key& key)
 //返回首元素的迭代器指针
 iterator begin()
 //返回尾元素的迭代器指针
-iterator end()
+riterator end()
 ```
 
 
