@@ -144,6 +144,35 @@ printf("ASCII value = %d, Character = %c\n", ch , ch );
 double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};
 ```
 
+字符串操作
+```
+//字符串生成
+string s("1a2b3c4d5e6f7g8h9i1a2b3c4d5e6f7g8ha9i");
+string::size_type position;
+
+
+//find 函数 返回jk 在s 中的下标位置 
+position = s.find("jk");
+//如果没找到，返回一个特别的标志c++中用npos表示
+if (position != s.npos){
+	cout << "position is : " << position << endl;
+}else{
+	cout << "Not found the flag" + flag;
+}
+
+//atoi字符串转换成整型数的
+using namespace std;
+
+int main(){  
+    string str ="123";
+    //.c_str()函数返回一个指向正规C字符串的指针常量, 内容与本string串相同
+    int num = atoi(str.c_str());
+    cout<<num<<endl;
+    getchar();
+    return 0;
+}
+```
+
 STL的vector用法
 ```
 // 导入
