@@ -149,3 +149,11 @@ ENV NAME World
 # 当容器启动时运行 app.py 
 CMD ["python", "app.py"]
 ```
+
+lamp docker
+```
+# create a temporary container for testing purposes
+docker run -it --rm fauria/lamp bash
+# create a container to debug a web app
+docker run --rm -p 8080:80 -e LOG_STDOUT=true -e LOG_STDERR=true -e LOG_LEVEL=debug -v /my/data/directory:/var/www/html fauria/lamp
+```
