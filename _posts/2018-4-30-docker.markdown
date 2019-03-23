@@ -112,6 +112,12 @@ docker exec -it [containerID] /bin/bash
 # 从正在运行的 Docker 容器里面，将文件拷贝到本机
 docker cp [containID]:[/path/to/file] ~/your/local/path
 
+# 停用全部运行中的容器
+docker stop $(docker ps -q)
+
+# 删除全部容器
+docker rm $(docker ps -aq)
+
 # 查看容器的变化
 docker diff [容器ID或容器名]
 
@@ -157,3 +163,5 @@ docker run -it --rm fauria/lamp bash
 # create a container to debug a web app
 docker run --rm -p 8080:80 -e LOG_STDOUT=true -e LOG_STDERR=true -e LOG_LEVEL=debug -v /my/data/directory:/var/www/html fauria/lamp
 ```
+
+
