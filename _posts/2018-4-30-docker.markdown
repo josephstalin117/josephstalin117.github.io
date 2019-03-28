@@ -164,4 +164,9 @@ docker run -it --rm fauria/lamp bash
 docker run --rm -p 8080:80 -e LOG_STDOUT=true -e LOG_STDERR=true -e LOG_LEVEL=debug -v /my/data/directory:/var/www/html fauria/lamp
 ```
 
+Laradock
+```
+docker-compose up -d nginx mysql phpmyadmin redis workspace 
+```
+
 
