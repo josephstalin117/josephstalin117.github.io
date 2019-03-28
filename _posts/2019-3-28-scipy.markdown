@@ -1,0 +1,17 @@
+---
+layout: post
+title:  scipy
+date:   2019-3-28 20:35:35 +0800
+categories: command
+---
+
+scipy.sparse的稀疏矩阵存储:  
+coo_matrix: 座标格式 (即 IJV, 三维格式),  
+csc_matrix: 压缩列格式,  
+csr_matrix: 压缩行格式
+```
+import numpy as np
+import scipy.sparse as sparse
+
+
+```

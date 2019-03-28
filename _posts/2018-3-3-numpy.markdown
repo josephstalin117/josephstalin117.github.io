@@ -428,3 +428,18 @@ array([[1, 2, 3],
        [4, 5, 6]])
 ```
 
+numpy.power
+```
+# First array elements raised to powers from second array, element-wise.
+>>> x1 = range(6)
+>>> x1
+[0, 1, 2, 3, 4, 5]
+>>> np.power(x1, 3)
+array([  0,   1,   8,  27,  64, 125])
+
+# Raise the bases to different exponents.
+>>> x2 = [1.0, 2.0, 3.0, 3.0, 2.0, 1.0]
+>>> np.power(x1, x2)
+array([  0.,   1.,   8.,  27.,  16.,   5.])
+```
+
