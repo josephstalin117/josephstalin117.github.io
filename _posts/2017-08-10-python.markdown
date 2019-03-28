@@ -143,6 +143,22 @@ g.greet()            # Call an instance method; prints "Hello, Fred"
 g.greet(loud=True)   # Call an instance method; prints "HELLO, FRED!"
 ```
 
+call & init
+```
+class Foo:
+    def __init__(self, a, b, c):
+        # ...
+
+x = Foo(1, 2, 3) # __init__
+
+class Foo:
+    def __call__(self, a, b, c):
+        # ...
+
+x = Foo()
+x(1, 2, 3) # __call__
+```
+
 python 执行bash命令
 ```
 import subprocess
