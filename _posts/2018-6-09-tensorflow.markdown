@@ -116,8 +116,9 @@ reshape(t, [-1]) ==> [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6]
 tf.truncated_normal
 ```
 
-tf.einsum(equation, *inputs,**kwargs)
+tf.einsum()
 ```
+tf.einsum(equation, `*inputs`,`**kwargs`)
 # A generalized contraction between tensors of arbitrary dimension.
 # C[i,k] = sum_j A[i,j] * B[j,k]
 # Matrix multiplication
@@ -134,6 +135,7 @@ tf.einsum(equation, *inputs,**kwargs)
 
 # Batch matrix multiplication
 >>> einsum('aij,ajk->aik', s, t)  # out[a,i,k] = sum_j s[a,i,j] * t[a, j, k]
+
 ```
 
 查看变量
@@ -248,6 +250,20 @@ tf.concat([t1, t2], 1)  # [[1, 2, 3, 7, 8, 9], [4, 5, 6, 10, 11, 12]]
 # tensor t4 with shape [2, 3]
 tf.shape(tf.concat([t3, t4], 0))  # [4, 3]
 tf.shape(tf.concat([t3, t4], 1))  # [2, 6]
+```
+
+tf.expand_dims
+```
+Inserts a dimension of 1 into a tensor's shape. (deprecated arguments)
+# 't' is a tensor of shape [2]
+tf.shape(tf.expand_dims(t, 0))  # [1, 2]
+tf.shape(tf.expand_dims(t, 1))  # [2, 1]
+tf.shape(tf.expand_dims(t, -1))  # [2, 1]
+
+# 't2' is a tensor of shape [2, 3, 5]
+tf.shape(tf.expand_dims(t2, 0))  # [1, 2, 3, 5]
+tf.shape(tf.expand_dims(t2, 2))  # [2, 3, 1, 5]
+tf.shape(tf.expand_dims(t2, 3))  # [2, 3, 5, 1]
 ```
 
 keras
