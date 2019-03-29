@@ -167,6 +167,14 @@ docker run --rm -p 8080:80 -e LOG_STDOUT=true -e LOG_STDERR=true -e LOG_LEVEL=de
 Laradock
 ```
 docker-compose up -d nginx mysql phpmyadmin redis workspace 
+# 关闭所有容器
+docker-compose down
+# 进入workspace
+docker-compose exec workspace bash
+
+# 重启nginx和mysql
+docker-compose up -d nginx mysql
+
 ```
 
 
