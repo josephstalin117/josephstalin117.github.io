@@ -340,6 +340,10 @@ dataset = read_csv('household_power_consumption.csv', header=0, infer_datetime_f
 # resample data to daily
 daily_groups = dataset.resample('D')
 daily_data = daily_groups.sum()
+
+# Convert a NumPy array to a Pandas series
+np_array = np.array([10, 20, 30, 40, 50])
+new_series = pd.Series(np_array)
 ```
 
 data analysis
