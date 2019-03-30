@@ -34,16 +34,25 @@ df.describe()
 
 # Constructing DataFrame from numpy ndarray:
 df2 = pd.DataFrame(np.random.randint(low=0, high=10, size=(5, 5)),columns=['a', 'b', 'c', 'd', 'e'])
+
+# Create dataframe
+df = pd.DataFrame(np.random.randn(8,5)
 ```
 
 insert
 ```
-# append
+# append 插入一行
 df.append(df2, ignore_index=True)
+
+# 插入列, 插入第一列
+df.insert(0,'date',date)
+
+# 默认插入到第一列
+df['date']=date
+
 ```
 
 get data from column & row
-
 ```
 # Getting a column by label
 df['rain_octsep']
