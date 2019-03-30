@@ -116,8 +116,9 @@ reshape(t, [-1]) ==> [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6]
 tf.truncated_normal
 ```
 
-tf.einsum(equation, *inputs,**kwargs)
+tf.einsum()
 ```
+tf.einsum(equation, `*inputs`,`**kwargs`)
 # A generalized contraction between tensors of arbitrary dimension.
 # C[i,k] = sum_j A[i,j] * B[j,k]
 # Matrix multiplication
@@ -134,6 +135,7 @@ tf.einsum(equation, *inputs,**kwargs)
 
 # Batch matrix multiplication
 >>> einsum('aij,ajk->aik', s, t)  # out[a,i,k] = sum_j s[a,i,j] * t[a, j, k]
+
 ```
 
 查看变量
@@ -236,6 +238,21 @@ c = tf.tile(a, [2,4,6,8], name=None)
 # c.shape[6,12,18,24]
 ```
 
+tf.split
+```
+# Splits a tensor into sub tensors.
+
+# 'value' is a tensor with shape [5, 30]
+# Split 'value' into 3 tensors with sizes [4, 15, 11] along dimension 1
+split0, split1, split2 = tf.split(value, [4, 15, 11], 1)
+tf.shape(split0)  # [5, 4]
+tf.shape(split1)  # [5, 15]
+tf.shape(split2)  # [5, 11]
+# Split 'value' into 3 tensors along dimension 1
+split0, split1, split2 = tf.split(value, num_or_size_splits=3, axis=1)
+tf.shape(split0)  # [5, 10]
+```
+
 tf.concat
 ```
 # Concatenates tensors along one dimension.
@@ -248,6 +265,20 @@ tf.concat([t1, t2], 1)  # [[1, 2, 3, 7, 8, 9], [4, 5, 6, 10, 11, 12]]
 # tensor t4 with shape [2, 3]
 tf.shape(tf.concat([t3, t4], 0))  # [4, 3]
 tf.shape(tf.concat([t3, t4], 1))  # [2, 6]
+```
+
+tf.expand_dims
+```
+Inserts a dimension of 1 into a tensor's shape. (deprecated arguments)
+# 't' is a tensor of shape [2]
+tf.shape(tf.expand_dims(t, 0))  # [1, 2]
+tf.shape(tf.expand_dims(t, 1))  # [2, 1]
+tf.shape(tf.expand_dims(t, -1))  # [2, 1]
+
+# 't2' is a tensor of shape [2, 3, 5]
+tf.shape(tf.expand_dims(t2, 0))  # [1, 2, 3, 5]
+tf.shape(tf.expand_dims(t2, 2))  # [2, 3, 1, 5]
+tf.shape(tf.expand_dims(t2, 3))  # [2, 3, 5, 1]
 ```
 
 keras
