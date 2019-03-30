@@ -46,10 +46,10 @@ c = np.full((2,2), 7)  # Create a constant array
 print(c)               # Prints "[[ 7.  7.]
                        #          [ 7.  7.]]"
 
+# 对角矩阵
 d = np.eye(2)         # Create a 2x2 identity matrix
 print(d)              # Prints "[[ 1.  0.]
                       #          [ 0.  1.]]"
-
 
 ```
 
@@ -333,6 +333,32 @@ array([ True,  True, False, False])
 ```
 
 #### 矩阵
+
+numpy.mat
+```
+a=np.mat('4 3; 2 1')
+print(a)
+# [[4 3]
+#  [2 1]]
+
+# array([1, 2, 3])
+a1=array([1,2,3])
+# matrix([[1, 2, 3]])
+a1=mat(a1)
+
+#逆矩阵
+a1.I
+```
+
+创建一个3*3的零矩阵，矩阵这里zeros函数的参数是一个tuple类型(3,3)
+```
+#matrix([[ 0.,  0.,  0.],
+#        [ 0.,  0.,  0.],
+#        [ 0.,  0.,  0.]])
+mat(zeros((3,3))) 
+
+
+```
 
 numpy.power
 ```
