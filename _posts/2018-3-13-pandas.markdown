@@ -41,6 +41,9 @@ df = pd.DataFrame(np.random.randn(8,5))
 # create dataframe
 col_names =  ['A', 'B', 'C']
 my_df  = pd.DataFrame(columns = col_names)
+
+# create from numpy
+pd.DataFrame(np_array)
 ```
 
 insert
