@@ -13,5 +13,7 @@ csr_matrix: 压缩行格式
 import numpy as np
 import scipy.sparse as sparse
 
-
+A = lil.tocoo()
+for i,j,d in zip(A.row, A.col, A.data):
+	a[i,j] = d
 ```
