@@ -169,6 +169,17 @@ process = subprocess.Popen(['ls', '-l'])
 (output, err) = process.communicate()
 ```
 
+判断变量是否存在
+```
+# To check the existence of a local variable:
+if 'myVar' in locals():
+  # myVar exists.
+
+# To check the existence of a global variable:
+if 'myVar' in globals():
+  # myVar exists.
+```
+
 python 默认执行
 ```
 if __name__ == '__main__':
