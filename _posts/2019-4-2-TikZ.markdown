@@ -275,14 +275,6 @@ categories: command
 #### kalman-filter
 
 ```
-% Kalman filter system model
-% by Burkart Lingner
-% An example using TikZ/PGF 2.00
-%
-% Features: Decorations, Fit, Layers, Matrices, Styles
-% Tags: Block diagrams, Diagrams
-% Technical area: Electrical engineering
-
 \documentclass[a4paper,10pt]{article}
 
 \usepackage[english]{babel}
@@ -295,23 +287,6 @@ categories: command
 \usepackage{amsfonts}
 
 \usepackage{tikz}
-
-%%%<
-\usepackage{verbatim}
-\usepackage[active,tightpage]{preview}
-\PreviewEnvironment{tikzpicture}
-\setlength\PreviewBorder{5pt}%
-%%%>
-
-\begin{comment}
-:Title: Kalman Filter System Model
-:Slug: kalman-filter
-:Author: Burkart Lingner
-
-This is the system model of the (linear) Kalman filter. 
-
-\end{comment}
-
 
 \usetikzlibrary{decorations.pathmorphing} % noisy shapes
 \usetikzlibrary{fit}					% fitting shapes to coordinates
