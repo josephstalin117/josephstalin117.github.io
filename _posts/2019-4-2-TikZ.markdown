@@ -476,5 +476,6 @@ This is the system model of the (linear) Kalman filter.
 
 \end{document}
 ```
+
 ![images](/source/tikz_kalman.png)
 
