@@ -107,10 +107,6 @@ categories: command
 \usepackage{tikz}
 \usetikzlibrary{positioning, fit, arrows.meta, shapes}
 
-% used to avoid putting the same thing several times...
-% Command \empt{var1}{var2}
-\newcommand{\empt}[2]{$#1^{\langle #2 \rangle}$}
-
 \begin{document}
 
 \begin{tikzpicture}[
@@ -228,12 +224,6 @@ categories: command
 \documentclass[tikz,border=10pt]{standalone}
 \usepackage{tikz}
 \usetikzlibrary{positioning, fit, arrows.meta, shapes}
-
-% used to avoid putting the same thing several times...
-% Command \empt{var1}{var2}
-\newcommand{\empt}[2]{$#1^{\langle #2 \rangle}$}
-
-\begin{document}
 
 
 \begin{tikzpicture}[
