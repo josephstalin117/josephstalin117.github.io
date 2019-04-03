@@ -102,7 +102,6 @@ categories: command
 
 #### LSTM
 ```
-% By J. Leon, Beerware licence is acceptable...
 \documentclass[tikz,border=10pt]{standalone}
 \usepackage{tikz}
 \usetikzlibrary{positioning, fit, arrows.meta, shapes}
@@ -220,7 +219,6 @@ categories: command
 
 #### seq2seq
 ```
-% By J. Leon, Beerware licence is acceptable...
 \documentclass[tikz,border=10pt]{standalone}
 \usepackage{tikz}
 \usetikzlibrary{positioning, fit, arrows.meta, shapes}
