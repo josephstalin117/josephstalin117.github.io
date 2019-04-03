@@ -270,4 +270,4 @@ categories: command
   % End of code
 \end{document}
 ```
-![images](/source/tikz_lstm.png)
+![images](/source/tikz_seq2seq.png)
