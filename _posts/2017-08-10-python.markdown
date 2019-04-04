@@ -508,6 +508,9 @@ re
 re.match(pattern, string, flags=0)
 re.search(pattern, string, flags=0)
 
+re.I #忽略大小写
+re.M #多行模式
+
 line = "Cats are smarter than dogs";
 # Python的r前缀，就不用考虑转义的问题了
 searchObj = re.search( r'(.*) are (.*?) .*', line, re.M|re.I)
