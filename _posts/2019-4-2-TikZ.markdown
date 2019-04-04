@@ -5,6 +5,37 @@ date:   2019-4-2 20:35:35 +0800
 categories: command
 ---
 
+#### 基础格式
+```
+%使用standalone格式
+\documentclass[tikz,border=2pt]{standalone} 
+\begin{document} 
+\begin{tikzpicture} 
+\draw[step=1,color=gray!40] (-2,-2) grid (2,2); 
+\draw[->] (-3,0) -- (3,0); 
+\draw[->] (0,-3) -- (0,3); 
+\draw (0,0) circle (1);  
+\end{tikzpicture} 
+\end{document}
+```
+
+平移
+xshift ，x坐标轴平移。 yshift ，y坐标轴平移。 rotate ，旋转 。 注意xshift默认的单位并不是cm，如果要单位是cm需要写出来。
+```
+\begin{tikzpicture} 
+\draw[help lines] (0,0) grid (3,2); 
+\draw (0,0) -- (1,1); 
+\draw[red] (0,0) -- ([xshift=1cm] 1,1); 
+\end{tikzpicture}
+```
+
+旋转
+```
+\begin{tikzpicture} 
+\draw (0,0)[rotate=30]  ellipse (2 and 1); 
+\end{tikzpicture}
+```
+
 
 #### 流程图
 ```
