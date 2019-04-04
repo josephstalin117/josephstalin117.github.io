@@ -57,6 +57,10 @@ df.insert(0,'date',date)
 # 默认插入到第一列
 df['date']=date
 
+# 连续插入一行
+ df.loc[-1] = [2, 3, 4]  # adding a row
+ df.index = df.index + 1  # shifting index
+ df = df.sort_index()  # sorting by index
 ```
 
 get data from column & row
