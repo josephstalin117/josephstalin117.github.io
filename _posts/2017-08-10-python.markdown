@@ -458,6 +458,33 @@ with open("results/gen.{}_epoch{}.json".format(config.graph_name, num_epoch), 'w
 	fout.write(json.dumps(results))
 ```
 
+json
+```
+import json
+
+# some JSON:
+x =  '{ "name":"John", "age":30, "city":"New York"}'
+
+# parse x:
+y = json.loads(x)
+
+# the result is a Python dictionary:
+print(y["age"])
+
+# a Python object (dict):
+x = {
+  "name": "John",
+  "age": 30,
+  "city": "New York"
+}
+
+# convert into JSON:
+y = json.dumps(x)
+
+# the result is a JSON string:
+print(y)
+```
+
 pickle
 ```
 a = ['test value','test value 2','test value 3']
