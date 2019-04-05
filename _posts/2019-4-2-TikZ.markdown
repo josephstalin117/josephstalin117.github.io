@@ -47,6 +47,11 @@ xshift ，x坐标轴平移。 yshift ，y坐标轴平移。 rotate ，旋转 。
 pdftops -eps <pdf file> <eps file>
 ```
 
+node换行
+```
+\node at (-0.5,1)[draw, align=center]{example \\ example example};
+```
+
 
 #### 流程图
 ```
