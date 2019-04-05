@@ -42,6 +42,11 @@ xshift ，x坐标轴平移。 yshift ，y坐标轴平移。 rotate ，旋转 。
 \coordinate (A) at (\XA,\YA);
 ```
 
+输出eps图
+```
+pdftops -eps <pdf file> <eps file>
+```
+
 
 #### 流程图
 ```
