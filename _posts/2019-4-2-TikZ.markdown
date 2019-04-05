@@ -36,6 +36,12 @@ xshift ，x坐标轴平移。 yshift ，y坐标轴平移。 rotate ，旋转 。
 \end{tikzpicture}
 ```
 
+变量定义
+```
+\newcommand\XA{2}
+\coordinate (A) at (\XA,\YA);
+```
+
 
 #### 流程图
 ```
