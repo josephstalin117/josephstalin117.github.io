@@ -143,6 +143,10 @@ I_{t}=I_{0}+\sum_{i=1}^{t}(Q_{i}-d_{i})\label{con:inventoryflow}
 \ end{equation}
 
 Equation \ ref{con:inventoryflow} is the inventory flow formula.
+
+%实数集
+\usepackage{amssymb}
+\mathbb{R}
 ```
 
 #### 希腊字母
