@@ -55,6 +55,9 @@ This paper.\par
 %换行
 \\
 
+%调整页边距
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
 
 ```
 
@@ -410,6 +413,7 @@ $$x^n+y^n=z^n \eqno{(1)}$$
 
 \begin{document}
 
+\begin{table}
 \begin{tabular}{|l|c|r|} %l(left)居左显示 r(right)居右显示 c居中显示
 \hline 
 Name&Steve&Bill\\
@@ -417,6 +421,7 @@ Name&Steve&Bill\\
 Matlab&Mathmatica&Maple\\
 \hline 
 \end{tabular}
+\end{table}
 
 \end{document}
 ```
@@ -427,6 +432,7 @@ Matlab&Mathmatica&Maple\\
 \documentclass[UTF8]{ctexart}
 \begin{document}
 
+\begin{table}
 \begin{tabular}{ccc}
 \hline
 姓名& 学号& 性别\\
@@ -435,6 +441,7 @@ Steve Jobs& 001& Male\\
 Bill Gates& 002& Female\\
 \hline
 \end{tabular}
+\end{table}
 
 \end{document}
 ```
@@ -446,6 +453,7 @@ Bill Gates& 002& Female\\
 \usepackage{booktabs} %需要加载宏包{booktabs}
 \begin{document}
 
+\begin{table}
 \begin{tabular}{ccc}
 \toprule  %添加表格头部粗线
 姓名& 学号& 性别\\
@@ -454,6 +462,7 @@ Steve Jobs& 001& Male\\
 Bill Gates& 002& Female\\
 \bottomrule %添加表格底部粗线
 \end{tabular}
+\end{table}
 
 \end{document}
 ```
