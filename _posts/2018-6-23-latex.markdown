@@ -404,6 +404,88 @@ $$x^n+y^n=z^n \eqno{(1)}$$
 \bibliography{mybibfile.bib}
 ```
 
+#### 表格
+```
+\documentclass{article}
+
+\begin{document}
+
+\begin{tabular}{|l|c|r|} %l(left)居左显示 r(right)居右显示 c居中显示
+\hline 
+Name&Steve&Bill\\
+\hline  
+Matlab&Mathmatica&Maple\\
+\hline 
+\end{tabular}
+
+\end{document}
+```
+![images](/source/latex_table1.png)
+
+三线表
+```
+\documentclass[UTF8]{ctexart}
+\begin{document}
+
+\begin{tabular}{ccc}
+\hline
+姓名& 学号& 性别\\
+\hline
+Steve Jobs& 001& Male\\
+Bill Gates& 002& Female\\
+\hline
+\end{tabular}
+
+\end{document}
+```
+![images](/source/latex_table2.png)
+
+加载 booktabs 宏包之后可以使用 \toprule 和 \bottomrule 命令分别画出表格头和表格底的粗横线，而用 \midrule 画出表格中的横线。
+```
+\documentclass[UTF8]{ctexart}
+\usepackage{booktabs} %需要加载宏包{booktabs}
+\begin{document}
+
+\begin{tabular}{ccc}
+\toprule  %添加表格头部粗线
+姓名& 学号& 性别\\
+\midrule  %添加表格中横线
+Steve Jobs& 001& Male\\
+Bill Gates& 002& Female\\
+\bottomrule %添加表格底部粗线
+\end{tabular}
+
+\end{document}
+```
+
+表格合并
+```
+\documentclass[UTF8]{ctexart}
+\usepackage{multirow}
+\begin{document}
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|} %表格7列 全部居中显示
+\hline
+\multicolumn{7}{|c|}{事件}\\  %横向合并7列单元格  两侧添加竖线
+\hline
+\multirow{4}*{策略}&50&0&100&200&300&300\\  %纵向合并4行单元格 
+\cline{2-7}  %为第二列到第七列添加横线
+&100&100&0&100&200&200\\
+\cline{2-7}
+&150&200&100&0&100&200\\
+\cline{2-7}
+&200&300&200&100&0&300\\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}
+```
+![images](/source/latex_table3.png)
+
+
 #### vscode 设置
 ```
 "latex-workshop.latex.tools": [
