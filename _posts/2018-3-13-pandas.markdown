@@ -134,6 +134,15 @@ df.head(5)
 df = df.reset_index('water_year')
 df.head(5)
 
+# 根据某一列排序
+df.sort_index(axis=1)
+
+# 根据某一行进行排序
+df.sort_index()
+
+# 根据某一列值进行排序
+df.sort_values(by='a')
+
 # remove all duplicates and keep one
 df.drop_duplicates()
 
