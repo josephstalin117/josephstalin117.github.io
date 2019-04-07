@@ -411,6 +411,12 @@ import os
 if not os.path.exists(directory):
     os.makedirs(directory)
 
+# remove file
+os.remove("demofile.txt")
+
+# remove folder
+os.rmdir("myfolder")
+
 # 列出文件夹中的文件
 for filename in os.listdir(csv_dir):
 	if filename.endswith(".csv"):
