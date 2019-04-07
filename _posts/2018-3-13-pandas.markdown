@@ -68,6 +68,9 @@ get data from column & row
 # Getting a column by label
 df['rain_octsep']
 
+# 获得多列
+df[['a', 'b']]
+
 # Getting a column by label using .
 df.rain_octsep
 
@@ -161,6 +164,9 @@ for index, row in df.iterrows():
 
 # tolist
 List = df['row1'].tolist()
+
+# 指定列名 & 指定行属性 & 按值排序
+df[['algo_name', 'nout', 'rmse']][(df['nout']==1) & (df['dataset']=='beijing_do')].sort_values(by='algo_name')
 ```
 
 apply function
