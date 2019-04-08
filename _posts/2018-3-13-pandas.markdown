@@ -375,3 +375,9 @@ series = read_csv('shampoo-sales.csv', header=0, parse_dates=[0], index_col=0, s
 autocorrelation_plot(series)
 pyplot.show()
 ```
+
+setting
+```
+# display all text in a cell without truncation
+pd.set_option('display.max_colwidth', -1)
+```
