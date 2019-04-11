@@ -34,6 +34,13 @@ plt.yticks(fontsize=20)
 matplotlib.rcParams.update({'font.size': 22})
 ```
 
+调整横坐标数值
+```
+x=[1,2,3,4,5]
+plt.xticks(np.arange(1, 6, 1))
+plt.plot(x, np.sin(x))
+```
+
 调整线条颜色
 ```
 x = range(len(data))

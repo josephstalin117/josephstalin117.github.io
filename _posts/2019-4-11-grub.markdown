@@ -1,0 +1,42 @@
+---
+layout: post
+title:  grub
+date:   2019-4-11 20:35:35 +0800
+categories: command
+---
+
+grub secure
+```
+# 查看环境变量，这里可以查看启动路径和分区。
+set
+
+# 查看设备
+ls
+
+# 加载模块
+insmod
+
+# 指定用于启动系统的分区,在救援模式下设置grub启动分区
+root
+
+# 设定grub启动路径
+prefix
+```
+
+修改启动分区
+```
+grub rescue>root=(hd0,msdos7)
+grub rescue>prefix=/boot/grub //grub 路径设置 
+grub rescue>set root=(hd0,msdos7)
+grub rescue>set prefix=(hd0,msdos7)/boot/grub
+grub rescue>insmod normal // 启动 normal 启动
+
+grub rescue>normal
+```
+
+ubuntu 更新grub
+```
+sudo update-grub
+sudo grub-install /dev/sda
+```
+
