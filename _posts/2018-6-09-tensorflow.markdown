@@ -62,6 +62,9 @@ sudo nvidia-uninstall
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
+# 更新动态链接库
+ldconfig /usr/local/cuda-10.0/lib64
+
 nvcc --version
 ```
 
