@@ -5,7 +5,7 @@ date:   2016-04-04 21:35:35 +0800
 categories: command
 ---
 
-## linux属性
+#### linux属性
 ```
 # 查看linux版本
 lsb_release -a
@@ -14,7 +14,7 @@ lsb_release -a
 /etc/apt/sources.list
 ```
 
-## 用户权限
+#### 用户权限
 
 ```
 # 查看所有用户
@@ -89,7 +89,7 @@ wall "hello, world!"
 sudo chmod u+s `which ping`
 ```
 
-## 进程管理
+#### 进程管理
 ```
 # 查看进程
 ps -ef |grep vsftpd
@@ -104,7 +104,7 @@ lsof -i:80
 lsof -p 7876
 ```
 
-## 标准输入输出
+#### 标准输入输出
 ```
 echo log > /dev/null 2>&1
 
@@ -120,7 +120,7 @@ echo log > /dev/null 2>&1
 &
 ```
 
-## ubuntu apt
+#### ubuntu apt
 
 ```
 # list the installed software packages on your machine 
@@ -137,6 +137,21 @@ sudo apt-get remove gnome
 
 # 使用代理安装
 sudo apt-get -o Acquire::http::proxy="http://127.0.0.1:8118/" update
+```
+
+#### update-alternatives
+```
+# display 参数列出一个命令的所有可选命令
+update-alternatives --display java
+
+# config参数用于给某个命令选择一个link值
+update-alternatives --config java
+
+# install参数用于添加一个命令的link值，slave 创建的链接从属某一个主链接。
+update-alternatives --install /usr/bin/java java /usr/local/java/jdk-9/bin/java 1702
+
+# remove参数用于删除一个命令的link值，其附带的slave也将一起删除。
+update-alternatives –remove java /usr/local/jre1.6.0_20/bin/java
 ```
 
 #### grep
