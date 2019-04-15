@@ -19,6 +19,21 @@ tensorboard
 tensorboard --logdir ./_logs
 ```
 
+禁用开源驱动nouveau
+```
+sudo vim /etc/modprobe.d/blacklist.conf
+# 添加以下两行
+blacklist nouveau
+options nouveau modeset=0
+
+# 更新内核
+sudo update-initramfs -u
+sudo reboot
+
+# 查看是否禁用成功
+lsmod | grep nouveau
+```
+
 tfdbg
 ```
 from tensorflow.python import debug as tf_debug
@@ -34,10 +49,19 @@ nvidia-smi -l
 
 # 查看GPU是否可用
 lspci | grep -i nvidia
+
+# 卸载nvidia驱动
+sudo nvidia-uninstall
+
+其实只安装cuda即可，cuda自带nvidia驱动
 ```
 
 查看CUDA版本信息
 ```
+# 添加cuda环境变量
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
 nvcc --version
 ```
 

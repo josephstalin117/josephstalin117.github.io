@@ -40,3 +40,11 @@ sudo update-grub
 sudo grub-install /dev/sda
 ```
 
+开机花屏
+```
+1. 开机按esc进入grub模式
+2. 按e修改grub
+3. quite splash所在行后添加 3
+4. ctrl+x保存后重启
+```
+
