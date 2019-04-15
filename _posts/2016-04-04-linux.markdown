@@ -134,6 +134,9 @@ apt-get purge gnome
 
 # 卸载掉gnome
 sudo apt-get remove gnome
+
+# 使用代理安装
+sudo apt-get -o Acquire::http::proxy="http://127.0.0.1:8118/" update
 ```
 
 #### grep
