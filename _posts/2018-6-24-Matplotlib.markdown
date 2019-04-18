@@ -249,3 +249,12 @@ plt.show()
 ```
 
 ![images](/source/legend.png)
+
+生成eps图
+```
+# plt调用gcf函数取得当前绘制的figure并调用savefig函数
+# get current figure
+foo_fig = plt.gcf() 
+foo_fig.savefig('foo.eps', format='eps', dpi=1000)
+plt.show()
+```
