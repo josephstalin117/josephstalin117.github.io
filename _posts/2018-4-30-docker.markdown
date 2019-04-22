@@ -191,6 +191,9 @@ docker network ls
 
 # 删除网络
 docker network rm c520032c3d31
+
+# Use the docker network prune command to remove all unused networks.
+docker network prune
 ```
 
 
