@@ -160,6 +160,9 @@ if (position != s.npos){
 	cout << "Not found the flag" + flag;
 }
 
+//字符串结束符号
+\0
+
 //atoi字符串转换成整型数的
 using namespace std;
 

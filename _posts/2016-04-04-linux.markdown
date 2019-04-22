@@ -64,6 +64,7 @@ export PATH="/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:$PATH"
 
 # 改变文件拥有者和群组
 chown root: log2012.log
+chown -R joseph:joseph dir
 
 # 查看用户所在组
 groups user1
