@@ -546,3 +546,16 @@ z 		#最大化当前所在面板
 page up #向上滚动屏幕，q 退出
 page down #向下滚动屏幕，q 退出
 ```
+
+systemctl
+```
+# 立即启动一个服务
+$ sudo systemctl start apache.service
+
+# 立即停止一个服务
+$ sudo systemctl stop apache.service
+
+# 重启一个服务
+$ sudo systemctl restart apache.service
+
+```
