@@ -59,6 +59,8 @@ ctrl+r    #恢复上一步操作
 [N]>>    #一行或N行往右移动一个tab
 [N]<<    #一行或N行往左移动一个tab
 :set number #显示行号
+ctrl + s #冻结terminal
+ctrl + q #解冻
 ```
 
 ### 搜索

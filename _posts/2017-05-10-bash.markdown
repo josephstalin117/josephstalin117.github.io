@@ -187,3 +187,9 @@ echo "nameXnameX"|xargs -dX
 ls *.jpg | xargs -n1 -I cp {} /data/images
 
 ```
+
+等待
+```
+# 等待10s
+sleep 10
+```
