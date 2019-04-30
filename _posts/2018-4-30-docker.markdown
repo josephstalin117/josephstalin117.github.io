@@ -196,4 +196,12 @@ docker network rm c520032c3d31
 docker network prune
 ```
 
+docker换源
+```
+# 新建/etc/docker/daemon.json加入
+{
+  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
+}
+```
+
 

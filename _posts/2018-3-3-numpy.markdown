@@ -19,6 +19,12 @@ print(a)                  # Prints "[5, 2, 3]"
 b = np.array([[1,2,3],[4,5,6]])    # Create a rank 2 array
 print(b.shape)                     # Prints "(2, 3)"
 print(b[0, 0], b[0, 1], b[1, 0])   # Prints "1 2 4"
+
+# Fill the array with a scalar value.
+a = np.array([1, 2])
+>>> a.fill(0)
+>>> a
+array([0, 0])
 ```
 
 Create arrays:
@@ -350,13 +356,12 @@ a1=mat(a1)
 a1.I
 ```
 
-创建一个3*3的零矩阵，矩阵这里zeros函数的参数是一个tuple类型(3,3)
+创建一个`3*3`的零矩阵，矩阵这里zeros函数的参数是一个tuple类型(3,3)
 ```
 #matrix([[ 0.,  0.,  0.],
 #        [ 0.,  0.,  0.],
 #        [ 0.,  0.,  0.]])
-mat(zeros((3,3))) 
-
+mat(zeros((3,3)))
 
 ```
 
@@ -411,6 +416,14 @@ array([[0, 1, 2],
 array([1, 1, 1])
 >>> np.argmax(a, axis=1)
 array([2, 2])
+```
+
+numpy.clip
+```
+# Clip (limit) the values in an array.
+>>> a = np.arange(10)
+>>> np.clip(a, 1, 8)
+array([1, 1, 2, 3, 4, 5, 6, 7, 8, 8])
 ```
 
 numpy.reshape
