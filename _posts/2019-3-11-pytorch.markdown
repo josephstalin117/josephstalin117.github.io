@@ -19,8 +19,57 @@ print(x)
 x = torch.randn(4, 4)
 y = x.view(16)
 z = x.view(-1, 8)  # the size -1 is inferred from other dimensions
+
 # torch.Size([4, 4]) torch.Size([16]) torch.Size([2, 8])
 print(x.size(), y.size(), z.size())
+```
+
+view()
+```
+# Returns a new tensor with the same data as the self tensor but of a different shape.
+>>> x = torch.randn(4, 4)
+>>> x.size()
+torch.Size([4, 4])
+>>> y = x.view(16)
+>>> y.size()
+torch.Size([16])
+>>> z = x.view(-1, 8)  # the size -1 is inferred from other dimensions
+>>> z.size()
+torch.Size([2, 8])
+```
+
+permute()
+```
+# Permute the dimensions of this tensor.
+>>> x = torch.randn(2, 3, 5)
+>>> x.size()
+torch.Size([2, 3, 5])
+>>> x.permute(2, 0, 1).size()
+torch.Size([5, 2, 3])
+```
+
+repeat()
+```
+# Repeats this tensor along the specified dimensions.
+>>> x = torch.tensor([1, 2, 3])
+>>> x.repeat(4, 2)
+tensor([[ 1,  2,  3,  1,  2,  3],
+        [ 1,  2,  3,  1,  2,  3],
+        [ 1,  2,  3,  1,  2,  3],
+        [ 1,  2,  3,  1,  2,  3]])
+>>> x.repeat(4, 2, 1).size()
+torch.Size([4, 2, 3])
+```
+
+torch.zeros()
+```
+# Returns a tensor filled with the scalar value 0, with the shape defined by the variable argument sizes.
+>>> torch.zeros(2, 3)
+tensor([[ 0.,  0.,  0.],
+        [ 0.,  0.,  0.]])
+
+>>> torch.zeros(5)
+tensor([ 0.,  0.,  0.,  0.,  0.])
 ```
 
 简单的神经网络结构
