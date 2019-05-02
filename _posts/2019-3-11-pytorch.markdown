@@ -72,6 +72,28 @@ tensor([[ 0.,  0.,  0.],
 tensor([ 0.,  0.,  0.,  0.,  0.])
 ```
 
+torch.cat()
+```
+# Concatenates the given sequence of seq tensors in the given dimension. All tensors must either have the same shape (except in the concatenating dimension) or be empty.
+
+>>> x = torch.randn(2, 3)
+>>> x
+tensor([[ 0.6580, -1.0969, -0.4614],
+        [-0.1034, -0.5790,  0.1497]])
+>>> torch.cat((x, x, x), 0)
+tensor([[ 0.6580, -1.0969, -0.4614],
+        [-0.1034, -0.5790,  0.1497],
+        [ 0.6580, -1.0969, -0.4614],
+        [-0.1034, -0.5790,  0.1497],
+        [ 0.6580, -1.0969, -0.4614],
+        [-0.1034, -0.5790,  0.1497]])
+>>> torch.cat((x, x, x), 1)
+tensor([[ 0.6580, -1.0969, -0.4614,  0.6580, -1.0969, -0.4614,  0.6580,
+         -1.0969, -0.4614],
+        [-0.1034, -0.5790,  0.1497, -0.1034, -0.5790,  0.1497, -0.1034,
+         -0.5790,  0.1497]])
+```
+
 简单的神经网络结构
 ```
 import torch
