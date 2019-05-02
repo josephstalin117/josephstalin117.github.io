@@ -94,10 +94,27 @@ tensor([[ 0.6580, -1.0969, -0.4614,  0.6580, -1.0969, -0.4614,  0.6580,
          -0.5790,  0.1497]])
 ```
 
+torch.squeeze()
+```
+# 对数据的维度进行压缩，去掉维数为1的的维度，比如是一行或者一列这种，一个一行三列（1,3）的数去掉第一个维数为一的维度之后就变成（3）行。squeeze(a)就是将a中所有为1的维度删掉。不为1的维度没有影响。
+
+>>> x = torch.zeros(2, 1, 2, 1, 2)
+>>> x.size()
+torch.Size([2, 1, 2, 1, 2])
+>>> y = torch.squeeze(x)
+>>> y.size()
+torch.Size([2, 2, 2])
+>>> y = torch.squeeze(x, 0)
+>>> y.size()
+torch.Size([2, 1, 2, 1, 2])
+>>> y = torch.squeeze(x, 1)
+>>> y.size()
+torch.Size([2, 2, 1, 2])
+```
+
 torch.unsqueeze()
 ```
-Returns a new tensor with a dimension of size one inserted at the specified position. The returned tensor shares the same underlying data with this tensor.
-
+# 对数据维度进行扩充。给指定位置加上维数为一的维度，比如原本有个三行的数据（3），在0的位置加了一维就变成一行三列（1,3）。
 >>> x = torch.tensor([1, 2, 3, 4])
 >>> torch.unsqueeze(x, 0)
 tensor([[ 1,  2,  3,  4]])
