@@ -88,6 +88,9 @@ wall "hello, world!"
 
 # 添加软件权限
 sudo chmod u+s `which ping`
+
+# 更改文件夹权限
+chmod 775 -R dir
 ```
 
 #### 进程管理
