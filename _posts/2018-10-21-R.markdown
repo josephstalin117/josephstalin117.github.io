@@ -12,6 +12,9 @@ conda install -c r r-essentials
 
 基本操作
 ```
+# Get and print current working directory.
+print(getwd())
+
 # 设置工作目录
 setwd("F:/Projects/time_series_forecast/ARIMA")
 
@@ -74,6 +77,29 @@ x <- 30L
 if(is.integer(x)) {
    print("X is an Integer")
 }
+```
+
+数据分析
+```
+# 读取csv文件
+data2<-read.table('item.csv',header=TRUE,fileEncoding='utf-8')
+
+# 查询文件行数和列数
+print(is.data.frame(data))
+print(ncol(data))
+print(nrow(data))
+
+# Get the max salary from data frame.
+sal <- max(data$salary)
+print(sal)
+
+# Get the person detail having max salary.
+retval <- subset(data, salary == max(salary))
+print(retval)
+
+# 获取薪水大于600且是IT部分的员工信息
+info <- subset(data, salary > 600 & dept == "IT")
+print(info)
 ```
 
 类型转换
