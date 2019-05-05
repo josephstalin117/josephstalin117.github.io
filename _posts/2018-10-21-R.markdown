@@ -12,6 +12,9 @@ conda install -c r r-essentials
 
 基本操作
 ```
+# 下载包
+install.packages("lubridate", dependencies=TRUE, repos='http://cran.rstudio.com/')
+
 # Get and print current working directory.
 print(getwd())
 
@@ -45,9 +48,6 @@ names(x)
 
 # 删除变量
 rm(var.3)
-
-# 下载包
-install.packages("lubridate", dependencies=TRUE, repos='http://cran.rstudio.com/')
 
 # 绘图
 plot(data)
@@ -100,6 +100,11 @@ print(retval)
 # 获取薪水大于600且是IT部分的员工信息
 info <- subset(data, salary > 600 & dept == "IT")
 print(info)
+
+# 写入csv文件
+data <- read.csv("input.csv")
+retval <- subset(data, as.Date(start_date) > as.Date("2014-01-01"))
+write.csv(retval,"output.csv")
 ```
 
 类型转换
