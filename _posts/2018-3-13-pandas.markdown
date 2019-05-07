@@ -83,6 +83,9 @@ df[df.rain_octsep < 1000]
 # convert pandas float series to int and filter
 df = df[df['hour'].astype(int)==0]
 
+# 类型转换
+df['timestamp'] = df['datetime'].astype(int)
+
 # line replaces None with NaN
 df['column'].replace('None', np.nan, inplace=True)
 
@@ -325,6 +328,9 @@ end = datetime.datetime(2017,12,15,4)
 base_df['dateTime'] = pd.to_datetime(base_df['dateTime'])
 base_df = base_df.set_index(['dateTime'])
 new_df = base_df.loc[start:end]
+
+# 转换成时间戳
+cod_df['datetime'] = pd.to_datetime(cod_df["datetime"]).astype(int)/10**9
 
 # datetime format
 df = pd.DataFrame({"Date": ["26-12-2007", "27-12-2007", "28-12-2007"]})
