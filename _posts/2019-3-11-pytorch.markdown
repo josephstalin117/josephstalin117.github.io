@@ -22,6 +22,21 @@ z = x.view(-1, 8)  # the size -1 is inferred from other dimensions
 
 # torch.Size([4, 4]) torch.Size([16]) torch.Size([2, 8])
 print(x.size(), y.size(), z.size())
+
+# 查看变量类型
+print(a.dtype)
+
+# 查看变量位置
+print(a.device)
+
+# Variables wrap a Tensor
+# requires_grad indicates whether a variable is trainable.
+x = Variable(torch.ones(2, 2), requires_grad=True)
+# Variable containing:
+# 1  1
+# 1  1
+# [torch.FloatTensor of size 2x2]
+
 ```
 
 view()
@@ -70,6 +85,23 @@ tensor([[ 0.,  0.,  0.],
 
 >>> torch.zeros(5)
 tensor([ 0.,  0.,  0.,  0.,  0.])
+```
+
+torch.bmm()
+```
+# Batch Matrix x Matrix
+# Size 10x3x5
+batch1 = torch.randn(10, 3, 4)
+batch2 = torch.randn(10, 4, 5)
+r = torch.bmm(batch1, batch2)
+
+# Batch Matrix + Matrix x Matrix
+# Performs a batch matrix-matrix product
+# 3x4 + (5x3x4 X 5x4x2 ) -> 5x3x2
+M = torch.randn(3, 2)
+batch1 = torch.randn(5, 3, 4)
+batch2 = torch.randn(5, 4, 2)
+r = torch.addbmm(M, batch1, batch2)
 ```
 
 torch.cat()
