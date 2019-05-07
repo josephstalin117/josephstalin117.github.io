@@ -562,3 +562,11 @@ $ sudo systemctl stop apache.service
 $ sudo systemctl restart apache.service
 
 ```
+
+vsftpd
+```
+# /etc/vsftpd.conf
+
+# 增加匿名访问目录
+anon_root=/var/ftp
+```
