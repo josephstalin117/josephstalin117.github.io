@@ -270,7 +270,17 @@ print (S.name)
   
 # Access using getattr() 
 print ("The Student DOB using getattr() is : ",end ="") 
-print (getattr(S,'DOB')) 
+print (getattr(S,'DOB'))
+```
+
+slice
+```
+# A slice object is used to specify how to slice a sequence. You can specify where to start the slicing, and where to end. You can also specify the step, which allows you to e.g. slice only every other item.
+# slice(start, end, step)
+a = ("a", "b", "c", "d", "e", "f", "g", "h")
+x = slice(3, 5)
+# ('d', 'e')
+print(a[x])
 ```
 
 anaconda2
