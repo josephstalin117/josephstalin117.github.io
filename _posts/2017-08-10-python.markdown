@@ -283,6 +283,20 @@ x = slice(3, 5)
 print(a[x])
 ```
 
+kwargs
+```
+# You can use **kwargs to let your functions take an arbitrary number of keyword arguments
+
+>>> def print_keyword_args(**kwargs):
+...     # kwargs is a dict of the keyword args passed to the function
+...     for key, value in kwargs.items():
+...         print "%s = %s" % (key, value)
+... 
+>>> print_keyword_args(first_name="John", last_name="Doe")
+first_name = John
+last_name = Doe
+```
+
 anaconda2
 ```
 # Create a conda environment named tensorflow to run a version of Python by invoking the following command:
