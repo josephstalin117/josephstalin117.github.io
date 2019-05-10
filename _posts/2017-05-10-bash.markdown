@@ -34,7 +34,7 @@ Meta+.    #Loop through and paste the last argument of previous commands.
 Ctrl+r    #Search as you type
 ```
 
-#### 脚本
+#### 脚本shell
 
 脚本解释器
 ```
@@ -73,7 +73,7 @@ unset variable_name
 string="abcd"
 echo ${#string} #输出 4
 
-# 数组
+# 数组(注意间隔是空格)
 array_name=(value0 value1 value2 value3)
 
 # 下标定义数组

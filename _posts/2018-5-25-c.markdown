@@ -332,8 +332,6 @@ iterator begin()
 riterator end()
 ```
 
-
-
 STL reverse函数
 ```
 //转换0～5下标的元素
@@ -402,6 +400,30 @@ s.top();
 s.pop;
 # 5 20 30 10
 showstack(s);
+```
+
+STL queue
+```
+#include <queue>
+queue<int> q1;
+
+//返回最后一个元素
+q1.back()
+
+//如果队列空则返回真
+q1.empty()
+
+//返回第一个元素
+q1.front()
+
+//删除第一个元素
+q1.pop() 
+
+//在末尾加入一个元素
+q1.push()
+
+//返回队列中元素的个数
+q1.size()
 ```
 
 STL的pair用法 
