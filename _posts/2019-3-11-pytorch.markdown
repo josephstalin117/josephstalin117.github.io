@@ -87,6 +87,17 @@ tensor([[ 0.,  0.,  0.],
 tensor([ 0.,  0.,  0.,  0.,  0.])
 ```
 
+torch.mul()
+```
+# Multiplies each element of the input input with the scalar value and returns a new resulting tensor.
+
+>>> a = torch.randn(3)
+>>> a
+tensor([ 0.2015, -0.4255,  2.6087])
+>>> torch.mul(a, 100)
+tensor([  20.1494,  -42.5491,  260.8663])
+```
+
 torch.bmm()
 ```
 # Batch Matrix x Matrix
@@ -198,6 +209,17 @@ class Net(nn.Module):
 
 net = Net()
 print(net)
+# 输出网络结构
+
+input = torch.randn(1, 1, 32, 32)
+out = net(input)
+print(out)
+# 输出预测结果
+
+params = list(net.parameters())
+print(len(params))
+print(params[0].size())  # conv1's .weight
+# The learnable parameters of a model are returned by net.parameters()
 ```
 
 nn
