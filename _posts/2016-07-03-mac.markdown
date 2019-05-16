@@ -44,7 +44,7 @@ cd ~         #同样也是回到主目录
 jobs control  
 ```
 Ctrl+z #will suspend the currently forgrounded program
-bg #
+bg #将进程搬到后台运行（Background）
 fg jobID #place job in the foreground, and make it the current job.
 jobs #show the following job running in the background.
 

@@ -412,6 +412,9 @@ umount /mnt/cdrom
 ```
 # opens a file or URL in the user's preferred application
 xdg-open $file
+
+# 后台打开pycharm
+./pycharm &
 ```
 
 #### ss
