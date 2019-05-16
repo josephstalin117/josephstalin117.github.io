@@ -91,6 +91,9 @@ REVOKE ALL PRIVILEGES ON phpmyadmin.* FROM 'phpmyadmin'@'localhost';
 显示数据库
 SHOW DATABASES;
 
+选择数据库
+use DATABASE;
+
 reload
 FLUSH PRIVILEGES;
 ```
