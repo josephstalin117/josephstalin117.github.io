@@ -291,3 +291,63 @@ for i in inputs:
     # after each step, hidden contains the hidden state.
     out, hidden = lstm(i.view(1, 1, -1), hidden)
 ```
+
+序列化保存模型
+```
+#save
+torch.save(model.state_dict(), PATH)
+
+#load
+model = CivilNet(*args, **kwargs)
+model.load_state_dict(torch.load(PATH))
+model.eval()
+```
+
+序列化中间过程中的checkpoint
+```
+#save
+torch.save({
+            'epoch': epoch,
+            'model_state_dict': model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'loss': loss,
+            ...
+            }, PATH)
+
+#load
+model = CivilNet(*args, **kwargs)
+optimizer = TheOptimizerClass(*args, **kwargs)
+
+checkpoint = torch.load(PATH)
+model.load_state_dict(checkpoint['model_state_dict'])
+optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+epoch = checkpoint['epoch']
+loss = checkpoint['loss']
+
+model.train()
+#model.eval()
+```
+
+将多个模型序列化到一个文件里
+```
+#save
+torch.save({
+            'modelA_state_dict': modelA.state_dict(),
+            'modelB_state_dict': modelB.state_dict(),
+            'optimizerA_state_dict': optimizerA.state_dict(),
+            'optimizerB_state_dict': optimizerB.state_dict(),
+            ...
+            }, PATH)
+
+#load
+modelA = TheModelAClass(*args, **kwargs)
+modelB = TheModelBClass(*args, **kwargs)
+optimizerA = TheOptimizerAClass(*args, **kwargs)
+optimizerB = TheOptimizerBClass(*args, **kwargs)
+
+checkpoint = torch.load(PATH)
+modelA.load_state_dict(checkpoint['modelA_state_dict'])
+modelB.load_state_dict(checkpoint['modelB_state_dict'])
+optimizerA.load_state_dict(checkpoint['optimizerA_state_dict'])
+optimizerB.load_state_dict(checkpoint['optimizerB_state_dict'])
+```
