@@ -40,6 +40,7 @@ categories: command
 \subsection{State Key Laboratory of ISN }
 \paragraph{XiDian University} is the best university in communications industry. 
 Hello, world!
+
 \end{document}
 ```
 
@@ -59,6 +60,8 @@ This paper.\par
 \usepackage{geometry}
 \geometry{a4paper,scale=0.8}
 
+%文字加粗
+\textbf{文本}
 ```
 
 添加图片
@@ -547,4 +550,32 @@ Bill Gates& 002& Female\\
         ]
     }
 ],
+```
+
+beamer
+```
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{bookmark}
+\usepackage{graphicx}
+\usepackage{xeCJK} %导入中文包
+\setCJKmainfont{SimHei} %中文字体采用黑体  Microsoft YaHei
+\usetheme{Hannover}
+\usecolortheme{spruce}
+\tiny
+\title{Graph Convolutional Network}
+\author{josephlin}
+
+\begin{document}
+
+\frame{Graph Convolutional Network}
+
+\section{Introduction}
+\begin{frame}
+    \frametitle{CNN}
+    CNN中的卷积本质上就是利用一个共享参数的过滤器（kernel），通过计算中心像素点以及相邻像素点的加权和来构成feature map实现空间特征的提取，当然加权系数就是卷积核的权重系数。卷积核的系数通过是随机化初值，然后根据误差函数通过反向传播梯度下降进行迭代优化。\\
+    \includegraphics[height=4cm]{images/feature_map.jpg}
+\end{frame}
+\end{document}
 ```
