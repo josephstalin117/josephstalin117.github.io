@@ -181,7 +181,6 @@ which firefox
 ```
 
 #### network
-
 ```
 # 启动以太网卡
 ifconfig eth0 up
@@ -189,9 +188,13 @@ sudo /etc/init.d/networking restart
 
 # 网络重启
 sudo /etc/init.d/networking restart
+sudo systemctl restart NetworkManager.service
 
 # 查看所有路由
 route -n
+
+# 查看网络地址
+ip a
 
 # 去除IP地址
 ifconfig eh0 0.0.0.0
