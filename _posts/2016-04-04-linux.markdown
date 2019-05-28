@@ -10,6 +10,9 @@ categories: command
 # 查看linux版本
 lsb_release -a
 
+# 查看nvidia显卡
+lspci | grep -i nvidia
+
 # 换源
 /etc/apt/sources.list
 ```
@@ -195,6 +198,12 @@ route -n
 
 # 查看网络地址
 ip a
+
+# 查看无线网络连接情况
+iwconfig
+
+# 查看以太网接口
+lspci |grep -i 'eth'
 
 # 去除IP地址
 ifconfig eh0 0.0.0.0
