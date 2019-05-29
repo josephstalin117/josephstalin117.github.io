@@ -28,6 +28,7 @@ print(a.dtype)
 
 # 查看变量位置
 print(a.device)
+a.is_cuda
 
 # Variables wrap a Tensor
 # requires_grad indicates whether a variable is trainable.
@@ -153,6 +154,27 @@ torch.Size([2, 1, 2, 1, 2])
 >>> y = torch.squeeze(x, 1)
 >>> y.size()
 torch.Size([2, 2, 1, 2])
+```
+
+类型转换
+```
+# cpu->gpu
+data.cuda()
+
+# gpu->cpu
+data.cpu()
+
+# Tensor–>Numpy.ndarray
+data.numpy()
+
+# Numpy.ndarray–>Tensor
+torch.from_numpy(data)
+
+# torch.double()将该tensor投射为double类型
+newtensor = tensor.double()
+
+# torch.float()将该tensor投射为float类型
+newtensor = tensor.float()
 ```
 
 torch.unsqueeze()
