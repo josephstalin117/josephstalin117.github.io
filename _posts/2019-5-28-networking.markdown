@@ -26,3 +26,16 @@ arp -a
 # 查看arp缓存表获取局域网IP地址
 cat /proc/net/arp
 ```
+
+proxychains
+```
+# install
+sudo apt install proxychains
+
+# 修改配置
+vim /etc/proxychains.conf
+socks4 127.0.0.1 9095 -> socks5 127.0.0.1 1080
+
+# 使用
+proxychains4 wget http://xxx.com/xxx.zip
+```
