@@ -585,3 +585,17 @@ vsftpd
 # 增加匿名访问目录
 anon_root=/var/ftp
 ```
+
+修改文件名编码
+```
+apt-get install convmv
+
+gbk->utf-8
+convmv -f gbk -t UTF-8 --notest -r 目录
+convmv -f gbk -t UTF-8 --notest 测试.txt
+
+#-f 参数是指出转换前的编码；
+#-t 是转换后的编码；
+#-r 递归处理子文件夹；
+#--notest 真正进行操作，请注意在默认情况下是不对文件进行真实操作的，而只是试验；
+```
