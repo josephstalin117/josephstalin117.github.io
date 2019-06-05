@@ -372,6 +372,9 @@ daily_data = daily_groups.sum()
 # Convert a NumPy array to a Pandas series
 np_array = np.array([10, 20, 30, 40, 50])
 new_series = pd.Series(np_array)
+
+# Convert series to numpy array
+np_array = series.values
 ```
 
 data analysis
