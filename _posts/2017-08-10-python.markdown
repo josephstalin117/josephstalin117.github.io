@@ -214,7 +214,7 @@ new_list = list(map(lambda x: x * 2 , my_list))
 # Output: [2, 10, 8, 12, 16, 22, 6, 24]
 print(new_list)
 
-# lambda
+# 冒号表示匿名函数的参数
 f = lambda x: x*x
 # 25
 f(5)
