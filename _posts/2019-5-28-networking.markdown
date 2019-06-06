@@ -39,3 +39,8 @@ socks4 127.0.0.1 9095 -> socks5 127.0.0.1 1080
 # 使用
 proxychains4 wget http://xxx.com/xxx.zip
 ```
+
+v2ray
+```
+curl https://install.direct/go.sh | sudo bash
+```

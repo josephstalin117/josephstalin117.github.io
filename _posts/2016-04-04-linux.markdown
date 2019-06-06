@@ -413,11 +413,19 @@ cmake --version
 #Type this command to list the devices that are accessible on the computer:
 fdisk -l
 
-# 挂载文件
+#格式化ext4
+sudo mkfs.ext4 /dev/sdb1
+
+# 创建目录并挂载文件
 mount /dev/cdrom /mnt/cdrom
 
 # 取消挂载
 umount /mnt/cdrom
+
+# 开机自动挂载
+sudo blkid
+# 添加UUID到/etc/fstab 添加UUID=63295b70-daec-4253-b659-821f51200be9 /home/data ext4 defaults,errors=remount-ro 0 1到/etc/fstab 其中UUID后面跟sdb1的UUID 重启
+
 ```
 
 #### 使用图形界面打开文件
