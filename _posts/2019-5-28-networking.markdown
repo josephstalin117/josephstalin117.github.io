@@ -68,15 +68,19 @@ cat /etc/resolv.conf
 
 静态路由设置
 ```
-/etc/netplay/
+/etc/netplay/01-network-manager.yaml
 
+# 应用设置
+sudo netplan apply
+
+# 设置静态路由
 network:
   version: 2
   renderer: networkd
   ethernets:
     enp3s0:
       dhcp4: no
-      addresses: [192.168.1.110/24]
+      addresses: [192.168.1.110/24, ]
       gateway4:  192.168.1.1
       nameservers:
         addresses: [8.8.8.8, 114.114.114.114]
