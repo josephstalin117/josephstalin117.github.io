@@ -183,7 +183,7 @@ find . -name "*.err"
 which firefox
 ```
 
-#### network
+#### networking
 ```
 # 启动以太网卡
 ifconfig eth0 up

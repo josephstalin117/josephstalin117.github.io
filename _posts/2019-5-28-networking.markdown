@@ -40,6 +40,48 @@ socks4 127.0.0.1 9095 -> socks5 127.0.0.1 1080
 proxychains4 wget http://xxx.com/xxx.zip
 ```
 
+route
+```
+# 查看路由表
+route
+
+# 添加默认路由
+route add default gw 172.18.3.254
+
+# 添加静态路由
+route add -net 192.168.4.0/24 gw 60.12.105.145 dev eth1
+
+# 删除静态路由
+route del -net 192.168.100.0/24 gw 192.168.100.1
+```
+
+traceroute
+```
+# 追踪网络数据包的路由
+traceroute baidu.com
+```
+
+查看DNS服务器
+```
+cat /etc/resolv.conf
+```
+
+静态路由设置
+```
+/etc/netplay/
+
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp3s0:
+      dhcp4: no
+      addresses: [192.168.1.110/24]
+      gateway4:  192.168.1.1
+      nameservers:
+        addresses: [8.8.8.8, 114.114.114.114]
+```
+
 v2ray
 ```
 curl https://install.direct/go.sh | sudo bash
