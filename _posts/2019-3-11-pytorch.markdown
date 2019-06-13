@@ -30,6 +30,12 @@ print(a.dtype)
 print(a.device)
 a.is_cuda
 
+# 更换device位置
+cuda0 = torch.device('cuda:0')
+d = torch.randn(2, device=cuda2)
+e = torch.randn(2).to(cuda2)
+f = torch.randn(2).cuda(cuda2)
+
 # Variables wrap a Tensor
 # requires_grad indicates whether a variable is trainable.
 x = Variable(torch.ones(2, 2), requires_grad=True)

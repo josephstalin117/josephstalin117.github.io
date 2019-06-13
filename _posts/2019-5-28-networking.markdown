@@ -48,11 +48,29 @@ route
 # 添加默认路由
 route add default gw 172.18.3.254
 
+# 删除默认路由
+route del default gw 82.17.68.254
+
 # 添加静态路由
 route add -net 192.168.4.0/24 gw 60.12.105.145 dev eth1
 
 # 删除静态路由
 route del -net 192.168.100.0/24 gw 192.168.100.1
+```
+
+ip
+```
+# 查看ip地址
+ip addr
+
+# 删除静态路由
+ip route del 192.0.2.0/26 dev eth0
+
+# 添加静态路由 via指网关地址
+ip route add 192.0.2.0/26 via 192.0.2.1 dev eth0
+
+# 添加默认路由
+ip route add default via 192.168.0.1 dev eth0
 ```
 
 traceroute

@@ -180,6 +180,13 @@ if 'myVar' in globals():
   # myVar exists.
 ```
 
+判断变量类型
+```
+x = 12
+>>> isinstance(x, int)
+True
+```
+
 python 默认执行
 ```
 if __name__ == '__main__':
