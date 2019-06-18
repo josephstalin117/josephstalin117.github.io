@@ -331,6 +331,9 @@ tar -z
 tar -xvf file.tar
 tar -zxvf data.tar.gz
 
+#unzip
+unzip file.zip -d destination_folder
+
 # 打包
 tar czvf FileName.tar DirName
 zip FileName.zip DirName
