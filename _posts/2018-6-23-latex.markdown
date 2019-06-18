@@ -130,33 +130,33 @@ $$行间公司$$
 %向量
 \overrightarrow{AB}
 
-%占位或对齐
+占位或对齐
 &
 
-%公式组合
+公式组合
 \begin{equation*} %带*无编号
 \end{equation*}
 
-%绝对值
+绝对值
 \left| \frac{a}{b} \right|
 
-%数学公式空格
+数学公式空格
 a \qquad b
 
-%公式引用
+公式引用
 \ begin{equation}
 I_{t}=I_{0}+\sum_{i=1}^{t}(Q_{i}-d_{i})\label{con:inventoryflow}
 \ end{equation}
 
 Equation \ ref{con:inventoryflow} is the inventory flow formula.
 
-%实数集
+实数集
 \usepackage{amssymb}
 \mathbb{R}
 
 数学字体加粗
 \usepackage{bm}
-\bm{${{-0.628}^{**}}$}
+\bm{R}
 ```
 
 #### 希腊字母
