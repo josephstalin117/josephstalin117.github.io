@@ -153,6 +153,10 @@ Equation \ ref{con:inventoryflow} is the inventory flow formula.
 %实数集
 \usepackage{amssymb}
 \mathbb{R}
+
+数学字体加粗
+\usepackage{bm}
+\bm{${{-0.628}^{**}}$}
 ```
 
 #### 希腊字母
