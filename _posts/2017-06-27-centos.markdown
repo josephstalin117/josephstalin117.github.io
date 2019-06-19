@@ -11,6 +11,11 @@ cat /etc/resolv.conf
 route -n #路由表
 ```
 
+查看centos版本
+```
+cat /etc/redhat-release
+```
+
 yum
 ```
 # Add Nginx Repository
