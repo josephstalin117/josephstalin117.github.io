@@ -579,14 +579,16 @@ page down #向下滚动屏幕，q 退出
 systemctl
 ```
 # 立即启动一个服务
-$ sudo systemctl start apache.service
+sudo systemctl start apache.service
 
 # 立即停止一个服务
-$ sudo systemctl stop apache.service
+sudo systemctl stop apache.service
 
 # 重启一个服务
-$ sudo systemctl restart apache.service
+sudo systemctl restart apache.service
 
+# 查看服务状态
+sudo systemctl status apache.service
 ```
 
 vsftpd
