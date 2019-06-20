@@ -157,6 +157,15 @@ Equation \ ref{con:inventoryflow} is the inventory flow formula.
 数学字体加粗
 \usepackage{bm}
 \bm{R}
+
+撇号
+a'
+
+角度
+90^\circ
+
+exp
+\exp
 ```
 
 #### 希腊字母
