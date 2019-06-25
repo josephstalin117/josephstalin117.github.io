@@ -235,12 +235,12 @@ $A^{\mathrm{T}}$
 $A^{\mathrm{T}}$
 ```
 
-多行公式堆积
+多行公式堆积(nonumber 代表没有公式编号)
 ```
 % & 指定位置对齐
 \begin{align}
-	x &= t + \cos{t} + 1\\
-	y &= 2\sin{t}
+	x &= t + \cos{t} + 1 \\
+	y &= 2\sin{t} \nonumber
 \end{align}
 ```
 
