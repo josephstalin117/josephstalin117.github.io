@@ -63,7 +63,7 @@ df['date']=date
  df = df.sort_index()  # sorting by index
 ```
 
-get data from column & row
+get data from column & row 数据过滤
 ```
 # Getting a column by label
 df['rain_octsep']
@@ -82,6 +82,12 @@ df[df.rain_octsep < 1000]
 
 # convert pandas float series to int and filter
 df = df[df['hour'].astype(int)==0]
+
+# 多重数据过滤
+df[['algo_name', 'rmse']][(df['nout']==2) & (df['dataset']=='beijing_do_s') & (df['filter'].isna())].sort_values(by='rmse')
+
+# 过滤值是NaN的行
+df['filter'].isna()
 
 # 类型转换
 df['timestamp'] = df['datetime'].astype(int)
