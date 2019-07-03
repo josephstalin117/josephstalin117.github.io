@@ -162,6 +162,12 @@ torch.Size([2, 1, 2, 1, 2])
 torch.Size([2, 2, 1, 2])
 ```
 
+touch.nn.Linear
+```
+#Applies a linear transformation to the incoming data:y = xAT+b
+touch.nn.Linear(in_features, out_features, bias=True)
+```
+
 矩阵转置
 ```
 >>> x = torch.randn(2, 3)
