@@ -326,7 +326,7 @@ for t in range(500):
 
 nn.LSTM
 ```
-lstm = nn.LSTM(3, 3)  # Input dim is 3, output dim is 3
+lstm = nn.LSTM(3, 3, 2)  # Input dim is 3, output dim is 3, num_layers is 2 mean stacking two LSTMs together to form a stacked LSTM
 inputs = [torch.randn(1, 3) for _ in range(5)]  # make a sequence of length 5
 
 # initialize the hidden state.
