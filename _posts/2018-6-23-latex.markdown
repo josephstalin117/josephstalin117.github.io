@@ -75,6 +75,17 @@ This paper.\par
 %修改图片大小缩放80%
 \includegraphics[width = .8\textwidth]{a.jpg}
 
+%crap image
+\usepackage{graphicx}
+...
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[trim=left bottom right top, clip]{file}
+    \caption{default}
+    \label{default}
+    \end{center}
+\end{figure}
+
 %图片说明
 \begin{figure}[!ht]
 \centering
