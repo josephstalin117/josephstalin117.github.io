@@ -38,6 +38,9 @@ usermod -U newuser1
 # 踢掉用户
 pkill -kill -t tty
 
+# 停用用户所有进程
+pkill -u user
+
 # 显示文件最后5行内容
 tail -n 5 test.log
 

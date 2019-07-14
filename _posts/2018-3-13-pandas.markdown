@@ -342,6 +342,16 @@ cod_df['datetime'] = pd.to_datetime(cod_df["datetime"]).astype(int)/10**9
 df = pd.DataFrame({"Date": ["26-12-2007", "27-12-2007", "28-12-2007"]})
 df["Date"] = pd.to_datetime(df["Date"]).dt.strftime('%Y-%m-%d')
 print(df)
+
+# 获取不同时间
+df['hour'] = df['date'].dt.hour
+df['dayofweek'] = df['date'].dt.dayofweek
+df['quarter'] = df['date'].dt.quarter
+df['month'] = df['date'].dt.month
+df['year'] = df['date'].dt.year
+df['dayofyear'] = df['date'].dt.dayofyear
+df['dayofmonth'] = df['date'].dt.day
+df['weekofyear'] = df['date'].dt.weekofyear
 ```
 
 pandas.series
