@@ -62,6 +62,17 @@ This paper.\par
 
 %文字加粗
 \textbf{文本}
+
+%文字颜色
+\usepackage{xcolor}
+\textcolor{<color>}{<text>}
+
+%文字删除线
+\usepackage{ulem}
+\sout{文字} %删除线
+\uwave{文字} %波浪线
+\xout{文字} %斜删除线
+\uuline{文字}  %双下划线
 ```
 
 添加图片
