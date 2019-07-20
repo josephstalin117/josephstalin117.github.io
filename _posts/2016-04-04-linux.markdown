@@ -99,6 +99,12 @@ sudo chmod u+s `which ping`
 chmod 775 -R dir
 ```
 
+#### 查看日志文件
+```
+# 查看系统重启日志
+last |grep reboot
+```
+
 #### 进程管理
 ```
 # 查看进程
