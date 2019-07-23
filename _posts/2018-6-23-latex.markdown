@@ -176,6 +176,12 @@ Equation \ ref{con:inventoryflow} is the inventory flow formula.
 \usepackage{amssymb}
 \mathbb{R}
 
+花体
+\mathcal{L}
+
+空心
+\mathbb{R}
+
 数学字体加粗
 \usepackage{bm}
 \bm{R}
