@@ -165,6 +165,9 @@ $$行间公司$$
 绝对值
 \left| \frac{a}{b} \right|
 
+二范数
+\left\|Q\right\|
+
 数学公式空格
 a \qquad b
 
