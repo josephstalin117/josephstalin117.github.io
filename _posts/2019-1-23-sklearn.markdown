@@ -24,3 +24,27 @@ from sklearn.metrics import mean_squared_error
 rmse = sqrt(mean_squared_error(inv_y, inv_yhat))
 ```
 
+GridSearchCV
+```
+# Exhaustive search over specified parameter values for an estimator.
+# 自动调参
+
+# 设置超参数
+param_grid = [
+  {'C': [1, 10, 100, 1000], 'kernel': ['linear']},
+  {'C': [1, 10, 100, 1000], 'gamma': [0.001, 0.0001], 'kernel': ['rbf']},
+]
+
+svm_model = svm.SVC()
+
+# 获取选择的最优模型
+clf = GridSearchCV(svm_model, param_grid, cv=5)
+clf.fit(X_train, y_train)
+
+# 获取最优模型
+best_model = clf.best_estimator_
+
+# 查看最优超参数配置
+print(clf.best_params_)
+```
+
