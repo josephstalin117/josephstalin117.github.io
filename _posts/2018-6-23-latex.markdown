@@ -159,6 +159,9 @@ $$行间公司$$
 \begin{equation*} %带*无编号
 \end{equation*}
 
+极小值
+\min
+
 绝对值
 \left| \frac{a}{b} \right|
 
