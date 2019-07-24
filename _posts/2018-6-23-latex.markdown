@@ -278,6 +278,17 @@ $A^{\mathrm{T}}$
 \end{align}
 ```
 
+大括号
+```
+f(x)=\left\{
+\begin{aligned}
+x & = & \cos(t) \\
+y & = & \sin(t) \\
+z & = & \frac xy
+\end{aligned}
+\right.
+```
+
 矩阵
 $$\begin{matrix} x&y\\z&v \end{matrix}$$
 $$\begin{vmatrix} x&y\\z&v \end{vmatrix}$$
