@@ -471,6 +471,23 @@ Matlab&Mathmatica&Maple\\
 ```
 ![images](/source/latex_table1.png)
 
+调整表格大小
+```
+\begin{table}
+
+\caption{表格标题}
+
+\scalebox{0.9}{
+
+\begin{tabular}
+
+……
+
+\end{tabular}}
+
+\end{table}
+```
+
 三线表
 ```
 \documentclass[UTF8]{ctexart}
