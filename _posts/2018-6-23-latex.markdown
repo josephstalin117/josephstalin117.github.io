@@ -159,8 +159,14 @@ $$行间公司$$
 \begin{equation*} %带*无编号
 \end{equation*}
 
+极小值
+\min
+
 绝对值
 \left| \frac{a}{b} \right|
+
+二范数
+\left\|Q\right\|
 
 数学公式空格
 a \qquad b
@@ -270,6 +276,17 @@ $A^{\mathrm{T}}$
 	x &= t + \cos{t} + 1 \\
 	y &= 2\sin{t} \nonumber
 \end{align}
+```
+
+大括号
+```
+f(x)=\left\{
+\begin{aligned}
+x & = & \cos(t) \\
+y & = & \sin(t) \\
+z & = & \frac xy
+\end{aligned}
+\right.
 ```
 
 矩阵
