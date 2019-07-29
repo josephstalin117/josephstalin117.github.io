@@ -1,0 +1,17 @@
+---
+layout: post
+title:  vscode
+date:   2019-07-29 20:35:35 +0800
+categories: essay
+---
+
+remote ssh
+```
+# .ssh/config
+Host Tokyo
+    HostName 8.8.8.8 #这里改成你的服务器 IP
+    User vscode
+    ForwardAgent yes
+    IdentityFile C:/Users/Administrator/.ssh/id_ecdsa #使用的 ssh key 
+    #ProxyCommand connect -H 127.0.0.1:1080 %h %p #HTTP代理需要的自己加
+```
