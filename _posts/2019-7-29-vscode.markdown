@@ -8,8 +8,8 @@ categories: essay
 remote ssh
 ```
 # .ssh/config
-Host Tokyo
-    HostName 8.8.8.8 #这里改成你的服务器 IP
+Host 8.8.8.8 #这里改成你的服务器 IP
+    HostName 名字
     User vscode
     ForwardAgent yes
     IdentityFile C:/Users/Administrator/.ssh/id_ecdsa #使用的 ssh key 
