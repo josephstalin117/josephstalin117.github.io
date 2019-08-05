@@ -649,6 +649,11 @@ Bill Gates& 002& Female\\
 ],
 ```
 
+pdf2eps
+```
+pdftops -eps [file].pdf
+```
+
 beamer
 ```
 \documentclass{beamer}
