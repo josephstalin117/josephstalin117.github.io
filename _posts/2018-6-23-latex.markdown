@@ -111,7 +111,28 @@ b 底部。将图形放置在页面的底部。
 p 浮动页。将图形放置在一只允许有浮动对象的页面上。
 htb 一般使用
 !h 试图放在当前位置
-ht 
+ht
+
+%并排图片
+\usepackage{graphicx}
+\usepackage{subfigure}
+\begin{figure}[htbp]
+  \centering
+  \subfigure[name of the subfigure]{
+    \begin{minipage}{8cm}
+      \centering                               
+      \includegraphics[width = .9\textwidth]{images/hidden_rmse.eps}
+    \end{minipage}
+  }
+  \subfigure[name of the subfigure]{
+    \begin{minipage}{8cm}
+      \centering
+      \includegraphics[width = .9\textwidth]{images/nin_rmse.eps}
+    \end{minipage}
+  }
+  \caption{name of the figure}
+  \label{fig:1}
+\end{figure}
 ```
 
 #### 数学公式
