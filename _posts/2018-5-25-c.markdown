@@ -118,6 +118,12 @@ int 4字节
 short int 2字节
 float 4字节
 double 8字节
+
+//等价于null, c++11
+nullptr
+
+//转换为string型, c++17
+to_string()
 ```
 
 auto 存储类
