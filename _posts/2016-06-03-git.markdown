@@ -194,3 +194,33 @@ git merge [branch]
 # 删除分支
 git branch -d [branchname]
 ```
+
+remote远程主机管理
+```
+# 显示所有远程主机
+git remote
+
+# 删除远程主机
+git remote rm <主机名>
+
+# 添加远程主机
+git remote add <主机名> <网址>
+```
+
+fetch取回远程主机的更新
+```
+git fetch <远程主机名>
+
+# 取回远程主机的特定分支更新
+git fetch <远程主机名> <分支名>
+
+# 查看远程分支remote
+git branch -r
+
+# 从远程分支上创建新分支
+git checkout -b newBrach origin/master
+
+# 本地分支合并远程分支
+git merge origin/master
+git rebase origin/master
+```
