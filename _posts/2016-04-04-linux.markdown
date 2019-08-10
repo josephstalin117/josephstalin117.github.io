@@ -74,6 +74,9 @@ chown -R joseph:joseph dir
 # 查看用户所在组
 groups user1
 
+# 查看用户信息
+id user1
+
 # 修改密码
 sudo passwd user
 

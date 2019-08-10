@@ -1,0 +1,41 @@
+---
+layout: post
+title:  kvm
+date:   2019-07-29 20:35:35 +0800
+categories: essay
+---
+
+virsh指令
+```
+#列出当前虚拟机列表，不包括未启动的
+virsh list
+
+#列出所有虚拟机，包括所有已经定义的虚拟机
+virsh list --all 
+
+#关闭虚拟机
+virsh destroy vm-name 
+
+#启动虚拟机
+virsh start vm-name
+
+#编辑虚拟机xml文件
+virsh edit vm-name 
+
+#删除虚拟机
+virsh undefine vm-name 
+
+#停止虚拟机
+virsh shutdown vm-name 
+
+#重启虚拟机
+virsh reboot vm-name
+
+#虚拟机随宿主机启动
+virsh autostart vm-name 
+```
+
+安装虚拟机
+```
+virt-install --name vm01 --boot network,cdrom,menu=on --ram 1024 --vcpus=1 --os-variant=rhel6 --accelerate --cdrom=/opt/iso/CentOS-6.4-x86_64-bin-DVD1.iso --disk path=/opt/kvmimg/vm01.img,size=5,bus=virtio --bridge=br0,model=virtio --autostart --vnc --vncport=5900 --vnclisten=0.0.0.0
+```
