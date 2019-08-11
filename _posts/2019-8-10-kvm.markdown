@@ -48,3 +48,14 @@ virt-install --name vm01 \
 --bridge=virbr0,model=virtio \
 --autostart --vnc --vncport=5900 --vnclisten=0.0.0.0
 ```
+
+桥接管理
+```
+# 显示所有网桥
+brctl show
+```
+
+图形化界面
+```
+virt-manager
+```
