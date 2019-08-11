@@ -226,6 +226,9 @@ cin >>a[2];
 cin >>a[5];
 cin >>a[6];
 
+//返回空的vector
+return {};
+
 //全部输出
 int i ;
 for(i=0; i<a.size(); i++) cout<<a[i]<<" " ;
