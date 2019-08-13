@@ -85,6 +85,33 @@ traceroute
 traceroute baidu.com
 ```
 
+iftop查看网卡流量
+```
+# 合并为一行
+t
+
+# 查看端口
+p
+
+# 暂停刷新
+P
+
+# 直接显示IP, 不进行DNS反解析
+iftop -n
+
+# 监控eth1网卡
+iftop -i eth1
+
+# 显示某个网段进出封包流量
+iftop -F 192.168.1.0/24 or 192.168.1.0/255.255.255.0
+```
+
+nethogs查看进程流量
+```
+# 查看eth0的流量
+nethogs eht0
+```
+
 查看DNS服务器
 ```
 cat /etc/resolv.conf
