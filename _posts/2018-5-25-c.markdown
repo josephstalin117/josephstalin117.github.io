@@ -249,6 +249,10 @@ a.begin();
 //end( ) 函数返回一个指向向量末尾的迭代器。
 a.end();
 
+//cbegin()和cend()是C++11新增的，它们返回一个const的迭代器，不能用于修改元素
+a.cbegin()
+a.cend()
+
 //获取向量中的元素个数
 a.size()
 //判断向量是否为空
@@ -267,6 +271,8 @@ v5.pop_back();
 v5.push_back(6);
 //删除第四个元素
 v5.erase(v5.begin() + 3);
+
+
 
 //创建一个10*5的int型二维
 vector< vector<int> > b(10, vector<int>(5)); 
@@ -453,6 +459,21 @@ cout<<"min_element: "<<*min_element(myvec.begin(),myvec.end())<<endl;
 cout<<"max_element: "<<*max_element(myvec.begin(),myvec.end())<<endl;
 ```
 
+STL substr()
+```
+// string::substr
+#include <iostream>
+#include <string>
+int main (){
+    std::string str="We think in generalities, but we live in details.";
+    // (quoting Alfred N. Whitehead)
+    std::string str2 = str.substr (3,5); // "think"
+    std::size_t pos = str.find("live"); // position of "live" in str
+    std::string str3 = str.substr (pos); // get from "live" to the end
+    std::cout << str2 << ' ' << str3 << '\n';
+    return 0;
+}
+```
 
 STL deque 双向数组
 ```
