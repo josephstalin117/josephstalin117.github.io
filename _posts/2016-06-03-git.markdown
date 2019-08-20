@@ -190,6 +190,8 @@ git checkout -b [branch]
 git checkout master
 ## 合并分支
 git merge [branch]
+## 取消merge
+git merge --abort
 
 # 删除分支
 git branch -d [branchname]
