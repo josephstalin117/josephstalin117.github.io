@@ -25,6 +25,18 @@ a = np.array([1, 2])
 >>> a.fill(0)
 >>> a
 array([0, 0])
+
+# Copy an element of an array to a standard Python scalar and return it.
+>>> np.random.seed(123)
+>>> x = np.random.randint(9, size=(3, 3))
+>>> x
+array([[2, 2, 6],
+       [1, 3, 6],
+       [1, 0, 1]])
+>>> x.item(3)
+1
+>>> x.item((0, 1))
+2
 ```
 
 Create arrays:
