@@ -337,6 +337,14 @@ int main()
     dict.insert(pair<string,int>("apple",2));
     dict.insert(unordered_map<string, int>::value_type("orange",3));
     dict["banana"] = 6;
+
+    // Create an unordered_map of three strings (that map to strings)
+    std::unordered_map<std::string, std::string> u = {
+        {"RED","#FF0000"},
+        {"GREEN","#00FF00"},
+        {"BLUE","#0000FF"}
+    };
+
     // 判断是否有元素
     if(dict.empty())
         cout<<"该字典无元素"<<endl;
@@ -633,6 +641,11 @@ int main(){
 		cout<<p.top()<<endl;
 		p.pop();
 	}
+
+	//emplace 最大的作用是避免产生不必要的临时变量
+	std::vector<Foo> v;
+	// 没有临时变量产生
+	v.emplace(someIterator, 42, 3.1416);
 	return 0;
 }
 ```

@@ -84,7 +84,7 @@ This paper.\par
 \end{document}
 
 %修改图片大小缩放80%
-\includegraphics[width = .8\textwidth]{a.jpg}
+\includegraphics[width = .8\textwidth, height=6cm]{a.jpg}
 
 %crap image
 \usepackage{graphicx}

@@ -140,6 +140,7 @@ network:
 v2ray
 ```
 curl https://install.direct/go.sh | sudo bash
+v2ray --config=/etc/v2ray/config.json
 
 # server config
 {
