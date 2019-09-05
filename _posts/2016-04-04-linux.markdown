@@ -121,6 +121,9 @@ lsof -i:80
 # 查看程序打开了那些文件
 lsof -p 7876
 
+# 查看哪些服务占用
+sudo lsof | grep nvidia
+
 # 查看内存占用
 free
 
@@ -135,6 +138,9 @@ top -o ％MEM
 
 # 查看内存占用前10的进程
 ps aux | sort -k4,4nr | head -n 10
+
+# 停止gdm服务
+sudo systemctl stop gdm3
 ```
 
 #### 标准输入输出
