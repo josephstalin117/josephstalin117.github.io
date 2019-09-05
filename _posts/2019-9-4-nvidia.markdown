@@ -39,3 +39,31 @@ sudo apt-get install autoremove --purge nvidia*
 ```
 sudo /usr/local/cuda-8.0/bin/uninstall_cuda-8.0.pl
 ```
+
+查看显卡占用
+```
+nvidia-smi -l
+
+# 查看GPU是否可用
+lspci | grep -i nvidia
+
+其实只安装cuda即可，cuda自带nvidia驱动
+```
+
+查看CUDA版本信息
+```
+# 添加cuda环境变量
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+# 更新动态链接库
+ldconfig /usr/local/cuda-10.0/lib64
+
+# 检测cuda安装情况
+nvcc --version
+```
+
+查看cuDNN版本信息
+```
+cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+```
