@@ -19,21 +19,6 @@ tensorboard
 tensorboard --logdir ./_logs
 ```
 
-禁用开源驱动nouveau
-```
-sudo vim /etc/modprobe.d/blacklist.conf
-# 添加以下两行
-blacklist nouveau
-options nouveau modeset=0
-
-# 更新内核
-sudo update-initramfs -u
-sudo reboot
-
-# 查看是否禁用成功
-lsmod | grep nouveau
-```
-
 tfdbg
 ```
 from tensorflow.python import debug as tf_debug

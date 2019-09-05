@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "nvidia"
+date:   2019-09-04 20:35:35 +0800
+categories: command
+---
+
+禁用开源驱动nouveau
+```
+sudo vim /etc/modprobe.d/blacklist.conf
+# 添加以下两行
+blacklist nouveau
+options nouveau modeset=0
+
+# 更新内核
+sudo update-initramfs -u
+sudo reboot
+
+# 查看是否禁用成功
+lsmod | grep nouveau
+```
+
+```
+# 查看哪些服务占用
+sudo lsof | grep nvidia
+
+# 禁用nvidia服务
+# 停止gdm服务
+sudo systemctl stop gdm3
+```
+
+卸载驱动
+```
+sudo /usr/bin/nvidia-uninstall
+sudo apt-get install autoremove --purge nvidia* 
+```
+
+卸载cuda
+```
+sudo /usr/local/cuda-8.0/bin/uninstall_cuda-8.0.pl
+```
