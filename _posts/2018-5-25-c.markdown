@@ -650,6 +650,16 @@ int main(){
 }
 ```
 
+STL::accumulate
+```
+   // accumulate函数的第一个功能，求和
+   int total;
+   total = accumulate ( v1.begin ( ) , v1.end ( ) , 0 );
+
+   cout << "整数从1到20的和为: " 
+        << total << "." << endl;
+```
+
 for
 ```
 for (int num : nums) {
