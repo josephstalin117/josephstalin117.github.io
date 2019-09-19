@@ -560,8 +560,14 @@ convmv -f gbk -t UTF-8 --notest 测试.txt
 #--notest 真正进行操作，请注意在默认情况下是不对文件进行真实操作的，而只是试验；
 ```
 
-cacaview
+jpg转text
 ```
 sudo apt install caca-utils
 cacaview 1.jpg
+```
+
+pdf转text
+```
+apt-get install poppler-utils
+pdftotext php-manual.pdf php-manual.txt
 ```
