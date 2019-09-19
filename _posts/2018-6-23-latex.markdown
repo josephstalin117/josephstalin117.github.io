@@ -221,6 +221,10 @@ a'
 
 exp
 \exp
+
+删除公式效果
+\usepackage{cancel}
+\xcancel{公式内容}
 ```
 
 #### 希腊字母
