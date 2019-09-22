@@ -357,6 +357,9 @@ pip install -U <包名>
 # 显示包所在的目录
 pip show -f <包名>
 
+# 安装指定版本
+pip install numpy==1.13.1
+
 # 搜索包
 pip search <搜索关键字>
 

@@ -14,6 +14,11 @@ sess = tf.Session()
 print(sess.run(hello))
 ```
 
+卸载tensorflow
+```
+pip uninstall tensorflow-gpu
+```
+
 tensorboard
 ```
 tensorboard --logdir ./_logs

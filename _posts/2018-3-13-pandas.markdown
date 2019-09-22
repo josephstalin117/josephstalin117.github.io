@@ -343,6 +343,17 @@ df = pd.DataFrame({"Date": ["26-12-2007", "27-12-2007", "28-12-2007"]})
 df["Date"] = pd.to_datetime(df["Date"]).dt.strftime('%Y-%m-%d')
 print(df)
 
+# Timedelta
+           A      B          C
+# 0 2018-01-01 0 days 2018-01-01
+# 1 2018-01-02 1 days 2018-01-03
+# 2 2018-01-03 2 days 2018-01-05
+s = pd.Series(pd.date_range('2018-1-1', periods=3, freq='D'))
+td = pd.Series([ pd.Timedelta(days=i) for i in range(3) ])
+df = pd.DataFrame(dict(A = s, B = td))
+df['C']=df['A']+df['B']
+
+
 # 获取不同时间
 df['hour'] = df['date'].dt.hour
 df['dayofweek'] = df['date'].dt.dayofweek
