@@ -21,7 +21,10 @@ systemctl enable mysql
 mysql -u root -p
 
 # show status
-service mysql status
+systemctl status mysql.service
+
+# 初始化配置
+sudo mysql_secure_installation
 ```
 
 
@@ -49,13 +52,11 @@ show grants for root@'localhost';
 ```
 数据库导出:
 mysqldump -u root -p -d 数据库名 > data.sql
+
 数据库导入:
 1. use database_name;
 2. set names utf8; (或其他需要的编码)
 3. source example.sql (sql文件存放路径)
-
-重命名表名
-rename table MyClass to YouClass;
 ```
 
 #### 数据库操作
@@ -96,4 +97,7 @@ use DATABASE;
 
 reload
 FLUSH PRIVILEGES;
+
+重命名表名
+rename table MyClass to YouClass;
 ```

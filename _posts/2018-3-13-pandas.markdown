@@ -326,7 +326,7 @@ data.dropna(axis=1, how=’all’)
 data.dropna(axis=1, how=’any’)
 ```
 
-date
+时间日期处理
 ```
 # selecting DataFrame rows between two dates 
 start = datetime.datetime(2014,4,2)
@@ -363,6 +363,13 @@ df['year'] = df['date'].dt.year
 df['dayofyear'] = df['date'].dt.dayofyear
 df['dayofmonth'] = df['date'].dt.day
 df['weekofyear'] = df['date'].dt.weekofyear
+
+设定Timestamp
+>>> pd.Timestamp(year=2017, month=1, day=1, hour=12)
+Timestamp('2017-01-01 12:00:00')
+
+# 设定时间
+df['dateTime'].iloc[1] = df['dateTime'].iloc[1].replace(minute=0)
 ```
 
 pandas.series
@@ -416,4 +423,9 @@ setting
 ```
 # display all text in a cell without truncation
 pd.set_option('display.max_colwidth', -1)
+```
+
+plot
+```
+df.set_index('dateTime').plot(title='title content')
 ```

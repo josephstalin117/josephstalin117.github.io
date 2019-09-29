@@ -469,6 +469,12 @@ for (uid, group) in itertools.groupby(iter([(yield line.strip().split('\t')) for
         continue
 ```
 
+sort
+```
+list.sort(key=..., reverse=...)
+sorted(list, key=..., reverse=...)
+```
+
 enumerate
 ```
 for counter, value in enumerate(some_list):
