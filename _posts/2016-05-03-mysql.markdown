@@ -101,3 +101,18 @@ FLUSH PRIVILEGES;
 重命名表名
 rename table MyClass to YouClass;
 ```
+
+外网访问
+```
+# 1. 修改配置文件
+sudo vim /etc/mysql/my.cnf
+把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.
+
+# 2. 创建host
+mysql> update user set host='%' where user='root';
+mysql> flush privileges;
+
+# 3. 授权用户远程访问
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'mypwd' WITH GRANT OPTION;
+mysql> flush privileges;
+```
