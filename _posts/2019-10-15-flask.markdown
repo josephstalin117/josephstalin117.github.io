@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "flask"
+date:   2019-10-15 20:35:35 +0800
+categories: command
+---
+
+运行
+```
+$export FLASK_APP=hello.py
+$export FLASK_ENV=development
+$flask run --host=0.0.0.0
+```
+
+Route
+```
+@app.route('/')
+def index():
+    return 'Index Page'
+
+@app.route('/hello')
+def hello():
+    return 'Hello, World'
+```
