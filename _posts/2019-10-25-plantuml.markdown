@@ -8,7 +8,8 @@ categories: command
 配置
 ```
 1. 安装graphviz
-2. 配置vscode插件: PlantUML, Graphviz Preview
+2. 下载plantuml.jar
+3. 配置vscode插件: PlantUML, Graphviz Preview
 ```
 
 运行
