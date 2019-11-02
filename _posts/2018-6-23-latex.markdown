@@ -658,6 +658,11 @@ pdf2eps
 pdftops -eps [file].pdf
 ```
 
+编译tex文件
+```
+pdflatex test.tex
+```
+
 beamer
 ```
 \documentclass{beamer}

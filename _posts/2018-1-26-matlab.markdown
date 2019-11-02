@@ -8,18 +8,25 @@ categories: command
 ```
 #获取矩阵行数和列数
 size
+
 #n=1返回矩阵A的行数，n=2返回矩阵的列数
 size(A,n)
+
 #生成m*n的零矩阵
 zeros(m,n)
+
 #找到非零元素的索引和值
 find()
+
 #以A的内容堆叠在（MxN）的矩阵B中，B矩阵的大小由MxN及A矩阵的内容决定
 repmat(A,m,n)
+
 #返回n*n的单位矩阵
 eye(n)
+
 #返回A中沿着标量dim指定的维数上的元素的平均值
 mean(A,dim)
+
 #求A矩阵的逆矩阵
 int(A)
 
@@ -34,3 +41,57 @@ matlab 后台运行
 ```
 nohup /user/matlab/bin/matlab <fill.m> <fill.out> &
 ```
+
+matlab 命令行执行
+```
+存在test.m文件
+matlab -nojvm -nodesktop -nodisplay -r test
+```
+
+matlab 读取csv
+```
+指定了开始读取位置的行号（row）和列号（col）
+M = csvread('filename', row, col)
+```
+
+获取矩阵size
+```
+A = rand(2,3,4,5);
+sz = size(A)
+
+szdim2 = size(A,2)
+```
+
+字符串
+```
+str = ["Mercury","Gemini","Apollo";
+       "Skylab","Skylab B","ISS"]
+
+%单字符串输出：
+disp('Hello World!');
+```
+
+数组
+```
+a = [1 2 3 4]
+
+# 多行矩阵
+a = [1 2 3; 4 5 6; 7 8 10]
+
+# 创建矩阵
+z = zeros(5,1)
+
+# 矩阵转置
+a'
+
+# * 执行标准矩阵乘法
+p = a*inv(a)
+```
+
+画图
+```
+x = 0:pi/100:2*pi;
+y = sin(x);
+plot(x,y)
+```
+
