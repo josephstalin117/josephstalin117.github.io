@@ -45,6 +45,21 @@ GRANT SELECT ON *.* TO 'username'@'host_or_wildcard' IDENTIFIED BY 'password';
 
 查询用户权限：
 show grants for root@'localhost';
+
+显示用户权限
+Show Grants for bob@'%';
+
+创建用户权限
+grant create user on *.* to admin@'localhost' with grant option;
+
+显示mysql用户
+SELECT User FROM mysql.user;
+
+取消用户权限
+REVOKE ALL PRIVILEGES ON phpmyadmin.* FROM 'phpmyadmin'@'localhost';
+
+reload
+FLUSH PRIVILEGES;
 ```
 
 #### 导入导出
@@ -74,29 +89,17 @@ INSERT INTO worker (name) VALUES ('tom');
 纵向显示数据
 SELECT * FROM test\G
 
+选取有限列
+SELECT * FROM test LIMIT n;
+
 显示表
 DESCRIBE  `table`;
-
-创建用户权限
-grant create user on *.* to admin@'localhost' with grant option;
-
-显示用户权限
-Show Grants for bob@'%';
-
-显示mysql用户
-SELECT User FROM mysql.user;
-
-取消用户权限
-REVOKE ALL PRIVILEGES ON phpmyadmin.* FROM 'phpmyadmin'@'localhost';
 
 显示数据库
 SHOW DATABASES;
 
 选择数据库
 use DATABASE;
-
-reload
-FLUSH PRIVILEGES;
 
 重命名表名
 rename table MyClass to YouClass;

@@ -566,3 +566,31 @@ numpy.ndarray.tolist
 >>> a.tolist()
 [[1, 2], [3, 4]]
 ```
+
+numpy存取
+```
+# 将数组保存到.npy为扩展名的文件中
+a = np.array([1,2,3,4,5])
+ 
+# 保存到 outfile.npy 文件上
+np.save('outfile.npy',a)
+
+
+# 加载文件
+b = np.load('outfile.npy')
+
+
+# 将多个数组保存到npz为扩展名的文件中
+a = np.array([[1,2,3],[4,5,6]])
+b = np.arange(0, 1.0, 0.1)
+c = np.sin(b)
+
+# c 使用了关键字参数 sin_array
+np.savez("runoob.npz", a, b, sin_array = c)
+r = np.load("runoob.npz")
+
+print(r.files) # 查看各个数组名称
+print(r["arr_0"]) # 数组 a
+print(r["arr_1"]) # 数组 b
+print(r["sin_array"]) # 数组 c
+```
