@@ -120,6 +120,15 @@ a
 a[:-1]
 ```
 
+Magic Methods
+```
+# 动态获取对象的所有属性
+__dict__
+
+# 打印__str__的返回值
+__str__
+```
+
 SimpleServer
 ```
 python -m http.server 8080
@@ -164,6 +173,35 @@ class Foo:
 
 x = Foo()
 x(1, 2, 3) # __call__
+```
+
+dict
+```
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+# Check if Key Exists
+if "model" in thisdict:
+	print("yes")
+
+# add 
+thisdict["color"] = "red"
+
+# remove
+thisdict.pop("model")
+
+# 获取属性, 可迭代
+# 用元祖来存放key和vlaue
+dict.items()
+
+# 只包含key
+dict.keys()
+
+# 只包含value
+dict.values()
 ```
 
 python 执行bash命令
