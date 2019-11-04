@@ -37,8 +37,20 @@ GRANT ALL ON db.* TO 'myuser'@'192.168.1.3' IDENTIFIED BY 'mypassword';
 对lisi用户仅对db1.author表有查询、插入和更新的操作
 grant select,insert,update on db1.author to 'lisi'@'192.168.11.88';
 
-创建用户
-CREATE USER "allen" IDENTIFIED BY "1234";
+创建用户，指定任意ip
+CREATE USER 'allen'@'%' IDENTIFIED BY "1234";
+
+查询用户
+select host,user from user;
+
+删除zhangsan用户从任意地址登录
+drop user 'zhangsan'@'%';
+
+删除zhangsan用户从192.168.11.% 网段登录
+drop user 'zhangsan'@'192.168.11.%';
+
+修改密码
+set password for 'lisi'@'192.168.11.88'=password('321');
 
 权限刷新
 FLUSH PRIVILEGES;
