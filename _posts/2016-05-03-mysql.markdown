@@ -119,8 +119,8 @@ SELECT * FROM test\G
 选取有限列
 SELECT * FROM test LIMIT n;
 
-显示表
-DESCRIBE  `table`;
+显示表结构
+DESC `table`;
 
 显示数据库
 SHOW DATABASES;

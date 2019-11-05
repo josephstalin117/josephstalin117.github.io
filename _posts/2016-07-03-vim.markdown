@@ -191,3 +191,12 @@ do #The change under the cursor is replaced
 # 取消鼠标显示
 :set mouse=
 ```
+
+### 插件
+```
+# 文件侧边栏
+NERDTree
+
+# F3唤起
+map <F2> :NERDTreeToggle<CR>
+```

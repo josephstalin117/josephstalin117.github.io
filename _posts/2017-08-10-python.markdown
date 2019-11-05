@@ -557,12 +557,16 @@ file io
 #'r' to read the content of the file
 with open('somefile.txt', 'a', encoding='UTF-8') as the_file:
     the_file.write('Hello\n')
+    contents = the_file.read()
 
 # return the 5 first characters of the file
 f.read(5)
 
 # return one line of the file
-print(f.readline())
+f1 = f.readline()
+for x in f1:
+	print(x)
+
 
 # looping through the lines of the file
 for x in f:
