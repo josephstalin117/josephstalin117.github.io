@@ -314,6 +314,25 @@ tf.shape(tf.expand_dims(t2, 2))  # [2, 3, 1, 5]
 tf.shape(tf.expand_dims(t2, 3))  # [2, 3, 5, 1]
 ```
 
+tf.cast
+```
+# Casts a tensor to a new type.
+x = tf.constant([1.8, 2.2], dtype=tf.float32)
+tf.dtypes.cast(x, tf.int32)  # [1, 2], dtype=tf.int32
+```
+
+tf.where
+```
+tf.where(condition, x=None, y=None, name=None)
+
+# Return the elements, either from x or y, depending on the condition.
+def square_if_positive_vectorized(x):
+  return tf.where(x > 0, x ** 2, x)
+
+# [-5, -4, -3, -2, -1,  0,  1,  4,  9, 16]
+square_if_positive_vectorized(tf.range(-5, 5))
+```
+
 keras
 ```
 from keras.models import Sequential
