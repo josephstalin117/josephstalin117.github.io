@@ -155,7 +155,7 @@ df.sort_index()
 # 根据某一列值进行排序
 df.sort_values(by='a')
 
-# remove all duplicates and keep one
+# remove all duplicates and keep one 去重
 df.drop_duplicates()
 
 df = pd.DataFrame({"A":["foo", "foo", "foo", "bar"], "B":[0,1,1,1], "C":["A","A","B","A"]})

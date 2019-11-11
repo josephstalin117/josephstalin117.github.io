@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "awk"
+date:   2019-11-11 20:35:35 +0800
+categories: command
+---
+
+使用方法
+```
+awk '{[pattern] action}' {filenames}   # 行匹配语句 awk '' 只能用单引号
+
+# 每行按空格或TAB分割，输出文本中的1、4项
+$ awk '{print $1,$4}' log.txt
+
+# 格式化输出
+$ awk '{printf "%-8s %-10s\n",$1,$4}' log.txt
+```
+
+指定分割符
+```
+awk -F  #-F相当于内置变量FS, 指定分割字符
+
+$awk -F, '{print $1,$2}'   log.txt
+```
+
+设定变量
+```
+awk -v  # 设置变量
+
+$awk -va=1 '{print $1,$1+a}' log.txt
+```
+
+常用
+```
+# 过滤第一列大于2的行
+$ awk '$1>2' log.txt
+
+# 过滤第一列等于2的行
+$ awk '$1==2 {print $1,$3}' log.txt
+
+# 输出第二列包含 "th"，并打印第二列与第四列，~ 表示模式开始。// 中是模式。
+$ awk '$2 ~ /th/ {print $2,$4}' log.txt
+```
+
+
+awk 脚本
+```
+关于awk脚本，我们需要注意两个关键词BEGIN和END。
+
+BEGIN{ 这里面放的是执行前的语句 }
+END {这里面放的是处理完所有的行后要执行的语句 }
+{这里面放的是处理每一行时要执行的语句}
+
+$ cat score.txt
+Marry   2143 78 84 77
+Jack    2321 66 78 45
+Tom     2122 48 77 71
+Mike    2537 87 97 95
+Bob     2415 40 57 62
+
+$ cat cal.awk
+#!/bin/awk -f
+#运行前
+BEGIN {
+    math = 0
+    english = 0
+    computer = 0
+ 
+    printf "NAME    NO.   MATH  ENGLISH  COMPUTER   TOTAL\n"
+    printf "---------------------------------------------\n"
+}
+#运行中
+{
+    math+=$3
+    english+=$4
+    computer+=$5
+    printf "%-6s %-6s %4d %8d %8d %8d\n", $1, $2, $3,$4,$5, $3+$4+$5
+}
+#运行后
+END {
+    printf "---------------------------------------------\n"
+    printf "  TOTAL:%10d %8d %8d \n", math, english, computer
+    printf "AVERAGE:%10.2f %8.2f %8.2f\n", math/NR, english/NR, computer/NR
+}
+
+$ awk -f cal.awk score.txt
+NAME    NO.   MATH  ENGLISH  COMPUTER   TOTAL
+---------------------------------------------
+Marry  2143     78       84       77      239
+Jack   2321     66       78       45      189
+Tom    2122     48       77       71      196
+Mike   2537     87       97       95      279
+Bob    2415     40       57       62      159
+---------------------------------------------
+  TOTAL:       319      393      350
+AVERAGE:     63.80    78.60    70.00
+```
