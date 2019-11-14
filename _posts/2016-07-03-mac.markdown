@@ -200,3 +200,29 @@ alfred
 # 放大展示
 cmd+L
 ```
+
+launchctl
+```
+# 查看所有服务
+launchctl list | grep <service name>
+
+# 查看服务状态
+# 停止
+launchctl stop <Service Name>
+# 开始
+launchctl start <Service Name>
+# kill
+launchctl kill <Service Name> 
+
+# 卸载服务
+launchctl unload ~/Library/LaunchAgents/com.chanjh.wifikeeper.plist
+launchctl stop com.chanjh.wifikeeper
+
+# lauchd 配置 
+~/Library/LaunchAgents
+/Library/LaunchAgents
+/Library/LaunchDaemons
+/System/Library/LaunchAgents
+/System/Library/LaunchDaemons
+```
+
