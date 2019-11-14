@@ -199,6 +199,9 @@ find . -name "*.php" | xargs grep
 # 只输出文件中匹配到的部分 -o
 grep -o 'matchcontent=[]'
 
+# 取反
+grep -v 'matchcontent'
+
 # 查看当前目录文件名中含有nout4的文件
 ls | grep nout4
 ```
