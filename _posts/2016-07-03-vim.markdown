@@ -200,3 +200,39 @@ NERDTree
 # F3唤起
 map <F2> :NERDTreeToggle<CR>
 ```
+
+### neovim
+```
+# 配置文件
+~/.config/nvim/init.vim
+
+# 插件管理工具 vim-plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# 修改init.vim 其它插件的安装都要放在两个 call 命令之间
+call plug#begin('~/.local/share/nvim/plugged')
+
+call plug#end()<Paste>
+
+# vim-plug 使用
+安装插件
+:PlugInstall
+更新插件：
+PlugUpdate
+删除插件：
+PlugClean （首先在 init.vim 中，注释掉该插件，然后打开 Nvim， 使用 :PlugClean 命令清除该插件）
+查看插件状态：
+PlugStatus
+升级 vim-plug：
+:PlugUpgrade
+
+# 文件管理器插件
+Plug 'scrooloose/nerdtree'
+
+# 补全
+Plug 'Valloric/YouCompleteMe'
+
+# 内置terminal
+:terminal
+```
