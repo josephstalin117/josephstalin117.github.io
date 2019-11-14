@@ -212,8 +212,8 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # 修改init.vim 其它插件的安装都要放在两个 call 命令之间
 call plug#begin('~/.local/share/nvim/plugged')
-
-call plug#end()<Paste>
+# 插件
+call plug#end()
 
 # vim-plug 使用
 安装插件
@@ -230,9 +230,18 @@ PlugStatus
 # 文件管理器插件
 Plug 'scrooloose/nerdtree'
 
-# 补全
-Plug 'Valloric/YouCompleteMe'
-
 # 内置terminal
 :terminal
+
+# 水平方向打开terminal
+vnew term://bash
+
+# 垂直方向打开terminal
+new term://bash
+
+# 输入模式
+i
+
+# 退出terminal输入模式
+<Ctrl+\><Ctrl+N>
 ```
