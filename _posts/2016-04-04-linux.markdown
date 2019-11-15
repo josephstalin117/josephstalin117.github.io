@@ -206,6 +206,21 @@ grep -v 'matchcontent'
 ls | grep nout4
 ```
 
+#### sort & uniq
+```
+# 正排序
+sort -n file
+
+# 逆排序
+sort -rn file
+
+# 所有字符只显示一次
+sort -nr file | uniq
+
+# 所有字符显示一遍，并计算重复个数
+sort -nr file | uniq -c
+```
+
 #### Find Linux Files by Name or Extension
 ```
 find . -name "*.err"
@@ -279,6 +294,9 @@ netstat -tl -c 5
 
 # 展示网卡信息
 netstat -i
+
+# 统计TCP链接状态
+netstat -nat | awk '{print  $6}' | sort | uniq -c | sort -n
 ```
 
 #### tcpdump
@@ -339,6 +357,7 @@ md5sum file
 #### .bashrc 配置
 ```
 alias vim='nvim'
+alias ls='ls -ahG'
 ```
 
 #### 文件管理

@@ -15,3 +15,17 @@ Host 8.8.8.8 #这里改成你的服务器 IP
     IdentityFile C:/Users/Administrator/.ssh/id_ecdsa #使用的 ssh key 
     #ProxyCommand connect -H 127.0.0.1:1080 %h %p #HTTP代理需要的自己加
 ```
+
+vim
+```
+"vim.normalModeKeyBindingsNonRecursive": [
+    {
+        "before": ["j"],
+        "after": ["g", "j"]
+    },
+    {
+        "before": ["k"],
+        "after": ["g", "k"]
+    }
+]
+```
