@@ -336,6 +336,11 @@ sz
 md5sum file
 ```
 
+#### .bashrc 配置
+```
+alias vim='nvim'
+```
+
 #### 文件管理
 ```
 # 统计挂载磁盘的整体情况
