@@ -93,6 +93,12 @@ range
 range(start, stop, step)
 ```
 
+运算符
+```
+# 按位取反
+~
+```
+
 
 Extended Slices
 ```
