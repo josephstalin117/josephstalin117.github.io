@@ -64,7 +64,7 @@ c = np.full((2,2), 7)  # Create a constant array
 print(c)               # Prints "[[ 7.  7.]
                        #          [ 7.  7.]]"
 
-# 对角矩阵
+# 单位矩阵
 d = np.eye(2)         # Create a 2x2 identity matrix
 print(d)              # Prints "[[ 1.  0.]
                       #          [ 0.  1.]]"

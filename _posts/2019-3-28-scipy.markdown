@@ -6,14 +6,44 @@ categories: command
 ---
 
 scipy.sparse的稀疏矩阵存储:  
-coo_matrix: 座标格式 (即 IJV, 三维格式),  
-csc_matrix: 压缩列格式,  
-csr_matrix: 压缩行格式
+
 ```
 import numpy as np
 import scipy.sparse as sparse
 
+#coo_matrix: 座标格式 (即 IJV, 三维格式)
+#csc_matrix: 压缩列格式
+#csr_matrix: 压缩行格式
+
+# Convert this matrix to COOrdinate format.
 A = lil.tocoo()
 for i,j,d in zip(A.row, A.col, A.data):
 	a[i,j] = d
+
+# Return a dense matrix representation of this matrix.
+mtx = sparse.coo_matrix((3, 4), dtype=np.int8)
+mtx.todense()
+```
+
+scipy.sparse.diags
+```
+# Construct a sparse matrix from diagonals.
+# 从对角线构造一个稀疏矩阵
+
+>>> from scipy.sparse import diags
+>>> diagonals = [[1, 2, 3, 4], [1, 2, 3], [1, 2]]
+
+# scipy.sparse.diags(diagonals, offsets=0)
+>>> diags(diagonals, [0, -1, 2]).toarray()
+array([[1, 0, 1, 0],
+       [1, 2, 0, 2],
+       [0, 2, 3, 0],
+       [0, 0, 3, 4]])
+
+>>> diags([1, 2, 3], 1).toarray()
+array([[ 0.,  1.,  0.,  0.],
+       [ 0.,  0.,  2.,  0.],
+       [ 0.,  0.,  0.,  3.],
+       [ 0.,  0.,  0.,  0.]])
+
 ```

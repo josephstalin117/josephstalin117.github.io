@@ -178,8 +178,29 @@ List = df['row1'].tolist()
 df[['algo_name', 'nout', 'rmse']][(df['nout']==1) & (df['dataset']=='beijing_do')].sort_values(by='algo_name')
 ```
 
-apply function
+修改数据
+```
+#修改index为‘1’，column为‘name’的那一个值为aa
+df.loc[1,'name'] = 'aa'
 
+#修改index为‘1’的那一行的所有值。
+df.loc[1] = ['bb','ff',11]
+
+#修改index为‘1’，column为‘name’的那一个值为bb，age列的值为11。
+df.loc[1,['name','age']] = ['bb',11]
+
+#iloc[row_index, column_index]
+#修改某一无素
+df.iloc[1,2] = 19
+
+##修改一整列
+df.iloc[:,2] = [11,22,33]
+
+#修改一整行
+df.iloc[0,:] = ['lily','F',15]
+```
+
+apply function
 ```
 # Applying a function to a column
 def base_year(year):
@@ -211,8 +232,26 @@ df = pd.DataFrame(ipl_data)
 
 print df.groupby('Team').groups
 
+{'Kings': Int64Index([4, 6, 7],      dtype='int64'),
+'Devils': Int64Index([2, 3],         dtype='int64'),
+'Riders': Int64Index([0, 1, 8, 11],  dtype='int64'),
+'Royals': Int64Index([9, 10],        dtype='int64'),
+'kings' : Int64Index([5],            dtype='int64')}
+
 # multiple columns
 print df.groupby(['Team','Year']).groups
+
+#{('Kings', 2014): Int64Index([4], dtype='int64'),
+#('Royals', 2014): Int64Index([9], dtype='int64'),
+#('Riders', 2014): Int64Index([0], dtype='int64'),
+#('Riders', 2015): Int64Index([1], dtype='int64'),
+#('Kings', 2016): Int64Index([6], dtype='int64'),
+#('Riders', 2016): Int64Index([8], dtype='int64'),
+#('Riders', 2017): Int64Index([11], dtype='int64'),
+#('Devils', 2014): Int64Index([2], dtype='int64'),
+#('Devils', 2015): Int64Index([3], dtype='int64'),
+#('kings', 2015): Int64Index([5], dtype='int64'),
+#('Royals', 2015): Int64Index([10], dtype='int64'),
 
 # Iterating through Groups
 grouped = df.groupby('Year')
@@ -221,13 +260,50 @@ for name,group in grouped:
     print name
     print group
 
+2014
+   Points  Rank     Team   Year
+0     876     1   Riders   2014
+2     863     2   Devils   2014
+4     741     3   Kings    2014
+9     701     4   Royals   2014
+
+2015
+   Points  Rank     Team   Year
+1     789     2   Riders   2015
+3     673     3   Devils   2015
+5     812     4    kings   2015
+10    804     1   Royals   2015
+
+2016
+   Points  Rank     Team   Year
+6     756     1    Kings   2016
+8     694     2   Riders   2016
+
+2017
+   Points  Rank    Team   Year
+7     788     1   Kings   2017
+11    690     2  Riders   2017
+
 # Select a Group
 grouped = df.groupby('Year')
 print grouped.get_group(2014)
 
+   Points  Rank     Team    Year
+0     876     1   Riders    2014
+2     863     2   Devils    2014
+4     741     3   Kings     2014
+9     701     4   Royals    2014
+
 # Aggregations
 grouped = df.groupby('Year')
-print grouped['Points'].agg(np.mean)
+print(grouped['Points'].agg(np.mean))
+
+Year
+2014   795.25
+2015   769.50
+2016   725.00
+2017   739.00
+Name: Points, dtype: float64
 
 ```
 
