@@ -505,3 +505,19 @@ plot
 ```
 df.set_index('dateTime').plot(title='title content')
 ```
+
+excel
+```
+import pandas as pd
+from pandas import ExcelWriter
+from pandas import ExcelFile
+
+df = pd.read_excel('File.xlsx', sheetname='Sheet1')
+
+print("Column headings:")
+print(df.columns)
+
+sepalWidth = df['Sepal width']
+sepalLength = df['Sepal length']
+petalLength = df['Petal length']
+```
