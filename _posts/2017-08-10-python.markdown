@@ -754,3 +754,11 @@ args = (1, 2, 3)
 kwargs = {"a": 1, "b": 2, "c": 3}
 # f(**kwargs) -> f(a=1, b=2, c=3)
 ```
+
+argparse
+```
+parser = argparse.ArgumentParser()
+parser.add_argument('--sensor_ids_filename', type=str, default='data/graph_sensor_ids.txt',
+					help='File containing sensor ids separated by comma.')
+args = parser.parse_args()
+```
