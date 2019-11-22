@@ -198,6 +198,15 @@ df.iloc[:,2] = [11,22,33]
 
 #修改一整行
 df.iloc[0,:] = ['lily','F',15]
+
+#根据条件修改
+df.loc[df1['stream'] == 2, ['feat','another_feat']] = 'aaaa'
+print df
+   stream        feat another_feat
+a       1  some_value   some_value
+b       2        aaaa         aaaa
+c       2        aaaa         aaaa
+d       3  some_value   some_value
 ```
 
 apply function
@@ -514,10 +523,11 @@ from pandas import ExcelFile
 
 df = pd.read_excel('File.xlsx', sheetname='Sheet1')
 
-print("Column headings:")
+#Column headings
 print(df.columns)
 
 sepalWidth = df['Sepal width']
-sepalLength = df['Sepal length']
-petalLength = df['Petal length']
+
+#Don't forget to add '.xlsx' at the end of the path
+export_excel = df.to_excel (r'C:\Users\Ron\Desktop\export_dataframe.xlsx', index = None, header=True)
 ```
