@@ -255,6 +255,11 @@ print(np.divide(x, y))
 #  [ 1.73205081  2.        ]]
 print(np.sqrt(x))
 
+# Compute the standard deviation along the specified axis.
+>>> a = np.array([[1, 2], [3, 4]])
+>>> np.std(a)
+1.1180339887498949 # may vary
+
 ```
 
 矩阵行列求和
