@@ -532,6 +532,9 @@ path
 ```
 os.path.join('/home/build/test/sandboxes/', todaystr, '/new_sandbox/')
 
+# 获取当前目录
+os.getcwd()
+
 # create dir if not exist
 import os
 if not os.path.exists(directory):
