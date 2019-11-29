@@ -27,7 +27,7 @@ def to_str(unicode_or_str):
     return value    
 ```
 
-判断
+conditions
 ```
 # list init
 [x for x in range(1, 10)]
@@ -37,7 +37,13 @@ def to_str(unicode_or_str):
 'Yes' if fruit == 'Apple' else 'No'
 ```
 
-输入
+loop
+```
+[i ** 3 for i in range(0, x+1, 3)]
+```
+
+
+input
 ```
 input([prompt])
 
