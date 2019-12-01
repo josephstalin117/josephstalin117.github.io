@@ -31,8 +31,24 @@ Host lab
 ssh lab
 ```
 
-shell 脚本
+sftp使用
+```
+sftp 用户名@ip地址
 
+# 查看远程当前工作目录
+pwd
+# 查看本地当前工作路径
+lpwd
+
+# 上传文件
+put -r /User/ren/local/test.zip /home/root/remote
+
+# 下载文件
+get -r /home/ren/remote/test.zip /User/ren/local
+
+```
+
+shell 脚本
 ```
 #!/bin/sh
 ```
