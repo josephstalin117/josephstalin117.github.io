@@ -6,7 +6,6 @@ categories: command
 ---
 
 data read
-
 ```
 # Reading a csv into Pandas.
 df = pd.read_csv('uk_rain_2014.csv', encoding='utf-8', header=0)
@@ -420,7 +419,7 @@ data.dropna(axis=1, how=’all’)
 data.dropna(axis=1, how=’any’)
 ```
 
-时间日期处理
+时间日期处理datetime
 ```
 # selecting DataFrame rows between two dates 
 start = datetime.datetime(2014,4,2)
@@ -437,7 +436,29 @@ df = pd.DataFrame({"Date": ["26-12-2007", "27-12-2007", "28-12-2007"]})
 df["Date"] = pd.to_datetime(df["Date"]).dt.strftime('%Y-%m-%d')
 print(df)
 
+# 时间范围range
+DatetimeIndex(['2018-01-01 00:00:00', '2018-01-01 01:00:00',
+               '2018-01-01 02:00:00'],
+              dtype='datetime64[ns]', freq='H')
+dti = pd.date_range('2018-01-01', periods=3, freq='H')
+
+DatetimeIndex(['2018-04-24 00:00:00', '2018-04-25 12:00:00',
+               '2018-04-27 00:00:00'],
+              dtype='datetime64[ns]', freq=None)
+pd.date_range(start='2018-04-24', end='2018-04-27', periods=3)
+
+
 # Timedelta
+# Timedelta('1 days 02:00:00')
+ts = pd.Timestamp('2016-10-30 00:00:00', tz='Europe/Helsinki')
+
+# Respects absolute time
+# Timestamp('2016-10-30 23:00:00+0200', tz='Europe/Helsinki')
+ts + pd.Timedelta(days=1)
+# Respects calendar time
+# Timestamp('2016-10-31 00:00:00+0200', tz='Europe/Helsinki')
+ts + pd.DateOffset(days=1)
+
            A      B          C
 # 0 2018-01-01 0 days 2018-01-01
 # 1 2018-01-02 1 days 2018-01-03
@@ -446,7 +467,18 @@ s = pd.Series(pd.date_range('2018-1-1', periods=3, freq='D'))
 td = pd.Series([ pd.Timedelta(days=i) for i in range(3) ])
 df = pd.DataFrame(dict(A = s, B = td))
 df['C']=df['A']+df['B']
+           A      B          C
+# 0 2012-01-01 0 days 2012-01-01
+# 1 2012-01-02 1 days 2012-01-03
+# 2 2012-01-03 2 days 2012-01-05
 
+
+# This particular day contains a day light savings time transition
+ts = pd.Timestamp('2016-10-30 00:00:00', tz='Europe/Helsinki')
+
+# Respects absolute time
+# Timestamp('2016-10-30 23:00:00+0200', tz='Europe/Helsinki')
+ts + pd.Timedelta(days=1)
 
 # 获取不同时间
 df['hour'] = df['date'].dt.hour
@@ -464,6 +496,16 @@ Timestamp('2017-01-01 12:00:00')
 
 # 设定时间
 df['dateTime'].iloc[1] = df['dateTime'].iloc[1].replace(minute=0)
+
+# DateOffset
+ts = pd.Timestamp('2014-01-01 09:00')
+day = pd.offsets.Day()
+# Timestamp('2014-01-02 09:00:00')
+day.apply(ts)
+
+d = datetime.datetime(2008, 8, 18, 9, 0)
+# Timestamp('2008-08-11 09:00:00')
+d - pd.offsets.Week()
 ```
 
 pandas.series
