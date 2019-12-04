@@ -262,6 +262,21 @@ print(np.sqrt(x))
 
 ```
 
+np.argmin
+```
+# Returns the indices of the minimum values along an axis.
+>>> a = np.arange(6).reshape(2,3) + 10
+>>> a
+array([[10, 11, 12],
+       [13, 14, 15]])
+>>> np.argmin(a)
+0
+>>> np.argmin(a, axis=0)
+array([0, 0, 0])
+>>> np.argmin(a, axis=1)
+array([0, 0])
+```
+
 矩阵行列求和
 ```
 x = np.array([[1,2],[3,4]])
