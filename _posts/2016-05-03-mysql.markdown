@@ -102,10 +102,12 @@ mysqldump -u用户名 -p密码 数据库名 表名 --where="筛选条件" > 导�
 ```
 
 #### 数据库操作
-
 ```
 创建数据库，并指定字符集
 CREATE DATABASE `test2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci
+
+删除数据库
+drop database RUNOOB;
 
 更新
 UPDATE table SET name='Mary' WHERE id=1;
