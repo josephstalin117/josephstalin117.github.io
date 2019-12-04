@@ -432,6 +432,13 @@ end = datetime.datetime(2017,12,15,4)
 base_df['dateTime'] = pd.to_datetime(base_df['dateTime'])
 base_df = base_df.set_index(['dateTime'])
 new_df = base_df.loc[start:end]
+# or
+df = pd.DataFrame(np.random.random((200,3)))
+df['date'] = pd.date_range('2000-1-1', periods=200, freq='D')
+mask = (df['date'] > '2000-6-1') & (df['date'] <= '2000-6-10')
+print(df.loc[mask])
+# or
+df = df[(df['date'] > '2000-6-1') & (df['date'] <= '2000-6-10')]
 
 # 转换成时间戳
 cod_df['datetime'] = pd.to_datetime(cod_df["datetime"]).astype(int)/10**9
