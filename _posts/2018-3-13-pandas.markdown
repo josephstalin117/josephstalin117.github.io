@@ -6,7 +6,6 @@ categories: command
 ---
 
 data read
-
 ```
 # Reading a csv into Pandas.
 df = pd.read_csv('uk_rain_2014.csv', encoding='utf-8', header=0)
@@ -164,6 +163,11 @@ for index, row in df.iterrows():
 
 # tolist
 List = df['row1'].tolist()
+
+# get_loc
+unique_index = pd.Index(list('abc'))
+# 1
+unique_index.get_loc('b')
 ```
 
 排序
