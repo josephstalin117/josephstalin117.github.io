@@ -35,14 +35,18 @@ hotfix 分支
 2. 线上出现紧急问题时，需要及时修复，以master分支为基线，创建hotfix分支，修复完成后，需要合并到master分支和develop分支
 
 日志规范
-1. type: 本次 commit 的类型，诸如 bugfix docs style 等
-2. scope: 本次 commit 波及的范围
-3. subject: 简明扼要的阐述下本次 commit 的主旨，在原文中特意强调了几点 1. 使用祈使句，是不是很熟悉又陌生的一个词，来传送门在此 祈使句 2. 首字母不要大写 3. 结尾无需添加标点
-4. body: 同样使用祈使句，在主体内容中我们需要把本次 commit 详细的描述一下，比如此次变更的动机，如需换行，则使用 |
-5. footer: 描述下与之关联的 issue 或 break change，详见案例
+type: 本次 commit 的类型，诸如 bugfix docs style 等
+scope: 本次 commit 波及的范围
+subject: 简明扼要的阐述下本次 commit 的主旨，在原文中特意强调了几点
+```
+1. 使用祈使句，是不是很熟悉又陌生的一个词
+2. 首字母不要大写
+3. 结尾无需添加标点
+```
+body: 同样使用祈使句，在主体内容中我们需要把本次 commit 详细的描述一下，比如此次变更的动机，如需换行，则使用 |
+footer: 描述下与之关联的 issue 或 break change
 
 Type的类别说明：
-
 feat: 添加新特性
 fix: 修复bug
 docs: 仅仅修改了文档
