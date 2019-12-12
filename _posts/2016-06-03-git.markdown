@@ -6,13 +6,11 @@ categories: command
 ---
 
 初始化本地git仓库（创建新仓库）
-
 ```
 git init
 ```
 
 基本配置
-
 ```
 # 配置用户名
 git config --global user.name "xxx"
@@ -32,7 +30,6 @@ git config --list
 ```
 
 版本提交
-
 ```
 # 添加远端配置
 git remote add origin git@github.com:josephstalin117/time_series_forecast.git
@@ -53,10 +50,12 @@ git commit [file1] [file2] ... -m [message]
 git push [remote] [branch]
 git push origin master
 
+# 推送本地分支到远端仓库
+git push --set-upstream origin [分支名]
+
 ```
 
 版本控制
-
 ```
 # 撤销文件a的修改(没有被git add)
 git checkout a
@@ -179,6 +178,9 @@ git branch <branchname>
 # 显示分支列表
 git branch
 
+# 显示全部分支
+git branch -a
+
 # 切换分支
 git checkout <branchname>
 
@@ -216,11 +218,17 @@ git fetch <远程主机名>
 # 取回远程主机的特定分支更新
 git fetch <远程主机名> <分支名>
 
+# 远程分支拉到本地 
+git fetch origin [远程分支]
+
 # 查看远程分支remote
 git branch -r
 
-# 从远程分支上创建新分支
-git checkout -b newBrach origin/master
+# 本地创建分支并切换到该分支
+git checkout -b [本地分支名称] origin/[远程分支]
+
+# 拉取远程分支的内容
+git pull origin [远程分支]
 
 # 本地分支合并远程分支
 git merge origin/master
