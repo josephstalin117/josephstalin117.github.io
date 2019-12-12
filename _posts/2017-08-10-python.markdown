@@ -729,6 +729,19 @@ math.ceil(x)
 math.floor(x)
 ```
 
+random
+```
+# seed
+random.seed(5)
+
+# get random number
+random.random()
+
+# returns a randomly selected element from the specified range
+random.randrange(start, stop, step)
+
+```
+
 Set
 ```
 # A set is a collection which is unordered and unindexed. In Python sets are written with curly brackets.
