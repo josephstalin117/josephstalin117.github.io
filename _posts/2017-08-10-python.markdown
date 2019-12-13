@@ -161,6 +161,14 @@ class Greeter(object):
     # Constructor
     def __init__(self, name):
         self.name = name  # Create an instance variable
+        # 保护变量
+        self._say = "haha"
+        # 私有变量
+        self.__data = "test"
+    
+    # 私有方法
+    def __say():
+        print(self._say)
 
     # Instance method
     def greet(self, loud=False):
@@ -168,10 +176,17 @@ class Greeter(object):
             print('HELLO, %s!' % self.name.upper())
         else:
             print('Hello, %s' % self.name)
+    
+    # call 方法
+    def __call__(a, b):
+        self.a = a
+        self.b = b
 
 g = Greeter('Fred')  # Construct an instance of the Greeter class
 g.greet()            # Call an instance method; prints "Hello, Fred"
 g.greet(loud=True)   # Call an instance method; prints "HELLO, FRED!"
+# oncall 方法
+g(a, b)
 ```
 
 call & init
