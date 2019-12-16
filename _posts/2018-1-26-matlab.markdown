@@ -38,6 +38,21 @@ A.^2 和 A^2 点乘是数组的运算，不加点是矩阵的运算
 () 小括号，用于引用数组的元素。
 ```
 
+matlab 矩阵操作
+```
+A = ones(1,4);
+B = zeros(1,4);
+C = [A B]
+# C = 1×8
+#     1     1     1     1     0     0     0     0
+
+D = [A;B]
+# D = 2×4
+
+#     1     1     1     1
+#     0     0     0     0
+```
+
 matlab 后台运行
 ```
 nohup /user/matlab/bin/matlab <fill.m> <fill.out> &

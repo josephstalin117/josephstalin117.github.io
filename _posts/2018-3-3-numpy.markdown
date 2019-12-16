@@ -433,6 +433,22 @@ matrix([[ 3],
         [11]])
 ```
 
+numpy.concatenate
+```
+# Join a sequence of arrays along an existing axis
+>>> a = np.array([[1, 2], [3, 4]])
+>>> b = np.array([[5, 6]])
+>>> np.concatenate((a, b), axis=0)
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+>>> np.concatenate((a, b.T), axis=1)
+array([[1, 2, 5],
+       [3, 4, 6]])
+>>> np.concatenate((a, b), axis=None)
+array([1, 2, 3, 4, 5, 6])
+```
+
 创建一个`3*3`的零矩阵，矩阵这里zeros函数的参数是一个tuple类型(3,3)
 ```
 #matrix([[ 0.,  0.,  0.],
