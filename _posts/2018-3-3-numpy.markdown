@@ -587,26 +587,22 @@ array([[0, 2],
 
 矩阵相乘
 ```
-# Note that unlike MATLAB, * is elementwise multiplication, not matrix multiplication. We instead use the dot function to compute inner products of vectors, to multiply a vector by a matrix, and to multiply matrices. dot is available both as a function in the numpy module and as an instance method of array objects:
-x = np.array([[1,2],[3,4]])
-y = np.array([[5,6],[7,8]])
-
-v = np.array([9,10])
-w = np.array([11, 12])
-
-# Inner product of vectors; both produce 219
-print(v.dot(w))
-print(np.dot(v, w))
-
-# Matrix / vector product; both produce the rank 1 array [29 67]
-print(x.dot(v))
-print(np.dot(x, v))
-
-# Matrix / matrix product; both produce the rank 2 array
-# [[19 22]
-#  [43 50]]
-print(x.dot(y))
-print(np.dot(x, y))
+# Note that unlike MATLAB, * is elementwise multiplication, not matrix multiplication. 
+# We instead use the dot function to compute inner products of vectors, to multiply a vector by a matrix, and to multiply matrices. 
+#dot is available both as a function in the numpy module and as an instance method of array objects:
+>>> A = np.array( [[1,1],
+...             [0,1]] )
+>>> B = np.array( [[2,0],
+...             [3,4]] )
+>>> A * B                       # elementwise product 点乘
+array([[2, 0],
+       [0, 4]])
+>>> A @ B                       # matrix product 矩阵乘
+array([[5, 4],
+       [3, 4]])
+>>> A.dot(B)                    # another matrix product 矩阵乘
+array([[5, 4],
+       [3, 4]])
 
 ```
 
