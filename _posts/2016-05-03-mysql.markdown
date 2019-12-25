@@ -134,7 +134,7 @@ use DATABASE;
 rename table MyClass to YouClass;
 
 列出列名
-SELECT TABLE_COMMENT FROM INFORMATION_SCHEMA.TABLES  WHERE TABLE_NAME = 'sh_goods' AND TABLE_SCHEMA = 'sh_shop';
+select column_name, column_comment from information_schema.columns where table_schema ='db' and table_name = 'tablename' ;
 ```
 
 外网访问
