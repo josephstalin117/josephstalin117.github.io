@@ -234,3 +234,21 @@ git pull origin [远程分支]
 git merge origin/master
 git rebase origin/master
 ```
+
+合并远程分支
+```
+# 本地创建一个和远程分支b相同的分支b
+git checkout -b b origin/b
+
+# 远程代码pull到本地
+git pull origin b
+
+# 返回分支a
+git checkout a
+
+# 合并分支a和分支b
+git merge b
+
+# 本地分支a同步到远程
+git push origin a
+```
