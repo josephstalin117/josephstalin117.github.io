@@ -30,7 +30,7 @@ awk -v  # 设置变量
 $awk -va=1 '{print $1,$1+a}' log.txt
 ```
 
-常用
+常用正则
 ```
 # 过滤第一列大于2的行
 $ awk '$1>2' log.txt
