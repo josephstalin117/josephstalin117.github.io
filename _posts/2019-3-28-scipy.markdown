@@ -45,5 +45,70 @@ array([[ 0.,  1.,  0.,  0.],
        [ 0.,  0.,  2.,  0.],
        [ 0.,  0.,  0.,  3.],
        [ 0.,  0.,  0.,  0.]])
+```
 
+求特征值eigenvalues
+```
+from numpy import linalg as LA
+
+>>> w, v = LA.eig(np.diag((1, 2, 3)))
+>>> w; v
+array([1., 2., 3.])
+array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+```
+
+求解线性方程组
+```
+#importing the scipy and numpy packages
+from scipy import linalg
+import numpy as np
+
+#Declaring the numpy arrays
+a = np.array([[3, 2, 0], [1, -1, 0], [0, 5, 1]])
+b = np.array([2, 4, -1])
+
+#Passing the values to the solve function
+x = linalg.solve(a, b)
+
+#printing the result array
+print(x)
+[2, -2, 9]
+```
+
+特征值和特征向量
+```
+#importing the scipy and numpy packages
+from scipy import linalg
+import numpy as np
+
+#Declaring the numpy array
+A = np.array([[1,2],[3,4]])
+
+#Passing the values to the eig function
+l, v = linalg.eig(A)
+
+#printing the result for eigen values
+print(l)
+[-0.37228132+0.j  5.37228132+0.j]
+
+#printing the result for eigen vectors
+print(v)
+[[-0.82456484 -0.41597356]
+ [ 0.56576746 -0.90937671]]
+```
+
+scipy.sparse.rand
+```
+# 生成随机的稀疏矩阵
+>>> from scipy.sparse import rand
+>>> matrix = rand(3, 4, density=0.25, format="csr", random_state=42)
+>>> matrix
+<3x4 sparse matrix of type '<class 'numpy.float64'>'
+   with 3 stored elements in Compressed Sparse Row format>
+>>> matrix.todense()
+matrix([[0.05641158, 0.        , 0.        , 0.65088847],
+        [0.        , 0.        , 0.        , 0.14286682],
+        [0.        , 0.        , 0.        , 0.        ]])
 ```

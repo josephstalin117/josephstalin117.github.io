@@ -149,6 +149,17 @@ ps aux | sort -k4,4nr | head -n 10
 
 # 停止gdm服务
 sudo systemctl stop gdm3
+
+# glances 进程监控
+apt install glances
+热键
+a 自动排序
+c 按CPU使用率排序
+m 按内存占用排序
+i 按io速率排序进程
+n 显示或吟唱网络流量统计
+
+
 ```
 
 #### 标准输入输出
@@ -605,6 +616,12 @@ pdf转text
 ```
 apt-get install poppler-utils
 pdftotext php-manual.pdf php-manual.txt
+```
+
+格式化json
+```
+apt install jq
+cat json.txt | jq '.'
 ```
 
 统计文件行数

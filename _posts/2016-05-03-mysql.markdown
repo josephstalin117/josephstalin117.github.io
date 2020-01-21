@@ -132,6 +132,9 @@ use DATABASE;
 
 重命名表名
 rename table MyClass to YouClass;
+
+列出列名
+select column_name, column_comment from information_schema.columns where table_schema ='db' and table_name = 'tablename' ;
 ```
 
 外网访问
