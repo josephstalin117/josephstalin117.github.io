@@ -79,6 +79,15 @@ ip route add 192.0.2.0/26 via 192.0.2.1 dev eth0
 ip route add default via 192.168.0.1 dev eth0
 ```
 
+dns查询
+```
+# 查询单个域名的DNS信息
+dig baidu.com
+
+# 使用指定的DNS服务器进行查询
+dig @8.8.8.8 abc.filterinto.com
+```
+
 traceroute
 ```
 # 追踪网络数据包的路由
