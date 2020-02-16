@@ -6,7 +6,6 @@ categories: command
 ---
 
 #### nmap
-
 ```
 # 扫描局域网ip(进行ping扫描)
 nmap -sP 192.168.9.0/24
@@ -31,6 +30,18 @@ arp -a
 
 # 查看arp缓存表获取局域网IP地址
 cat /proc/net/arp
+```
+
+curl
+```
+# 只打印响应头部信息
+curl -I http://baidu.com
+
+# 将下载数据写入指定文件中
+curl http://man.linuxde.net/test.iso -o filename.iso --progress
+
+# HTTP POST 方式传送数据
+curl -d 
 ```
 
 proxychains
