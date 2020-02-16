@@ -126,6 +126,30 @@ nethogs eht0
 cat /etc/resolv.conf
 ```
 
+netstat查看套接字连接情况
+```
+# 列出当前所有连接
+netstat -a
+
+# 列出TCP协议连接
+netstat -t
+
+# 列出UDP协议连接
+netstat -u
+
+# 禁用反向域名解析
+netstat -n
+
+# 列出正在监听的套接字
+netstat -tnl
+
+# 获取进程名、进程号及用户ID
+sudo netstat -nlpt
+
+# 查看进程名和用户名
+sudo netstat -ltpe
+```
+
 静态路由设置
 ```
 /etc/netplay/01-network-manager.yaml
