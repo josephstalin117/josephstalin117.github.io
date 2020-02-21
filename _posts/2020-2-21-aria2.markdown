@@ -7,22 +7,22 @@ categories: command
 
 下载单个文件
 ```
-aria2c https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
+aria2c https://download.owncloud.org/owncloud-9.0.0.tar.bz2
 ```
 
 使用不同名字保存文件
 ```
-aria2c -o owncloud.zip https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
+aria2c -o owncloud.zip https://download.owncloud.org/owncloud-9.0.0.tar.bz2
 ```
 
 限制下载带宽
 ```
-aria2c --max-download-limit=500k https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
+aria2c --max-download-limit=500k https://download.owncloud.org/owncloud-9.0.0.tar.bz2
 ```
 
 续传未完成的下载
 ```
-aria2c -c https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
+aria2c -c https://download.owncloud.org/owncloud-9.0.0.tar.bz2
 ```
 
 从文件中获取下载输入
@@ -32,7 +32,7 @@ aria2c -i test-aria2.txt
 
 使用两个连接来下载
 ```
-aria2c -x2 https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
+aria2c -x 2 https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
 ```
 
 
