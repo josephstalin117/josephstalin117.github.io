@@ -58,3 +58,25 @@ try_files $uri $uri/ /index.php$is_args$args;
     }
 
 ```
+
+中转
+```
+events {
+        worker_connections 768;
+        # multi_accept on;
+}
+
+stream{
+    upstream group {
+        server berton.site:443;     # ip:port
+    }
+
+    server {
+        listen 0.0.0.0:80;
+        listen 80 udp;
+        proxy_pass group;
+        proxy_timeout 10m;
+        proxy_connect_timeout 5000ms;
+    }
+}
+```
