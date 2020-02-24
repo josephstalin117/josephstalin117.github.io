@@ -42,6 +42,9 @@ curl http://man.linuxde.net/test.iso -o filename.iso --progress
 
 # HTTP POST 方式传送数据
 curl -d 
+
+# 使用代理
+curl -x socks5://myproxy.com:8080 https://www.example.com
 ```
 
 proxychains
