@@ -35,5 +35,10 @@ aria2c -i test-aria2.txt
 aria2c -x 2 https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
 ```
 
+使用代理下载
+```
+aria2c --http-proxy 'http://127.0.0.1' $url
+```
+
 
 
