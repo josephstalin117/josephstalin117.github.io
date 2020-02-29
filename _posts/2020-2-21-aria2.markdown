@@ -30,9 +30,20 @@ aria2c -c https://download.owncloud.org/owncloud-9.0.0.tar.bz2
 aria2c -i test-aria2.txt
 ```
 
-使用两个连接来下载
+分段下载
 ```
 aria2c -x 2 https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
+```
+
+多线程下载
+```
+aria2c -s 2 http://xx.com/xx
+```
+
+BT下载
+```
+aria2c ‘xxx.torrnet‘
+aria2c '磁力链接'
 ```
 
 使用代理下载
