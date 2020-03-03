@@ -51,5 +51,17 @@ adb install apk-file
 adb uninstall apk-file
 ```
 
+下载指定文件
+```
+adb pull /sdcard/music.mp4
+```
 
+上传文件
+```
+adb push D:\Download\music.mp4 /sdcard/music
+```
 
+列出目录上的内容
+```
+adb shell ls
+```
