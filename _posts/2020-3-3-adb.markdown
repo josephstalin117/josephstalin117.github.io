@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "adb"
+date:   2020-03-03 20:35:35 +0800
+categories: command
+---
+
+
+查看adb版本信息
+```
+adb version
+```
+
+启动adb
+```
+adb start-server
+```
+
+停止adb
+```
+adb kill-server
+```
+
+查询已连接的设备
+```
+adb devices
+```
+
+查看应用列表
+```
+adb shell pm list packages
+```
+
+查看第三方应用
+```
+adb shell pm list packages -3
+```
+
+查看包名包含某字符串的应用
+```
+adb shell pm list packages huawei
+```
+
+安装应用
+```
+adb install apk-file
+```
+
+卸载应用
+```
+adb uninstall apk-file
+```
+
+
+
