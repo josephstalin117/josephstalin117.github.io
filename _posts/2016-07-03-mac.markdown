@@ -74,6 +74,14 @@ cd           #回到主目录
 cd ~         #同样也是回到主目录
 ```
 
+激活zsh
+```
+chsh -s /bin/zsh
+
+# 更换bash
+chsh -s /bin/bash
+```
+
 jobs control  
 ```
 Ctrl+z #will suspend the currently forgrounded program
