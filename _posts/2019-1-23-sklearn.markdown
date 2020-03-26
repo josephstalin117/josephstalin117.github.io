@@ -48,3 +48,18 @@ best_model = clf.best_estimator_
 print(clf.best_params_)
 ```
 
+labelEncoder
+```
+# Encode target labels with value between 0 and n_classes-1.
+>>> from sklearn import preprocessing
+>>> le = preprocessing.LabelEncoder()
+>>> le.fit([1, 2, 2, 6])
+LabelEncoder()
+>>> le.classes_
+array([1, 2, 6])
+>>> le.transform([1, 1, 2, 6])
+array([0, 0, 1, 2]...)
+>>> le.inverse_transform([0, 0, 1, 2])
+array([1, 1, 2, 6])
+```
+
