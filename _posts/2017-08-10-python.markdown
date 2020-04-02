@@ -805,3 +805,11 @@ parser.add_argument('--sensor_ids_filename', type=str, default='data/graph_senso
 					help='File containing sensor ids separated by comma.')
 args = parser.parse_args()
 ```
+
+raise
+```
+x = -1
+
+if x < 0:
+  raise Exception("Sorry, no numbers below zero")
+```
