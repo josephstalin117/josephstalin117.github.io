@@ -131,3 +131,27 @@ array([[1, 0, 2],
        [0, 0, 3],
        [4, 5, 6]])
 ```
+
+scipy.sparse.identity
+```
+# 单位矩阵
+>>> from scipy.sparse import identity
+>>> identity(3).toarray()
+array([[ 1.,  0.,  0.],
+       [ 0.,  1.,  0.],
+       [ 0.,  0.,  1.]])
+```
+
+scipy.sparse.linalg.eigsh
+```
+# 求特征矩阵
+# Find k eigenvalues and eigenvectors of the real symmetric square matrix or complex hermitian matrix A.
+
+>>> from scipy.sparse.linalg import eigsh
+>>> identity = np.eye(13)
+>>> eigenvalues, eigenvectors = eigsh(identity, k=6)
+>>> eigenvalues
+array([1., 1., 1., 1., 1., 1.])
+>>> eigenvectors.shape
+(13, 6)
+```
