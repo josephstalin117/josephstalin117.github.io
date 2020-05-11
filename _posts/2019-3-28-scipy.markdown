@@ -18,11 +18,14 @@ import scipy.sparse as sparse
 # Convert this matrix to COOrdinate format.
 A = lil.tocoo()
 for i,j,d in zip(A.row, A.col, A.data):
-	a[i,j] = d
+    a[i,j] = d
 
 # Return a dense matrix representation of this matrix.
 mtx = sparse.coo_matrix((3, 4), dtype=np.int8)
 mtx.todense()
+
+# csr to coo
+L = L.tocoo()
 ```
 
 scipy.sparse.diags
@@ -111,6 +114,7 @@ scipy.sparse.rand
 matrix([[0.05641158, 0.        , 0.        , 0.65088847],
         [0.        , 0.        , 0.        , 0.14286682],
         [0.        , 0.        , 0.        , 0.        ]])
+
 ```
 
 scipy.sparse.csr_matrix
