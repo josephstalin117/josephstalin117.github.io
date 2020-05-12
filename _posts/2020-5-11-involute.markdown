@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "社会的内卷化该如何应对"
-date:   2020-05-01 20:35:35 +0800
+date:   2020-05-11 20:35:35 +0800
 categories: essay
 ---
 
