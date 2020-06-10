@@ -232,6 +232,9 @@ dict.keys()
 
 # 只包含value
 dict.values()
+
+# loop
+for key, value in d.items():
 ```
 
 python 执行bash命令
