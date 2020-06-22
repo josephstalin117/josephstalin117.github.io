@@ -439,6 +439,9 @@ pip search <搜索关键字>
 
 # 换源
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple <包名>
+
+# 阿里源
+https://mirrors.aliyun.com/pypi/simple/
 ```
 
 jupyter
