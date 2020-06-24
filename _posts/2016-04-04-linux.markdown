@@ -129,6 +129,10 @@ lsof -i:80
 # 查看程序打开了那些文件
 lsof -p 7876
 
+# 查看进程占用端口
+ps -ef | grep 进程名
+netstat -nltp | grep  进程号
+
 # 查看哪些服务占用
 sudo lsof | grep nvidia
 
