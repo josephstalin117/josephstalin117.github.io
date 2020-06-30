@@ -10,6 +10,9 @@ data read
 # Reading a csv into Pandas.
 df = pd.read_csv('uk_rain_2014.csv', encoding='utf-8', header=0)
 
+# Read n rows
+data = pd.read_csv('data.csv', nrows = 5)
+
 # Getting first x rows.
 df.head(5)
 
