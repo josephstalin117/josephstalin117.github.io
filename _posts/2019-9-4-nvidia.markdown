@@ -35,8 +35,16 @@ sudo /usr/bin/nvidia-uninstall
 sudo apt-get purge nvidia*
 ```
 
-卸载cuda
+cuda
 ```
+# 验证安装
+# Verify running CUDA GPU jobs by compiling the samples and executing the deviceQuery or bandwidthTest programs.
+cd /usr/local/cuda-7.0/samples
+make
+./deviceQuery
+
+
+# 卸载cuda
 sudo /usr/local/cuda-8.0/bin/uninstall_cuda-8.0.pl
 ```
 
@@ -69,6 +77,14 @@ cuDNN
 sudo dpkg -i libcudnn8_x.x.x-1+cudax.x_amd64.deb
 sudo dpkg -i libcudnn8-dev_8.x.x.x-1+cudax.x_amd64.deb
 sudo dpkg -i libcudnn8-doc_8.x.x.x-1+cudax.x_amd64.deb
+
+# 验证cudnn安装
+cp -r /usr/src/cudnn_samples_v8/ $HOME
+cd  $HOME/cudnn_samples_v8/mnistCUDNN
+# Compile the mnistCUDNN sample.
+make clean && make
+./mnistCUDNN
+# Test passed!
 
 # 查看cuDNN版本信息
 cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
