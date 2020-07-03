@@ -32,7 +32,7 @@ sudo systemctl stop gdm3
 卸载驱动
 ```
 sudo /usr/bin/nvidia-uninstall
-sudo apt-get install autoremove --purge nvidia* 
+sudo apt-get purge nvidia*
 ```
 
 卸载cuda
@@ -63,7 +63,13 @@ ldconfig /usr/local/cuda-10.0/lib64
 nvcc --version
 ```
 
-查看cuDNN版本信息
+cuDNN
 ```
+# 安装cuDNN
+sudo dpkg -i libcudnn8_x.x.x-1+cudax.x_amd64.deb
+sudo dpkg -i libcudnn8-dev_8.x.x.x-1+cudax.x_amd64.deb
+sudo dpkg -i libcudnn8-doc_8.x.x.x-1+cudax.x_amd64.deb
+
+# 查看cuDNN版本信息
 cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
 ```
