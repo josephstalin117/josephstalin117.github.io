@@ -30,6 +30,11 @@ vim
 ]
 ```
 
+wrap
+```
+"editor.wordWrap": "on"
+```
+
 快捷键
 ```
 移动行：alt+up/down
