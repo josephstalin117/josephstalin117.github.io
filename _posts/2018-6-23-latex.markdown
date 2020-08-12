@@ -653,6 +653,12 @@ Bill Gates& 002& Female\\
 ],
 ```
 
+vscode操作
+```
+# paper 反选
+ctrl+右键
+```
+
 pdf2eps
 ```
 pdftops -eps [file].pdf
