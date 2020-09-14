@@ -334,3 +334,16 @@ iptables -t mangle -A V2RAY_MASK -d 192.168.0.0/16 -j RETURN
 iptables -t mangle -A V2RAY_MASK -p udp -j TPROXY --on-port 12345 --tproxy-mark 1
 iptables -t mangle -A PREROUTING -p udp -j V2RAY_MASK
 ```
+
+时间同步
+```
+apt-get update
+apt-get install ntp ntpdate -y
+
+yum install ntp ntpdate -y
+
+service ntpd stop                 #停止ntp服务
+ntpdate us.pool.ntp.org           #同步ntp时间
+service ntpd start                #启动ntp服务
+```
+
