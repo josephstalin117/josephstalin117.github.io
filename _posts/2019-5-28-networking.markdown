@@ -347,3 +347,20 @@ ntpdate us.pool.ntp.org           #同步ntp时间
 service ntpd start                #启动ntp服务
 ```
 
+修改mac地址
+```
+# 闭网卡设备
+ifconfig eth0 down
+
+# 修改MAC地址
+ifconfig eth0 hw ether MAC地址
+
+# 重启网卡
+ifconfig eth0 up
+
+# /etc/rc.d/rc.local中添加下三行
+ifconfig eth0 down
+ifconfig eth0 hw ether 00:0C:18:EF:FF:ED
+ifconfig eth0 up
+```
+
