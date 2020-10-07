@@ -164,6 +164,17 @@ i 按io速率排序进程
 n 显示或吟唱网络流量统计
 
 
+# fuser 报告进程使用的文件和网络套接字
+
+# 列出使用/etc/filesystems文件的进程的进程号和用户登录名
+fuser -u /etc/filesystems
+# 查看那些程序使用tcp的80端口
+fuser -v 80/tcp
+# 杀死访问指定文件的所有进程
+fuser -k 443/tcp
+# 查看哪个用户哪个进程占用着此设备
+fuser -m -v /dev/sdb1
+
 ```
 
 #### 标准输入输出
