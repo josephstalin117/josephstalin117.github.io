@@ -208,6 +208,9 @@ map <F2> :NERDTreeToggle<CR>
 # 配置文件
 ~/.config/nvim/init.vim
 
+# swap
+~/.local/share/nvim/swap
+
 # 插件管理工具 vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
