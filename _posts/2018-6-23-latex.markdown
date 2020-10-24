@@ -664,6 +664,11 @@ pdf2eps
 pdftops -eps [file].pdf
 ```
 
+eps2pdf
+```
+epstopdf [file].eps
+```
+
 编译tex文件
 ```
 pdflatex test.tex
