@@ -648,3 +648,14 @@ cat json.txt | jq '.'
 # c 统计字节数 l 统计行数 w 统计字数
 wc -clw file
 ```
+
+查看文件
+```
+cat file.txt
+
+# 查看前几行
+head -n 10 file.txt
+
+# 查看后几行
+tail -n 10 file.txt
+```
