@@ -374,6 +374,31 @@ print ("The Student DOB using getattr() is : ",end ="")
 print (getattr(S,'DOB'))
 ```
 
+vars
+```
+# The vars() function returns the __dic__ attribute of an object.
+# The __dict__ attribute is a dictionary containing the object's changeable attributes.
+
+class Person:
+  name = "John"
+  age = 36
+  country = "norway"
+
+x = vars(Person) 
+```
+
+setattr
+```
+# The setattr() function sets the value of the specified attribute of the specified object.
+
+class Person:
+  name = "John"
+  age = 36
+  country = "Norway"
+
+setattr(Person, 'age', 40)
+```
+
 slice
 ```
 # A slice object is used to specify how to slice a sequence. You can specify where to start the slicing, and where to end. You can also specify the step, which allows you to e.g. slice only every other item.
