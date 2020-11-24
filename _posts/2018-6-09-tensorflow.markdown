@@ -331,6 +331,9 @@ def square_if_positive_vectorized(x):
 
 # [-5, -4, -3, -2, -1,  0,  1,  4,  9, 16]
 square_if_positive_vectorized(tf.range(-5, 5))
+
+# [1, 200, 300, 4]
+tf.where([True, False, False, True], [1,2,3,4], [100,200,300,400])
 ```
 
 keras
