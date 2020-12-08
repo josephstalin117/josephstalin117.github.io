@@ -28,6 +28,26 @@ mtx.todense()
 L = L.tocoo()
 ```
 
+coo_matrix()
+```
+# Constructing a matrix using ijv format
+row  = np.array([0, 3, 1, 0])
+col  = np.array([0, 3, 1, 2])
+data = np.array([4, 5, 7, 9])
+coo_matrix((data, (row, col)), shape=(4, 4)).toarray()
+array([[4, 0, 9, 0],
+       [0, 7, 0, 0],
+       [0, 0, 0, 0],
+       [0, 0, 0, 5]])
+```
+
+isspmatrix_coo()
+```
+from scipy.sparse import coo_matrix, isspmatrix_coo
+isspmatrix_coo(coo_matrix([[5]]))
+True
+```
+
 scipy.sparse.diags
 ```
 # Construct a sparse matrix from diagonals.
@@ -48,6 +68,19 @@ array([[ 0.,  1.,  0.,  0.],
        [ 0.,  0.,  2.,  0.],
        [ 0.,  0.,  0.,  3.],
        [ 0.,  0.,  0.,  0.]])
+```
+
+scipy.sparse.spdiags()
+```
+# Return a sparse matrix from diagonals.
+from scipy.sparse import spdiags
+data = np.array([[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]])
+diags = np.array([0, -1, 2])
+spdiags(data, diags, 4, 4).toarray()
+array([[1, 0, 3, 0],
+       [1, 2, 0, 4],
+       [0, 2, 3, 0],
+       [0, 0, 3, 4]])
 ```
 
 求特征值eigenvalues
