@@ -181,16 +181,22 @@ network
 ```
 # 创建新的docker网络
 docker network create -d bridge my-net
+docker network create --driver=bridge --subnet=192.161.0.0/16 monitor_net
 
 # 运行两个容器并连接到 my-net 网络, 进入任一个容器，两者可以互相ping通
 docker run -it --rm --name busybox1 --network my-net busybox sh
 docker run -it --rm --name busybox2 --network my-net busybox sh
+
+docker run -it --name <容器名> ---network monitor_net  <镜像名>
 
 # 列出所有docker网络
 docker network ls
 
 # 删除网络
 docker network rm c520032c3d31
+
+# 删除网桥
+ip link del docker0 down
 
 # Use the docker network prune command to remove all unused networks.
 docker network prune
