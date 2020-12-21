@@ -64,6 +64,9 @@ sudo  usermod -aG sudo username
 # 将用户从sudo组删除，并添加到其他组
 sudo usermod -G 用户组名  用户名
 
+# 将用户从一个组中删除
+gpasswd -d userName groupName
+
 # 添加环境变量
 export PATH="/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:$PATH"
 

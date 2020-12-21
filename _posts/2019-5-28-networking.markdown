@@ -91,6 +91,9 @@ ip route add 192.0.2.0/26 via 192.0.2.1 dev eth0
 
 # 添加默认路由
 ip route add default via 192.168.0.1 dev eth0
+
+# 删除默认网桥
+ip link del docker0 down
 ```
 
 dns查询
@@ -362,5 +365,17 @@ ifconfig eth0 up
 ifconfig eth0 down
 ifconfig eth0 hw ether 00:0C:18:EF:FF:ED
 ifconfig eth0 up
+```
+
+acme.sh
+```
+# 生成证书
+acme.sh  --issue -d mydomain.com   --standalone
+
+# 安装证书
+acme.sh --install-cert -d example.com \
+--key-file       /path/to/keyfile/in/nginx/key.pem  \
+--fullchain-file /path/to/fullchain/nginx/cert.pem \
+--reloadcmd     "service nginx force-reload"
 ```
 
