@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "gitlab"
+date:   2021-1-18 20:35:35 +0800
+categories: command
+---
+
+基本命令
+```
+重新配置：gitlab-ctl reconfigure
+启动：gitlab-ctl start
+重新启动：gitlab-ctl restart
+停止：gitlab-ctl stop
+查看状态：gitlab-ctl status
+实时日志查看：gitlab-ctl tail
+检查报错：gitlab-rake gitlab:check
+```
+
+卸载
+```
+# 停止
+gitlab-ctl stop
+
+# Debian/Ubuntu
+sudo dpkg -r gitlab-ce
+
+# Redhat/Centos
+rpm -e gitlab-ce
+
+# 
+ps aux | grep gitlab
+```

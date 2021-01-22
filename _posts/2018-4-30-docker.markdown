@@ -33,6 +33,15 @@ docker history image_name
 # 普通用户授权docker
 sudo usermod -aG docker user
 sudo service docker restart
+
+# 启动一个或多个已经被停止的容器
+docker start
+
+# 停止一个运行中的容器
+docker stop
+
+# 重启容器
+docker restart
 ```  
 
 images文件管理
