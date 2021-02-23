@@ -186,6 +186,12 @@ docker-compose up -d nginx mysql
 
 ```
 
+docker compose
+```
+# Make sure you are in the same directory as docker-compose.yml
+docker-compose up -d
+```
+
 network
 ```
 # 创建新的docker网络

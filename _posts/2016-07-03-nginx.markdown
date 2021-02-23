@@ -16,6 +16,7 @@ nginx -V #查看版本信息和编译信息
 sudo nginx            # start
 sudo nginx -s stop    # stop
 sudo nginx -s reload  # restart
+sudo systemctl reload nginx
 ```
 
 #### REST

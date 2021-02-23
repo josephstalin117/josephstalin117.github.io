@@ -209,6 +209,21 @@ Equation \ ref{con:inventoryflow} is the inventory flow formula.
 空心
 \mathbb{R}
 
+黑体
+\mathbf{R}
+
+罗马字体
+\mathrm{R}
+
+无衬线体
+\mathsf{R}
+
+书法体
+\mathcal{R}
+
+手写体
+\mathscr{R}
+
 数学字体加粗
 \usepackage{bm}
 \bm{R}
