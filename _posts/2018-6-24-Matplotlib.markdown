@@ -258,3 +258,12 @@ foo_fig = plt.gcf()
 foo_fig.savefig('foo.eps', format='eps', dpi=1000)
 plt.show()
 ```
+
+误差图
+```
+fig, (ax, ax1) = plt.subplots(2, 1, sharex=True)
+ax.plot(x, y1, x, y2, color='black')
+ax.fill_between(x, y1, y2, where=y2 >= y1, facecolor='green', interpolate=True)
+ax.fill_between(x, y1, y2, where=y2 <= y1, facecolor='red', interpolate=True)
+ax.set_title('fill between where')
+```

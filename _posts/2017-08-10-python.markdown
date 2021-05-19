@@ -921,3 +921,57 @@ if __name__=='__main__':
     p.join()
     print 'All subprocesses done.'
 ```
+
+#### XML解析
+```
+<?xml version="1.0"?>
+<data>
+    <country name="Liechtenstein">
+        <rank>1</rank>
+        <year>2008</year>
+        <gdppc>141100</gdppc>
+        <neighbor name="Austria" direction="E"/>
+        <neighbor name="Switzerland" direction="W"/>
+    </country>
+    <country name="Singapore">
+        <rank>4</rank>
+        <year>2011</year>
+        <gdppc>59900</gdppc>
+        <neighbor name="Malaysia" direction="N"/>
+    </country>
+    <country name="Panama">
+        <rank>68</rank>
+        <year>2011</year>
+        <gdppc>13600</gdppc>
+        <neighbor name="Costa Rica" direction="W"/>
+        <neighbor name="Colombia" direction="E"/>
+    </country>
+</data>
+
+import xml.etree.ElementTree as ET
+tree = ET.parse('country_data.xml')
+root = tree.getroot()
+
+# parse from string
+root = ET.fromstring(country_data_as_string)
+
+# root
+>>> root.tag
+'data'
+>>> root.attrib
+{}
+
+# loop
+>>> for child in root:
+...     print(child.tag, child.attrib)
+...
+country {'name': 'Liechtenstein'}
+country {'name': 'Singapore'}
+country {'name': 'Panama'}
+
+# get text
+>>> root[0][1].text
+'2008'
+```
+
+

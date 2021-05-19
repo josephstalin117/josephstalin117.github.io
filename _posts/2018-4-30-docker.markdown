@@ -38,7 +38,7 @@ sudo service docker restart
 docker start
 
 # 停止一个运行中的容器
-docker stop
+docker stop id
 
 # 重启容器
 docker restart
