@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "frp"
+date:   2021-5-29 20:35:35 +0800
+categories: command
+---
+
+#### frps 配置
+
+```
+[common]
+bind_addr = 0.0.0.0
+bind_port = 7000
+bind_udp_port = 7001
+log_file = /usr/frp/frps.log
+# trace, debug, info, warn, error
+log_level = info
+log_max_days = 3
+
+# set dashboard_addr and dashboard_port to view dashboard of frps
+# dashboard_addr's default value is same with bind_addr
+# dashboard is available only if dashboard_port is set
+dashboard_addr = 0.0.0.0
+dashboard_port = 7500
+
+# dashboard user and pwd for basic auth protect, if not set, both default value is admin
+dashboard_user = admin
+dashboard_pwd = dashbord_password
+
+# auth
+authentication_method = token
+token = frp_server_token
+```
+
+启动frps
+```
+/usr/frp/frps -c /usr/frp/frps.ini
+```
+
+
+#### 内网服务配置
+
+```
+[common]
+server_addr = 172.8.11.202
+server_port = 7000
+token = frp_server_token
+login_fail_exit = false
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 6000
+```
+
