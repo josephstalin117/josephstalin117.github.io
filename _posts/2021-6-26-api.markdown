@@ -1,0 +1,275 @@
+---
+layout: post
+title:  "api"
+date:   2021-6-27 20:35:35 +0800
+categories: command
+---
+
+任何的API设计都遵循面向资源设计（Resource Oriented Design）,它包含如下三个关键概念：
+
+1. 资源: 资源就是一份数据,比如,一个用户
+2. 集合: 一组资源叫集合,比如一个用户列表
+3. URL:标识资源或集合的地址, 比如 /user
+
+#### 1. 对URLs使用kebab-case命名法
+
+例如,如果你想获得订单列表
+
+差的示例
+```
+/systemOrders 或者 /system_orders
+```
+
+好的示例：
+```
+/system-orders
+```
+
+
+#### 2. 对参数使用驼峰命名法
+
+例如, 如果你想从一个特定商店获得产品
+
+差的示例：
+
+```
+/system-orders/{order_id} 或者 /system-orders/{OrderId}
+```
+
+好的示例：
+```
+/system-orders/{orderId}
+```
+
+#### 3. 对集合使用复数命名法
+
+如果你想获得系统中的所有用户
+
+差的示例：
+
+```
+GET /user 或者 GET /User
+```
+
+好的示例：
+
+```
+GET /users
+```
+
+#### 4. URL以集合开头以标识符结尾
+
+如果你想要保证概念的单一和一致性
+
+差的示例：
+
+```
+GET /shops/:shopId/category/:categoryId/price
+```
+
+这种写法很糟糕,因为该URL指向的是一个属性而非资源。
+
+好的示例：
+
+```
+GET /shops/:shopId/ 或者 GET /category/:categoryId
+```
+
+#### 5. 资源URL中不要出现动词
+
+不要在URL中使用动词表达你的目的, 应该用适当的HTTP方法描述一个操作
+
+差的示例：
+
+```
+POST /updateuser/{userId} or GET /getusers
+```
+
+好的示例：
+
+```
+PUT /user{userId}
+```
+
+#### 6. 在非资源URL中使用动词
+
+如果您有一个仅返回单个操作的端点， 您可以使用动词。例如，如果您想向用户重新发送警报。
+
+好的例子：
+
+```
+POST /alerts/245743/resend
+```
+
+记住这些操作不是增删改查操作, 而是在我们的系统里用来完成特定任务的功能
+
+#### 7. 对JSON属性使用驼峰命名
+
+如果在你构建的系统中,你的请求体或者响应是JSON, 那么属性名应该使用驼峰命名法
+
+差的示例：
+
+```
+{user_name: "Mohammad Faisal"user_id: "1"}
+```
+
+好的示例：
+
+```
+{userName: "Mohammad Faisal"userId: "1"}
+```
+
+#### 8. 监控
+
+RESTful HTTP 服务必须实现 /health 和 /version 以及 /metrics端点。他们将提供以下信息。
+
+/health
+使用 200 OK 状态代码响应对 /health 的请求。
+
+/version
+用版本号响应/version的请求。
+
+/metrics
+此端点将提供各种指标，例如平均响应时间。
+ 
+此外也强烈推荐/debug 和 /status 端点。
+
+#### 9. 不要使用 table_name 作为资源名称
+
+不要使用tabel_name命名你的资源, 从长远来看这种偷懒是有害的
+
+差的示例：
+
+```
+product_order
+```
+
+好的示例：
+
+```
+product-orders
+```
+
+因为这会无意间暴露底层架构。
+
+#### 10. 使用API设计工具
+
+有很多好的 API 设计工具可以用来制作好的文档，例如
+
+* API Blueprint
+* Swagger
+
+对你的API用户来说，一份优秀详细的文档会带来非常棒的用户体验。
+
+#### 11. 使用简单序数作为版本
+
+始终对 API 进行版本控制并将向左移动，以使其具有最高的范围。版本号应为 v1、v2 等。
+
+好的示例：
+
+```
+http://api.domain.com/v1/shops/3/products
+```
+
+始终对API使用版本控制的原因是如果你的API被外部实体使用, 更改端点会破坏其功能。
+
+
+#### 12. 在您的响应中包括资源总数
+
+如果 API 返回一个对象列表，在响应中经常包含资源总数。您可以为此使用 total 属性。
+
+差的示例：
+
+```
+{users: [ ...]}
+```
+
+好的示例：
+
+```
+{  users: [      ...  ],  
+total: 34}
+```
+
+#### 13. 接受限制和偏移参数
+
+在GET操作中始终接受limit和offset参数。
+
+好的示例：
+
+```
+GET /shops?offset=5&limit=5
+```
+
+这是因为前端需要分页。
+
+#### 14. 获取字段查询参数
+
+考虑到要返回的数据量, 添加 fields 参数仅公开 API 中的必需字段。
+
+例子：
+
+仅返回商店的姓名，地址，和联系方式
+
+```
+GET /shops?fields=id,name,address,contact
+```
+
+在有些例子中它也有助于减少响应的大小。
+
+#### 15. 不要在 URL 中传递身份验证令牌
+
+这是一个非常糟糕的例子, 因为URLs经常被日志记录, 因此身份验证令牌也会被不必要地记录上
+
+差的例子：
+
+```
+GET /shops/123?token=some_kind_of_authenticaiton_token
+```
+
+好的例子：
+
+将它们与标头一起传递：
+
+```
+Authorization: Bearer xxxxxx, Extra yyyyy
+```
+
+同时，身份验证令牌时效性应该很短。
+
+#### 16. 验证内容的类型
+
+服务器不应内容类型。例如，如果您接受 application/x-www-form-urlencoded，那么攻击者可以创建一个表单并触发一个简单的 POST 请求。
+
+因此，要经常验证content-type ，如果您想使用默认类型，请使用content-type: application/json
+
+#### 17. 对增删查改功能使用HTTP方法
+
+HTTP方法用于解释增删查改功能
+
+* GET：检索资源的表示。
+
+* POST：创建新资源和子资源。
+
+* PUT：更新现有资源。
+
+* PATCH：更新现有资源。它只更新提供的字段，其他字段不理会
+
+* DELETE：删除现有资源。
+
+#### 18. 将 URL 中的关系用于嵌套资源
+
+一些实际例子是：
+
+* `GET /shops/2/products` 从商店 2 获取所有产品的列表。
+
+* `GET /shops/2/products/31`：获取店铺2中商品31的详细信息
+
+* `DELETE /shops/2/products/31` ，应该删除店铺 2 中的产品 31。
+
+* `PUT /shops/2/products/31` ，应该更新产品 31 的信息，只在资源 URL 上使用 PUT，而不是集合URL。
+
+* `POST /shops`，应该创建一个新商店并返回创建的新商店的详细信息。在集合 URL 上使用 POST。
+
+
+
