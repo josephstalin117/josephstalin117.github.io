@@ -34,3 +34,31 @@ svn commit -m "这个是修改操作"
 ```
 svn update
 ```
+
+passwd
+```
+# passwd
+[users]
+user1 = 123456
+```
+
+svnserve.conf
+```
+anon-access = read
+auth-access = write
+password-db = passwd
+```
+
+authz
+```
+[groups]
+dev = joseph
+
+[/]
+* = r
+@dev = rw
+
+[/docs]
+* = r
+@dev = rw
+```
