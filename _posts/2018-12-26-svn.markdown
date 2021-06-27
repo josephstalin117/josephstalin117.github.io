@@ -10,9 +10,19 @@ categories: command
 svn import ~/Documents/hangge_1268 svn://localhost/hangge/hangge_1268 --username=hangge --password=123 -m "这个是注释"
 ```
 
-下载代码
+仓库检出
 ```
 svn checkout svn://localhost/hangge --username=hangge --password=123 ~/Documents/hangge
+```
+
+创建仓库
+```
+svnadmin create /var/svn/svnrepos/具体项目名
+```
+
+启动svn
+```
+svnserve -d -r 目录 --listen-port 端口号
 ```
 
 提交代码
