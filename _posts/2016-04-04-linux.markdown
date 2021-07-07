@@ -662,3 +662,26 @@ head -n 10 file.txt
 # 查看后几行
 tail -n 10 file.txt
 ```
+
+#### 文件同步
+```
+rsync -r source destination
+
+# 多目录同步
+rsync -r source1 source2 destination
+
+# 同步元信息（比如修改时间、权限等）
+rsync -a source destination
+
+# 镜像副本（确保两目录完全相同）
+rsync -av --delete source/ destination
+
+# 排除文件
+rsync -av --exclude='*.txt' source/ destination
+
+# 指定必须同步文件
+rsync -av --include="*.txt" --exclude='*' source/ destination
+
+# 远程同步
+rsync -av source/ username@remote_host:destination
+```

@@ -11,6 +11,11 @@ categories: command
 youtube-dl.exe --proxy "socks5://127.0.0.1:1081/" -f 137+bestaudio --merge-output-format mkv "youtube url"
 ```
 
+查看格式
+```
+youtube-dl.exe --proxy "socks5://127.0.0.1:1081/" -F --merge-output-format mkv "youtube url"
+```
+
 
 #### ffmpeg
 
