@@ -74,6 +74,24 @@ systemctl start docker
 docker info
 ```
 
+proxy for Docker daemon
+```
+# create dir
+/etc/systemd/system/docker.service.d
+
+# create file
+/etc/systemd/system/docker.service.d/http-proxy.conf
+
+[Service]
+Environment="HTTP_PROXY=http://proxy.server:port"
+Environment="HTTPS_PROXY=http://proxy.server:port"
+Environment="NO_PROXY=localhost,127.0.0.1"
+
+# Apply settings and restart Docker:
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
 container 容器管理
 ```
 # 运行 image 其中-i启动交互式，-t是分配一个tty
@@ -137,6 +155,9 @@ docker commit \
     --message "modify: Nginx default page to Hello Docker" \
     webserver \
     nginx:v2
+
+# 查看docker挂载信息
+docker inspect [容器名]
 ```
 
 Dockerfile
@@ -192,6 +213,36 @@ docker compose
 docker-compose up -d
 ```
 
+docker compose代理设置
+```
+docker-compose build \
+    --build-arg http_proxy=http://proxy.exaple.com \
+    --build-arg https_proxy=http://proxy.exaple.com
+
+build:
+  context: .
+  args:
+    - http_proxy=http://proxy.exaple.com
+    - https_proxy=http://proxy.exaple.com
+
+# 代理设置
+bamboo-server:
+    image: matisq/bamboo-server
+    ports:
+        - 8085:8085
+        - 54663:54663
+    links:
+        - postgres
+    environment:
+        BAMBOO_VERSION: ${BAMBOO_VERSION}
+        BAMBOO_HOME: /home/bamboo
+        BAMBOO_BAMBOO_SERVER_ID: bamboo-server
+        http_proxy: http://192.168.65.1:3128
+        https_proxy: http://192.168.65.1:3128
+
+```
+
+
 network
 ```
 # 创建新的docker网络
@@ -223,6 +274,375 @@ docker换源
 {
   "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
 }
+```
+
+
+Dockerfile
+```
+FROM python:3.7.3
+
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
+RUN echo "Asia/Shanghai" > /etc/timezone
+
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak && \
+    echo "deb http://mirrors.aliyun.com/debian/ stretch main non-free contrib" >/etc/apt/sources.list && \
+    echo "deb-src http://mirrors.aliyun.com/debian/ stretch main non-free contrib" >>/etc/apt/sources.list && \
+    echo "deb http://mirrors.aliyun.com/debian-security stretch/updates main" >>/etc/apt/sources.list && \
+    echo "deb-src http://mirrors.aliyun.com/debian-security stretch/updates main" >>/etc/apt/sources.list && \
+    echo "deb http://mirrors.aliyun.com/debian/ stretch-updates main non-free contrib" >>/etc/apt/sources.list && \
+    echo "deb-src http://mirrors.aliyun.com/debian/ stretch-updates main non-free contrib" >>/etc/apt/sources.list && \
+    echo "deb http://mirrors.aliyun.com/debian/ stretch-backports main non-free contrib" >>/etc/apt/sources.list && \
+    echo "deb-src http://mirrors.aliyun.com/debian/ stretch-backports main non-free contrib" >>/etc/apt/sources.list
+
+RUN apt-get update && \
+    apt-get install -y vim && \
+	apt-get install -y openssh-server && \
+	rm -rf /var/lib/apt/lists/* && \
+	apt-get clean
+
+RUN echo 'root:bjut2019' |chpasswd
+
+RUN sed -ri 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+	sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+
+RUN mkdir -p /var/run/sshd
+
+EXPOSE 22
+EXPOSE 5000
+
+CMD ["/usr/sbin/sshd", "-D"]
+
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+ENTRYPOINT ["gunicorn"]
+```
+
+docker-compose.yaml
+```
+version: '2.2'
+services:
+    # api 接口 6075
+    twe:
+        image: water_twe
+        container_name: twe
+        restart: always
+        ports:
+            - "6075:5000"
+        volumes:
+            - ./twe:/app
+        depends_on:
+            twe-mysql:
+                condition: service_started
+            twe-redis:
+                condition: service_started
+            twe-neo4j:
+                condition: service_started
+            geoserver:
+                condition: service_started
+            twe-postgis:
+                condition: service_started
+        links:
+            - twe-mysql
+            - twe-redis
+            - twe-neo4j
+            - geoserver
+            - twe-postgis
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+    twe_master:
+        image: water_twe
+        container_name: twe_master
+        restart: always
+        ports:
+            - "10075:5000"
+        volumes:
+            - ./twe_master:/app
+        depends_on:
+            twe-mysql:
+                condition: service_started
+            twe-redis:
+                condition: service_started
+            twe-neo4j:
+                condition: service_started
+            geoserver:
+                condition: service_started
+            twe-postgis:
+                condition: service_started
+        links:
+            - twe-mysql
+            - twe-redis
+            - twe-neo4j
+            - geoserver
+            - twe-postgis
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+
+    # mysql
+    twe-mysql:
+        image: mysql:5.6
+        container_name: twe-mysql
+        restart: always
+        ports:
+            - "6076:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: 123456
+        volumes:
+            - ./mysql:/var/lib/mysql
+            - /etc/localtime:/etc/localtime
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+    
+    # mysql 在线管理 6077， 账号密码 root 123456
+    twe-phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: twe-phpmyadmin
+        restart: always
+        ports:
+            - "6077:80"
+        environment:
+            MYSQL_ROOT_PASSWORD: 123456
+        links:
+            - twe-mysql:db
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+    
+    # redis 
+    twe-redis:
+        image: redis:5
+        container_name: twe-redis
+        restart: always
+        ports:
+            - "6078:6379"
+        volumes:
+            - ./redis/twe:/data
+            - /etc/localtime:/etc/localtime
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+    
+    # neo4j 在线管理 7474，连接7687，账号密码 neo4j 8888
+    twe-neo4j:
+        image: neo4j:3.5.14
+        container_name: twe-neo4j
+        restart: always
+        ports:
+            - "7474:7474"
+            - "7687:7687"
+        volumes:
+            - ./neo4j:/data
+            - /etc/localtime:/etc/localtime
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+    
+    # geoserver 在线管理 6079, 账号密码 admin geoserver
+    geoserver:
+        image: oscarfonts/geoserver
+        container_name: geoserver
+        restart: always
+        ports:
+            - "6079:8080"
+        volumes:
+            - ./geoserver:/var/local/geoserver
+            - /etc/localtime:/etc/localtime
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+
+    # / 接口文档，/pt 平台原型
+    twe-apache:
+        image: php:7.2-apache
+        container_name: twe-apache
+        restart: always
+        ports:
+            - "6081:80"
+        volumes:
+            - ./apache:/var/www/html 
+            - /etc/localtime:/etc/localtime
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+
+    # crontab 定时任务
+    twe_crontab:
+        image: water_twe_crontab
+        container_name: twe-crontab
+        restart: always
+        links:
+            - twe-mysql:db
+            - geoserver
+            - twe-calsp
+            - twe-brain
+            - twe
+        depends_on:
+            twe-mysql:
+                condition: service_started
+            geoserver:
+                condition: service_started
+            twe-calsp:
+                condition: service_started
+        volumes:
+            - ./crontab:/app
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+
+    # water brain 训练平台
+    twe-brain:
+        image: water_twe_brain
+        container_name: twe-brain
+        restart: always
+        ports:
+            - "6082:5000"
+        links:
+            - twe-mysql:db
+            - twe-redis
+            - twe-predict
+        depends_on:
+            twe-mysql:
+                condition: service_started
+            twe-redis:
+                condition: service_started
+            twe-predict:
+                condition: service_started
+        volumes:
+            - ./brain:/app
+            - /etc/localtime:/etc/localtime
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+
+    # # celery predict 预测模型
+    twe-predict:
+        image: water_twe_predict
+        container_name: twe-predict
+        restart: always
+        ports:
+            - "6083:5000"
+        links:
+            - twe-redis-celery
+        depends_on:
+            twe-mysql:
+                condition: service_started
+            twe-redis-celery:
+                condition: service_started
+        volumes:
+            - ./predict:/app
+            - /etc/localtime:/etc/localtime
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+    
+    # # 污染管控模型
+    twe-calsp:
+        image: calsp
+        container_name: twe-calsp
+        restart: always
+        ports:
+            - "6074:5000"
+        links:
+            - twe-mysql
+        depends_on:
+            twe-mysql:
+                condition: service_started
+        volumes:
+            - ./calsp:/app
+            - /etc/localtime:/etc/localtime
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+    
+    # redis celery
+    twe-redis-celery:
+        image: redis:5
+        container_name: twe-redis-celery
+        restart: always
+        ports:
+            - "6084:6379"
+        volumes:
+            - ./redis/celery:/data
+            - /etc/localtime:/etc/localtime
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+    
+    # web
+    twe-web:
+        image: tomcat:8-jdk8-corretto
+        container_name: twe-web
+        restart: always
+        ports:
+            - "6085:8080"
+        links:
+            - twe
+            - geoserver
+            - twe-mongo
+        volumes:
+            - ./tomcat:/usr/local/tomcat/webapps
+            - /etc/localtime:/etc/localtime
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+        
+    twe-mongo:
+        image: mongo:4.4.2
+        container_name: twe-mongo
+        restart: always
+        ports:
+            - "27017:27017"
+        volumes:
+            - ./mongo:/data/db
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+
+    twe-postgis:
+        image: kartoza/postgis:13.0
+        container_name: twe-postgis
+        restart: always
+        ports:
+            - "25432:5432"
+        environment:
+            POSTGRES_USER: docker
+            POSTGRES_PASSWORD: bjut@2021
+            PASSWORD_AUTHENTICATION: md5
+            ALLOW_IP_RANGE: 0.0.0.0/0 
+        volumes:
+            - ./postgres:/var/lib/postgresql
+        networks:
+            default:
+                aliases:
+                    - api.water.bjut.com
+    
+
+networks:
+    default:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+            - subnet: 10.103.0.1/16
 ```
 
 

@@ -449,6 +449,7 @@ cod_df['datetime'] = pd.to_datetime(cod_df["datetime"]).astype(int)/10**9
 # datetime format
 df = pd.DataFrame({"Date": ["26-12-2007", "27-12-2007", "28-12-2007"]})
 df["Date"] = pd.to_datetime(df["Date"]).dt.strftime('%Y-%m-%d')
+df["Date"] = pd.to_datetime(df["Date"]).dt.strftime('%Y-%m-%d %H:%M:%S')
 print(df)
 
 # 时间范围range

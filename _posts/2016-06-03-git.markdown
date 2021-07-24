@@ -34,6 +34,9 @@ git config --list
 # 添加远端配置
 git remote add origin git@github.com:josephstalin117/time_series_forecast.git
 
+# 查看远端仓库地址
+git remote -v
+
 # 取回远程仓库的变化，并与本地分支合并
 git pull [remote] [branch]
 
