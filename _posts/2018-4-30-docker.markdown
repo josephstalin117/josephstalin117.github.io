@@ -5,7 +5,7 @@ date:   2018-4-30 20:35:35 +0800
 categories: command
 ---
 
-基本操作
+docker基本操作
 ```
 # 验证是否安装成功
 docker info
@@ -16,8 +16,58 @@ docker --version
 # 启动docker服务
 sudo service docker start/sudo systemctl start docker
 
-# List containers
+# 列出运行的docker
 docker ps
+```
+
+docker镜像构建
+```
+# 使用当前目录的 Dockerfile 创建镜像，标签为 runoob/ubuntu:v1。
+docker build -t runoob/ubuntu:v1 .
+
+# 通过 -f Dockerfile 文件的位置：
+docker build -f /path/to/a/Dockerfile .
+
+# 镜像构建代理
+docker build . \
+    --build-arg "HTTP_PROXY=http://proxy.example.com:8080/" \
+    --build-arg "HTTPS_PROXY=http://proxy.example.com:8080/" \
+    --build-arg "NO_PROXY=localhost,127.0.0.1,.example.com" \
+    -t your/image:tag
+
+# Dockerfile 代理设置
+FROM golang:1.12
+
+ENV http_proxy "http://172.17.0.1:1087"
+ENV HTTP_PROXY "http://172.17.0.1:1087"
+ENV https_proxy "http://172.17.0.1:1087"
+ENV HTTPS_PROXY "http://172.17.0.1:1087"
+
+RUN curl www.google.com --max-time 3
+```
+
+docker容器启动
+```
+# 进入docker服务
+docker exec -it 243c32535da7 /bin/bash
+
+# 启动docker容器
+docker run -d -p 5000:5000 training/webapp
+
+# 查看指定容器端口映射到宿主机的端口号
+docker port bf08b7f2cd89
+
+# 查看日志
+docker logs -f bf08b7f2cd89
+
+# 查看容器进程
+docker top wizardly_chandrasekhar
+
+# 查看Docker的底层信息
+docker inspect wizardly_chandrasekhar
+
+# 删除容器
+docker rm wizardly_chandrasekhar
 
 # 后台启动docker(centos:v1 image名)
 docker run -d centos:v1
@@ -49,53 +99,6 @@ docker export 1e560fca3906 > ubuntu.tar
 
 # 导入镜像
 cat docker/ubuntu.tar | docker import - test/ubuntu:v1
-
-# 进入docker服务
-docker exec -it 243c32535da7 /bin/bash
-
-# web服务端口映射
-docker run -d -p 5000:5000 training/webapp
-
-# 查看指定容器端口映射到宿主机的端口号
-docker port bf08b7f2cd89
-
-# 查看日志
-docker logs -f bf08b7f2cd89
-
-# 查看容器进程
-docker top wizardly_chandrasekhar
-
-# 查看Docker的底层信息
-docker inspect wizardly_chandrasekhar
-
-# 删除容器
-docker rm wizardly_chandrasekhar
-```
-
-docker镜像构建
-```
-# 使用当前目录的 Dockerfile 创建镜像，标签为 runoob/ubuntu:v1。
-docker build -t runoob/ubuntu:v1 .
-
-# 通过 -f Dockerfile 文件的位置：
-docker build -f /path/to/a/Dockerfile .
-
-# 镜像构建代理
-docker build . \
-    --build-arg "HTTP_PROXY=http://proxy.example.com:8080/" \
-    --build-arg "HTTPS_PROXY=http://proxy.example.com:8080/" \
-    --build-arg "NO_PROXY=localhost,127.0.0.1,.example.com" \
-    -t your/image:tag
-
-# Dockerfile 代理设置
-FROM golang:1.12
-
-ENV http_proxy "http://172.17.0.1:1087"
-ENV HTTP_PROXY "http://172.17.0.1:1087"
-ENV https_proxy "http://172.17.0.1:1087"
-ENV HTTPS_PROXY "http://172.17.0.1:1087"
-
-RUN curl www.google.com --max-time 3
 ```
 
 images文件管理
@@ -258,7 +261,6 @@ docker-compose exec workspace bash
 
 # 重启nginx和mysql
 docker-compose up -d nginx mysql
-
 ```
 
 docker compose
@@ -699,4 +701,9 @@ networks:
             - subnet: 10.103.0.1/16
 ```
 
+docker ps format
+```
+docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}\t{{.Mounts}}\t{{.Command}}"
+docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"
+```
 
