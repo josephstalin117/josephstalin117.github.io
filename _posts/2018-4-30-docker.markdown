@@ -51,8 +51,8 @@ docker容器启动
 # 进入docker服务
 docker exec -it 243c32535da7 /bin/bash
 
-# 启动docker容器
-docker run -d -p 5000:5000 training/webapp
+# 启动docker容器，容器内部端口5000，对外访问端口5001
+docker run -d -p 5001:5000 training/webapp
 
 # 查看指定容器端口映射到宿主机的端口号
 docker port bf08b7f2cd89
@@ -99,6 +99,9 @@ docker export 1e560fca3906 > ubuntu.tar
 
 # 导入镜像
 cat docker/ubuntu.tar | docker import - test/ubuntu:v1
+
+# 查看docker ipaddress
+docker inspect [id] | grep "IPAddress"
 ```
 
 images文件管理
@@ -322,6 +325,9 @@ ip link del docker0 down
 
 # Use the docker network prune command to remove all unused networks.
 docker network prune
+
+# 检查网络
+docker network inspect [id]
 ```
 
 docker换源
@@ -487,7 +493,7 @@ services:
                 aliases:
                     - api.water.bjut.com
     
-    # neo4j 在线管理 7474，连接7687，账号密码 neo4j 8888
+    # neo4j 在线管理 7474，连接7687
     twe-neo4j:
         image: neo4j:3.5.14
         container_name: twe-neo4j
@@ -503,7 +509,7 @@ services:
                 aliases:
                     - api.water.bjut.com
     
-    # geoserver 在线管理 6079, 账号密码 admin geoserver
+    # geoserver 在线管理 6079
     geoserver:
         image: oscarfonts/geoserver
         container_name: geoserver
