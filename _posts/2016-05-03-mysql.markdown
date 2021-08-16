@@ -20,6 +20,9 @@ systemctl enable mysql
 # login
 mysql -u root -p
 
+# 远程访问
+mysql -h 127.0.0.1 -u root -p -P 3306
+
 # show status
 systemctl status mysql.service
 

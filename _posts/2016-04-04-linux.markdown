@@ -488,6 +488,14 @@ nohup jupyter notebook 2>&1 &
 command >& file.txt(或者file.log) &
 ```
 
+#### curl
+```
+curl baidu.com
+
+# curl 代理
+curl -x http://172.18.10.204:8119 baidu.com
+```
+
 #### 库的软链接指令速查
 ```
 # locate 定位库的信息  
