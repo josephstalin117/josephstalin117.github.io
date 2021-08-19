@@ -693,3 +693,23 @@ rsync -av --include="*.txt" --exclude='*' source/ destination
 # 远程同步
 rsync -av source/ username@remote_host:destination
 ```
+
+#### SSH
+```
+# 本地端口转发
+
+# 假定host1是本地主机，host2是远程主机。由于种种原因，这两台主机之间无法连通。但是，另外还有一台host3，可以同时连通前面两台主机。因此，很自然的想法就是，通过host3，将host1连上host2。
+# 本地端口:目标主机:目标主机端口
+# 指定SSH绑定本地端口2121，然后指定host3将所有的数据，转发到目标主机host2的21端口
+ssh -L 2121:host2:21 host3
+ssh -NL 6067:47.101.193.148:6076 pi@172.18.10.204
+
+# 远程端口转发
+
+# host1与host2之间无法连通，必须借助host3转发。但是，特殊情况出现了，host3是一台内网机器，它可以连接外网的host1，但是反过来就不行，外网的host1连不上内网的host3。这时，"本地端口转发"就不能用了。
+# 既然host3可以连host1，那么就从host3上建立与host1的SSH连接，然后在host1上使用这条连接就可以了。
+# host3执行命令
+ssh -R 2121:host2:21 host1
+# R参数也是接受三个值，分别是"远程主机端口:目标主机:目标主机端口"。这条命令的意思，就是让host1监听它自己的2121端口，然后将所有数据经由host3，转发到host2的21端口。由于对于host3来说，host1是远程主机，所以这种情况就被称为"远程端口绑定"。
+ftp localhost:2121
+```
