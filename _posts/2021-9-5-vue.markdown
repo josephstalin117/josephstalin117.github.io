@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "VUE"
+date:   2021-9-5 20:35:35 +0800
+categories: command
+---
+
+npm
+```
+//查看版本
+npm -v
+```
+
+vue-cli
+```
+npm install cnpm -g
+cnpm install --global vue-cli
+```
+
+install VUE
+```
+# 创建一个基于 webpack 模板的新项目
+$ vue init webpack my-project
+# 这里需要进行一些配置，默认回车即可
+This will install Vue 2.x version of the template.
+
+$ cd my-project
+$ cnpm install
+// 运行VUE
+$ cnpm run dev
+```
