@@ -118,6 +118,9 @@ UPDATE table SET name='Mary' WHERE id=1;
 插入
 INSERT INTO worker (name) VALUES ('tom');
 
+删除数据
+DELETE FROM `movies` WHERE `movie_id` = 18;
+
 纵向显示数据
 SELECT * FROM test\G
 
