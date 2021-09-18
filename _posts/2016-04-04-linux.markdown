@@ -622,6 +622,18 @@ vsftpd
 anon_root=/var/ftp
 ```
 
+ftp
+```
+# connect ftp
+ftp 192.168.4.25
+
+# 匿名用户
+anony
+
+# 下载文件
+get file_name
+```
+
 修改文件名编码
 ```
 apt-get install convmv
@@ -713,3 +725,5 @@ ssh -R 2121:host2:21 host1
 # R参数也是接受三个值，分别是"远程主机端口:目标主机:目标主机端口"。这条命令的意思，就是让host1监听它自己的2121端口，然后将所有数据经由host3，转发到host2的21端口。由于对于host3来说，host1是远程主机，所以这种情况就被称为"远程端口绑定"。
 ftp localhost:2121
 ```
+
+
