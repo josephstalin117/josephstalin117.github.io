@@ -628,7 +628,7 @@ ftp
 ftp 192.168.4.25
 
 # 匿名用户
-anony
+anonymous 
 
 # 下载文件
 get file_name

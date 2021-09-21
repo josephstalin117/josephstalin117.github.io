@@ -22,7 +22,7 @@ svnadmin create /var/svn/svnrepos/具体项目名
 
 启动svn
 ```
-svnserve -d -r 目录 --listen-port 端口号
+svnserve -d -r 目录 --listen-port 端口号(3690)
 ```
 
 提交代码
