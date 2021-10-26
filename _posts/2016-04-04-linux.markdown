@@ -15,6 +15,9 @@ lspci | grep -i nvidia
 
 # 换源
 /etc/apt/sources.list
+
+# 查看服务器配置
+lscpu
 ```
 
 #### 用户权限
@@ -533,7 +536,10 @@ umount /mnt/cdrom
 
 # 开机自动挂载
 sudo blkid
-# 添加UUID到/etc/fstab 添加UUID=63295b70-daec-4253-b659-821f51200be9 /home/data ext4 defaults,errors=remount-ro 0 1到/etc/fstab 其中UUID后面跟sdb1的UUID 重启
+# 添加UUID到/etc/fstab 
+添加到/etc/fstab 其中UUID后面跟sdb1的UUID 重启
+UUID=63295b70-daec-4253-b659-821f51200be9 /home/data ext4 defaults,errors=remount-ro 0 1
+
 
 ```
 
