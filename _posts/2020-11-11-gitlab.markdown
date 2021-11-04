@@ -30,3 +30,8 @@ rpm -e gitlab-ce
 # 
 ps aux | grep gitlab
 ```
+
+更改账户
+```
+sudo gitlab-rake "gitlab:password:reset[johndoe]"
+```

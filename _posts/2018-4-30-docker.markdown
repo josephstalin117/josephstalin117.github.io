@@ -217,7 +217,7 @@ docker commit \
     nginx:v2
 
 # 查看docker挂载信息
-docker inspect [容器名]
+docker volume inspect [容器名]
 ```
 
 Dockerfile
@@ -336,6 +336,25 @@ docker换源
 {
   "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
 }
+```
+
+docker网段设置
+```
+# 新建/etc/docker/daemon.json加入
+{
+    "debug": true,
+    "bip": "192.168.1.1/24",
+    "default-address-pools":[
+        {
+            # 定义网络地址
+            "base": "172.19.31.0/8",
+            "size": 24
+        }
+    ]
+
+}
+# start docker daemon
+systemctl start docker
 ```
 
 
