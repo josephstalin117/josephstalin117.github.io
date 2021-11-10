@@ -171,6 +171,11 @@ List = df['row1'].tolist()
 unique_index = pd.Index(list('abc'))
 # 1
 unique_index.get_loc('b')
+
+# 获取列名
+# iterating the columns
+for col in data.columns:
+    print(col)
 ```
 
 排序
