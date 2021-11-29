@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "screen"
+date:   2021-11-29 20:35:35 +0800
+categories: command
+---
+
+screen
+```
+# 指定screen离线
+screen -d <作业名称>
+
+# 恢复离线的作业
+screen -r <作业名称>
+
+# 显示所有screen作业
+screen -ls
+
+# 恢复最新的screen作业
+screen -x
+
+# 创建指定名称的screen作业
+screen -S <作业名称>
+
+# 检查所有作业，并且删除已经无法使用的screen作业
+screen -wipe
+```
+
+screen session
+```
+# 创建一个新的运行shell的窗口并切换该窗口
+ctrl+a c
+
+# 切换到下一个窗口
+ctrl+a n
+
+# 切换到前一个窗口
+ctrl+a p
+
+# 切换选定的窗口
+ctrl+a 0~9
+
+# 显示所有窗口列表
+ctrl+a w
+
+# 离线当前窗口
+ctrl+a d
+
+# 切换上一个窗口
+ctrl+a ctrl+a
+
+# 关闭当前窗口
+ctrl+a k
+
+# 后台执行
+ctrl+a z
+
+# 锁定当前会话
+ctrl+a x
+```
