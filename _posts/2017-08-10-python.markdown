@@ -447,6 +447,9 @@ conda info --envs
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
 conda config --set show_channel_urls yes
+
+# site-packages
+/home/joseph/anaconda3/envs/neo4j/lib/python3.6/site-packages
 ```
 
 pip
