@@ -18,3 +18,30 @@ tx.create(ab)
 tx.commit()
 g.exists(ab)
 ```
+
+Cypher
+```
+# match
+MATCH (tom:Person {name: 'Tom Hanks'})
+RETURN tom
+
+# Find which `Movie`s Tom Hanks has directed.
+MATCH (:Person {name: 'Tom Hanks'})-[:DIRECTED]->(movie:Movie)
+RETURN movie
+
+
+# Find which Movie Tom Hanks has directed, but this time, return only the title of the movie.
+MATCH (:Person {name: 'Tom Hanks'})-[:DIRECTED]->(movie:Movie)
+RETURN movie.title
+
+# create direction
+CREATE (p:Person)-[:LIKES]->(t:Technology)
+
+# update direction
+MATCH (jennifer:Person {name: 'Jennifer'})
+MATCH (mark:Person {name: 'Mark'})
+CREATE (jennifer)-[rel:IS_FRIENDS_WITH]->(mark)
+
+# checo direction
+MATCH (:Person {name: 'Jennifer'})-[rel:WORKS_FOR]-(:Company {name: 'Neo4j'})
+```
