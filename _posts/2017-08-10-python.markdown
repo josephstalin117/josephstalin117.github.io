@@ -35,6 +35,8 @@ conditions
 
 # oneline
 'Yes' if fruit == 'Apple' else 'No'
+
+if i > 3: print("We are done.")
 ```
 
 loop
