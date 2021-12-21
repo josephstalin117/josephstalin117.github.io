@@ -97,6 +97,11 @@ tensor([[ 0.,  0.,  0.],
 tensor([ 0.,  0.,  0.,  0.,  0.])
 ```
 
+检查变量是否是nan
+```
+torch.isnan(torch.tensor([1, float('nan'), 2]))
+```
+
 torch.split()
 ```
 # Splits the tensor into chunks. Each chunk is a view of the original tensor.

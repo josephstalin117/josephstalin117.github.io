@@ -27,8 +27,12 @@ df.head(5)
 df.values
 
 # Finding out how many rows dataset has.
+# 获取行数
 len(df)
 df.shape
+
+# 获取列数
+len(df.columns)
 
 # Finding out basic statistical information on your dataset.
 pd.options.display.float_format = '{:,.3f}'.format # Limit output to 3 decimal places.
@@ -60,14 +64,15 @@ df.insert(0,'date',date)
 df['date']=date
 
 # 连续插入一行
- df.loc[-1] = [2, 3, 4]  # adding a row
- df.index = df.index + 1  # shifting index
- df = df.sort_index()  # sorting by index
+df.loc[-1] = [2, 3, 4]  # adding a row
+df.index = df.index + 1  # shifting index
+df = df.sort_index()  # sorting by index
 ```
 
 get data from column & row 数据过滤
 ```
 # Getting a column by label
+# 获取列数据
 df['rain_octsep']
 
 # 获得多列
@@ -80,10 +85,15 @@ df.rain_octsep
 df.rain_octsep < 1000 # Or df['rain_octsep] < 1000
 
 # Using a series of booleans to filter
+# 数据筛选
 df[df.rain_octsep < 1000]
 
 # convert pandas float series to int and filter
+# 数据转换
 df = df[df['hour'].astype(int)==0]
+
+# 类型转换
+df['timestamp'] = df['datetime'].astype(int)
 
 # 多重数据过滤
 df[['algo_name', 'rmse']][(df['nout']==2) & (df['dataset']=='beijing_do_s') & (df['filter'].isna())].sort_values(by='rmse')
@@ -91,17 +101,13 @@ df[['algo_name', 'rmse']][(df['nout']==2) & (df['dataset']=='beijing_do_s') & (d
 # 过滤值是NaN的行
 df['filter'].isna()
 
-# 类型转换
-df['timestamp'] = df['datetime'].astype(int)
-
 # line replaces None with NaN
+# 替换Nan值为None
 df['column'].replace('None', np.nan, inplace=True)
 
 # Filtering by multiple conditionals(Can't use the keyword 'and')
+# 多条件过滤
 df[(df.rain_octsep < 1000) & (df.outflow_octsep < 4000)]
-
-# Filtering by string methods
-df[df.water_year.str.startswith('199')]
 
 # Filtering by string methods
 df[df.water_year.str.startswith('199')]
@@ -132,6 +138,7 @@ df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]
 df.loc[~df['column_name'].isin(some_values)]
 
 # Getting a row via a numerical index
+# 根据索引获取行
 df.iloc[30]
 
 # Getting a columnes
@@ -141,6 +148,7 @@ df.iloc[:, 0]
 df.ix['1999/00'] # Label based with numerical index fallback *Not recommended
 
 # Setting a new index from an existing column
+# 设置索引
 df = df.set_index(['water_year'])
 df.head(5)
 
@@ -165,6 +173,7 @@ for index, row in df.iterrows():
     print(row['dateTime'], row['CODMn'])
 
 # tolist
+# 转换为列表
 List = df['row1'].tolist()
 
 # get_loc
