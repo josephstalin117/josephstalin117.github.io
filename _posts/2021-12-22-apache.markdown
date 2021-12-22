@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "apache"
+date:   2021-12-22 20:35:35 +0800
+categories: command
+---
+
+Setting Up Virtual Hosts
+```
+# Create the directory for your_domain as follows:
+sudo mkdir /var/www/your_domain
+sudo chown -R $USER:$USER /var/www/your_domain
+sudo chmod -R 755 /var/www/your_domain
+
+# modifying the default configuration file located at /etc/apache2/sites-available/000-default.conf directly
+# let’s make a new one at /etc/apache2/sites-available/your_domain.conf:
+sudo vim /etc/apache2/sites-available/your_domain.conf
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName your_domain
+    ServerAlias www.your_domain
+    DocumentRoot /var/www/your_domain
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+# Adjust directives in Apache main configuration file
+# /etc/apache2/apache2.conf
+<Directory /var/www/your_domain>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
+
+
+# enable the file with the a2ensite tool:
+sudo a2ensite your_domain.conf
+
+# Disable the default site defined in 000-default.conf:
+sudo a2dissite 000-default.conf
+
+# test for configuration errors
+sudo apache2ctl configtest
+
+# Restart Apache
+sudo systemctl restart apache2
+```
