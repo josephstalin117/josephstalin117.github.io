@@ -217,6 +217,14 @@ torch.Size([2, 1, 2, 1, 2])
 torch.Size([2, 2, 1, 2])
 ```
 
+变量初始化
+```
+大于2维度初始化
+nn.init.xavier_uniform_(p)
+1维weight初始化
+nn.init.uniform_(p)
+```
+
 torch.sparse
 ```
 >>> a = torch.randn(2, 3).to_sparse().requires_grad_(True)
