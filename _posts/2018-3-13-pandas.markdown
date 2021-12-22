@@ -13,6 +13,9 @@ df = pd.read_csv('uk_rain_2014.csv', encoding='utf-8', header=0)
 # Read n rows
 data = pd.read_csv('data.csv', nrows = 5)
 
+# 转换为numpy
+pd.DataFrame({"A": [1, 2], "B": [3, 4]}).to_numpy()
+
 # Getting first x rows.
 df.head(5)
 
@@ -50,6 +53,16 @@ my_df  = pd.DataFrame(columns = col_names)
 
 # create from numpy
 pd.DataFrame(np_array)
+
+# Iterate Over Columns in Pandas Dataframe
+# 迭代列名和列
+for (colname,colval) in df.iteritems():
+    print(colname, colval.values)
+
+# enumerate() to Iterate Over Columns Pandas
+# 迭代列序号和列数据
+for (index, colname) in enumerate(df):
+    print(index, df[colname].values)
 ```
 
 insert
