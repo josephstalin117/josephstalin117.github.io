@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "manim"
+date:   2022-1-8 20:35:35 +0800
+categories: command
+---
+
+运行动画
+```
+manimgl example_scenes.py OpeningManimExample
+```
+
+`-w` to write the scene to a file.
+
+`-o` to write the scene to a file and open the result.
+
+`-s` to skip to the end and just show the final frame.
+
+`-so` will save the final frame to an image and show it.
+
+`-n <number>` to skip ahead to the n’th animation of a scene.
+
+`-f` to make the playback window fullscreen.
+
+实体位置
+```
+circle2.next_to(circle1, DOWN+LEFT)
+```
