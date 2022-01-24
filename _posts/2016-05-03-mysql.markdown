@@ -26,40 +26,56 @@ mysql -h 127.0.0.1 -u root -p -P 3306
 # show status
 systemctl status mysql.service
 
+```
+
+#### 初始化
+```
 # 初始化配置
 sudo mysql_secure_installation
+
+# 以root权限登录
+sudo mysql
+
+# 查看密码权限
+SHOW VARIABLES LIKE 'validate_password%';
+
+# 设置全局密码策略为LOW
+SET GLOBAL validate_password_policy = 0;
 ```
 
 
-#### 权限
+#### 权限管理
 
 ```
+创建用户，指定任意ip
+CREATE USER 'allen'@'%' IDENTIFIED BY "1234";
+
 用户授权：
 GRANT ALL ON db.* TO 'myuser'@'192.168.1.3' IDENTIFIED BY 'mypassword';
+
+授权查询权限
+GRANT SELECT ON *.* TO 'username'@'host_or_wildcard' IDENTIFIED BY 'password';
+
+授权所有权限在test数据库
+grant all privileges on 'test'.* to 'test'@'%' identified by '1234';  
 
 对lisi用户仅对db1.author表有查询、插入和更新的操作
 grant select,insert,update on db1.author to 'lisi'@'192.168.11.88';
 
-创建用户，指定任意ip
-CREATE USER 'allen'@'%' IDENTIFIED BY "1234";
-
 查询用户
 select host,user from user;
 
-删除zhangsan用户从任意地址登录
+取消zhangsan用户从任意地址登录权限
 drop user 'zhangsan'@'%';
 
-删除zhangsan用户从192.168.11.% 网段登录
+取消zhangsan用户从192.168.11.% 网段登录权限
 drop user 'zhangsan'@'192.168.11.%';
 
-修改密码
+修改用户密码
 set password for 'lisi'@'192.168.11.88'=password('321');
 
 权限刷新
 FLUSH PRIVILEGES;
-
-授权
-GRANT SELECT ON *.* TO 'username'@'host_or_wildcard' IDENTIFIED BY 'password';
 
 查询用户权限：
 show grants for root@'localhost';
@@ -75,9 +91,6 @@ SELECT User FROM mysql.user;
 
 取消用户权限
 REVOKE ALL PRIVILEGES ON phpmyadmin.* FROM 'phpmyadmin'@'localhost';
-
-reload
-FLUSH PRIVILEGES;
 ```
 
 #### 导入导出
@@ -143,13 +156,14 @@ rename table MyClass to YouClass;
 select column_name, column_comment from information_schema.columns where table_schema ='db' and table_name = 'tablename' ;
 ```
 
-外网访问
+#### 外网访问
 ```
 # 1. 修改配置文件
 sudo vim /etc/mysql/my.cnf
 把bind-address参数的值改成你的内/外网IP或0.0.0.0,或者直接注释掉这行.
 
 # 2. 创建host
+mysql> use mysql
 mysql> update user set host='%' where user='root';
 mysql> flush privileges;
 

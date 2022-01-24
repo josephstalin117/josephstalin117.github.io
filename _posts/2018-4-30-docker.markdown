@@ -357,6 +357,14 @@ docker网段设置
 systemctl start docker
 ```
 
+Docker镜像清理
+```
+# 查看docker使用情况
+docker system df
+
+# 清理docker文件
+docker system prune -a
+```
 
 Dockerfile
 ```
