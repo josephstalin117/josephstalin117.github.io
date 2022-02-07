@@ -114,3 +114,12 @@ x|y
 
 (\d{3,4})\-(\d{6,8})
 ```
+
+匹配第一个:
+```
+line1:blabla:etcetc
+line2:blabla2:etcetc2
+line3:blabla3:etcetc3
+
+^([^:]*):
+```
