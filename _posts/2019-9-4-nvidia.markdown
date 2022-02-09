@@ -18,9 +18,7 @@ sudo reboot
 
 # 查看是否禁用成功
 lsmod | grep nouveau
-```
 
-```
 # 查看哪些服务占用
 sudo lsof | grep nvidia
 
@@ -42,7 +40,6 @@ cuda
 cd /usr/local/cuda-7.0/samples
 make
 ./deviceQuery
-
 
 # 卸载cuda
 sudo /usr/local/cuda-8.0/bin/uninstall_cuda-8.0.pl
@@ -77,6 +74,12 @@ cuDNN
 sudo dpkg -i libcudnn8_x.x.x-1+cudax.x_amd64.deb
 sudo dpkg -i libcudnn8-dev_8.x.x.x-1+cudax.x_amd64.deb
 sudo dpkg -i libcudnn8-doc_8.x.x.x-1+cudax.x_amd64.deb
+
+# 卸载cuDNN
+dpkg -l | grep cudnn
+dpkg --remove libcudnn8-doc
+dpkg --remove libcudnn8-dev
+dpkg --remove libcudnn8
 
 # 验证cudnn安装
 cp -r /usr/src/cudnn_samples_v8/ $HOME
