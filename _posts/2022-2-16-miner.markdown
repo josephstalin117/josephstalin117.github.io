@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "miner"
+date:   2022-2-16 20:35:35 +0800
+categories: command
+---
+
+NBMiner
+```
+./nbminer -a ethash -o stratum+tcp://asia2.ethermine.org:14444 --proxy 172.18.10.204:1081 -u 钱包地址.default -log
+```
+
+lhr模式
+```
+-lhr 0 
+```
+
+查看收益
+```
+ethermine.org
+```
