@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "zotero"
+date:   2022-3-14 20:35:35 +0800
+categories: command
+---
+
+安装插件
+```
+ZotFile
+Zutilo
+```
+
+同步-设置-关闭文件同步
