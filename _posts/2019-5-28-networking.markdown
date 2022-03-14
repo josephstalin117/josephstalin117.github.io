@@ -45,6 +45,9 @@ curl -d
 
 # 使用代理
 curl -x socks5://myproxy.com:8080 https://www.example.com
+
+# ipv6 访问
+curl -g -6 byr.pt
 ```
 
 proxychains
