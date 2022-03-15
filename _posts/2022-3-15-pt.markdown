@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "pt"
+date:   2022-3-14 20:35:35 +0800
+categories: command
+---
+
+pt软件
+```
+qbittorrent-nox
+```
+
+qbittorrent-nox安装
+```
+sudo add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable
+sudo apt install -y qbittorrent-nox
+```
+
+qbittorrent-nox配置
+```
+sudo nano /etc/systemd/system/qbittorrent-nox.service
+
+[Unit]
+Description=qBittorrent client
+After=network.target
+ 
+[Service]
+ExecStart=/usr/bin/qbittorrent-nox --webui-port=8080
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
+```
+
+修改qbittorrent-nox.service文件后重新载入
+```
+sudo systemctl daemon-reload
+```
+
+启动
+```
+sudo systemctl start qbittorrent-nox
+```
+
+查看状态
+```
+sudo systemctl status qbittorrent-nox
+```
+
+默认账号：admin/adminadmin
+
