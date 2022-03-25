@@ -114,6 +114,9 @@ df[['algo_name', 'rmse']][(df['nout']==2) & (df['dataset']=='beijing_do_s') & (d
 # 过滤值是NaN的行
 df['filter'].isna()
 
+# 过滤NaN的行
+df['filter'].notna()
+
 # line replaces None with NaN
 # 替换Nan值为None
 df['column'].replace('None', np.nan, inplace=True)
