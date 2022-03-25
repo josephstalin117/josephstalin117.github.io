@@ -343,7 +343,8 @@ docker网段设置
 # 新建/etc/docker/daemon.json加入
 {
     "debug": true,
-    "bip": "192.168.1.1/24",
+    # bridge0 网关设置
+    "bip": "172.19.153.1/24",
     "default-address-pools":[
         {
             # 定义网络地址

@@ -38,7 +38,7 @@ Ctrl+d    #屏幕向下滚动半屏
 Ctrl+u    #屏幕向上滚动半屏
 ```
 
-### 插入模式
+#### 插入模式
 
 ```
 i    #插入到光标前面
@@ -49,7 +49,7 @@ o, O    #新开一行
 Esc    #关闭插入模式
 ```
 
-### 编辑
+#### 编辑
 ```
 r    #在插入模式替换光标所在的一个字符
 J    #合并下一行到上一行
@@ -66,7 +66,7 @@ ctrl + s #冻结terminal
 ctrl + q #解冻
 ```
 
-### 搜索
+#### 搜索
 ```
 /pattern    #搜索（非插入模式)
 ?pattern    #往后搜索
@@ -76,14 +76,21 @@ N    #光标到达搜索结果的后一个目标
 :noh #取消搜索高亮
 ```
 
-### 视觉模式
+#### 视觉模式
 ```
 v    #选中一个或多个字符
 V    #选中一行
 Ctrl+v #列块视觉模式
 ```
 
-### 剪切和复制
+#### 列编辑模式
+```
+Ctrl+v #列选中模式
+Shift+i #选中模式插入
+Esc #插入完成按两次退出
+```
+
+#### 剪切和复制
 ```
 dd    #删除一行
 dw    #删除一个单词
@@ -107,7 +114,7 @@ sudo apt-get install vim-gnome
 "ap   # 将寄存器 a 中的内容粘贴到光标后面
 ```
 
-### 窗口操作
+#### 窗口操作
 
 ```
 :new
@@ -118,7 +125,7 @@ sudo apt-get install vim-gnome
 Ctrl+W    #切换窗口, h到左边窗口，j到下方窗口，k到上方窗口，l到右边窗口
 ```
 
-### 文件操作
+#### 文件操作
 
 ```
 # 打开多个文件
@@ -145,7 +152,7 @@ Ctrl+6 下一个文件
 :n
 ```
 
-### 缩进
+#### 缩进
 
 ```
 = #自动缩进
@@ -153,7 +160,7 @@ Ctrl+6 下一个文件
 << #向左缩进
 ```
 
-### 替换和删除
+#### 替换和删除
 
 ```
 # :s(substitute) 用以查找和替换字符串
@@ -178,7 +185,7 @@ Ctrl+6 下一个文件
 ```
 
 
-### diff
+#### diff
 
 ```
 vimdiff file1 file2
@@ -190,7 +197,7 @@ do #The change under the cursor is replaced
 [c #jump to the pervious diff
 ```
 
-### 设置鼠标
+#### 设置鼠标
 ```
 # 设置鼠标显示
 :set mouse=a
@@ -199,7 +206,7 @@ do #The change under the cursor is replaced
 :set mouse=
 ```
 
-### 插件
+#### 插件
 ```
 # 文件侧边栏
 NERDTree
@@ -208,7 +215,7 @@ NERDTree
 map <F2> :NERDTreeToggle<CR>
 ```
 
-### neovim
+#### neovim
 ```
 # 配置文件
 ~/.config/nvim/init.vim
@@ -256,7 +263,7 @@ i
 <Ctrl+\><Ctrl+N>
 ```
 
-### 宏
+#### 宏
 ```
 # 录制宏
 
