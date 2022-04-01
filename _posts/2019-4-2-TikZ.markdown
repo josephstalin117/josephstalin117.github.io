@@ -47,9 +47,26 @@ xshift ，x坐标轴平移。 yshift ，y坐标轴平移。 rotate ，旋转 。
 pdftops -eps <pdf file> <eps file>
 ```
 
+去除pdf空白区域
+```
+pdfcrop <pdf file>
+```
+
 node换行
 ```
 \node at (-0.5,1)[draw, align=center]{example \\ example example};
+```
+
+波浪线
+```
+\documentclass{article} % say
+\usepackage{tikz}
+\usetikzlibrary{arrows,snakes,backgrounds}
+\begin{document}
+\begin{tikzpicture}
+\draw [->,snake=snake] (0,0) -- (2,0);
+\end{tikzpicture}
+\end{document}
 ```
 
 
