@@ -168,6 +168,9 @@ sudo netstat -nlpt
 
 # 查看进程名和用户名
 sudo netstat -ltpe
+
+# 查看端口占用
+netstat -tunlp | grep 端口号
 ```
 
 静态路由设置

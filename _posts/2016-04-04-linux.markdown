@@ -137,6 +137,10 @@ service vsftpd
 # list stystem opened files，列出系统中打开的所有文件，因为linux上一切都是文件
 # 查看端口
 lsof -i:80
+
+# 查看端口占用
+netstat -tunlp | grep 端口号
+
 # 查看程序打开了那些文件
 lsof -p 7876
 
