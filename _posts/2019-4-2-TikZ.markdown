@@ -20,8 +20,9 @@ categories: command
 ```
 
 平移
-xshift ，x坐标轴平移。 yshift ，y坐标轴平移。 rotate ，旋转 。 注意xshift默认的单位并不是cm，如果要单位是cm需要写出来。
 ```
+% xshift ，x坐标轴平移。 yshift ，y坐标轴平移
+% 注意xshift默认的单位并不是cm，如果要单位是cm需要写出来。
 \begin{tikzpicture} 
 \draw[help lines] (0,0) grid (3,2); 
 \draw (0,0) -- (1,1); 
@@ -31,6 +32,7 @@ xshift ，x坐标轴平移。 yshift ，y坐标轴平移。 rotate ，旋转 。
 
 旋转
 ```
+% rotate旋转
 \begin{tikzpicture} 
 \draw (0,0)[rotate=30]  ellipse (2 and 1); 
 \end{tikzpicture}
@@ -40,6 +42,48 @@ xshift ，x坐标轴平移。 yshift ，y坐标轴平移。 rotate ，旋转 。
 ```
 \newcommand\XA{2}
 \coordinate (A) at (\XA,\YA);
+```
+
+正方形
+```
+\tikzstyle{matrix}=[rectangle,thick,minimum size=1cm,draw=gray!80,fill=gray!20]
+\node (m1) [matrix] at (0,0) [align=center] {};
+```
+
+矩形
+```
+\tikzstyle{matrix}=[rectangle,thick,minimum width=4mm,minimum height=3mm,draw=gray!80,fill=gray!20]
+\node (m1) [matrix] at (0,0) [align=center] {};
+```
+
+圆
+```
+\tikzstyle{cell}=[circle,fill=black!25,minimum size=25pt,inner sep=0pt]
+\node (n1) [node] at (0,0) [align=center] {$node_1$};
+```
+
+透明度
+```
+%fill opacity=.4, draw opacity=1
+\documentclass[tikz]{standalone}
+\begin{document}
+\begin{tikzpicture}[thick,fill opacity=.4,draw opacity=1]
+\draw[fill=yellow] (-9,-8) rectangle (9,8);
+\draw[fill=red] (-9,-6) rectangle (2,6);
+\draw[fill=orange,dashed] (-3,-5) rectangle (9,5);
+\draw[fill=green,dotted] (-3,-4) rectangle (5,4);
+\draw[fill=blue] (-6,-2) rectangle (0,2);
+\end{tikzpicture}
+\end{document}
+```
+
+箭头
+```
+\tikzstyle{arrow} = [->,>=stealth,draw=red!20,thick]
+
+\draw [arrow] (n1) -- (n5);
+% 线上添加文字
+\draw [arrow] (n2) -- node[below]{$S_{1,2}$}n1);
 ```
 
 输出eps图
@@ -66,6 +110,125 @@ node换行
 \begin{tikzpicture}
 \draw [->,snake=snake] (0,0) -- (2,0);
 \end{tikzpicture}
+\end{document}
+```
+
+添加文本
+```
+\documentclass{article}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+\node[draw] at (0,0) {some text};
+\node[draw,align=left] at (3,0) {some text\\ spanning three lines\\ with manual line breaks};
+\node[draw,text width=4cm] at (2,-2) {some text spanning three lines with automatic line breaks};
+\end{tikzpicture}
+
+\end{document}
+```
+
+tikzset
+```
+\documentclass{standalone}
+
+\usepackage{tikz}
+\begin{document}
+\pagestyle{empty}
+
+\def\layersep{2.5cm}
+
+\tikzset{%
+  stations1/.pic ={% #1 = edge lenght = radius
+    \tikzstyle{arrow} = [->,>=stealth,draw=red!50,thick]
+    \tikzstyle{arrow2} = [->,>=stealth,draw=red!80,thick]
+    \tikzstyle{arrow3} = [->,>=stealth,draw=red,thick]
+    \tikzstyle{node}=[circle,fill=black!25,minimum size=25pt,inner sep=0pt]
+    %\tikzstyle{matrix}=[rectangle,thick,minimum size=1cm,draw=gray!80,fill=gray!20]
+    %\tikzstyle{matrix}=[rectangle,thick,minimum width=8cm,minimum height=6cm,draw=gray!80,fill=gray!20,fill opacity=.8, align=right, text centered]
+    \tikzstyle{matrix}=[rectangle,thick,minimum width=8cm,minimum height=6cm,draw=gray!80,fill=gray!20,fill opacity=.8]
+
+    \node (m1) [matrix] at (0,0) [] {};
+    \node (n1) [node] at (0,0) [align=center] {$node_1$};
+    \node (n1) [node] at (0,0) [align=center] {$node_1$};
+    \node (n2) [node] at (-6,0) [align=center] {$node_2$};
+    \node (n3) [node] at (-5,5) [align=center] {$node_3$};
+    \node (n4) [node] at (-5,-5) [align=center] {$node_4$};
+    \node (n5) [node] at (0,-6) [align=center] {$node_5$};
+    \node (n6) [node] at (6,-6) [align=center] {$node_6$};
+    \node [draw,text width=4cm] at (4,6.5) {2021-1-16 12:00:00};
+
+    \draw [arrow3] (n1) -- (n5);
+    \draw [arrow3] (n1) -- (n6);
+    \draw [arrow2] (n3) -- (n1);
+    \draw [arrow3] (n2) -- (n1);
+    \draw [arrow] (n2) -- (n4);
+  },
+}
+\tikzset{%
+  stations2/.pic ={% #1 = edge lenght = radius
+  \tikzstyle{arrow} = [->,>=stealth,draw=red!50,thick]
+  \tikzstyle{arrow2} = [->,>=stealth,draw=red!80,thick]
+  \tikzstyle{arrow3} = [->,>=stealth,draw=red,thick]
+  \tikzstyle{node}=[circle,fill=black!25,minimum size=25pt,inner sep=0pt]
+  %\tikzstyle{matrix}=[rectangle,thick,minimum size=1cm,draw=gray!80,fill=gray!20]
+  %\tikzstyle{matrix}=[rectangle,thick,minimum width=8cm,minimum height=6cm,draw=gray!80,fill=gray!20,fill opacity=.8, align=right, text centered]
+  \tikzstyle{matrix}=[rectangle,thick,minimum width=8cm,minimum height=6cm,draw=gray!80,fill=gray!20,fill opacity=.8]
+
+  \node (m1) [matrix] at (0,0) [] {};
+  \node (n1) [node] at (0,0) [align=center] {$node_1$};
+  \node (n1) [node] at (0,0) [align=center] {$node_1$};
+  \node (n2) [node] at (-6,0) [align=center] {$node_2$};
+  \node (n3) [node] at (-5,5) [align=center] {$node_3$};
+  \node (n4) [node] at (-5,-5) [align=center] {$node_4$};
+  \node (n5) [node] at (0,-6) [align=center] {$node_5$};
+  \node (n6) [node] at (6,-6) [align=center] {$node_6$};
+  \node [draw,text width=4cm] at (4,6.5) {2021-1-16 8:00:00};
+
+  \draw [arrow3] (n1) -- (n5);
+  \draw [arrow3] (n1) -- (n6);
+  \draw [arrow2] (n3) -- (n1);
+  \draw [arrow3] (n2) -- (n1);
+  \draw [arrow] (n2) -- (n4);
+  },
+}
+
+\tikzset{%
+  stations3/.pic ={% #1 = edge lenght = radius
+  \tikzstyle{arrow} = [->,>=stealth,draw=red!50,thick]
+  \tikzstyle{arrow2} = [->,>=stealth,draw=red!80,thick]
+  \tikzstyle{arrow3} = [->,>=stealth,draw=red,thick]
+  \tikzstyle{node}=[circle,fill=black!25,minimum size=25pt,inner sep=0pt]
+  %\tikzstyle{matrix}=[rectangle,thick,minimum size=1cm,draw=gray!80,fill=gray!20]
+  %\tikzstyle{matrix}=[rectangle,thick,minimum width=8cm,minimum height=6cm,draw=gray!80,fill=gray!20,fill opacity=.8, align=right, text centered]
+  \tikzstyle{matrix}=[rectangle,thick,minimum width=8cm,minimum height=6cm,draw=gray!80,fill=gray!20,fill opacity=.8]
+
+  \node (m1) [matrix] at (0,0) [] {};
+  \node (n1) [node] at (0,0) [align=center] {$node_1$};
+  \node (n1) [node] at (0,0) [align=center] {$node_1$};
+  \node (n2) [node] at (-6,0) [align=center] {$node_2$};
+  \node (n3) [node] at (-5,5) [align=center] {$node_3$};
+  \node (n4) [node] at (-5,-5) [align=center] {$node_4$};
+  \node (n5) [node] at (0,-6) [align=center] {$node_5$};
+  \node (n6) [node] at (6,-6) [align=center] {$node_6$};
+  \node [draw,text width=4cm] at (4,6.5) {2021-1-16 04:00:00};
+
+  \draw [arrow3] (n1) -- (n5);
+  \draw [arrow3] (n1) -- (n6);
+  \draw [arrow2] (n3) -- (n1);
+  \draw [arrow3] (n2) -- (n1);
+  \draw [arrow] (n2) -- (n4);
+  },
+}
+
+\begin{tikzpicture}[scale=.4, font=\fontsize{12}{6}\selectfont]
+    \pic[scale=.4] at (0,0) {stations1};
+    \pic[scale=.4] at (2,-2) {stations2};
+    \pic[scale=.4] at (4,-4) {stations3};
+
+\end{tikzpicture}
+% End of code
 \end{document}
 ```
 
@@ -517,6 +680,48 @@ node换行
 ```
 
 ![images](/source/tikz_kalman.png)
+
+#### 重复元素
+```
+\documentclass{standalone}
+
+\usepackage{tikz}
+\begin{document}
+\pagestyle{empty}
+
+\def\layersep{10cm}
+
+\tikzset{%
+  stations/.pic={% #1 = edge lenght = radius
+    \tikzstyle{arrow} = [->,>=stealth,draw=red!20,thick]
+    \tikzstyle{arrow2} = [->,>=stealth,draw=red!50,thick]
+    \tikzstyle{arrow3} = [->,>=stealth,draw=red,thick]
+    \tikzstyle{node}=[circle,fill=black!25,minimum size=25pt,inner sep=0pt]
+
+    \node (n1) [node] at (0,0) [align=center] {$node_1$};
+    \node (n2) [node] at (-6,0) [align=center] {$node_2$};
+    \node (n3) [node] at (-5,5) [align=center] {$node_3$};
+    \node (n4) [node] at (-5,-5) [align=center] {$node_4$};
+    \node (n5) [node] at (0,-6) [align=center] {$node_5$};
+    \node (n6) [node] at (6,-6) [align=center] {$node_6$};
+
+    \draw [arrow3] (n1) -- (n5);
+    \draw [arrow3] (n1) -- (n6);
+    \draw [arrow2] (n3) -- (n1);
+    \draw [arrow3] (n2) -- (n1);
+    \draw [arrow] (n2) -- (n4);
+    },
+}
+
+\begin{tikzpicture}[scale=.4, font=\fontsize{12}{6}\selectfont]
+    \pic[draw=blue] at (-1,1) {stations};
+    \pic (stations) at (0,0) {stations};
+ 
+
+\end{tikzpicture}
+% End of code
+\end{document}
+```
 
 #### 时间序列
 timeseries.dat
