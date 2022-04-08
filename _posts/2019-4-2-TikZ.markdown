@@ -800,3 +800,65 @@ plot time dat
     \end{tikzpicture}
 \end{document}
 ```
+plot time_series
+```
+\documentclass{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+
+\begin{document}
+    \begin{tikzpicture}[scale=0.75]
+        \begin{axis}[height=7cm, width=12cm, xlabel=Time, ylabel=DO, legend pos=outer north east, xtick={1, 2, 3, 4, 5, 6, 7, 8, 9},xticklabels={$T-5$, $T-4$, $T-3$, $T-2$, $T-1$, $T$, $T+1$, $T+2$, $T+3$}]
+            % \addplot[color=blue, mark=square,] table[x=t, y=node1]{
+            %     t node1
+            %     1 2
+            %     2 1
+            %     3 0
+            %     4 2
+            %     5 3
+            %     6 2
+            %     7 4
+            % };
+            \addplot[color=blue, mark=square,] table[y=node1]{
+                t node1
+                1 2
+                2 1
+                3 0
+                4 2
+                5 3
+                6 2
+            };
+            \addlegendentry{node1}
+            \addplot[color=blue, mark=*, dashed] table[x=t, y=node1]{
+                t node1
+                6 2
+                7 5
+                8 6
+                9 2
+            };
+            \addlegendentry{node1 prediction}
+            \addplot[red, mark=square] table[x=t, y=node2] 
+            {
+                t node2
+                1 3
+                2 2
+                3 1
+                4 4
+                5 3
+                6 5
+            };
+            \addlegendentry{node2}
+            \addplot[color=green, mark=square,] table[x=t, y=node3]{
+                t node3
+                1 7
+                2 8
+                3 8
+                4 9
+                5 10
+                6 8
+            };
+            \addlegendentry{node3}
+        \end{axis}
+    \end{tikzpicture}
+\end{document}
+```
