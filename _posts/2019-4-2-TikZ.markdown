@@ -139,8 +139,8 @@ tikzset
 
 \def\layersep{2.5cm}
 
-\tikzset{%
-  stations1/.pic ={% #1 = edge lenght = radius
+\tikzset{
+  stations1/.pic ={
     \tikzstyle{arrow} = [->,>=stealth,draw=red!50,thick]
     \tikzstyle{arrow2} = [->,>=stealth,draw=red!80,thick]
     \tikzstyle{arrow3} = [->,>=stealth,draw=red,thick]
@@ -166,8 +166,8 @@ tikzset
     \draw [arrow] (n2) -- (n4);
   },
 }
-\tikzset{%
-  stations2/.pic ={% #1 = edge lenght = radius
+\tikzset{
+  stations2/.pic ={
   \tikzstyle{arrow} = [->,>=stealth,draw=red!50,thick]
   \tikzstyle{arrow2} = [->,>=stealth,draw=red!80,thick]
   \tikzstyle{arrow3} = [->,>=stealth,draw=red,thick]
@@ -194,8 +194,8 @@ tikzset
   },
 }
 
-\tikzset{%
-  stations3/.pic ={% #1 = edge lenght = radius
+\tikzset{
+  stations3/.pic ={
   \tikzstyle{arrow} = [->,>=stealth,draw=red!50,thick]
   \tikzstyle{arrow2} = [->,>=stealth,draw=red!80,thick]
   \tikzstyle{arrow3} = [->,>=stealth,draw=red,thick]
@@ -691,8 +691,8 @@ tikzset
 
 \def\layersep{10cm}
 
-\tikzset{%
-  stations/.pic={% #1 = edge lenght = radius
+\tikzset{
+  stations/.pic={
     \tikzstyle{arrow} = [->,>=stealth,draw=red!20,thick]
     \tikzstyle{arrow2} = [->,>=stealth,draw=red!50,thick]
     \tikzstyle{arrow3} = [->,>=stealth,draw=red,thick]
