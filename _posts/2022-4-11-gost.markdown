@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "gost"
+date:   2022-4-11 20:35:35 +0800
+categories: command
+---
+
+#### 端口转发
+client
+```
+gost -L=:8080 -F=socks5://server_ip:1080?notls=true
+```
+
+server
+```
+gost -L=socks5://:1080
+```
+
+#### 本地端口转发
+将本地的TCP端口A映射到指定的目标TCP端口B，所有到端口A的数据会被转发到端口B。此功能类似于SSH的本地端口转发功能。
+```
+gost -L=tcp://:2222/192.168.1.1:22 [-F=..]
+```

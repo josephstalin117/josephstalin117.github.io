@@ -38,3 +38,8 @@ xming
 //X display location
 localhost:0
 ```
+
+当前文件夹运行cmd
+```
+在文件夹地址栏输入cmd
+```
