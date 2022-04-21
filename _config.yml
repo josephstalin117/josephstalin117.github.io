@@ -7,7 +7,7 @@
 
 # Site settings
 title: josephlin
-email: josephlin117@gmail.com
+email: josephlin117@gmail.com,josephlin117@hotmail.com
 description: josephlin's blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://josephlin.org" # the base hostname & protocol for your site
