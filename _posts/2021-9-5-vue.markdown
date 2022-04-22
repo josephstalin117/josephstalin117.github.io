@@ -29,3 +29,18 @@ $ cnpm install
 // 运行VUE
 $ cnpm run dev
 ```
+
+npm
+```
+# 全局安装
+npm install -g webpack
+
+# 全局删除
+npm uninstall -g webpack
+
+# 查看npm安装module版本
+npm list
+
+# 查看单个npm库的version
+npm view <package> version
+```
