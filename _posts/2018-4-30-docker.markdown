@@ -193,6 +193,9 @@ docker container stop [containerID]
 # 查看docker容器的输出
 docker logs [containerID]
 
+# 查看最新的docker容器输出
+docker logs -f --tail 10 [containerID]
+
 # 进入一个正在运行的 docker 容器
 docker exec -it [containerID] /bin/bash
 

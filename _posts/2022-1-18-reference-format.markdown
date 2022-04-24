@@ -15,7 +15,7 @@ categories: command
 ```
 \bibitem{Salinas_Flunkert_2003}%格式：第一作者姓_第二作者姓_发表年份
 
-D. Salinas, V. Flunkert and J. Gasthaus, ``Financial time series forecasting using support vector machines,” \emph{Neurocomputing}, vol. 55, no. 1, pp. 307–319, Sep. 2003.
+D. Salinas, V. Flunkert and J. Gasthaus, ``Financial time series forecasting using support vector machines", \emph{Neuro computing}, vol. 55, no. 1, pp. 307–-319, Sep. 2003.
 ```
 
 注意点
@@ -38,7 +38,7 @@ D. Salinas, V. Flunkert and J. Gasthaus, ``Financial time series forecasting usi
 \bibitem{Bi_Yuan_2017}
 
 
-M.-T. Luong, H. Pham and C. D. Manning. ``Effective Approaches to Attention-based Neural Machine Translation", in \emph{Proc. of the 2015 Conference on Empirical Methods in Natural Language Processing}, Lisbon, Portugal, 2015, pp. 1412--1421
+T. Luong, H. Pham and C. Manning, ``Effective Approaches to Attention-based Neural Machine Translation", in \emph{Proc. of the 2015 Conference on Empirical Methods in Natural Language Processing}, Lisbon, Portugal, 2015, pp. 1412--1421
 ```
 
 注意点

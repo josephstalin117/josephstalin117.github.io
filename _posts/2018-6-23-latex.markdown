@@ -67,6 +67,8 @@ This paper.\par
 \usepackage{xcolor}
 \textcolor{<color>}{<text>}
 
+{\color{red} highlighted}
+
 %文字删除线
 \usepackage{ulem}
 \sout{文字} %删除线
