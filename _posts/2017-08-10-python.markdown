@@ -772,6 +772,8 @@ datetime.datetime.now().strfttime(%Y-%m-%d-%H-%M-%S)
 
 regular expression
 ```
+import re
+
 # re.match只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None；而re.search匹配整个字符串，直到找到一个匹配。
 # 使用group(num) 或 groups() 匹配对象函数来获取匹配表达式。
 re.match(pattern, string, flags=0)

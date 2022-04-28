@@ -5,12 +5,6 @@ date:   2021-9-5 20:35:35 +0800
 categories: command
 ---
 
-npm
-```
-//查看版本
-npm -v
-```
-
 vue-cli
 ```
 npm install cnpm -g
@@ -32,6 +26,9 @@ $ cnpm run dev
 
 npm
 ```
+# 查看版本
+npm -v
+
 # 全局安装
 npm install -g webpack
 
@@ -43,4 +40,111 @@ npm list
 
 # 查看单个npm库的version
 npm view <package> version
+```
+
+echarts配置
+```
+main.js
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import * as echarts from 'echarts'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import axios from 'axios'
+
+Vue.prototype.$http = axios
+Vue.prototype.$echarts = echarts
+Vue.config.productionTip = false
+
+
+// Import Bootstrap and BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue)
+    // Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+
+/* eslint-disable no-new */
+new Vue({
+    el: '#app',
+    router,
+    components: { App },
+    template: '<App/>'
+})
+
+<template>
+  <div id="predict">
+    test
+    <div id="myChart" :style="{width: '600px', height: '400px'}"></div>
+    <!-- <div id="myChart" :style="{}"></div> -->
+    <!-- <v-chart id="myChart" class="chart" :option="option" /> -->
+  </div>
+
+</template>
+
+<script>
+
+export default {
+  name: 'hello',
+  data () {
+    return {
+      msg: 'Welcome to kalacloud.com'
+    }
+  },
+  mounted(){
+    this.drawLine();
+  },
+  methods: {
+    drawLine(){
+        // 基于刚刚准备好的 DOM 容器，初始化 EChart 实例
+        let myChart = this.$echarts.init(document.getElementById('myChart'))
+        // 绘制图表
+        myChart.setOption({
+            title: { text: '太阳系八大行星的卫星数量' },
+            tooltip: {},
+            xAxis: {
+                data: ["水星","金星","地球","火星","木星","土星","金王星","海王星"]
+            },
+            yAxis: {},
+            series: [{
+                name: '数量',
+                type: 'bar',
+                data: [0, 0, 1, 2, 79, 82, 27, 14]
+            }]
+        });
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+
+#myChart{
+  position: absolute;
+  left: 50%;
+  /* top: 50%; */
+  /* transform: translate(-50%, -50%); */
+  transform: translate(-50%, 0);
+  padding: 10px;
+}
+</style>
 ```
