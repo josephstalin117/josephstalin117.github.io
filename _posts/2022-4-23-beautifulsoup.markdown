@@ -77,5 +77,14 @@ soup.find_all("a", class_="sister")
 
 # [<p class="title"><b>The Dormouse's story</b></p>]
 soup.find_all(class_=re.compile("itl"))
+```
 
+内容获取
+```
+# 完整数据获取
+print(soup.prettify())
+
+# 获取特定的URL地址
+link_node = soup.find('a',href="http://example.com/elsie")
+print(link_node.name,link_node['href'],link_node['class'],link_node.get_text())
 ```
