@@ -44,7 +44,7 @@ npm view <package> version
 
 echarts配置
 ```
-main.js
+main.js 模块加载
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
@@ -76,6 +76,7 @@ new Vue({
     template: '<App/>'
 })
 
+Test.vue
 <template>
   <div id="predict">
     test
@@ -147,4 +148,33 @@ a {
   padding: 10px;
 }
 </style>
+```
+
+
+axios
+```
+async function status() {
+  const url = "https://api.com";
+  let response = await axios.get(url);
+  return response.data;
+}
+
+status().then((data) => console.log(data));
+
+new Vue({
+  el: '#app',
+  data () {
+    return {
+      info: null
+    }
+  },
+  mounted () {
+    axios
+      .get('https://www.runoob.com/try/ajax/json_demo.json')
+      .then(response => (this.info = response))
+      .catch(function (error) { // 请求失败处理
+        console.log(error);
+      });
+  }
+})
 ```
