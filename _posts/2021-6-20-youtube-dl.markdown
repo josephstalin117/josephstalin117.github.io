@@ -31,3 +31,12 @@ $ ffmpeg \
 [输出文件]
 ```
 
+mkv to mp4
+```
+ffmpeg -i LostInTranslation.mkv -codec copy LostInTranslation.mp4
+```
+
+烧入字幕
+```
+ffmpeg -i mymovie.mp4 -vf subtitles=subtitles.srt mysubtitledmovie.mp4
+```

@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "scrapy"
+date:   2022-5-4 20:35:35 +0800
+categories: command
+---
+
+初始化
+```
+import scrapy
+
+class DmozSpider(scrapy.Spider):
+    name = "dmoz"
+    allowed_domains = ["dmoz.org"]
+    start_urls = [
+        "http://www.dmoz.org/Computers/Programming/Languages/Python/Books/",
+        "http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"
+    ]
+
+    # 解析返回的数据(response data)，提取数据(生成item)以及生成需要进一步处理的URL的Request对象。
+    def parse(self, response):
+        filename = response.url.split("/")[-2]
+        with open(filename, 'wb') as f:
+            f.write(response.body)
+```
+
+selector
+```
+# 获取标签中的文字
+>>> body = '<html><body><span>good</span></body></html>'
+>>> Selector(text=body).xpath('//span/text()').extract()
+[u'good']
+
+# 根据class名获取li标签内容，并存储为一个list
+results = response.xpath("//li[contains(@class, 'actors__container')]/").extract()
+
+# 获取href标签
+>>> response.xpath('//base/@href').extract()
+[u'http://example.com/']
+
+# 根据属性获取链接
+urls = response.xpath("//a[@rel = 'bookmark']/@href").extract()
+
+# 获取多个标签内容
+content_text = response.xpath("//div[@class = 'single__content']/p|//div[@class = 'single__content']/h2/text()").getall()
+```

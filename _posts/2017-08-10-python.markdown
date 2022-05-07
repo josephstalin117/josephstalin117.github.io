@@ -540,6 +540,9 @@ for i in mygenerator:
 # 0
 # 1
 # 4
+
+# get generator content
+next(mygenerator)
 ```
 
 getopt
@@ -768,6 +771,10 @@ x = datetime.time(3,12,0)
 
 # using - as separator
 datetime.datetime.now().strfttime(%Y-%m-%d-%H-%M-%S)
+
+# str to datetime
+from datetime import datetime
+datetime_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
 ```
 
 regular expression
