@@ -770,7 +770,7 @@ print(x.strftime("%B"))
 x = datetime.time(3,12,0)
 
 # using - as separator
-datetime.datetime.now().strfttime(%Y-%m-%d-%H-%M-%S)
+datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 
 # str to datetime
 from datetime import datetime

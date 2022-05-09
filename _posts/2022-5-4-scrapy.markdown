@@ -24,6 +24,11 @@ class DmozSpider(scrapy.Spider):
             f.write(response.body)
 ```
 
+运行
+```
+scrapy crawl spider
+```
+
 selector
 ```
 # 获取标签中的文字
