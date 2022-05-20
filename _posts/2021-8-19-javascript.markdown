@@ -39,4 +39,9 @@ const a = ["a", "b", "c"];
 a.forEach((element) => {
     console.log(element);
 });
+
+//for
+for (let i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
+}
 ```
