@@ -5,6 +5,8 @@ date:   2019-09-04 20:35:35 +0800
 categories: command
 ---
 
+安装cuda前关闭secure boot
+
 禁用开源驱动nouveau
 ```
 sudo vim /etc/modprobe.d/blacklist.conf
