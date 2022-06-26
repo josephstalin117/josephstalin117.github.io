@@ -142,3 +142,20 @@ document.add_page_break()
 document.save('demo.docx')
 ```
 
+#### 段落
+![images](/source/python_docx1.png)
+```
+ParagraphFormat.alignment （选择一个WD_PARAGRAPH_ALIGNMENT）
+ParagraphFormat.left_indent（长度）
+ParagraphFormat.right_indent（长度）
+ParagraphFormat.first_line_indent（长度）
+ParagraphFormat.space_before（长度）
+ParagraphFormat.space_after（长度）
+ParagraphFormat.line_spacing_rule（选择一个WD_LINE_SPACING）
+ParagraphFormat.line_spacing（长度）
+ParagraphFormat.widow_control（True：设置，None：继承Style设置）
+ParagraphFormat.keep_with_next（True：设置，None：继承Style设置）
+ParagraphFormat.keep_together（True：设置，None：继承Style设置）
+ParagraphFormat.page_break_before（True：设置，None：继承Style设置）
+```
+
