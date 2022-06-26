@@ -42,6 +42,12 @@ def conv_doc2docx(filename):
         print(e)
 ```
 
+#### 字体对应
+```
+四号 == 14pt
+小四 == 12pt
+```
+
 
 #### 读取docx文件
 
@@ -144,18 +150,24 @@ document.save('demo.docx')
 
 #### 段落
 ![images](/source/python_docx1.png)
+
+1. ParagraphFormat.alignment （选择一个WD_PARAGRAPH_ALIGNMENT）
+2. ParagraphFormat.left_indent（长度）
+3. ParagraphFormat.right_indent（长度）
+4. ParagraphFormat.first_line_indent（长度）
+5. ParagraphFormat.space_before（长度）
+6. ParagraphFormat.space_after（长度）
+7. ParagraphFormat.line_spacing_rule（选择一个WD_LINE_SPACING）
+8. ParagraphFormat.line_spacing（长度）
+9. ParagraphFormat.widow_control（True：设置，None：继承Style设置）
+10. ParagraphFormat.keep_with_next（True：设置，None：继承Style设置）
+11. ParagraphFormat.keep_together（True：设置，None：继承Style设置）
+12. ParagraphFormat.page_break_before（True：设置，None：继承Style设置）
+
+
+#### 查看样式
 ```
-ParagraphFormat.alignment （选择一个WD_PARAGRAPH_ALIGNMENT）
-ParagraphFormat.left_indent（长度）
-ParagraphFormat.right_indent（长度）
-ParagraphFormat.first_line_indent（长度）
-ParagraphFormat.space_before（长度）
-ParagraphFormat.space_after（长度）
-ParagraphFormat.line_spacing_rule（选择一个WD_LINE_SPACING）
-ParagraphFormat.line_spacing（长度）
-ParagraphFormat.widow_control（True：设置，None：继承Style设置）
-ParagraphFormat.keep_with_next（True：设置，None：继承Style设置）
-ParagraphFormat.keep_together（True：设置，None：继承Style设置）
-ParagraphFormat.page_break_before（True：设置，None：继承Style设置）
+styles = document.styles
+print("\n".join([s.name for s in styles if s.type == WD_STYLE_TYPE.PARAGRAPH]))
 ```
 
