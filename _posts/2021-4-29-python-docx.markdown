@@ -65,6 +65,11 @@ class DocProc:
 
 
 #### 常用方法
+
+Word文档的主要结构单位是『段落』（Paragraph）。标题也好，目录也好，正文也好，都是段落。通过赋予段落不同的样式，形成不同功能的文档结构。这种做法一直可以追溯到Word 6.0时代，猜测是当时为了节省紧俏的存储资源而设定的。  
+
+比段落更小的单位是『游程』（Run）。比方说，你想在一个段落里加重某几个字，那么加重的字就形成一个游程。一个段落至少包含一个游程。  
+
 ```
 from  docx import  Document
 from  docx.shared import  Pt
@@ -84,6 +89,8 @@ paragraph = document.add_paragraph(u'添加了文本')
 #设置字号
 run = paragraph.add_run(u'设置字号')
 run.font.size=Pt(24)
+
+
 
 #设置字体
 run = paragraph.add_run('Set Font,')
@@ -124,6 +131,16 @@ document.add_paragraph(
 #增加图片（此处使用相对位置）
 document.add_picture('jdb.jpg',width=Inches(1.25))
 
+#增加分页
+document.add_page_break()
+
+#保存文件
+document.save('demo.docx')
+```
+
+#### 表格
+
+```
 #增加表格
 table = document.add_table(rows=3,cols=3)
 hdr_cells=table.rows[0].cells
@@ -141,11 +158,24 @@ hdr_cells[0].text = '3'
 hdr_cells[1].text = 'cafdwvaef'
 hdr_cells[2].text = 'aabs zfgf'
 
-#增加分页
-document.add_page_break()
+# 建立表格
+from docx import Document
 
-#保存文件
-document.save('demo.docx')
+document = Document()
+table = document.add_table(rows=9,cols=10,style = 'Table Grid')
+cell_1 = table.cell(1,2)
+cell_2 = table.cell(4,6)
+# 合并表格
+cell_1.merge(cell_2)
+document.save('table-1.docx')
+
+document = Document('table-1.docx')
+table = document.tables[0]
+for row,obj_row in enumerate(table.rows):
+    for col,cell in enumerate(obj_row.cells):
+        cell.text = cell.text + "%d,%d " % (row,col)
+
+document.save('table-2.docx')
 ```
 
 #### 段落
@@ -163,6 +193,14 @@ document.save('demo.docx')
 10. ParagraphFormat.keep_with_next（True：设置，None：继承Style设置）
 11. ParagraphFormat.keep_together（True：设置，None：继承Style设置）
 12. ParagraphFormat.page_break_before（True：设置，None：继承Style设置）
+
+# 设置段落
+```
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+
+p = document.add_paragraph(u'字体在右边', line_style)
+p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+```
 
 
 #### 查看样式
