@@ -780,6 +780,12 @@ d -- 输入命令开启
 
 # 开启远程唤醒
 ethtool -s eth0 wol g
+
+# 安装wakeonlan
+sudo apt-get install wakeonlan
+
+
+
 ```
 
 #### rc.local
