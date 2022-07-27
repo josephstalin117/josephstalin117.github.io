@@ -60,7 +60,6 @@ git push origin master
 # 推送本地分支到远端仓库
 git push --set-upstream origin [分支名]
 ```
-<<<<<<< HEAD
 
 暂存当前没有提交的更改，方便切换到其他分支
 ```
@@ -92,39 +91,6 @@ git stash save "stash msg"
 git stash branch new_brach stash@{0}
 ```
 
-=======
-
-暂存当前没有提交的更改，方便切换到其他分支
-```
-# 保存当前更改
-git stash save
-# 保存当前更改
-git stash
-# 推出之前stash的内容更改
-git stash pop
-# 推出之前stash的内容更改
-git stash apply 
-
-# 只stash没有被add的内容
-git stash save --keep-index
-# stash还未加入git记录的文件
-git stash save --include-untracked
-
-# 显示stash堆栈
-git stash list --stat
-# 显示第x次的更改
-git stash show stash@{0}
-# 显示最近一次stash的更改
-git stash show
-# 显示最近一次stash的详细更改
-git stash show --patch
-
-git stash save "stash msg"
-
-git stash branch new_brach stash@{0}
-```
-
->>>>>>> 3e169c2e4b8b1b733e2a3945991d20dcd391249b
 过滤所有提交记录，删除不应该提交的问题
 ```
 # 删除所有分支的.vscode文件夹
@@ -186,19 +152,6 @@ git pull
 ```
 
 分支与master冲突（避免`git merge master`）
-<<<<<<< HEAD
-=======
-```
-# 从上游分支获取最新commit信息，并有机的将当前分支和上游分支合并
-git rebase master
-```
-
-修改之前某次提交的内容
-```
-# head~n 指从HEAD向前推n个commit
-git rebase -i [git-hash]
-git rabase -i [head~n]
->>>>>>> 3e169c2e4b8b1b733e2a3945991d20dcd391249b
 ```
 # 从上游分支获取最新commit信息，并有机的将当前分支和上游分支合并
 git rebase master
@@ -210,14 +163,6 @@ git rebase master
 git rebase -i [git-hash]
 git rabase -i [head~n]
 ```
-
-
-
-
-
-
-
-
 
 回滚commit
 ```
@@ -392,26 +337,17 @@ git reset --hard HEAD^
 
 # 强制提交本地代码
 git push origin master -f
-<<<<<<< HEAD
-=======
 ```
 
-
-删除指定commit提交（非最后一次提交）
->>>>>>> 3e169c2e4b8b1b733e2a3945991d20dcd391249b
-```
-# 查看提交记录，获取删除记录的前一次提交的commit-hash（注意是前一次提交的commit-hash）
-git log
-
-<<<<<<< HEAD
 
 删除指定commit提交（非最后一次提交）
 ```
 # 查看提交记录，获取删除记录的前一次提交的commit-hash（注意是前一次提交的commit-hash）
 git log
 
-=======
->>>>>>> 3e169c2e4b8b1b733e2a3945991d20dcd391249b
+# 查看提交记录，获取删除记录的前一次提交的commit-hash（注意是前一次提交的commit-hash）
+git log
+
 # 查看commit记录，将要删除的commit记录前单词`pick`改为`drop`，保存退出
 git rebase -i 35f96e1
 
@@ -421,7 +357,6 @@ git commit -m "new commit"  # 冲突时使用
 git rebase --continue       # 冲突时使用
 git push origin master -f
 ```
-<<<<<<< HEAD
 
 强制覆盖本地代码（与git远端仓库保持一致）
 ```
@@ -468,5 +403,3 @@ v1.4
 # 查看版本信息
 git show v1.4
 ```
-=======
->>>>>>> 3e169c2e4b8b1b733e2a3945991d20dcd391249b
