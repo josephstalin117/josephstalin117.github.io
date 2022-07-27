@@ -5,13 +5,14 @@ date:   2016-06-03 16:35:35 +0800
 categories: command
 ---
 
-初始化本地git仓库（创建新仓库）
-```
-git init
-```
+
+# 基础操作
 
 基本配置
 ```
+# 初始化本地git仓库（创建新仓库）
+git init
+
 # 配置用户名
 git config --global user.name "xxx"
 
@@ -49,13 +50,59 @@ git commit -m [message]
 # 提交暂存区的指定文件到仓库区
 git commit [file1] [file2] ... -m [message]
 
+# 向上一个commit提交内容
+git commit --amend -C head
+
 # 上传本地指定分支到远程仓库
 git push [remote] [branch]
 git push origin master
 
 # 推送本地分支到远端仓库
 git push --set-upstream origin [分支名]
+```
 
+暂存当前没有提交的更改，方便切换到其他分支
+```
+# 保存当前更改
+git stash save
+# 保存当前更改
+git stash
+# 推出之前stash的内容更改
+git stash pop
+# 推出之前stash的内容更改
+git stash apply 
+
+# 只stash没有被add的内容
+git stash save --keep-index
+# stash还未加入git记录的文件
+git stash save --include-untracked
+
+# 显示stash堆栈
+git stash list --stat
+# 显示第x次的更改
+git stash show stash@{0}
+# 显示最近一次stash的更改
+git stash show
+# 显示最近一次stash的详细更改
+git stash show --patch
+
+git stash save "stash msg"
+
+git stash branch new_brach stash@{0}
+```
+
+过滤所有提交记录，删除不应该提交的问题
+```
+# 删除所有分支的.vscode文件夹
+git filter-branch --tree-filter 'rm -rf .vscode'
+# xxx不存在，不报错
+git filter-branch --tree-filter 'rm -f xxx'
+# 所有分支所有提交
+git filter-branch --tree-filter 'rm -rf .vscoe' -- --all
+
+# 只检查password.txt文件
+git filter-branch --index-filter 'git rm --cached --ignore-unmatch password.txt'
+git filter-branch -f --prune-empty -- --all
 ```
 
 版本控制
@@ -102,8 +149,24 @@ git log
 git fetch --all
 git reset --hard origin/master
 git pull
-
 ```
+
+分支与master冲突（避免`git merge master`）
+```
+# 从上游分支获取最新commit信息，并有机的将当前分支和上游分支合并
+git rebase master
+```
+
+修改之前某次提交的内容
+```
+# head~n 指从HEAD向前推n个commit
+git rebase -i [git-hash]
+git rabase -i [head~n]
+```
+
+
+
+
 
 回滚commit
 ```
@@ -120,7 +183,7 @@ git revert HEAD
 ```
 ![images](/source/git_reset.png)
 
-# 文件对比
+文件对比
 ```
 #显示工作区与当前分支最新commit之间的差异
 git diff HEAD [filename]
@@ -143,7 +206,6 @@ git config --global core.pager 'less'
 ```
 
 查看记录
-
 ```
 #显示文件的历史修改
 git log -p [filename]
@@ -159,7 +221,7 @@ git log —pretty=oneline [filename]
 git show [版本号] [filename]
 ```
 
-代理
+# 代理设置
 ```
 git config --global http.proxy 'http://127.0.0.1:1080'
 git config --global http.proxy 'socks5://127.0.0.1:1080'
@@ -184,6 +246,8 @@ Host github.com
 User git
 ProxyCommand connect -H 127.0.0.1:1080 %h %p
 ```
+
+# 分支管理
 
 分支管理
 ```
@@ -268,7 +332,29 @@ git merge b
 git push origin a
 ```
 
-冲突管理
+# 彻底删除commit
+
+删除最后一次提交
+```
+# 回滚上次提交
+git reset --hard HEAD^
+
+# 强制提交本地代码
+git push origin master -f
 ```
 
+
+删除指定commit提交（非最后一次提交）
+```
+# 查看提交记录，获取删除记录的前一次提交的commit-hash（注意是前一次提交的commit-hash）
+git log
+
+# 查看commit记录，将要删除的commit记录前单词`pick`改为`drop`，保存退出
+git rebase -i 35f96e1
+
+# 解决冲突，强制推送更新到远端
+git add .                   # 冲突时使用
+git commit -m "new commit"  # 冲突时使用
+git rebase --continue       # 冲突时使用
+git push origin master -f
 ```
