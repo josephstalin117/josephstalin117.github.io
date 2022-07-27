@@ -804,4 +804,16 @@ sudo chmod 755 /etc/rc.local
 sudo systemctl status rc.local.service
 ```
 
+#### 翻译软件
+```
+# 安装
+sudo apt-get install translate-shell
+
+# 翻译为中文
+trans :zh-CN test
+
+# 查看语言代码
+trans -T
+```
+
 
