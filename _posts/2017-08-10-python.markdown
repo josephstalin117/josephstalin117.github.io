@@ -27,6 +27,8 @@ def to_str(unicode_or_str):
     return value    
 ```
 
+# 基础语法
+
 conditions
 ```
 # list init
@@ -156,57 +158,6 @@ nohup
 nohup python -u ./cmd.py > cmd.log 2>&1 &
 ```
 
-Classes
-```
-class Greeter(object):
-
-    # Constructor
-    def __init__(self, name):
-        self.name = name  # Create an instance variable
-        # 保护变量
-        self._say = "haha"
-        # 私有变量
-        self.__data = "test"
-    
-    # 私有方法
-    def __say():
-        print(self._say)
-
-    # Instance method
-    def greet(self, loud=False):
-        if loud:
-            print('HELLO, %s!' % self.name.upper())
-        else:
-            print('Hello, %s' % self.name)
-    
-    # call 方法
-    def __call__(a, b):
-        self.a = a
-        self.b = b
-
-g = Greeter('Fred')  # Construct an instance of the Greeter class
-g.greet()            # Call an instance method; prints "Hello, Fred"
-g.greet(loud=True)   # Call an instance method; prints "HELLO, FRED!"
-# oncall 方法
-g(a, b)
-```
-
-call & init
-```
-class Foo:
-    def __init__(self, a, b, c):
-        # ...
-
-x = Foo(1, 2, 3) # __init__
-
-class Foo:
-    def __call__(self, a, b, c):
-        # ...
-
-x = Foo()
-x(1, 2, 3) # __call__
-```
-
 dict
 ```
 thisdict = {
@@ -304,6 +255,128 @@ zip() in conjunction with the * operator can be used to unzip a list:
 True
 ```
 
+# 面向对象
+
+Classes
+```
+class Greeter(object):
+
+    # Constructor
+    def __init__(self, name):
+        self.name = name  # Create an instance variable
+        # 保护变量
+        self._say = "haha"
+        # 私有变量
+        self.__data = "test"
+    
+    # 私有方法
+    def __say():
+        print(self._say)
+
+    # Instance method
+    def greet(self, loud=False):
+        if loud:
+            print('HELLO, %s!' % self.name.upper())
+        else:
+            print('Hello, %s' % self.name)
+    
+    # call 方法
+    def __call__(a, b):
+        self.a = a
+        self.b = b
+
+g = Greeter('Fred')  # Construct an instance of the Greeter class
+g.greet()            # Call an instance method; prints "Hello, Fred"
+g.greet(loud=True)   # Call an instance method; prints "HELLO, FRED!"
+# oncall 方法
+g(a, b)
+```
+
+call & init
+```
+class Foo:
+    def __init__(self, a, b, c):
+        # ...
+
+x = Foo(1, 2, 3) # __init__
+
+class Foo:
+    def __call__(self, a, b, c):
+        # ...
+
+x = Foo()
+x(1, 2, 3) # __call__
+```
+
+@property装饰器
+`Python`内置的`@property`装饰器可以把类的方法伪装成属性调用的方式。也就是本来是`Foo.func()`的调用方法，变成`Foo.func`的方式。在很多场合下，这是一种非常有用的机制。
+```
+class People:
+
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+
+    @property
+    def age(self):
+        return self.__age
+
+    @age.setter
+    def age(self, age):
+        if isinstance(age, int):
+            self.__age = age
+        else:
+            raise ValueError
+
+    @age.deleter
+    def age(self):
+        print("删除年龄数据！")
+
+obj = People("jack", 18)
+print(obj.age)
+obj.age = 19
+print("obj.age:  ", obj.age)
+del obj.age
+
+---------------------------
+打印结果：
+18
+obj.age:   19
+删除年龄数据！
+
+# 使用方法
+obj = People("jack", 18)
+a = obj.age    # 获取值
+obj.age = 19    # 重新赋值
+del obj.age     # 删除属性
+```
+
+setattr
+```
+# The setattr() function sets the value of the specified attribute of the specified object.
+class Person:
+  name = "John"
+  age = 36
+  country = "Norway"
+
+setattr(Person, 'age', 40)
+```
+
+vars
+```
+# The vars() function returns the __dic__ attribute of an object.
+# The __dict__ attribute is a dictionary containing the object's changeable attributes.
+
+class Person:
+  name = "John"
+  age = 36
+  country = "norway"
+
+x = vars(Person) 
+```
+
+# 高级用法
+
 lambda
 ```
 # Program to double each item in a list using map()
@@ -376,30 +449,6 @@ print ("The Student DOB using getattr() is : ",end ="")
 print (getattr(S,'DOB'))
 ```
 
-vars
-```
-# The vars() function returns the __dic__ attribute of an object.
-# The __dict__ attribute is a dictionary containing the object's changeable attributes.
-
-class Person:
-  name = "John"
-  age = 36
-  country = "norway"
-
-x = vars(Person) 
-```
-
-setattr
-```
-# The setattr() function sets the value of the specified attribute of the specified object.
-
-class Person:
-  name = "John"
-  age = 36
-  country = "Norway"
-
-setattr(Person, 'age', 40)
-```
 
 slice
 ```
@@ -424,6 +473,92 @@ kwargs
 first_name = John
 last_name = Doe
 ```
+
+yield
+```
+def createGenerator():
+    mylist = range(3)
+    for i in mylist:
+        yield i*i
+
+# create a generator
+mygenerator = createGenerator()
+
+# mygenerator is an object!
+print(mygenerator)
+# <generator object createGenerator at 0xb7555c34>
+
+for i in mygenerator:
+    print(i)
+# 0
+# 1
+# 4
+
+# get generator content
+next(mygenerator)
+```
+
+getopt
+```
+def parseArgs(self):
+    try:
+        # 短参数后面跟:代表可以接收值，长参数后面跟=代表接收一个值
+        options, args = getopt.getopt(sys.argv[1:], 'cgf:', ['common', 'sg', 'filename='])
+        for opt, value in options:
+            if opt in ('-c', '--common'):
+                self.water_name = "beijing_do_s"
+                self.csv_file = "../csv/Beijing_DO_s.csv"
+            if opt in ('-g', '--sg'):
+                self.water_name = "beijing_do_s_savgol"
+                self.csv_file = "../csv/Beijing_DO_s_savgol.csv"
+            if opt in ('-f','--filename'):
+                fileName = value
+                print("[*] Filename is ",fileName)
+                # do something
+                exit()
+    except getopt.GetoptError as msg:
+        print(msg)
+        sys.exit(2)
+
+# 调用
+# 短参数使用的时候是参数名[空格]参数值
+# 长参数使用的时候是参数名=参值
+```
+
+itertools
+```
+import itertools
+
+# groupby1
+groups = []
+uniquekeys = []
+data = sorted(data, key=keyfunc)
+for k, g in groupby(data, keyfunc):
+    groups.append(list(g))      # Store group iterator as a list
+    uniquekeys.append(k)
+
+# groupby2
+for (uid, group) in itertools.groupby(iter([(yield line.strip().split('\t')) for line in sys.stdin]),lambda item: item[0]):
+    try:
+        if not uid or len(uid) > 20 or uid == 'null':
+            continue
+    except:
+        continue
+```
+
+sort
+```
+list.sort(key=..., reverse=...)
+sorted(list, key=..., reverse=...)
+```
+
+enumerate
+```
+for counter, value in enumerate(some_list):
+    print(counter, value)
+```
+
+# Anaconda
 
 anaconda2
 ```
@@ -521,89 +656,7 @@ c.NotebookApp.port =8888 #可自行指定一个端口, 访问时使用该端口
 nohup jupyter notebook > jupyter.log 2>&1 &
 ```
 
-yield
-```
-def createGenerator():
-    mylist = range(3)
-    for i in mylist:
-        yield i*i
-
-# create a generator
-mygenerator = createGenerator()
-
-# mygenerator is an object!
-print(mygenerator)
-# <generator object createGenerator at 0xb7555c34>
-
-for i in mygenerator:
-    print(i)
-# 0
-# 1
-# 4
-
-# get generator content
-next(mygenerator)
-```
-
-getopt
-```
-def parseArgs(self):
-    try:
-        # 短参数后面跟:代表可以接收值，长参数后面跟=代表接收一个值
-        options, args = getopt.getopt(sys.argv[1:], 'cgf:', ['common', 'sg', 'filename='])
-        for opt, value in options:
-            if opt in ('-c', '--common'):
-                self.water_name = "beijing_do_s"
-                self.csv_file = "../csv/Beijing_DO_s.csv"
-            if opt in ('-g', '--sg'):
-                self.water_name = "beijing_do_s_savgol"
-                self.csv_file = "../csv/Beijing_DO_s_savgol.csv"
-            if opt in ('-f','--filename'):
-                fileName = value
-                print("[*] Filename is ",fileName)
-                # do something
-                exit()
-    except getopt.GetoptError as msg:
-        print(msg)
-        sys.exit(2)
-
-# 调用
-# 短参数使用的时候是参数名[空格]参数值
-# 长参数使用的时候是参数名=参值
-```
-
-itertools
-```
-import itertools
-
-# groupby1
-groups = []
-uniquekeys = []
-data = sorted(data, key=keyfunc)
-for k, g in groupby(data, keyfunc):
-    groups.append(list(g))      # Store group iterator as a list
-    uniquekeys.append(k)
-
-# groupby2
-for (uid, group) in itertools.groupby(iter([(yield line.strip().split('\t')) for line in sys.stdin]),lambda item: item[0]):
-    try:
-        if not uid or len(uid) > 20 or uid == 'null':
-            continue
-    except:
-        continue
-```
-
-sort
-```
-list.sort(key=..., reverse=...)
-sorted(list, key=..., reverse=...)
-```
-
-enumerate
-```
-for counter, value in enumerate(some_list):
-    print(counter, value)
-```
+# 文件管理
 
 path
 ```
@@ -676,6 +729,8 @@ with open("results/gen.{}_epoch{}.json".format(config.graph_name, num_epoch), 'w
 # Double precision numbers
 print("%.2f" % a)
 ```
+
+# 数据处理
 
 json
 ```
@@ -897,6 +952,8 @@ assert x == "hello"
 assert x == "goodbye", "x should be 'hello'"
 ```
 
+# 多线程
+
 multiprocessing
 ```
 from multiprocessing import Process
@@ -936,7 +993,7 @@ if __name__=='__main__':
     print 'All subprocesses done.'
 ```
 
-#### XML解析
+# XML解析
 ```
 <?xml version="1.0"?>
 <data>
