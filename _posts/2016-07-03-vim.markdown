@@ -5,30 +5,60 @@ date:   2016-07-03 16:35:35 +0800
 categories: command
 ---
 
-#### 移动
+# 基础操作
+
+光标移动
 ```
-h,j,k,l    #h表示往左，j表示往下，k表示往右，l表示往上
-w, e, W, E    #跳到单词的后面，小写包括标点
-b, B    #以单词为单位往前跳动光标，小写包含标点
-f/F  #command is used to search through the current line
-O    #开启新的一行
-^    #一行的开始
-$    #一行的结尾
-gg    #文档的第一行
-[N]G    #文档的第N行或者最后一行
-Ctrl+o  #jump back to the previous (older) location
-Ctrl+i  #to jump forward to the next location
-H       #光标移动至当前屏幕显示行的行首
-M       #光标移动至当前屏幕中间行的行首
-L       #光标移动至当前屏幕最后一行的行首
+# h表示往左，j表示往下，k表示往右，l表示往上
+h,j,k,l
+
+# 跳到单词的后面，小写包括标点
+w, e, W, E
+
+# 以单词为单位往前跳动光标，小写包含标点
+b, B
+
+# command is used to search through the current line
+# 搜索本行
+f/F
+
+# 开启新的一行
+O
+
+# 一行的开始
+^
+
+# 一行的结尾
+$
+
+# 文档的第一行
+gg
+
+# 跳到文档的第N行或者最后一行
+[N]G
+
+# jump back to the previous (older) location
+Ctrl+o
+
+# to jump forward to the next location
+Ctrl+i
+
+# 光标移动至当前屏幕显示行的行首
+H
+
+# 光标移动至当前屏幕中间行的行首
+M
+
+# 光标移动至当前屏幕最后一行的行首
+L
 ```
 
-#### 进去文件时指定行号
+进去文件时指定行号
 ```
 vim +418 test.txt
 ```
 
-#### 滚屏
+滚屏
 ```
 Ctrl+f    #上一页
 Ctrl+b    #下一页
@@ -38,69 +68,82 @@ Ctrl+d    #屏幕向下滚动半屏
 Ctrl+u    #屏幕向上滚动半屏
 ```
 
-#### 插入模式
-
+插入模式
 ```
 i    #插入到光标前面
 I    #插入到行的开始位置
 a    #插入到光标的后面
 A    #插入到行的最后位置
+
 o, O    #新开一行
+
 Esc    #关闭插入模式
 ```
 
-#### 编辑
+编辑模式
 ```
 r    #在插入模式替换光标所在的一个字符
 J    #合并下一行到上一行
 s    #删除光标所在的一个字符, 光标还在当行
 S    #删除光标所在的一行，光标还在当行，不同于dd
 u    #撤销上一步操作
+
 ctrl+r    #恢复上一步操作
+
 .    #重复最后一个命令
 ~    #变换为大写
+
 [N]>>    #一行或N行往右移动一个tab
 [N]<<    #一行或N行往左移动一个tab
-:set number #显示行号
+
+
+
 ctrl + s #冻结terminal
 ctrl + q #解冻
 ```
 
-#### 搜索
+视觉模式
+```
+v    #选中一个或多个字符
+V    #选中一行
+
+Ctrl+v #列块视觉模式
+
+v + e #选中当前单词
+```
+
+列编辑模式
+```
+Ctrl+v  # 列选中模式
+Shift+i # 选中模式插入
+Esc     # 插入完成按两次退出
+```
+
+搜索
 ```
 /pattern    #搜索（非插入模式)
 ?pattern    #往后搜索
+
 n    #光标到达搜索结果的前一个目标
 N    #光标到达搜索结果的后一个目标
 
 :noh #取消搜索高亮
 ```
 
-#### 视觉模式
-```
-v    #选中一个或多个字符
-V    #选中一行
-Ctrl+v #列块视觉模式
-v + e #选中当前单词
-```
 
-#### 列编辑模式
-```
-Ctrl+v #列选中模式
-Shift+i #选中模式插入
-Esc #插入完成按两次退出
-```
-
-#### 剪切和复制
+剪切和复制
 ```
 dd    #删除一行
 dw    #删除一个单词
+
 x    #删除后一个字符
 X    #删除前一个字符
 D    #删除一行最后一个字符
+
 [N]yy    #复制一行或者N行
+
 yw    #复制一个单词
-p    #粘贴
+p     #粘贴
 
 :reg # 查看vim寄存器
 
@@ -115,18 +158,47 @@ sudo apt-get install vim-gnome
 "ap   # 将寄存器 a 中的内容粘贴到光标后面
 ```
 
-#### 窗口操作
-
+窗口操作
 ```
 :new
 :split    #水平方向分割出一个窗口
-:vsplit    #垂直方向分割出一个窗口
+:vsplit   #垂直方向分割出一个窗口
 :vs       #垂直分割
 :close    #关闭窗口
 Ctrl+W    #切换窗口, h到左边窗口，j到下方窗口，k到上方窗口，l到右边窗口
 ```
 
-#### 文件操作
+缩进
+```
+= #自动缩进
+>> #向右缩进
+<< #向左缩进
+```
+
+替换和删除
+```
+# :s(substitute) 用以查找和替换字符串
+:{作用范围}s/{目标}/{替换}/{替换标志}
+
+# 全局范围(%)查找foo并替换为bar，所有出现都会被替换
+:s/foo/bar/g
+
+# 当前行
+:s/foo/bar/g
+
+# 全文
+:%s/foo/bar/g
+
+# 选定的区域(按v可自动补全)
+:'<,'>s/foo/bar/g
+
+# c对替换进行确认，y替换，n不替换，a替换所有，q退出查找模式
+:%s/foo/bar/gc
+
+:%s/\s\+$//g #删除行尾多个空格
+```
+
+# 文件操作
 
 ```
 # 打开多个文件
@@ -153,52 +225,29 @@ Ctrl+6 下一个文件
 :n
 ```
 
-#### 缩进
 
+# 额外功能
+
+diff
 ```
-= #自动缩进
->> #向右缩进
-<< #向左缩进
-```
-
-#### 替换和删除
-
-```
-# :s(substitute) 用以查找和替换字符串
-:{作用范围}s/{目标}/{替换}/{替换标志}
-
-# 全局范围(%)查找foo并替换为bar，所有出现都会被替换
-:s/foo/bar/g
-
-# 当前行
-:s/foo/bar/g
-
-# 全文
-:%s/foo/bar/g
-
-# 选定的区域(按v可自动补全)
-:'<,'>s/foo/bar/g
-
-# c对替换进行确认，y替换，n不替换，a替换所有，q退出查找模式
-:%s/foo/bar/gc
-
-:%s/\s\+$//g #删除行尾多个空格
-```
-
-
-#### diff
-
-```
+# 对比文件
 vimdiff file1 file2
+
+
 zo #打开折叠 
 zc #关闭折叠
+
 dp #puts changes under the cursor into the other file
 do #The change under the cursor is replaced
+
 ]c #jump to the new diff
 [c #jump to the pervious diff
 ```
 
-#### 设置鼠标
+
+# 设置
+
+设置鼠标
 ```
 # 设置鼠标显示
 :set mouse=a
@@ -206,8 +255,12 @@ do #The change under the cursor is replaced
 # 取消鼠标显示
 :set mouse=
 ```
+设置行号
+```
+:set number #显示行号
+```
 
-#### 插件
+# 插件推荐
 ```
 # 文件侧边栏
 NERDTree
@@ -216,7 +269,7 @@ NERDTree
 map <F2> :NERDTreeToggle<CR>
 ```
 
-#### neovim
+# neovim
 ```
 # 配置文件
 ~/.config/nvim/init.vim
@@ -264,7 +317,7 @@ i
 <Ctrl+\><Ctrl+N>
 ```
 
-#### 宏
+# 宏
 ```
 # 录制宏
 
