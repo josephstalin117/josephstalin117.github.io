@@ -785,6 +785,8 @@ b
 
 logger
 ```
+import logging
+
 # 定义
 def get_logger(log_dir, name, log_filename='info.log', level=logging.INFO):
     logger = logging.getLogger(name)
