@@ -56,6 +56,18 @@ categories: command
 \node (m1) [matrix] at (0,0) [align=center] {};
 ```
 
+平行四边形
+```
+\tikzstyle{matrix}=[trapezium,
+thick,minimum width=8cm,
+minimum height=6cm,
+trapezium left angle=110,
+trapezium right angle=70,
+draw=gray!80,
+fill=gray!20,
+fill opacity=.8]
+```
+
 圆
 ```
 \tikzstyle{cell}=[circle,fill=black!25,minimum size=25pt,inner sep=0pt]
