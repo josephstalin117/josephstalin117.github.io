@@ -42,6 +42,38 @@ npm list
 npm view <package> version
 ```
 
+vue打包
+```
+# 生成dist文件
+npm run build
+```
+
+打包子路径设置
+```
+# vue-router
+# router/index.js
+export default new Router({
+  //mode: 'history',
+  mode: 'hash',  //改为hash
+  base: '/dist/', //加上这一行
+
+# config/index.js
+//assetsPublicPath: '/',
+// 修改
+assetsPublicPath: '/dist/',
+```
+
+lan 访问
+```
+# ./build/webpack.dev.conf.js
+devServer: {
+    host: '0.0.0.0',//your ip address
+    port: 8080,
+    disableHostCheck: true,
+    ...
+}
+```
+
 echarts配置
 ```
 main.js 模块加载

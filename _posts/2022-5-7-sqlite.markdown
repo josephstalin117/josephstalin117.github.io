@@ -23,6 +23,12 @@ $sqlite3 testDB.db .dump > testDB.sql
 $sqlite3 testDB.db < testDB.sql
 ```
 
+命令行交互
+```
+# 退出
+.quit
+```
+
 数据表操作
 ```
 # 查看表

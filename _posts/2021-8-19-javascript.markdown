@@ -45,3 +45,24 @@ for (let i = 0; i < 5; i++) {
   text += "The number is " + i + "<br>";
 }
 ```
+
+Date
+```
+//格式化时间数据
+formatDate: function (date) {
+    var d = new Date(date),
+    month = "" + (d.getMonth() + 1),
+    day = "" + d.getDate(),
+    year = d.getFullYear();
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
+    return [year, month, day].join("-");
+},
+
+//获取前7天Date数据
+const now = new Date();
+const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+const minDate = new Date(today);
+minDate.setDate(minDate.getDate() - 7);
+const maxDate = new Date(today);
+```
