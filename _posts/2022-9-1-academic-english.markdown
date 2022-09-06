@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "学术英语"
-date:   2022-9-6 20:35:35 +0800
+date:   2022-9-1 20:35:35 +0800
 categories: command
 ---
 
@@ -10,6 +10,8 @@ categories: command
 denotes -> represents
 
 can be formulated as -> is obtained as
+
+shows -> illustrates
 
 
 
