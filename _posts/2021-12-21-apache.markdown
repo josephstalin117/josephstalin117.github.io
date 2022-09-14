@@ -5,6 +5,12 @@ date:   2021-12-21 20:35:35 +0800
 categories: command
 ---
 
+apache2服务器启动
+```
+sudo systemctl start apache2
+```
+
+
 Setting Up Virtual Hosts
 ```
 # Create the directory for your_domain as follows:
