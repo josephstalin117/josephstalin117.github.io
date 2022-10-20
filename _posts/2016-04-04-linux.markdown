@@ -5,7 +5,7 @@ date:   2016-04-04 21:35:35 +0800
 categories: command
 ---
 
-#### linux属性
+# linux属性
 ```
 # 查看linux版本
 lsb_release -a
@@ -20,7 +20,7 @@ lspci | grep -i nvidia
 lscpu
 ```
 
-#### 用户权限
+# 用户权限
 ```
 # 查看所有用户
 cat /etc/passwd
@@ -107,7 +107,9 @@ sudo chmod u+s `which ping`
 chmod 775 -R dir
 ```
 
-#### 修改时间
+# 系统操作
+
+## 修改时间
 ```
 date -R
 
@@ -115,18 +117,24 @@ date -R
 date --set="2017-01-22 16:16:23"
 ```
 
-#### 关机
+## 关机
 ```
 sudo shutdown now
 ```
 
-#### 查看日志文件
+## 查看日志文件
 ```
 # 查看系统重启日志
 last |grep reboot
+
+# 查看系统日志
+dmesg
+
+# 自定义dmesg输出
+dmesg |grep [keyword]
 ```
 
-#### 进程管理
+## 进程管理
 ```
 # 查看进程
 ps -ef |grep vsftpd
@@ -192,7 +200,7 @@ fuser -m -v /dev/sdb1
 
 ```
 
-#### 标准输入输出
+## 标准输入输出
 ```
 echo log > /dev/null 2>&1
 
@@ -208,7 +216,68 @@ echo log > /dev/null 2>&1
 &
 ```
 
-#### ubuntu apt
+# 系统设置
+
+## 环境变量
+```
+vim .profile
+export PATH=$PATH:/home/jeremie/Downloads/pycharm-community-2016.3.2/bin
+source .profile
+
+# 设置环境变量
+export http_proxy="http://172.18.10.216:1080"
+
+# 查看环境变量
+echo $http_proxy
+
+# 删除环境变量
+unset http_proxy
+```
+
+## systemctl
+```
+# 立即启动一个服务
+sudo systemctl start apache.service
+
+# 立即停止一个服务
+sudo systemctl stop apache.service
+
+# 重启一个服务
+sudo systemctl restart apache.service
+
+# 查看服务状态
+sudo systemctl status apache.service
+```
+
+## 系统休眠
+```
+# 查看是否开启自动休眠
+sudo systemctl status sleep.target
+
+# 关闭自动休眠
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+# 查看自动休眠是否关闭
+systemctl status sleep.target
+```
+
+## rc.local开机启动
+```
+# 开机启动
+创建/etc/rc.local文件
+
+# rc.local文件第一行添加
+#!/bin/sh -e
+
+# 确保/etc/rc.local可执行
+sudo chown root /etc/rc.local
+sudo chmod 755 /etc/rc.local
+
+# 验证rc.local工作正常
+sudo systemctl status rc.local.service
+```
+
+## ubuntu apt 包管理
 ```
 # list the installed software packages on your machine 
 sudo apt list --installed | grep -i gnome
@@ -226,7 +295,7 @@ sudo apt-get remove gnome
 sudo apt-get -o Acquire::http::proxy="http://127.0.0.1:8118/" update
 ```
 
-#### update-alternatives
+## update-alternatives
 ```
 # display 参数列出一个命令的所有可选命令
 update-alternatives --display java
@@ -241,7 +310,30 @@ update-alternatives --install /usr/bin/java java /usr/local/java/jdk-9/bin/java 
 update-alternatives –remove java /usr/local/jre1.6.0_20/bin/java
 ```
 
-#### grep
+## 库的软链接指令速查
+```
+# locate 定位库的信息  
+locate libcurl.so.4  
+
+# ls -l  查看链接  
+ls -l /usr/local/lib/libcurl.so.4
+
+# sudo rm -rf 删除软连接
+sudo rm -rf /usr/lib/x86_64-linux-gnu/libcurl.so.4
+
+# sudo ln -s 重建软连接
+sudo ln -s /home/anaconda2/lib/libcurl.so.4.4.0 /home/anaconda2/lib/libcurl.so.4
+
+# 文件夹软连接
+ln -s /opt/linux/rootfs_dir  /home/jyg/rootfs_dir
+
+# cmake --version 使用cmake时的链接库，如果有冲突则会报错。没有冲突，会输出版本信息
+cmake --version
+```
+
+# 命令工具
+
+## grep
 ```
 find . -name "*.php" | xargs grep
 
@@ -264,7 +356,7 @@ find . -name "arima*.json" -exec grep -lv "algo_name" /dev/null {} +
 find . -name "arima*.json" -exec grep -lv "algo_name" /dev/null {} + | wc -l
 ```
 
-#### sort & uniq
+## sort & uniq
 ```
 # 正排序
 sort -n file
@@ -279,116 +371,24 @@ sort -nr file | uniq
 sort -nr file | uniq -c
 ```
 
-#### Find Linux Files by Name or Extension
+## Find Linux Files by Name or Extension
 ```
 find . -name "*.err"
 ```
 
-#### finding out where a program is located
+## finding out where a program is located
 ```
 which firefox
 ```
 
-#### networking
-```
-# 启动以太网卡
-ifconfig eth0 up
-sudo /etc/init.d/networking restart
-
-# 网络重启
-sudo /etc/init.d/networking restart
-sudo systemctl restart NetworkManager.service
-
-# 查看所有路由
-route -n
-
-# 查看网络地址
-ip a
-
-# 查看无线网络连接情况
-iwconfig
-
-# 查看以太网接口
-lspci |grep -i 'eth'
-
-# 去除IP地址
-ifconfig eh0 0.0.0.0
-
-# 添加ip
-ip addr add 目的/网关 dev eth0
-
-# 添加路由
-sudo ip route add 目的ip/netmask via 192.168.1.1
-
-# ping4次
-ping -c 4 google.com
-
-# 修改查看本地路由表
-route
-
-# 添加一条路由信息
-route add -net 10.10.10.0/24 gw 192.168.0.1
-
-# 删除一条路由信息
-route del -net 10.10.10.0/24 gw 192.168.0.1
-
-# 添加默认网关
-route add default gw 192.168.0.1
-
-# 查看路由表
-netstat -r
-
-# 查看tcp链接
-netstat -t
-
-# 查看udp链接
-netstat -u
-
-# 查看对应进程信息
-netstat -ltp
-
-# 每隔5秒展示tcp监听信息
-netstat -tl -c 5
-
-# 展示网卡信息
-netstat -i
-
-# 统计TCP链接状态
-netstat -nat | awk '{print  $6}' | sort | uniq -c | sort -n
-```
-
-#### tcpdump
-
-```
-# FILTERING BY SOURCE AND DESTINATION
-tcpdump src 2.3.4.5
-tcpdump dst 3.4.5.6
-
-# FIND TRAFFIC BY IP
-tcpdump host 1.2.3.4
-
-# SHOW TRAFFIC RELATED TO A SPECIFIC PORT
-tcpdump port 3389
-tcpdump src port 1025
-```
-
-#### nc
-```
-# 将本地文件发送到远程服务器的80端口
-nc 192.168.1.199 80 < data.txt
-
-# 本地端口，将接收的数据重定向到本地文件
-nc -l 8080 > data.txt
-```
-
-#### xargs
+## xargs
 ```
 # 使用-I指定一个替换字符串{}，这个字符串在xargs扩展时会被替换掉
 # 将上一个程序的标准输出传给下一个程序的命令行
 echo xx | xargs -I {} command {}
 ```
 
-#### ls
+## ls
 ```
 # 列出所有文件名前缀是predict的文件
 ls predict*
@@ -397,254 +397,10 @@ ls predict*
 ls predict* | wc -l
 ```
 
-#### dd
+## dd
 
 ```
 dd if=<source file name> of=<target file name> [Options]
-```
-
-#### 文件本地上传和下载
-```
-# 安装
-sudo apt install lrzsz
-
-# 上传
-rz
-
-# 下载
-sz
-
-# md5 校验
-md5sum file
-```
-
-#### .bashrc 配置
-```
-alias vim='nvim'
-alias ls='ls -ahG'
-```
-
-#### 文件管理
-```
-# 统计挂载磁盘的整体情况
-df -h
-
-# 查看当前目录每个文件夹的情况
-du --max-depth=1 -h
-du -sh *
-
-# 查看硬盘情况
-fdisk -l
-
-# Size of a directory
-du -sh /tmp
-
-# Size of a file
-du -h /tmp/xyz
-
-# 查询设备类型和文件系统
-blkid
-```
-
-#### 解压压缩
-```
-#extract
-tar -x
-#if the tar file also compressed with .tar.gz or tgz extension
-tar -z
-tar -xvf file.tar
-tar -zxvf data.tar.gz
-
-#unzip
-unzip file.zip -d destination_folder
-
-# 打包
-tar czvf FileName.tar DirName
-zip FileName.zip DirName
-
-# gz
-gzip -dk file.gz
-```
-
-#### tree
-```
-#Tee command is used to store and view (both at the same time) the output of any other command.
-ls | tee file
-```
-
-#### 环境变量
-```
-vim .profile
-export PATH=$PATH:/home/jeremie/Downloads/pycharm-community-2016.3.2/bin
-source .profile
-
-# 设置环境变量
-export http_proxy="http://172.18.10.216:1080"
-
-# 查看环境变量
-echo $http_proxy
-
-# 删除环境变量
-unset http_proxy
-```
-
-#### crontab
-```
-sudo vim /etc/crontab
-#每隔两分钟执行一次脚本
-2 *   * * * root   /usr/bin/python3.5 /home/edgar/auto.py > /home/edgar/auto.log
-# 分 时 日 月 周 用户 命令
-* * * * * user command
-# 每分钟执行一次
-* * * * * user command
-# 每隔2小时执行一次
-* */2 * * * user command (/表示频率)
-# 每天8:30分执行一次
-30 8 * * * user command
-# 每小时的30和50分各执行一次
-30,50 * * * * user command（,表示并列）
-# 每个月的3号到6号的8:30执行一次
-30 8 3-6 * * user command （-表示范围）
-# 每个星期一的8:30执行一次
-30 8 * * 1 user command （周的范围为0-7,0和7代表周日）
-```
-
-#### nohup
-```
-# nohup 确保这个进程在断开 ssh 连接后依旧运行，& 让进程在后台运行
-nohup jupyter notebook 2>&1 &
-
-# 后台文件写入log
-command >& file.txt(或者file.log) &
-```
-
-#### curl
-```
-curl baidu.com
-
-# curl 代理
-curl -x http://172.18.10.204:8119 baidu.com
-```
-
-#### 库的软链接指令速查
-```
-# locate 定位库的信息  
-locate libcurl.so.4  
-
-# ls -l  查看链接  
-ls -l /usr/local/lib/libcurl.so.4  
-
-# sudo rm -rf 删除软连接  
-sudo rm -rf /usr/lib/x86_64-linux-gnu/libcurl.so.4  
-
-# sudo ln -s 重建软连接  
-sudo ln -s /home/anaconda2/lib/libcurl.so.4.4.0 /home/anaconda2/lib/libcurl.so.4  
-
-# 文件夹软连接
-ln -s /opt/linux/rootfs_dir  /home/jyg/rootfs_dir
-
-# cmake --version 使用cmake时的链接库，如果有冲突则会报错。没有冲突，会输出版本信息  
-cmake --version  
-```
-
-#### 文件挂载
-```
-#Type this command to list the devices that are accessible on the computer:
-fdisk -l
-
-#格式化ext4
-sudo mkfs.ext4 /dev/sdb1
-
-# 创建目录并挂载文件
-mount /dev/cdrom /mnt/cdrom
-
-# 取消挂载
-umount /mnt/cdrom
-
-# 开机自动挂载
-sudo blkid
-# 添加UUID到/etc/fstab 
-添加到/etc/fstab 其中UUID后面跟sdb1的UUID 重启
-UUID=63295b70-daec-4253-b659-821f51200be9 /home/data ext4 defaults,errors=remount-ro 0 1
-
-
-```
-
-#### 使用图形界面打开文件
-```
-# opens a file or URL in the user's preferred application
-xdg-open $file
-
-# 后台打开pycharm
-./pycharm &
-```
-
-#### ss
-```
-# apt
-apt-get install shadowsocks
-
-#pip
-pip install shadowsocks
-
-# 服务启动
-ssserver -c /etc/shadowsocks.json --log-file=/tmp/shadowsocks.log
-
-# 本地启动
-sslocal -c /home/mudao/shadowsocks.json
-
-# 配置文件
-{
-"server":"::",  ##填写服务器外网ip地址，ip也可以写内网地址，只要能转发出来即可。
-"server_port":8000,
-"local_address":"127.0.0.1",
-"local_port":1080,
-"password":"",
-"timeout":300,
-"method":"aes-256-cfb",
-"fast_open":false
-}
-
-# 后台运行
-nohup ssserver -c /etc/shadowsocks.json > /dev/null 2>&1 & 
-```
-
-Privoxy
-```
-# install
-sudo apt install privoxy
-
-# 修改配置文件 
-vim /etc/privoxy/config
-#listen-address 127.0.0.1:8118 #取消注释
-listen-address 0.0.0.0:8118 #取消注释
-forward-socks5t / 127.0.0.1:1080 #取消注释
-
-# 启动privoxy
-systemctl start privoxy
-
-# 添加socks5代理
-export ALL_PROXY=socks5://127.0.0.1:1080
-
-# 配置/etc/profile 添加http代理
-export http_proxy=http://127.0.0.1:8118
-export https_proxy=http://127.0.0.1:8118
-export ftp_proxy=http://127.0.0.1:8118
-```
-
-systemctl
-```
-# 立即启动一个服务
-sudo systemctl start apache.service
-
-# 立即停止一个服务
-sudo systemctl stop apache.service
-
-# 重启一个服务
-sudo systemctl restart apache.service
-
-# 查看服务状态
-sudo systemctl status apache.service
 ```
 
 vsftpd
@@ -716,7 +472,324 @@ head -n 10 file.txt
 tail -n 10 file.txt
 ```
 
-#### 文件同步
+## nohup
+```
+# nohup 确保这个进程在断开 ssh 连接后依旧运行，& 让进程在后台运行
+nohup jupyter notebook 2>&1 &
+
+# 后台文件写入log
+command >& file.txt(或者file.log) &
+```
+
+
+
+
+## 使用图形界面打开文件
+```
+# opens a file or URL in the user's preferred application
+xdg-open $file
+
+# 后台打开pycharm
+./pycharm &
+```
+
+# 网络
+
+## networking
+```
+# 启动以太网卡
+ifconfig eth0 up
+sudo /etc/init.d/networking restart
+
+# 网络重启
+sudo /etc/init.d/networking restart
+sudo systemctl restart NetworkManager.service
+
+# 查看所有路由
+route -n
+
+# 查看网络地址
+ip a
+
+# 查看无线网络连接情况
+iwconfig
+
+# 查看以太网接口
+lspci |grep -i 'eth'
+
+# 去除IP地址
+ifconfig eh0 0.0.0.0
+
+# 添加ip
+ip addr add 目的/网关 dev eth0
+
+# 添加路由
+sudo ip route add 目的ip/netmask via 192.168.1.1
+
+# ping4次
+ping -c 4 google.com
+
+# 修改查看本地路由表
+route
+
+# 添加一条路由信息
+route add -net 10.10.10.0/24 gw 192.168.0.1
+
+# 删除一条路由信息
+route del -net 10.10.10.0/24 gw 192.168.0.1
+
+# 添加默认网关
+route add default gw 192.168.0.1
+
+# 查看路由表
+netstat -r
+
+# 查看tcp链接
+netstat -t
+
+# 查看udp链接
+netstat -u
+
+# 查看对应进程信息
+netstat -ltp
+
+# 每隔5秒展示tcp监听信息
+netstat -tl -c 5
+
+# 展示网卡信息
+netstat -i
+
+# 统计TCP链接状态
+netstat -nat | awk '{print  $6}' | sort | uniq -c | sort -n
+```
+
+## curl
+```
+curl baidu.com
+
+# curl 代理
+curl -x http://172.18.10.204:8119 baidu.com
+```
+
+
+
+## tcpdump
+
+```
+# FILTERING BY SOURCE AND DESTINATION
+tcpdump src 2.3.4.5
+tcpdump dst 3.4.5.6
+
+# FIND TRAFFIC BY IP
+tcpdump host 1.2.3.4
+
+# SHOW TRAFFIC RELATED TO A SPECIFIC PORT
+tcpdump port 3389
+tcpdump src port 1025
+```
+
+## nc
+```
+# 将本地文件发送到远程服务器的80端口
+nc 192.168.1.199 80 < data.txt
+
+# 本地端口，将接收的数据重定向到本地文件
+nc -l 8080 > data.txt
+```
+
+## .bashrc 配置
+```
+alias vim='nvim'
+alias ls='ls -ahG'
+```
+
+# 文件
+
+## 文件挂载
+```
+#Type this command to list the devices that are accessible on the computer:
+fdisk -l
+
+#格式化ext4
+sudo mkfs.ext4 /dev/sdb1
+
+# 创建目录并挂载文件
+mount /dev/cdrom /mnt/cdrom
+
+# 取消挂载
+umount /mnt/cdrom
+
+# 查看UUID
+sudo blkid
+
+# 添加UUID到/etc/fstab 
+# 添加到/etc/fstab 其中UUID后面跟sdb1的UUID 重启
+UUID=63295b70-daec-4253-b659-821f51200be9 /home/data ext4 defaults,errors=remount-ro 0 1
+```
+
+## 文件管理
+```
+# 统计挂载磁盘的整体情况
+df -h
+
+# 查看当前目录每个文件夹的情况
+du --max-depth=1 -h
+du -sh *
+
+# 查看硬盘情况
+fdisk -l
+
+# Size of a directory
+du -sh /tmp
+
+# Size of a file
+du -h /tmp/xyz
+
+# 查询设备类型和文件系统
+blkid
+```
+
+## 解压压缩
+```
+#extract
+tar -x
+#if the tar file also compressed with .tar.gz or tgz extension
+tar -z
+tar -xvf file.tar
+tar -zxvf data.tar.gz
+
+#unzip
+unzip file.zip -d destination_folder
+
+# 打包
+tar czvf FileName.tar DirName
+zip FileName.zip DirName
+
+# gz
+gzip -dk file.gz
+```
+
+## 文件本地上传和下载
+```
+# 安装
+sudo apt install lrzsz
+
+# 上传
+rz
+
+# 下载
+sz
+
+# md5 校验
+md5sum file
+```
+
+
+
+## tree
+```
+#Tee command is used to store and view (both at the same time) the output of any other command.
+ls | tee file
+```
+
+
+
+## crontab
+```
+sudo vim /etc/crontab
+#每隔两分钟执行一次脚本
+2 *   * * * root   /usr/bin/python3.5 /home/edgar/auto.py > /home/edgar/auto.log
+# 分 时 日 月 周 用户 命令
+* * * * * user command
+# 每分钟执行一次
+* * * * * user command
+# 每隔2小时执行一次
+* */2 * * * user command (/表示频率)
+# 每天8:30分执行一次
+30 8 * * * user command
+# 每小时的30和50分各执行一次
+30,50 * * * * user command（,表示并列）
+# 每个月的3号到6号的8:30执行一次
+30 8 3-6 * * user command （-表示范围）
+# 每个星期一的8:30执行一次
+30 8 * * 1 user command （周的范围为0-7,0和7代表周日）
+```
+
+
+
+## ss
+```
+# apt
+apt-get install shadowsocks
+
+#pip
+pip install shadowsocks
+
+# 服务启动
+ssserver -c /etc/shadowsocks.json --log-file=/tmp/shadowsocks.log
+
+# 本地启动
+sslocal -c /home/mudao/shadowsocks.json
+
+# 配置文件
+{
+"server":"::",  ##填写服务器外网ip地址，ip也可以写内网地址，只要能转发出来即可。
+"server_port":8000,
+"local_address":"127.0.0.1",
+"local_port":1080,
+"password":"",
+"timeout":300,
+"method":"aes-256-cfb",
+"fast_open":false
+}
+
+# 后台运行
+nohup ssserver -c /etc/shadowsocks.json > /dev/null 2>&1 & 
+```
+
+Privoxy
+```
+# install
+sudo apt install privoxy
+
+# 修改配置文件 
+vim /etc/privoxy/config
+#listen-address 127.0.0.1:8118 #取消注释
+listen-address 0.0.0.0:8118 #取消注释
+forward-socks5t / 127.0.0.1:1080 #取消注释
+
+# 启动privoxy
+systemctl start privoxy
+
+# 添加socks5代理
+export ALL_PROXY=socks5://127.0.0.1:1080
+
+# 配置/etc/profile 添加http代理
+export http_proxy=http://127.0.0.1:8118
+export https_proxy=http://127.0.0.1:8118
+export ftp_proxy=http://127.0.0.1:8118
+```
+
+
+
+
+
+
+# 常用工具
+
+## 翻译软件
+```
+# 安装
+sudo apt-get install translate-shell
+
+# 翻译为中文
+trans :zh-CN test
+
+# 查看语言代码
+trans -T
+```
+
+## 文件同步
 ```
 rsync -r source destination
 
@@ -739,7 +812,8 @@ rsync -av --include="*.txt" --exclude='*' source/ destination
 rsync -av source/ username@remote_host:destination
 ```
 
-#### SSH
+
+## SSH
 ```
 # 本地端口转发
 
@@ -759,7 +833,7 @@ ssh -R 2121:host2:21 host1
 # R参数也是接受三个值，分别是"远程主机端口:目标主机:目标主机端口"。这条命令的意思，就是让host1监听它自己的2121端口，然后将所有数据经由host3，转发到host2的21端口。由于对于host3来说，host1是远程主机，所以这种情况就被称为"远程端口绑定"。
 ```
 
-#### wol
+## wol
 ```
 # 检查网卡是否支持wol
 ethtool eth0
@@ -783,37 +857,4 @@ ethtool -s eth0 wol g
 
 # 安装wakeonlan
 sudo apt-get install wakeonlan
-
-
-
 ```
-
-#### rc.local
-```
-# 开机启动
-创建/etc/rc.local文件
-
-# rc.local文件第一行添加
-#!/bin/sh -e
-
-# 确保/etc/rc.local可执行
-sudo chown root /etc/rc.local
-sudo chmod 755 /etc/rc.local
-
-# 验证rc.local工作正常
-sudo systemctl status rc.local.service
-```
-
-#### 翻译软件
-```
-# 安装
-sudo apt-get install translate-shell
-
-# 翻译为中文
-trans :zh-CN test
-
-# 查看语言代码
-trans -T
-```
-
-

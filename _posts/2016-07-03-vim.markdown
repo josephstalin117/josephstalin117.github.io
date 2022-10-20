@@ -266,6 +266,12 @@ do #The change under the cursor is replaced
 :set number #显示行号
 ```
 
+全局配置文件
+```
+/etc/vim/vimrc
+/etc/vimrc
+```
+
 # 插件推荐
 ```
 # 文件侧边栏
