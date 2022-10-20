@@ -31,11 +31,14 @@ $sqlite3 testDB.db < testDB.sql
 
 数据表操作
 ```
+# 打开数据库
+.open test.db
+
 # 查看表
-sqlite>.tables
+.tables
 
 # 查看表结构
-sqlite>.schema COMPANY
+.schema COMPANY
 
 # 创建表
 sqlite> CREATE TABLE COMPANY(

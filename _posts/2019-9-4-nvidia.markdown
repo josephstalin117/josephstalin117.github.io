@@ -27,6 +27,9 @@ sudo lsof | grep nvidia
 # 禁用nvidia服务
 # 停止gdm服务
 sudo systemctl stop gdm3
+
+# ubuntu 20.04
+sudo systemctl stop lightdm
 ```
 
 卸载驱动
@@ -60,8 +63,8 @@ lspci | grep -i nvidia
 查看CUDA版本信息
 ```
 # 添加cuda环境变量
-export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export PATH=/usr/local/cuda/bin:${PATH}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 
 # 更新动态链接库
 ldconfig /usr/local/cuda-10.0/lib64

@@ -13,5 +13,7 @@ can be formulated as -> is obtained as
 
 shows -> illustrates
 
+deal with -> approach
+
 
 

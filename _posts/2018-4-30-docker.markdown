@@ -273,6 +273,9 @@ docker compose
 ```
 # Make sure you are in the same directory as docker-compose.yml
 docker-compose up -d
+
+# 关闭docker compose
+docker compose stop
 ```
 
 docker compose代理设置
