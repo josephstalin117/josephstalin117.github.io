@@ -109,7 +109,7 @@ chmod 775 -R dir
 
 # 系统操作
 
-## 修改时间
+修改时间
 ```
 date -R
 
@@ -117,12 +117,12 @@ date -R
 date --set="2017-01-22 16:16:23"
 ```
 
-## 关机
+关机
 ```
 sudo shutdown now
 ```
 
-## 日志
+日志
 ```
 # 查看系统重启日志
 last |grep reboot
@@ -134,7 +134,7 @@ dmesg
 dmesg |grep [keyword]
 ```
 
-## 进程管理
+进程管理
 ```
 # 查看进程
 ps -ef |grep vsftpd
@@ -200,7 +200,7 @@ fuser -m -v /dev/sdb1
 
 ```
 
-## 标准输入输出
+标准输入输出
 ```
 echo log > /dev/null 2>&1
 
@@ -218,7 +218,7 @@ echo log > /dev/null 2>&1
 
 # 系统设置
 
-## 环境变量
+环境变量
 ```
 vim .profile
 export PATH=$PATH:/home/jeremie/Downloads/pycharm-community-2016.3.2/bin
@@ -234,7 +234,7 @@ echo $http_proxy
 unset http_proxy
 ```
 
-## systemctl
+systemctl
 ```
 # 立即启动一个服务
 sudo systemctl start apache.service
@@ -249,7 +249,7 @@ sudo systemctl restart apache.service
 sudo systemctl status apache.service
 ```
 
-## 系统休眠
+系统休眠
 ```
 # 查看是否开启自动休眠
 sudo systemctl status sleep.target
@@ -261,7 +261,7 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 systemctl status sleep.target
 ```
 
-## rc.local开机启动
+rc.local开机启动
 ```
 # 开机启动
 创建/etc/rc.local文件
@@ -277,7 +277,7 @@ sudo chmod 755 /etc/rc.local
 sudo systemctl status rc.local.service
 ```
 
-## ubuntu apt 包管理
+ubuntu apt 包管理
 ```
 # list the installed software packages on your machine 
 sudo apt list --installed | grep -i gnome
@@ -295,7 +295,7 @@ sudo apt-get remove gnome
 sudo apt-get -o Acquire::http::proxy="http://127.0.0.1:8118/" update
 ```
 
-## update-alternatives
+update-alternatives
 ```
 # display 参数列出一个命令的所有可选命令
 update-alternatives --display java
@@ -310,7 +310,7 @@ update-alternatives --install /usr/bin/java java /usr/local/java/jdk-9/bin/java 
 update-alternatives –remove java /usr/local/jre1.6.0_20/bin/java
 ```
 
-## 库的软链接指令速查
+库的软链接指令速查
 ```
 # locate 定位库的信息  
 locate libcurl.so.4  
@@ -333,7 +333,7 @@ cmake --version
 
 # 命令工具
 
-## grep
+grep
 ```
 find . -name "*.php" | xargs grep
 
@@ -356,7 +356,7 @@ find . -name "arima*.json" -exec grep -lv "algo_name" /dev/null {} +
 find . -name "arima*.json" -exec grep -lv "algo_name" /dev/null {} + | wc -l
 ```
 
-## sort & uniq
+sort & uniq
 ```
 # 正排序
 sort -n file
@@ -371,24 +371,24 @@ sort -nr file | uniq
 sort -nr file | uniq -c
 ```
 
-## Find Linux Files by Name or Extension
+Find Linux Files by Name or Extension
 ```
 find . -name "*.err"
 ```
 
-## finding out where a program is located
+finding out where a program is located
 ```
 which firefox
 ```
 
-## xargs
+xargs
 ```
 # 使用-I指定一个替换字符串{}，这个字符串在xargs扩展时会被替换掉
 # 将上一个程序的标准输出传给下一个程序的命令行
 echo xx | xargs -I {} command {}
 ```
 
-## ls
+ls
 ```
 # 列出所有文件名前缀是predict的文件
 ls predict*
@@ -397,7 +397,7 @@ ls predict*
 ls predict* | wc -l
 ```
 
-## dd
+dd
 
 ```
 dd if=<source file name> of=<target file name> [Options]
@@ -472,7 +472,7 @@ head -n 10 file.txt
 tail -n 10 file.txt
 ```
 
-## nohup
+nohup
 ```
 # nohup 确保这个进程在断开 ssh 连接后依旧运行，& 让进程在后台运行
 nohup jupyter notebook 2>&1 &
@@ -484,7 +484,7 @@ command >& file.txt(或者file.log) &
 
 
 
-## 使用图形界面打开文件
+使用图形界面打开文件
 ```
 # opens a file or URL in the user's preferred application
 xdg-open $file
@@ -495,7 +495,7 @@ xdg-open $file
 
 # 网络
 
-## networking
+networking
 ```
 # 启动以太网卡
 ifconfig eth0 up
@@ -563,7 +563,7 @@ netstat -i
 netstat -nat | awk '{print  $6}' | sort | uniq -c | sort -n
 ```
 
-## curl
+curl
 ```
 curl baidu.com
 
@@ -573,7 +573,7 @@ curl -x http://172.18.10.204:8119 baidu.com
 
 
 
-## tcpdump
+tcpdump
 
 ```
 # FILTERING BY SOURCE AND DESTINATION
@@ -588,7 +588,7 @@ tcpdump port 3389
 tcpdump src port 1025
 ```
 
-## nc
+nc
 ```
 # 将本地文件发送到远程服务器的80端口
 nc 192.168.1.199 80 < data.txt
@@ -597,7 +597,7 @@ nc 192.168.1.199 80 < data.txt
 nc -l 8080 > data.txt
 ```
 
-## .bashrc 配置
+.bashrc 配置
 ```
 alias vim='nvim'
 alias ls='ls -ahG'
@@ -605,7 +605,7 @@ alias ls='ls -ahG'
 
 # 文件
 
-## 文件挂载
+文件挂载
 ```
 #Type this command to list the devices that are accessible on the computer:
 fdisk -l
@@ -627,7 +627,7 @@ sudo blkid
 UUID=63295b70-daec-4253-b659-821f51200be9 /home/data ext4 defaults,errors=remount-ro 0 1
 ```
 
-## 文件管理
+文件管理
 ```
 # 统计挂载磁盘的整体情况
 df -h
@@ -649,7 +649,7 @@ du -h /tmp/xyz
 blkid
 ```
 
-## 解压压缩
+解压压缩
 ```
 #extract
 tar -x
@@ -669,7 +669,7 @@ zip FileName.zip DirName
 gzip -dk file.gz
 ```
 
-## 文件本地上传和下载
+文件本地上传和下载
 ```
 # 安装
 sudo apt install lrzsz
@@ -686,7 +686,7 @@ md5sum file
 
 
 
-## tree
+tree
 ```
 #Tee command is used to store and view (both at the same time) the output of any other command.
 ls | tee file
@@ -694,7 +694,7 @@ ls | tee file
 
 
 
-## crontab
+crontab
 ```
 sudo vim /etc/crontab
 #每隔两分钟执行一次脚本
@@ -717,7 +717,7 @@ sudo vim /etc/crontab
 
 
 
-## ss
+ss
 ```
 # apt
 apt-get install shadowsocks
@@ -777,7 +777,7 @@ export ftp_proxy=http://127.0.0.1:8118
 
 # 常用工具
 
-## 翻译软件
+翻译软件
 ```
 # 安装
 sudo apt-get install translate-shell
@@ -789,7 +789,7 @@ trans :zh-CN test
 trans -T
 ```
 
-## 文件同步
+文件同步
 ```
 rsync -r source destination
 
@@ -813,7 +813,7 @@ rsync -av source/ username@remote_host:destination
 ```
 
 
-## SSH
+SSH
 ```
 # 本地端口转发
 
@@ -833,7 +833,7 @@ ssh -R 2121:host2:21 host1
 # R参数也是接受三个值，分别是"远程主机端口:目标主机:目标主机端口"。这条命令的意思，就是让host1监听它自己的2121端口，然后将所有数据经由host3，转发到host2的21端口。由于对于host3来说，host1是远程主机，所以这种情况就被称为"远程端口绑定"。
 ```
 
-## wol
+wol
 ```
 # 检查网卡是否支持wol
 ethtool eth0
