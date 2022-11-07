@@ -122,7 +122,7 @@ date --set="2017-01-22 16:16:23"
 sudo shutdown now
 ```
 
-## 查看日志文件
+## 日志
 ```
 # 查看系统重启日志
 last |grep reboot

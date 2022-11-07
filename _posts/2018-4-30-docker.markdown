@@ -5,7 +5,7 @@ date:   2018-4-30 20:35:35 +0800
 categories: command
 ---
 
-docker基本操作
+# docker基本操作
 ```
 # 验证是否安装成功
 docker info
@@ -14,7 +14,8 @@ docker info
 docker --version
 
 # 启动docker服务
-sudo service docker start/sudo systemctl start docker
+sudo service docker start
+sudo systemctl start docker
 
 # 列出运行的docker
 docker ps
@@ -104,6 +105,8 @@ cat docker/ubuntu.tar | docker import - test/ubuntu:v1
 docker inspect [id] | grep "IPAddress"
 ```
 
+# docker 镜像管理
+
 images文件管理
 ```
 # 列出本机的所有 image 文件。
@@ -128,31 +131,15 @@ ExecStart=/usr/bin/docker daemon -H fd://
 ExecStart=/usr/bin/docker daemon -g /new/path/docker -H fd://
 # reload systemd daemon
 systemctl daemon-reload
+
 # start docker daemon
 systemctl start docker
+
 # 使用docker info查看root位置
 docker info
 ```
 
-proxy for Docker daemon
-```
-# create dir
-/etc/systemd/system/docker.service.d
-
-# create file
-/etc/systemd/system/docker.service.d/http-proxy.conf
-
-[Service]
-Environment="HTTP_PROXY=http://proxy.server:port"
-Environment="HTTPS_PROXY=http://proxy.server:port"
-Environment="NO_PROXY=localhost,127.0.0.1"
-
-# Apply settings and restart Docker:
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-```
-
-container 容器管理
+# container 容器管理
 ```
 # 运行 image 其中-i启动交互式，-t是分配一个tty
 docker run -it --rm ubuntu bash
@@ -247,134 +234,8 @@ ENV NAME World
 
 # 当容器启动时运行 app.py 
 CMD ["python", "app.py"]
-```
 
-lamp docker
-```
-# create a temporary container for testing purposes
-docker run -it --rm fauria/lamp bash
-# create a container to debug a web app
-docker run --rm -p 8080:80 -e LOG_STDOUT=true -e LOG_STDERR=true -e LOG_LEVEL=debug -v /my/data/directory:/var/www/html fauria/lamp
-```
-
-Laradock
-```
-docker-compose up -d nginx mysql phpmyadmin redis workspace 
-# 关闭所有容器
-docker-compose down
-# 进入workspace
-docker-compose exec workspace bash
-
-# 重启nginx和mysql
-docker-compose up -d nginx mysql
-```
-
-docker compose
-```
-# Make sure you are in the same directory as docker-compose.yml
-docker-compose up -d
-
-# 关闭docker compose
-docker compose stop
-```
-
-docker compose代理设置
-```
-docker-compose build \
-    --build-arg http_proxy=http://proxy.exaple.com \
-    --build-arg https_proxy=http://proxy.exaple.com
-
-build:
-  context: .
-  args:
-    - http_proxy=http://proxy.exaple.com
-    - https_proxy=http://proxy.exaple.com
-
-# 代理设置
-bamboo-server:
-    image: matisq/bamboo-server
-    ports:
-        - 8085:8085
-        - 54663:54663
-    links:
-        - postgres
-    environment:
-        BAMBOO_VERSION: ${BAMBOO_VERSION}
-        BAMBOO_HOME: /home/bamboo
-        BAMBOO_BAMBOO_SERVER_ID: bamboo-server
-        http_proxy: http://192.168.65.1:3128
-        https_proxy: http://192.168.65.1:3128
-
-```
-
-
-network
-```
-# 创建新的docker网络
-docker network create -d bridge my-net
-docker network create --driver=bridge --subnet=192.161.0.0/16 monitor_net
-
-# 运行两个容器并连接到 my-net 网络, 进入任一个容器，两者可以互相ping通
-docker run -it --rm --name busybox1 --network my-net busybox sh
-docker run -it --rm --name busybox2 --network my-net busybox sh
-
-docker run -it --name <容器名> ---network monitor_net  <镜像名>
-
-# 列出所有docker网络
-docker network ls
-
-# 删除网络
-docker network rm c520032c3d31
-
-# 删除网桥
-ip link del docker0 down
-
-# Use the docker network prune command to remove all unused networks.
-docker network prune
-
-# 检查网络
-docker network inspect [id]
-```
-
-docker换源
-```
-# 新建/etc/docker/daemon.json加入
-{
-  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
-}
-```
-
-docker网段设置
-```
-# 新建/etc/docker/daemon.json加入
-{
-    "debug": true,
-    # bridge0 网关设置
-    "bip": "172.19.153.1/24",
-    "default-address-pools":[
-        {
-            # 定义网络地址
-            "base": "172.19.31.0/8",
-            "size": 24
-        }
-    ]
-
-}
-# start docker daemon
-systemctl start docker
-```
-
-Docker镜像清理
-```
-# 查看docker使用情况
-docker system df
-
-# 清理docker文件
-docker system prune -a
-```
-
-Dockerfile
-```
+# Dockerfile例子
 FROM python:3.7.3
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
@@ -414,6 +275,144 @@ RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 ENTRYPOINT ["gunicorn"]
 ```
+
+lamp docker
+```
+# create a temporary container for testing purposes
+docker run -it --rm fauria/lamp bash
+# create a container to debug a web app
+docker run --rm -p 8080:80 -e LOG_STDOUT=true -e LOG_STDERR=true -e LOG_LEVEL=debug -v /my/data/directory:/var/www/html fauria/lamp
+```
+
+docker compose
+```
+# Make sure you are in the same directory as docker-compose.yml
+docker-compose up -d
+
+# 关闭docker compose
+docker compose stop
+```
+
+# 代理设置
+
+proxy for Docker daemon
+```
+# create dir
+/etc/systemd/system/docker.service.d
+
+# create file
+/etc/systemd/system/docker.service.d/http-proxy.conf
+
+[Service]
+Environment="HTTP_PROXY=http://proxy.server:port"
+Environment="HTTPS_PROXY=http://proxy.server:port"
+Environment="NO_PROXY=localhost,127.0.0.1"
+
+# Apply settings and restart Docker:
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+
+docker compose代理设置
+```
+docker-compose build \
+    --build-arg http_proxy=http://proxy.exaple.com \
+    --build-arg https_proxy=http://proxy.exaple.com
+
+build:
+  context: .
+  args:
+    - http_proxy=http://proxy.exaple.com
+    - https_proxy=http://proxy.exaple.com
+
+# 代理设置
+bamboo-server:
+    image: matisq/bamboo-server
+    ports:
+        - 8085:8085
+        - 54663:54663
+    links:
+        - postgres
+    environment:
+        BAMBOO_VERSION: ${BAMBOO_VERSION}
+        BAMBOO_HOME: /home/bamboo
+        BAMBOO_BAMBOO_SERVER_ID: bamboo-server
+        http_proxy: http://192.168.65.1:3128
+        https_proxy: http://192.168.65.1:3128
+
+```
+
+# docker网络设置
+
+network
+```
+# 创建新的docker网络
+docker network create -d bridge my-net
+docker network create --driver=bridge --subnet=192.161.0.0/16 monitor_net
+
+# 运行两个容器并连接到 my-net 网络, 进入任一个容器，两者可以互相ping通
+docker run -it --rm --name busybox1 --network my-net busybox sh
+docker run -it --rm --name busybox2 --network my-net busybox sh
+
+docker run -it --name <容器名> ---network monitor_net  <镜像名>
+
+# 列出所有docker网络
+docker network ls
+
+# 删除网络
+docker network rm c520032c3d31
+
+# 删除网桥
+ip link del docker0 down
+
+# Use the docker network prune command to remove all unused networks.
+docker network prune
+
+# 检查网络
+docker network inspect [id]
+```
+
+# docker 设置
+
+docker换源
+```
+# 新建/etc/docker/daemon.json加入
+{
+  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
+}
+```
+
+docker网段设置
+```
+# 新建/etc/docker/daemon.json加入
+{
+    "debug": true,
+    # bridge0 网关设置
+    "bip": "172.19.153.1/24",
+    "default-address-pools":[
+        {
+            # 定义网络地址
+            "base": "172.19.31.0/8",
+            "size": 24
+        }
+    ]
+
+}
+# start docker daemon
+systemctl start docker
+```
+
+Docker镜像清理
+```
+# 查看docker使用情况
+docker system df
+
+# 清理docker文件
+docker system prune -a
+```
+
+
 
 docker-compose.yaml
 ```
