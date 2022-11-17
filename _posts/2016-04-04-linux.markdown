@@ -482,10 +482,13 @@ command >& file.txt(或者file.log) &
 ```
 
 
-
-
 使用图形界面打开文件
 ```
+# 配置
+# vim /etc/ssh/sshd_config
+AllowTcpForwarding yes
+X11Forwarding yes
+
 # opens a file or URL in the user's preferred application
 xdg-open $file
 
@@ -857,4 +860,7 @@ ethtool -s eth0 wol g
 
 # 安装wakeonlan
 sudo apt-get install wakeonlan
+
+# 网络唤醒
+wakeonlan xx:xx:xx:xx:xx:xx 
 ```
