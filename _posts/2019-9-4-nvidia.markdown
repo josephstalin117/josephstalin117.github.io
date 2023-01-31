@@ -30,6 +30,10 @@ sudo systemctl stop gdm3
 
 # ubuntu 20.04
 sudo systemctl stop lightdm
+
+# 安装gcc
+sudo apt update
+sudo apt install build-essential
 ```
 
 卸载驱动
