@@ -530,7 +530,7 @@ ip addr add 目的/网关 dev eth0
 sudo ip route add 目的ip/netmask via 192.168.1.1
 
 # ping4次
-ping -c 4 google.com
+ping -c 4 google.comsudo 
 
 # 手动获取ip
 sudo dhclient
