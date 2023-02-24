@@ -234,6 +234,27 @@ echo $http_proxy
 unset http_proxy
 ```
 
+字体配置
+```
+# /usr/share/fonts/下新建winFonts目录
+sudo mkdir -p /usr/share/fonts/winFonts
+
+# 然后将字体文件拷贝到此文件夹下
+sudo cp ~/Desktop/font/*.ttf /usr/share/fonts/winFonts/
+
+# 修改权限
+sudo chmod 755 /usr/share/fonts/winFonts/*.ttf
+
+# 生成核心字体信息
+sudo mkfontscale
+sudo mkfontdir
+sudo fc-cache -fv
+
+# matplotlib报错问题
+sudo apt install msttcorefonts -qq
+rm ~/.cache/matplotlib -rf
+```
+
 systemctl
 ```
 # 立即启动一个服务
