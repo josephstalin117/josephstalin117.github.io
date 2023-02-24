@@ -49,3 +49,7 @@ sudo systemctl status qbittorrent-nox
 
 默认账号：admin/adminadmin
 
+磁力链接
+```
+magnet:?xt=urn:btih:E5757D533B3690774519E6A80021E43C03A58C0B
+```

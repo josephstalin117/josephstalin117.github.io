@@ -551,7 +551,10 @@ ip addr add 目的/网关 dev eth0
 sudo ip route add 目的ip/netmask via 192.168.1.1
 
 # ping4次
-ping -c 4 google.com
+ping -c 4 google.comsudo 
+
+# 手动获取ip
+sudo dhclient
 
 # 修改查看本地路由表
 route
@@ -593,6 +596,15 @@ curl baidu.com
 
 # curl 代理
 curl -x http://172.18.10.204:8119 baidu.com
+```
+
+ufw
+```
+# 关闭ufw
+sudo ufw disable
+
+# 查看状态
+sudo ufw status
 ```
 
 
@@ -839,6 +851,12 @@ rsync -av source/ username@remote_host:destination
 
 SSH
 ```
+# 安装ssh
+sudo apt install openssh-server
+# 查看ssh是否启动
+sudo systemctl status ssh
+
+
 # 本地端口转发
 
 # 假定host1是本地主机，host2是远程主机。由于种种原因，这两台主机之间无法连通。但是，另外还有一台host3，可以同时连通前面两台主机。因此，很自然的想法就是，通过host3，将host1连上host2。
