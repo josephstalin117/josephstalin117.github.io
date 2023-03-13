@@ -22,7 +22,7 @@ Based on these comments and suggestions, we have made careful modifications to t
 给审稿人的意见回信  
 Response to Reviewers  
 
-#### 普适的回应
+# 普适的回应
 
 We feel great thanks for your professional review work on our article. As you are concerned, there are several problems that need to be addressed. According to your nice suggestions, we have made extensive corrections to our previous draft, the detailed corrections are listed below.  
 
@@ -38,7 +38,7 @@ According to the associate editor and reviewers’ comments, we have made extens
 
 Thank you for your nice comments on our article. According to your suggestions, we have supplemented several data here and corrected several mistakes in our previous draft. Based on your comments, we also attached a point-by-point letter to you and the other two reviewers. We have made extensive revisions to our previous draft. The detailed point-by-point responses are listed below.  
 
-#### 拼写错误类
+# 拼写错误类
 
 We were really sorry for our careless mistakes. Thank you for your reminder.  
 
@@ -56,7 +56,7 @@ it is really a giant mistake to the whole quality of our article. We feel sorry 
 
 thanks for your careful checks. We are sorry for our carelessness. Based on your comments, we have made the corrections to make the unit harmonized within the whole manuscript.  
 
-#### 对语言不满意类
+# 对语言不满意类
 
 We tried our best to improve the manuscript and made some changes to the manuscript. These changes will not influence the content and framework of the paper. And here we did not list the changes but marked in red in the revised paper. We appreciate for Editors/Reviewers’ warm work earnestly and hope that the correction will meet with approval.  
 
@@ -64,7 +64,10 @@ Thanks for your suggestion. We feel sorry for our poor writings, however, we do 
 
 Thanks for your suggestion. We have tried our best to polish the language in the revised manuscript.  
 
-#### 要求加文献
+
+We would like to thank you for your comments. Typos and grammar errors have carefully been revised in the whole manuscript.  
+
+# 要求加文献
 
 We sincerely appreciate the valuable comments. We have checked the literature carefully and added more references on ___ and___ into the INTRODUCTION part in the revised manuscript.  
 On XXX，文献  
@@ -72,7 +75,7 @@ On YYY, 文献
 
 As suggested by the reviewer, we have added more references to support this idea (文献1.2.3...). According to 文献1, ... is ...  
 
-#### 建议修改内容类
+# 建议修改内容类
 
 同意的场合  
 
@@ -102,7 +105,7 @@ Specific section has been updated, such that [explain the change made].
 
 We agree that this is a potential limitation of the study. We have added this as a limitation on [insert the exact location where the change can be found in the revised manuscript]:  
 
-#### 让补实验
+# 让补实验
 
 如果能补：  
 The manuscript has been revised accordingly to clarify the above concerns.....
