@@ -5,7 +5,7 @@ date:   2017-05-10 16:35:35 +0800
 categories: command
 ---
 
-#### Basic moves
+# Basic moves
 
 ```
 Ctrl+b    #Move back one character.
@@ -20,7 +20,7 @@ Meta+b    #Move backward a word
 Ctrl+l    #Clear the screen
 ```
 
-#### Cut and paste
+# Cut and paste
 
 ```
 Ctrl+k    #Cut from cursor to the end of line.
@@ -34,7 +34,7 @@ Meta+.    #Loop through and paste the last argument of previous commands.
 Ctrl+r    #Search as you type
 ```
 
-#### 脚本shell
+# 脚本shell
 
 脚本解释器
 ```
@@ -192,4 +192,12 @@ ls *.jpg | xargs -n1 -I cp {} /data/images
 ```
 # 等待10s
 sleep 10
+```
+
+停止
+```
+# 脚本停止
+#!/bin/sh
+some command
+exit 0
 ```
