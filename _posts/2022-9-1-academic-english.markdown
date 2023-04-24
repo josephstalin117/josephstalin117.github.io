@@ -11,7 +11,7 @@ denotes -> represents
 
 can be formulated as -> is obtained as
 
-shows -> illustrates
+shows -> illustrates, represents
 
 deal with -> approach
 

@@ -68,6 +68,19 @@ fill=gray!20,
 fill opacity=.8]
 ```
 
+字体大小
+```
+\tiny
+\small
+\normalsize
+\large
+\Large
+\LARGE
+\huge
+
+\node(SpatialTemporalFusion1) [SpatialTemporalFusion] at (\BA, -3.5) {\normalsize Spatial-Temporal Fusion};
+```
+
 圆
 ```
 \tikzstyle{cell}=[circle,fill=black!25,minimum size=25pt,inner sep=0pt]

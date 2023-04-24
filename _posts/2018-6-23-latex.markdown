@@ -69,6 +69,13 @@ This paper.\par
 
 {\color{red} highlighted}
 
+%行号
+%switch 双栏
+%left Line numbers in left margin (default)
+%pagewise Restart numbering on every page
+\usepackage[switch, pagewise]{lineno}
+\linenumbers
+
 %文字删除线
 \usepackage{ulem}
 \sout{文字} %删除线
@@ -684,6 +691,11 @@ pdftops -eps [file].pdf
 eps2pdf
 ```
 epstopdf [file].eps
+```
+
+裁剪pdf文件
+```
+pdfcrop [file].pdf
 ```
 
 编译tex文件
