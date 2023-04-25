@@ -5,7 +5,7 @@ date:   2019-5-28 20:35:35 +0800
 categories: command
 ---
 
-#### nmap
+nmap
 ```
 # 扫描局域网ip(进行ping扫描)
 nmap -sP 192.168.9.0/24
@@ -48,6 +48,21 @@ curl -x socks5://myproxy.com:8080 https://www.example.com
 
 # ipv6 访问
 curl -g -6 byr.pt
+```
+
+telnet
+```
+# 测试端口
+telnet 101.199.97.65 62715
+
+# 端口未打开
+Trying 101.199.97.65...
+telnet: connect to address 101.199.97.65: Connection refused
+
+# 端口已打开
+Trying 101.199.97.65...
+Connected to 101.199.97.65.
+Escape character is '^'.
 ```
 
 proxychains
