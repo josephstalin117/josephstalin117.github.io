@@ -102,3 +102,9 @@ make clean && make
 cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
 cat /usr/include/x86_64-linux-gnu/cudnn_v*.h | grep CUDNN_MAJOR -A 2
 ```
+
+tensorflow找不到cudnn
+```
+CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib
+```
