@@ -192,6 +192,9 @@ docker cp [containID]:[/path/to/file] ~/your/local/path
 # 停用全部运行中的容器
 docker stop $(docker ps -q)
 
+# 重启全部的容器
+docker restart $(docker ps -a -q)
+
 # 删除全部容器
 docker rm $(docker ps -aq)
 

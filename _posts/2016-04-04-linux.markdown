@@ -699,7 +699,7 @@ unzip file.zip -d destination_folder
 
 # 打包
 tar czvf FileName.tar DirName
-zip FileName.zip DirName
+zip -r FileName.zip DirName
 
 # gz
 gzip -dk file.gz
