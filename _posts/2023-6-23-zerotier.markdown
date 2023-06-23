@@ -80,3 +80,12 @@ mkdir moons.d
 #for linux and windows(windows需要用管理员模式启动cmd输入)
 zerotier-cli listpeers
 ```
+
+# 加入网络
+```
+# 加入网络
+sudo zerotier-cli join network_id
+
+# 退出网络
+sudo zerotier-cli leave network_id
+```
