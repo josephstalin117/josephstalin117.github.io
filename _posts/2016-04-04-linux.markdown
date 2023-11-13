@@ -18,6 +18,9 @@ lspci | grep -i nvidia
 
 # 查看服务器配置
 lscpu
+
+# 查看硬盘编号
+ls /dev/disk/by-id -al
 ```
 
 # 用户权限

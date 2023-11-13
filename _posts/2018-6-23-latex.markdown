@@ -200,6 +200,7 @@ $$行间公司$$
 
 数学公式空格
 a \qquad b
+a \ b
 
 公式引用
 \ begin{equation}
