@@ -121,7 +121,7 @@ pdftops -eps <pdf file> <eps file>
 pdfcrop <pdf file>
 ```
 
-node换行
+node换行(必须有align关键字)
 ```
 \node at (-0.5,1)[draw, align=center]{example \\ example example};
 ```
