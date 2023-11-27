@@ -15,10 +15,53 @@ shows -> illustrates, represents
 
 deal with -> approach
 
+proposed -> suggested
+
+good -> positive, favorable, rosy, promising, perfect, pleasurable, excellent, outstanding, superior
+
+bad -> dreadful, unfavorable, poor, adverse, ill
+
+think -> harbor the idea that, take the attitude that, hold the view that, it is widely shared that, it is universally acknowledged that
+
+thing -> affair, business, matter
+
+common -> shared
+
+get many benefits -> reap huge fruits
+
+in my opinion -> for my part ,from my own perspective
+
+more and more -> Increasing(ly), growing
+
+helpful -> beneficial, rewarding
+
+very -> overwhelmingly, exceedingly, extremely, intensely
+
+unnecessary, avoidable -> hardly necessary, hardly inevitable
+
+necessary -> indispensable
+
+attract one's attention -> capture one's attention
+
+aspet -> facet, demension, sphere
+
+always -> invariably
+
+show -> demonstrate / manifest
+
+so -> consequently, accordingly
+
+
+
+
+
+
+
+
 # Introduction
 
-总体介绍
-```
+#### 总体介绍
+
 Research on __ has a long tradition
 
 关于__的研究有着悠久的传统。
@@ -27,7 +70,7 @@ Research on __ has a long tradition
 
 For decades, one of the most popular ideas in __ research is the idea that __
 
-几十年来，__研究中最流行的观点之一是__。
+几十年来，__ 研究中最流行的观点之一是 __。
 
 
 
@@ -172,10 +215,10 @@ This is a technique common in __
 There are several common kinds of __
 
 有几种常见的__。
-```
 
-问题定义
-```
+
+#### 问题定义
+
 This seems to be a common problem in __
 
 这似乎是__的一个普遍问题。
@@ -232,7 +275,7 @@ This seems to be a common problem in __
 
 This is a complex problem and to simplify it requires __
 
-  这是一个复杂的问题，简化它需要__。
+这是一个复杂的问题，简化它需要__。
 
 
 
@@ -357,10 +400,10 @@ These examples highlight the problem that __
 The main practical problem that confronts us is __
 
 我们面临的主要实际问题是__。
-```
 
-研究现状
-```
+
+#### 研究现状
+
 There is no previous research using __ approach.
 
 之前没有使用__方法的研究。
@@ -418,14 +461,13 @@ Moreover, few studies have focussed on __
 In particular no study, to our knowledge, has considered __
 
 据我们所知，没有一项研究认为__。
-```
 
-解决方法
-```
+
+#### 解决方法
+
 One way to overcome these problems is to __
 
 克服这些问题的一个方法是__。
-
 
 
 There are many alternative methods are available for solving these problems. 
@@ -433,11 +475,9 @@ There are many alternative methods are available for solving these problems.
 有许多可供选择的方法来解决这些问题。
 
 
-
 In order to rectify the problem of __
 
 为了纠正__的问题。
-
 
 
 A solution to this problem is proposed in __
@@ -445,11 +485,9 @@ A solution to this problem is proposed in __
 解决这个问题的办法是__。
 
 
-
 One approach to solve this problem involves the use of __
 
 解决这个问题的方法之一是使用__。
-
 
 
 An alternative approach to the problem is __
@@ -457,17 +495,14 @@ An alternative approach to the problem is __
 解决这个问题的另一种方法是__。
 
 
-
 This can be applied to solve these problems.
 
 这个可以用来解决这些问题。
 
 
-
 A number of works have shown that this problem can be overcome by using __
 
 大量研究表明，使用__可以克服这一问题。
-
 
 
 A large number of alternative approaches have been developed over the last few decades to__
@@ -655,10 +690,10 @@ A possible solution to the problem at hand is __
 It is clear that the problem could be easily tackled by __
 
 很明显，这个问题很容易用__来解决。
-```
 
-研究动机
-```
+
+#### 研究动机
+
 It is of interest to know whether __still hold true.
 
 知道__是否仍然正确是很重要的。
@@ -722,10 +757,10 @@ A new approach is therefore needed for __
 To illuminate this uncharted area, we examined __
 
 为了阐明这个未知的领域，我们考察了__。
-```
 
-研究目标
-```
+
+#### 研究目标
+
 The aim is to develop more sophisticated methods for __
 
 其目的是为__开发更复杂的方法。
@@ -849,10 +884,10 @@ The objective is to demonstrate the feasibility of __
 One of the objectives is to improve the __
 
 其中一个目标是改进__。
-```
 
-研究的意义和优势
-```
+
+#### 研究的意义和优势
+
 This thesis documents several key contributions made to the fields of __
 
 这篇论文记录了对__领域的几项重要贡献。
@@ -1042,9 +1077,6 @@ This is an important advantage of this algorithm __
 These are the main advantages of this method.
 
 这些是这种方法的主要优点。
-```
-
-
 
 
 
