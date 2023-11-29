@@ -7,7 +7,7 @@ categories: command
 
 # 同义词替换
 
-denotes -> represents
+denotes -> represents, show, mean, indicate
 
 can be formulated as -> is obtained as
 
@@ -51,7 +51,7 @@ show -> demonstrate / manifest
 
 so -> consequently, accordingly
 
-
+in addition -> moreover
 
 
 
