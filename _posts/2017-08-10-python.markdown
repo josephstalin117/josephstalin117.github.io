@@ -618,6 +618,9 @@ pip install numpy==1.13.1
 # 搜索包
 pip search <搜索关键字>
 
+# 显示已安装包的版本
+pip show <搜索关键字>
+
 # 换源
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple <包名>
 
