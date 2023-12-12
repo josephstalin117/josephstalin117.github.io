@@ -629,6 +629,20 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ xx
 
 ```
 
+查看包的所有依赖版本
+```
+# main.py
+from pip._vendor import pkg_resources
+
+def find_dependencies(package_name):
+    package = pkg_resources.working_set.by_key[package_name]
+
+    print([str(dependency) for dependency in package.requires()])
+
+
+find_dependencies('requests')
+```
+
 jupyter
 ```
 # 添加核
