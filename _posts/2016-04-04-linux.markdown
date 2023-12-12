@@ -395,6 +395,21 @@ sort -nr file | uniq
 sort -nr file | uniq -c
 ```
 
+查看文件大小并排序
+```
+du -sh /usr/*  |sort -nr | head
+```
+
+统计每个文件的行数，并根据行数对文件进行排序
+```
+wc -l * | sort -n
+```
+
+查看开头是NN的文件名的行数，并根据每个文件的行数进行排序
+```
+wc -l NN* | sort -n
+```
+
 Find Linux Files by Name or Extension
 ```
 find . -name "*.err"
