@@ -624,12 +624,29 @@ pip install numpy==1.13.1
 # 搜索包
 pip search <搜索关键字>
 
+# 显示已安装包的版本
+pip show <搜索关键字>
+
 # 换源
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple <包名>
 
 # 阿里源
 pip install -i https://mirrors.aliyun.com/pypi/simple/ xx
 
+```
+
+查看包的所有依赖版本
+```
+# main.py
+from pip._vendor import pkg_resources
+
+def find_dependencies(package_name):
+    package = pkg_resources.working_set.by_key[package_name]
+
+    print([str(dependency) for dependency in package.requires()])
+
+
+find_dependencies('requests')
 ```
 
 jupyter
