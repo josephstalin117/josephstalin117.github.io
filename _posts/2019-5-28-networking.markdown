@@ -83,6 +83,9 @@ route
 # 查看路由表
 route
 
+# 查看网关gateway
+route -n
+
 # 添加默认路由
 route add default gw 172.18.3.254
 

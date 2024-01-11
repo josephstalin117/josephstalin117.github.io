@@ -5,6 +5,70 @@ date:   2019-07-29 20:35:35 +0800
 categories: essay
 ---
 
+检查环境
+```
+# 验证CPU是否支持硬件虚拟化
+grep -Eoc '(vmx|svm)' /proc/cpuinfo //数字大于0，则代表CPU支持硬件虚拟化，反之则不支持
+
+# 检查 VT 是否在 BIOS 中启用
+apt install cpu-checker //检查 VT 是否在 BIOS 中启用
+kvm-ok //如果处理器虚拟化能力没有在 BIOS 中被禁用，命令将会打印出,否则，这个命令将会打印一个失败信息，和打印的消息
+# 输出：
+        INFO: /dev/kvm exists
+        KVM acceleration can be used
+```
+
+
+安装kvm
+```
+## libvirt相关
+apt -y install libvirt-dev
+apt -y install libvirt-daemon-system 
+apt -y install libvirt-clients
+apt -y install virtinst 
+apt -y install virt-manager
+## qemu+kvm
+apt -y install qemu-kvm
+##网桥工具
+apt -y install bridge-utils
+
+## 验证libvirtd是否启用，输出：active 表示启用
+systemctl is-active libvirtd
+## 验证kvm，输出kvm_intel、kvm两列 表示安装成功
+lsmod | grep kvm
+
+
+## 启动虚拟化和设置开机自启
+systemctl start libvirtd 
+systemctl enable libvirtd
+systemctl list-unit-files |grep libvirtd.service //打印启动虚拟化和设置开机自启情况
+```
+
+配置网桥
+```
+vim /etc/netplan/01-network-manager-all.yaml //找到打开文件
+## 内容如下
+network:
+    version: 2
+    ethernets:
+        enp3s0:（改为你的网卡名字）
+            dhcp4: false
+            dhcp6: false
+    bridges:
+        br0:
+            addresses: [192.168.16.231/24]（你的ip）
+            gateway4: 192.168.16.1 （你的网关）
+            nameservers:
+                addresses: [202.101.172.35, 8.8.8.8]（这是DNS1，DNS2）
+                search: [msnode]
+            interfaces: [enp3s0（改为你的网卡名字）]
+
+启用配置，并重启网络
+netplan apply
+systemctl restart network-manager.service   # 这个服务好像没有
+systemctl restart network  # 重启网络服务
+```
+
 virsh指令
 ```
 #列出当前虚拟机列表，不包括未启动的

@@ -115,6 +115,12 @@ range(start, stop, step)
 ~
 ```
 
+小数点取后两位
+```
+# 80.23
+round(80.23456, 2)
+```
+
 
 Extended Slices
 ```

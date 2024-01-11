@@ -53,6 +53,8 @@ so -> consequently, accordingly
 
 in addition -> moreover
 
+to solve this problem ->  to address this issue
+
 
 
 
