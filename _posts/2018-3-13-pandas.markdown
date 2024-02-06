@@ -661,3 +661,10 @@ df.diff()
 4  1.0  2.0   9.0
 5  1.0  3.0  11.0
 ```
+
+计算收益率
+
+```
+daily_pct_change = daily_close.pct_change()
+daily_pct_change = daily_close / daily_close.shift(1) -1
+```
