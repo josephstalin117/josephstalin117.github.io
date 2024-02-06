@@ -395,6 +395,36 @@ $$x^n+y^n=z^n \eqno{(1)}$$
 ```
 
 ```
+% 调整大小
+\begin{minipage}{0.9\linewidth}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\begin{algorithm}[H]
+\caption{Training process of Transvae}
+\label{training-process}
+\begin{algorithmic}[1]
+\Require
+Water quality sequences: ${X}{=}\{x_{1},\dots,x_{T}\}$
+\Ensure
+Predicted sequences: $\hat{Y}$
+\For{each epoch}
+\State Generate $\mathcal{X}$ \textit{via} local and global embedding in (\ref{eq:local_embedding}, \ref{eq:global_embedding})
+\State Generate $H$ \textit{via} multi-head self-attention mechanism in (\ref{eq:attention_qkv}) with $\mathcal{X}$
+\State Generate $\bar{H}$ \textit{via} Feed-forward and Residual Network in (\ref{eq:feed-forward})
+\State Generate mean $\mu_{z_t}$ and co-variance $\Sigma_{z_t}$ \textit{via} two linear models
+\State Generate randomly sampled $z$ from the $q_{\phi}(z_t|\tilde{h}_t)$
+\State Generate final reconstruction $\hat{X}$ \textit{via} in (\ref{eq:reconstructed})
+\State Compute loss $\mathcal{L}$ with (\ref{con:loss_fn})
+\State Generate $\hat{Y}$ \textit{via} present anomaly score with reconstructed $\hat{X}$ in (\ref{eq:anomaly-score})
+\State Apply BPTT to backpropagate gradient
+\State Train the model for minimizing the loss with the Adam optimizer
+\EndFor
+\end{algorithmic} 
+\end{algorithm}
+\end{minipage}
+```
+
+```
 自定义 Initialize
 \algnewcommand{\Initialize}[1]{
   \State \textbf{Initialize:}

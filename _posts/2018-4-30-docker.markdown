@@ -299,6 +299,7 @@ docker compose stop
 # 代理设置
 
 proxy for Docker daemon
+systemd的系统代理（谨慎使用）
 ```
 # create dir
 /etc/systemd/system/docker.service.d

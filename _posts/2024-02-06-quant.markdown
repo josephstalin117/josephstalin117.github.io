@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "QUANT"
+date:   2024-02-06 20:35:35 +0800
+categories: command
+---
+
+滑动窗口rolling
+```
+df = pd.DataFrame({'B': [0, 1, 2, np.nan, 4]})
+df
+     B
+0  0.0
+1  1.0
+2  2.0
+3  NaN
+4  4.0
+
+df.rolling(2).sum()
+     B
+0  NaN
+1  1.0
+2  3.0
+3  NaN
+4  NaN
+```
+
+收益率
+```
+daily_close.pct_change()
+daily_pct_change = daily_close / daily_close.shift(1) -1
+```

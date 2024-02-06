@@ -175,8 +175,21 @@ df.head(5)
 # remove all duplicates and keep one 去重
 df.drop_duplicates()
 
+# 去除重复行
 df = pd.DataFrame({"A":["foo", "foo", "foo", "bar"], "B":[0,1,1,1], "C":["A","A","B","A"]})
-df.drop_duplicates(subset=['A', 'C'], keep=last)
+
+     A  B  C
+0  foo  0  A
+1  foo  1  A
+2  foo  1  B
+3  bar  1  A
+
+df.drop_duplicates(subset=['A', 'C'], keep='last')
+
+     A  B  C
+1  foo  1  A
+2  foo  1  B
+3  bar  1  A
 
 # reset index
 df = df.reset_index(drop=True)
@@ -296,7 +309,7 @@ print df.groupby('Team').groups
 # multiple columns
 print df.groupby(['Team','Year']).groups
 
-#{('Kings', 2014): Int64Index([4], dtype='int64'),
+#('Kings', 2014): Int64Index([4], dtype='int64'),
 #('Royals', 2014): Int64Index([9], dtype='int64'),
 #('Riders', 2014): Int64Index([0], dtype='int64'),
 #('Riders', 2015): Int64Index([1], dtype='int64'),
@@ -662,9 +675,27 @@ df.diff()
 5  1.0  3.0  11.0
 ```
 
-计算收益率
-
+滑动窗口rolling
 ```
-daily_pct_change = daily_close.pct_change()
-daily_pct_change = daily_close / daily_close.shift(1) -1
+df = pd.DataFrame({'B': [0, 1, 2, np.nan, 4]})
+df
+     B
+0  0.0
+1  1.0
+2  2.0
+3  NaN
+4  4.0
+
+df.rolling(2).sum()
+     B
+0  NaN
+1  1.0
+2  3.0
+3  NaN
+4  NaN
+```
+
+收益率
+```
+
 ```
