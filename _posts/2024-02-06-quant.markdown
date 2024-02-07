@@ -38,3 +38,37 @@ time_month = df.index.strftime("%Y-%m")
 df.index = time_month
 df.groupby(df.index).first()
 ```
+
+调整x轴横坐标
+```
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.dates as mdate
+
+plt.rcParams['font.sans-serif'] = ['Simhei'] #显示中文
+plt.rcParams['axes.unicode_minus'] = False #显示负号
+
+
+x = df300['tradeDate']
+# 获取收盘价收益率
+y = df300['avgReturn1M']
+# 调整图像大小
+plt.figure(figsize=(10,5))
+
+# 绘制曲线
+plt.plot(x, y, label="沪深300")
+
+plt.title("沪深300指数收益率")
+ax = plt.gca()
+# 横坐标显示的日期
+x = pd.to_datetime(x)
+x = x.dt.strftime('%Y-%m-%d')
+# 修改横坐标显示的数值
+xtricks_list = pd.date_range(x.iloc[0],x.iloc[-1], freq='6m').strftime('%Y-%m-%d').tolist()
+
+plt.xticks(xtricks_list)
+plt.xlabel("时间")
+plt.ylabel("收益率")
+
+plt.show()
+```

@@ -41,6 +41,16 @@ plt.xticks(np.arange(1, 6, 1))
 plt.plot(x, np.sin(x))
 ```
 
+调整横坐标间隔
+```
+ax = plt.gca()
+# 横坐标显示的日期
+ax.xaxis.set_major_formatter(mdata.DataFormatter('%Y-%m-%d'))
+
+plt.xticks(pd.data_range('2018-9-1','2018-11-30', freq='10d'))
+plt.yticks(range(20, 110, 10))
+```
+
 调整线条颜色
 ```
 x = range(len(data))

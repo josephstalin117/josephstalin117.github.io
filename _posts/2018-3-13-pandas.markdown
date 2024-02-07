@@ -67,8 +67,21 @@ for (index, colname) in enumerate(df):
 
 insert
 ```
-# append 插入一行
+# append 插入一行(已经被废弃)
 df.append(df2, ignore_index=True)
+
+# 连续插入一行
+lst = []
+
+for new_row in items_generation_logic:
+   lst.append(new_row)
+
+# create extension
+df_extended = pd.DataFrame(lst, columns=['A', 'B', 'C'])
+# or columns=df.columns if identical columns
+
+# concatenate to original
+out = pd.concat([df, df_extended])
 
 # 插入列, 插入第一列
 df.insert(0,'date',date)
@@ -116,6 +129,9 @@ df['filter'].isna()
 
 # 过滤NaN的行
 df['filter'].notna()
+
+# 正则表达式
+df[df['name'].str.contains(r'\d{6,}')]
 
 # line replaces None with NaN
 # 替换Nan值为None
