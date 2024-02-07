@@ -30,3 +30,11 @@ df.rolling(2).sum()
 daily_close.pct_change()
 daily_pct_change = daily_close / daily_close.shift(1) -1
 ```
+
+获取每月第一天数据
+```
+df.index = pd.to_datetime(df.index)
+time_month = df.index.strftime("%Y-%m")
+df.index = time_month
+df.groupby(df.index).first()
+```
