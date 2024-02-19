@@ -41,6 +41,7 @@ plt.xticks(np.arange(1, 6, 1))
 plt.plot(x, np.sin(x))
 ```
 
+
 调整横坐标间隔
 ```
 ax = plt.gca()

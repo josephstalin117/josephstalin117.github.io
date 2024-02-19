@@ -72,3 +72,48 @@ plt.ylabel("收益率")
 
 plt.show()
 ```
+
+监测数据缺失情况
+```
+# check for nan under a single DF column
+df['column name'].isnull().values.any()
+
+# count the nan under a single DF column
+df['column name'].isnull().sum()
+
+# check for nan under an entire DF
+df.isnull().values.any()
+
+# count the nan under an entire DF
+df.isnull().sum().sum()
+```
+
+时间序列处理
+```
+# 时间序列整理datetime format
+df = pd.DataFrame({"Date": ["26-12-2007", "27-12-2007", "28-12-2007"]})
+df["Date"] = pd.to_datetime(df["Date"]).dt.strftime('%Y-%m-%d')
+df["Date"] = pd.to_datetime(df["Date"]).dt.strftime('%Y-%m-%d %H:%M:%S')
+
+
+# 时间范围生成range
+DatetimeIndex(['2018-01-01 00:00:00', '2018-01-01 01:00:00','2018-01-01 02:00:00'],
+              dtype='datetime64[ns]', freq='H')
+# periods代表生成的数量
+dti = pd.date_range('2018-01-01', periods=3, freq='H')
+
+DatetimeIndex(['2018-04-24 00:00:00', '2018-04-25 12:00:00',
+               '2018-04-27 00:00:00'],
+              dtype='datetime64[ns]', freq=None)
+pd.date_range(start='2018-04-24', end='2018-04-27', periods=3)
+
+# 生成2000-01-01到2001-02-06的月末数据
+date_range = pd.date_range(start="2000-01-01", end="2001-02-06", freq='ME')
+2000-01-31
+2000-02-29
+...
+...
+
+# 获取该月份第一天的日期
+start_date = (date.floor('d') + pd.offsets.MonthEnd(0) - pd.offsets.MonthBegin(1)).strftime('%Y-%m-%d')
+```

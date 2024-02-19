@@ -232,7 +232,7 @@ for col in data.columns:
     print(col)
 ```
 
-排序
+## 排序
 ```
 # 指定列名 & 指定行属性 & 按值排序
 df[['algo_name', 'nout', 'rmse']][(df['nout']==1) & (df['dataset']=='beijing_do')].sort_values(by='algo_name')
@@ -253,7 +253,7 @@ s.sort_values(ascending=True)
 s.sort_values(ascending=False)
 ```
 
-修改数据
+## 修改数据
 ```
 #修改index为‘1’，column为‘name’的那一个值为aa
 df.loc[1,'name'] = 'aa'
@@ -282,6 +282,12 @@ a       1  some_value   some_value
 b       2        aaaa         aaaa
 c       2        aaaa         aaaa
 d       3  some_value   some_value
+```
+
+## 判断数据
+```
+# 判断是否存在nan值，如果存在返回True
+df['col_name'].isnull().values.any()
 ```
 
 apply function
@@ -486,6 +492,8 @@ data.dropna(axis=1, how=’all’)
 data.dropna(axis=1, how=’any’)
 ```
 
+## 时间序列time series
+
 时间日期处理datetime
 ```
 # selecting DataFrame rows between two dates 
@@ -505,13 +513,12 @@ df = df[(df['date'] > '2000-6-1') & (df['date'] <= '2000-6-10')]
 # 转换成时间戳
 cod_df['datetime'] = pd.to_datetime(cod_df["datetime"]).astype(int)/10**9
 
-# datetime format
+# 时间序列整理datetime format
 df = pd.DataFrame({"Date": ["26-12-2007", "27-12-2007", "28-12-2007"]})
 df["Date"] = pd.to_datetime(df["Date"]).dt.strftime('%Y-%m-%d')
 df["Date"] = pd.to_datetime(df["Date"]).dt.strftime('%Y-%m-%d %H:%M:%S')
-print(df)
 
-# 时间范围range
+# 时间范围生成range
 DatetimeIndex(['2018-01-01 00:00:00', '2018-01-01 01:00:00',
                '2018-01-01 02:00:00'],
               dtype='datetime64[ns]', freq='H')
@@ -641,6 +648,8 @@ plot
 df.set_index('dateTime').plot(title='title content')
 ```
 
+## 文件处理
+
 excel
 ```
 import pandas as pd
@@ -709,9 +718,4 @@ df.rolling(2).sum()
 2  3.0
 3  NaN
 4  NaN
-```
-
-收益率
-```
-
 ```
