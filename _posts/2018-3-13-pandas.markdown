@@ -249,9 +249,53 @@ df = np.array_split(df, 20)
 ```
 data = pd.Series([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
-# 将数据划分为三个频率区间
+# 将数据划分为三个频率区间（分箱操作）
 bins = 3
 result = pd.cut(data, bins=bins, labels=[f'区间{i+1}' for i in range(bins)])
+```
+
+diff 差分
+```
+df = pd.DataFrame({'a': [1, 2, 3, 4, 5, 6],
+                   'b': [1, 1, 2, 3, 5, 8],
+                   'c': [1, 4, 9, 16, 25, 36]})
+df
+   a  b   c
+0  1  1   1
+1  2  1   4
+2  3  2   9
+3  4  3  16
+4  5  5  25
+5  6  8  36
+
+df.diff()
+     a    b     c
+0  NaN  NaN   NaN
+1  1.0  0.0   3.0
+2  1.0  1.0   5.0
+3  1.0  1.0   7.0
+4  1.0  2.0   9.0
+5  1.0  3.0  11.0
+```
+
+滑动窗口rolling
+```
+df = pd.DataFrame({'B': [0, 1, 2, np.nan, 4]})
+df
+     B
+0  0.0
+1  1.0
+2  2.0
+3  NaN
+4  4.0
+
+df.rolling(2).sum()
+     B
+0  NaN
+1  1.0
+2  3.0
+3  NaN
+4  NaN
 ```
 
 ## 排序
@@ -304,6 +348,65 @@ a       1  some_value   some_value
 b       2        aaaa         aaaa
 c       2        aaaa         aaaa
 d       3  some_value   some_value
+```
+
+Add default values
+```
+#replace nan with an empty string or some other default value.
+data.country = data.country.fillna('')
+
+#a calculation like taking the mean duration can help us even the dataset out. It’s not a great measure, but it’s an estimate of what the duration could be based on the other data.
+data.duration = data.duration.fillna(data.duration.mean())
+```
+
+move column
+```
+a
+#   x1  x2
+#0   0   5
+#1   1   6
+#2   2   7
+#3   3   8
+#4   4   9
+
+a.x2 = a.x2.shift(1)
+#   x1  x2
+#0   0 NaN
+#1   1   5
+#2   2   6
+#3   3   7
+#4   4   8
+```
+
+Remove rows & columns
+```
+#Drop columns
+df.drop(['B', 'C'], axis=1)
+df.drop(columns=['B', 'C'])
+
+#Drop a row by index
+df.drop([0, 1])
+
+#Dropping all rows with any NA values is easy:
+data.dropna()
+
+#we can also drop rows that have all NA value
+data.dropna(how=’all’)
+
+#We can also put a limitation on how many non-null values need to be in a row in order to keep it (in this example, the data needs to have at least 5 non-null values):
+data.dropna(thresh=5)
+
+#Let’s say for instance that we don’t want to include any movie that doesn’t have information on when the movie came out:
+data.dropna(subset=[‘title_year’])
+
+#update data with drop nan
+data = data.dropna(subset=[water_column])
+
+#Drop the columns with that are all NA values:
+data.dropna(axis=1, how=’all’)
+
+#Drop all columns with any NA values:
+data.dropna(axis=1, how=’any’)
 ```
 
 ## 判断数据
@@ -419,7 +522,7 @@ Name: Points, dtype: float64
 
 ```
 
-#### COMBINING DATASETS
+#### COMBINING DATASETS合并数据
 
 ```
 rain_jpn = pd.read_csv('notebook_playground/data/jpn_rain.csv')
@@ -446,73 +549,13 @@ result = pd.concat([df1, df4], axis=1, sort=False)
 ![images](/source/pandas_merging_concat_axis1.png)
 
 
-#### SAVING YOUR DATASETS
+## SAVING YOUR DATASETS数据保存
 
 ```
 # Saving your data to a csv
 df.to_csv('uk_rain.csv',index=False)
 ```
 
-## data cleaning
-
-Add default values
-```
-#replace nan with an empty string or some other default value.
-data.country = data.country.fillna('')
-
-#a calculation like taking the mean duration can help us even the dataset out. It’s not a great measure, but it’s an estimate of what the duration could be based on the other data.
-data.duration = data.duration.fillna(data.duration.mean())
-```
-
-move column
-```
-a
-#   x1  x2
-#0   0   5
-#1   1   6
-#2   2   7
-#3   3   8
-#4   4   9
-
-a.x2 = a.x2.shift(1)
-#   x1  x2
-#0   0 NaN
-#1   1   5
-#2   2   6
-#3   3   7
-#4   4   8
-```
-
-Remove rows & columns
-```
-#Drop columns
-df.drop(['B', 'C'], axis=1)
-df.drop(columns=['B', 'C'])
-
-#Drop a row by index
-df.drop([0, 1])
-
-#Dropping all rows with any NA values is easy:
-data.dropna()
-
-#we can also drop rows that have all NA value
-data.dropna(how=’all’)
-
-#We can also put a limitation on how many non-null values need to be in a row in order to keep it (in this example, the data needs to have at least 5 non-null values):
-data.dropna(thresh=5)
-
-#Let’s say for instance that we don’t want to include any movie that doesn’t have information on when the movie came out:
-data.dropna(subset=[‘title_year’])
-
-#update data with drop nan
-data = data.dropna(subset=[water_column])
-
-#Drop the columns with that are all NA values:
-data.dropna(axis=1, how=’all’)
-
-#Drop all columns with any NA values:
-data.dropna(axis=1, how=’any’)
-```
 
 ## 时间序列time series
 
@@ -698,46 +741,10 @@ df.to_hdf('data.h5', key='df', mode='w')
 pd.read_hdf('data.h5', 'df')
 ```
 
-diff 差分
-```
-df = pd.DataFrame({'a': [1, 2, 3, 4, 5, 6],
-                   'b': [1, 1, 2, 3, 5, 8],
-                   'c': [1, 4, 9, 16, 25, 36]})
-df
-   a  b   c
-0  1  1   1
-1  2  1   4
-2  3  2   9
-3  4  3  16
-4  5  5  25
-5  6  8  36
+## 显示设置
 
-df.diff()
-     a    b     c
-0  NaN  NaN   NaN
-1  1.0  0.0   3.0
-2  1.0  1.0   5.0
-3  1.0  1.0   7.0
-4  1.0  2.0   9.0
-5  1.0  3.0  11.0
+全列数据显示
 ```
-
-滑动窗口rolling
-```
-df = pd.DataFrame({'B': [0, 1, 2, np.nan, 4]})
-df
-     B
-0  0.0
-1  1.0
-2  2.0
-3  NaN
-4  4.0
-
-df.rolling(2).sum()
-     B
-0  NaN
-1  1.0
-2  3.0
-3  NaN
-4  NaN
+pd.set_option("display.max_rows", None)
+pd.set_option("display.max_columns", None)
 ```
