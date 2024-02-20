@@ -5,6 +5,7 @@ date:   2018-3-13 20:35:35 +0800
 categories: command
 ---
 
+## 数据读取
 data read
 ```
 # Reading a csv into Pandas.
@@ -44,8 +45,14 @@ df.describe()
 # Constructing DataFrame from numpy ndarray:
 df2 = pd.DataFrame(np.random.randint(low=0, high=10, size=(5, 5)),columns=['a', 'b', 'c', 'd', 'e'])
 
-# Create dataframe
+# Create dataframe创建DataFrame
 df = pd.DataFrame(np.random.randn(8,5))
+
+[{'points': 50, 'time': '5:00', 'year': 2010},
+{'points': 25, 'time': '6:00', 'month': "february"},
+{'points':90, 'time': '9:00', 'month': 'january'},
+{'points_h1':20, 'month': 'june'}]
+df = pd.DataFrame(ds)
 
 # create dataframe
 col_names =  ['A', 'B', 'C']
@@ -65,7 +72,7 @@ for (index, colname) in enumerate(df):
     print(index, df[colname].values)
 ```
 
-insert
+insert插入
 ```
 # append 插入一行(已经被废弃)
 df.append(df2, ignore_index=True)
@@ -95,6 +102,7 @@ df.index = df.index + 1  # shifting index
 df = df.sort_index()  # sorting by index
 ```
 
+## 数据处理
 get data from column & row 数据过滤
 ```
 # Getting a column by label
@@ -230,6 +238,20 @@ unique_index.get_loc('b')
 # iterating the columns
 for col in data.columns:
     print(col)
+```
+
+平均划分20份
+```
+df = np.array_split(df, 20)
+```
+
+区间范围划分
+```
+data = pd.Series([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+# 将数据划分为三个频率区间
+bins = 3
+result = pd.cut(data, bins=bins, labels=[f'区间{i+1}' for i in range(bins)])
 ```
 
 ## 排序
