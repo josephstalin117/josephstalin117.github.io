@@ -70,6 +70,10 @@ for (colname,colval) in df.iteritems():
 # 迭代列序号和列数据
 for (index, colname) in enumerate(df):
     print(index, df[colname].values)
+
+# 多个索引筛选MultiIndex
+df[df.index.get_level_values(0) == 1]
+
 ```
 
 insert插入
@@ -245,13 +249,18 @@ for col in data.columns:
 df = np.array_split(df, 20)
 ```
 
-区间范围划分
+区间范围划分bins
 ```
 data = pd.Series([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
-# 将数据划分为三个频率区间（分箱操作）
+# 将数据划分为三个频率区间(分箱操作)(bins)
 bins = 3
 result = pd.cut(data, bins=bins, labels=[f'区间{i+1}' for i in range(bins)])
+```
+
+计算差分的频率
+```
+result_count = pd.cut(allcom_df['factor'], bins=bins).value_counts()
 ```
 
 diff 差分

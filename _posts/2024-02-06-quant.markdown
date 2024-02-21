@@ -117,3 +117,9 @@ date_range = pd.date_range(start="2000-01-01", end="2001-02-06", freq='ME')
 # 获取该月份第一天的日期
 start_date = (date.floor('d') + pd.offsets.MonthEnd(0) - pd.offsets.MonthBegin(1)).strftime('%Y-%m-%d')
 ```
+
+会计表达
+```
+# 万分位
+f'{num / 10000:.2f} 万'
+```
