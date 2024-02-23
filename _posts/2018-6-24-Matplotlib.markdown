@@ -41,6 +41,11 @@ plt.xticks(np.arange(1, 6, 1))
 plt.plot(x, np.sin(x))
 ```
 
+强制显示横坐标
+```
+plt.tight_layout()
+```
+
 
 调整横坐标间隔
 ```
@@ -50,6 +55,18 @@ ax.xaxis.set_major_formatter(mdata.DataFormatter('%Y-%m-%d'))
 
 plt.xticks(pd.data_range('2018-9-1','2018-11-30', freq='10d'))
 plt.yticks(range(20, 110, 10))
+
+# 横坐标显示数字
+import matplotlib.ticker as plticker
+
+fig, ax = plt.subplots()
+ax.plot(x,y2, color='r')
+# this locator puts ticks at regular intervals
+loc = plticker.MultipleLocator(base=12.0)
+ax.xaxis.set_major_locator(loc)
+ax.set_title("公司财务数据缺失百分比折线图"+factor_name)
+ax.set_xlabel('时间')
+ax.set_ylabel('百分比')
 ```
 
 调整线条颜色

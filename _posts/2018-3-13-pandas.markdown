@@ -74,6 +74,9 @@ for (index, colname) in enumerate(df):
 # 多个索引筛选MultiIndex
 df[df.index.get_level_values(0) == 1]
 
+# 重置多索引(两个索引)
+df = df.reset_index(level=[0,1])
+
 ```
 
 insert插入

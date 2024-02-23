@@ -558,6 +558,17 @@ with tqdm(total=200) as pbar:
 Processing:: 100%|██████████| 200/200 [00:02<00:00, 91.94it/s]
 ```
 
+计时
+```
+import time
+# 开始时间
+start_time = time.time()
+# 需要计算的方法
+time.sleep(1)
+end_time = time.time()
+print("proc time: {:.2f}s".format(end_time - start_time))
+```
+
 itertools
 ```
 import itertools
@@ -884,7 +895,7 @@ from datetime import datetime
 datetime_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
 ```
 
-regular expression
+regular expression正则表达式
 ```
 import re
 
@@ -892,6 +903,9 @@ import re
 # 使用group(num) 或 groups() 匹配对象函数来获取匹配表达式。
 re.match(pattern, string, flags=0)
 re.search(pattern, string, flags=0)
+
+# 非贪婪模式
+(.*?)
 
 re.I #忽略大小写
 re.M #多行模式
