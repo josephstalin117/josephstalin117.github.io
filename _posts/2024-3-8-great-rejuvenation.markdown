@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "如何选择一个好行业"
+title:  "如何才能胜利？"
 date:   2024-3-8 20:35:35 +0800
 categories: command
 ---
