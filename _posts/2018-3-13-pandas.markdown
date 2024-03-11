@@ -74,6 +74,9 @@ for (index, colname) in enumerate(df):
 # 多个索引筛选MultiIndex
 df[df.index.get_level_values(0) == 1]
 
+# 重置多索引(两个索引)
+df = df.reset_index(level=[0,1])
+
 ```
 
 insert插入
@@ -399,6 +402,9 @@ df.drop([0, 1])
 #Dropping all rows with any NA values is easy:
 data.dropna()
 
+# 去除inf和nan
+df.replace([np.inf, -np.inf], np.nan).dropna(axis=1)
+
 #we can also drop rows that have all NA value
 data.dropna(how=’all’)
 
@@ -570,6 +576,10 @@ df.to_csv('uk_rain.csv',index=False)
 
 时间日期处理datetime
 ```
+# 字符串转换为date
+pd.to_datetime(base_df['dateTime']，format='%d%b%Y:%H:%M:%S.%f')s
+
+
 # selecting DataFrame rows between two dates 
 start = datetime.datetime(2014,4,2)
 end = datetime.datetime(2017,12,15,4)
