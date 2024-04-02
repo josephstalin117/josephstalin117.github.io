@@ -57,9 +57,9 @@ to solve this problem ->  to address this issue
 
 however -> In spite of that, Nevertheless, Despite this, On the other hand, In contrast
 
+XX is defined as follows: -> XX is obtained as follows:, XX expressed is given as:, XX can be formulated as:, is expressed as:
 
-
-
+The patches are mapped to the Transformer latent space of dimension $D$ via a trainable linear projection W. 
 
 
 # Introduction
@@ -1081,6 +1081,69 @@ This is an important advantage of this algorithm __
 These are the main advantages of this method.
 
 这些是这种方法的主要优点。
+
+
+## 摘要写作例子
+
+Edge computing is a new architecture to provide computing, storage, and networking resources for achieving the Internet of Things. It brings computation to the network edge close to users. 
+
+1-2 句话，概念和背景介绍。
+
+However, nodes in the edge have limited energy and resources. Completely running tasks in the edge may cause poor performance. Cloud data centers (CDCs) have rich resources for executing tasks, but they are located in places far away from users. CDCs lead to long transmission delays and large financial costs for utilizing resources. 
+
+1-2 句话，指出存在的问题。
+
+Therefore, it is essential to smartly offload users’ tasks between a CDC layer and an edge computing layer. 
+
+1 句话，指出有必要进行 XX 研究。
+
+This work proposes a cloud and edge computing system, which has a terminal layer, edge computing layer, and CDC layer. 
+
+1 句话，指出设计了 XX 架构。
+
+In each time slot, this work jointly considers CPU, memory, and bandwidth resources, the load balance of all heterogeneous nodes in the edge layer, the maximum amount of energy, the maximum number of servers, and task queue stability in the CDC layer. Considering the abovementioned factors, a single-objective constrained optimization problem is formulated. 
+
+1-2 句话，建立了 XX 优化问题。（预测类论文不需要问题建模）
+
+To solve this problem, this work proposes a simulated-annealing-based migrating birds optimization procedure to obtain a close-to-optimal solution. 
+
+1-2 句话，设计了 XX 算法，该算法具有 XX 等关键组件，具有 XX 优点。
+
+Based on it, this work designs a profit-maximized collaborative computation offloading and resource allocation algorithm to maximize the profit of systems and guarantee that response time limits of tasks are strictly met. 
+
+1 句话，根据该算法，实现了 XX 目标。
+
+Realistic data-based simulation results demonstrate that it realizes higher profit than its state-of-the-
+art peers by XX%, XX%, and XX%. 
+
+1 句话，实验结果如何(添加具体的百分比)。
+
+
+## 结论写作例子
+
+It is important to maximize the profit of distributed cloud and edge computing systems by optimally scheduling all tasks between them given user-specific response time limits of tasks. 
+
+1 句话，这个问题很重要
+
+It is challenging to execute them in nodes in the edge computing layer because their computation resources and battery capacities are often constrained and heterogeneous.
+
+1 句话，这个问题很难
+
+Current offloading methods fail to jointly optimize computation offloading and resource allocation for nodes in the edge and servers in CDC. They are insufficient and coarse-grained to schedule arriving tasks. 
+
+1 句话，现在的相关方法，存在 XX 问题。
+
+In this work, a problem is formulated and solved with a simulated-annealing-based biobjective differential evolution (SBDE) algorithm to obtain an approximate Pareto-optimal set. 
+
+1-2 句话，设计了 XX 算法，该算法具有 XX 等关键组件，具有 XX 优点。
+
+It explicitly specifies the task service rate and the selected node for each task in each time slot by considering resource limits, load balance requirement, processing capacities of nodes in the edge, and server and energy constraints in CDC. This work considers the joint optimization of computation offloading between Cloud data center (CDC) and edge computing layers, and resource allocation in CDC. 
+
+1-2 句话，该算法具体优化的变量是 XX，实现的目标是 XX。
+
+Real-life data-driven simulations show that the proposed method realizes a larger profit than several typical offloading strategies. It can be readily implemented and incorporated into large-scale industrial computing systems. 
+
+1 句话，实验结果如何(添加具体的百分比)。
 
 
 
