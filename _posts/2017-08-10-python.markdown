@@ -631,6 +631,9 @@ conda config --set show_channel_urls yes
 
 # site-packages
 /home/joseph/anaconda3/envs/neo4j/lib/python3.6/site-packages
+
+# 查看conda配置
+conda config --show
 ```
 
 pip
