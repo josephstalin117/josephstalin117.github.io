@@ -34,6 +34,17 @@ plt.yticks(fontsize=20)
 matplotlib.rcParams.update({'font.size': 22})
 ```
 
+指定字体
+```
+import matplotlib.font_manager as fm
+
+font_path = '/usr/share/fonts/winfonts/times.ttf'
+font_prop = fm.FontProperties(fname=font_path)
+
+plt.xlabel('pH', fontproperties=font_prop)
+plt.ylabel('Turbidity', fontproperties=font_prop)
+```
+
 调整横坐标数值
 ```
 x=[1,2,3,4,5]
@@ -294,4 +305,11 @@ ax.plot(x, y1, x, y2, color='black')
 ax.fill_between(x, y1, y2, where=y2 >= y1, facecolor='green', interpolate=True)
 ax.fill_between(x, y1, y2, where=y2 <= y1, facecolor='red', interpolate=True)
 ax.set_title('fill between where')
+```
+
+避免图片字体type3问题
+```
+import matplotlib
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 ```

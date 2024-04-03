@@ -761,3 +761,13 @@ beamer
 \end{frame}
 \end{document}
 ```
+
+避免eps文件存在Type3字体
+```
+使用eps2eps命令将图片的字体曲线化
+eps2eps your.eps output.eps
+
+# 查看pdf是否存在type3字体
+pdffonts MY_PDF.pdf
+```
+
