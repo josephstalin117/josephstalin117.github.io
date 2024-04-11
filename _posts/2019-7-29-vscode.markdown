@@ -71,3 +71,11 @@ wrap
 打开最近打开的文件：ctrl + r
 打开新的命令窗：ctrl + shift + c
 ```
+
+查看插件内存占用
+```
+>command shift p
+>developer: open process explorer
+
+查找cpu和内存占用最高的进程，禁用扩展插件
+```
