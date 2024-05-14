@@ -1021,6 +1021,12 @@ assert x == "hello"
 assert x == "goodbye", "x should be 'hello'"
 ```
 
+Raise an exception 抛出异常
+```
+if x < 0:
+    raise Exception("Sorry, no numbers below zero")
+```
+
 # 多线程
 
 multiprocessing
