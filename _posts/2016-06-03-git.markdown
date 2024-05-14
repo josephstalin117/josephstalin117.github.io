@@ -106,6 +106,9 @@ git filter-branch -f --prune-empty -- --all
 ```
 
 版本控制
+`<rev>~<n>` goes backward n parents from rev, selecting the first parent each time.
+Use `<rev>^<n>` to select the n-th immediate parent of merge commit rev.
+`<rev>~<n>`, e.g. HEAD~, main~3.
 ```
 # 撤销文件a的修改(没有被git add)
 git checkout a
@@ -114,7 +117,7 @@ git checkout a
 git reset HEAD a
 git checkout a
 
-# 撤销文件a的修改(已经被commit)
+# 撤销文件a的修改(已经被commit), HEAD指当前所在分支, HEAD^指当前分支的前一个merge节点
 git reset HEAD^
 git checkout a
 
@@ -150,6 +153,8 @@ git fetch --all
 git reset --hard origin/master
 git pull
 ```
+
+
 
 分支与master冲突（避免`git merge master`）
 ```
