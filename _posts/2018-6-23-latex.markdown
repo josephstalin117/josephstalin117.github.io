@@ -63,6 +63,9 @@ This paper.\par
 %文字加粗
 \textbf{文本}
 
+%文字下划线
+\underline{文本}
+
 %文字颜色
 \usepackage{xcolor}
 \textcolor{<color>}{<text>}
