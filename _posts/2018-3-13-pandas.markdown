@@ -324,6 +324,9 @@ df.sort_index()
 # 根据某一列值进行排序
 df.sort_values(by='a')
 
+# 根据某列排序，并重置index
+df2 = df.sort_values(by=['x','y'],ignore_index=True)
+
 s = pd.Series([np.nan, 1, 3, 10, 5])
 # series 升序
 s.sort_values(ascending=True)

@@ -66,3 +66,16 @@ const minDate = new Date(today);
 minDate.setDate(minDate.getDate() - 7);
 const maxDate = new Date(today);
 ```
+
+字符串处理string
+```
+# slice()
+const str = 'Coding Beauty';
+const firstTwoChars = str.slice(0, 2);
+console.log(firstTwoChars); // Co
+
+# substring()
+const str = 'Coding Beauty';
+const firstTwoChars = str.substring(0, 2);
+console.log(firstTwoChars); // Co
+```
