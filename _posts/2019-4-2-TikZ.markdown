@@ -5,7 +5,7 @@ date:   2019-4-2 20:35:35 +0800
 categories: command
 ---
 
-#### 基础格式
+# 基础格式
 ```
 %使用standalone格式
 \documentclass[tikz,border=2pt]{standalone} 
@@ -258,7 +258,42 @@ tikzset
 ```
 
 
-#### 流程图
+# 数学符号
+
+构建坐标系和添加函数
+```
+\begin{tikzpicture} 
+\draw[step=1,color=gray!40] (0,0) grid (2,2);
+% 横坐标和纵坐标
+\draw[->] (-3,0) -- (3,0) node[above] {$x_2$};
+\draw[->] (0,-3) -- (0,3) node[right] {$x_1$};
+\draw[draw=black] (0,0) rectangle (1, 1);
+\draw[-] (2, -1.5) -- (-1.5,2) node[left,black] {$x_1+x_2=\frac{1}{2}$};
+\draw[-] (-2, 0.5) -- (2,0.5) node[above,black] {$x_2=\frac{1}{2}$};
+\draw[-] (0.5, -2) -- (0.5,2) node[right,black] {$x_1=\frac{1}{2}$};
+\end{tikzpicture} 
+
+\end{document}
+```
+![images](/source/tikz_coordinate_system.png)
+
+
+圆形
+```
+\draw (0,0) circle (1);
+```
+
+矩形
+```
+\draw[draw=black] (0,0) rectangle (1, 1);
+```
+
+
+
+
+
+
+# 流程图
 ```
 % texlive2015, pdflatex
 \documentclass{article}
@@ -299,7 +334,7 @@ tikzset
 
 ![images](/source/latex.png)
 
-#### 神经网络图
+# 神经网络图
 
 ```
 \documentclass{article}
@@ -706,7 +741,7 @@ tikzset
 
 ![images](/source/tikz_kalman.png)
 
-#### 重复元素
+# 重复元素
 ```
 \documentclass{standalone}
 
@@ -748,7 +783,7 @@ tikzset
 \end{document}
 ```
 
-#### 时间序列
+# 时间序列
 timeseries.dat
 ```
 t x y z
