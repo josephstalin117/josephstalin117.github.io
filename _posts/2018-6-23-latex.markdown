@@ -176,6 +176,15 @@ $$行间公司$$
 %原点乘
 \odot
 
+%无穷
+\infty
+
+%极限
+%lim
+\lim
+\lim_{x \to 2} f(x) = 5
+
+
 %除
 \div
 
@@ -320,6 +329,12 @@ $A^{\mathrm{T}}$
 ```
 %mathrm 指罗马字体
 $A^{\mathrm{T}}$
+```
+
+极限
+$\lim_{x \to 2} f(x) = 5$
+```
+\lim_{x \to 2} f(x) = 5
 ```
 
 多行公式堆积(nonumber 代表没有公式编号)
