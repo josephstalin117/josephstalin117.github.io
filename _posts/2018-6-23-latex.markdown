@@ -294,6 +294,14 @@ $\sqrt{a+b}$
 \sqrt{a+b}
 ```
 
+导数
+```
+求导
+$\mathrm{d}$
+偏导
+$\partial$
+```
+
 上标^
 $a^3$
 ```
@@ -534,6 +542,19 @@ Predicted sequences: $\hat{Y}$
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
+```
+
+#### 代码
+```
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+\begin{Verbatim}[numbers=left, frame=single, formatcom=\color{black}]
+#include <iostream>    
+int main() {
+    std::cout << "Hello, world!" << std::endl;
+    return 0;
+}
+\end{Verbatim}
 ```
 
 #### 引用
