@@ -123,3 +123,15 @@ start_date = (date.floor('d') + pd.offsets.MonthEnd(0) - pd.offsets.MonthBegin(1
 # 万分位
 f'{num / 10000:.2f} 万'
 ```
+
+计算涨跌幅
+```
+def calculate_change_pct(data):
+    """
+    涨跌幅 = (当期收盘价-前期收盘价) / 前期收盘价
+    :param data: dataframe，带有收盘价
+    :return: dataframe，带有涨跌幅
+    """
+    data['close_pct'] = (data['close'] - data['close'].shift(1)) / data['close'].shift(1)
+    return data
+```

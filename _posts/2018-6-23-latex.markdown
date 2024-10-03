@@ -63,6 +63,9 @@ This paper.\par
 %文字加粗
 \textbf{文本}
 
+%文字下划线
+\underline{文本}
+
 %文字颜色
 \usepackage{xcolor}
 \textcolor{<color>}{<text>}
@@ -173,6 +176,15 @@ $$行间公司$$
 %原点乘
 \odot
 
+%无穷
+\infty
+
+%极限
+%lim
+\lim
+\lim_{x \to 2} f(x) = 5
+
+
 %除
 \div
 
@@ -282,6 +294,14 @@ $\sqrt{a+b}$
 \sqrt{a+b}
 ```
 
+导数
+```
+求导
+$\mathrm{d}$
+偏导
+$\partial$
+```
+
 上标^
 $a^3$
 ```
@@ -317,6 +337,12 @@ $A^{\mathrm{T}}$
 ```
 %mathrm 指罗马字体
 $A^{\mathrm{T}}$
+```
+
+极限
+$\lim_{x \to 2} f(x) = 5$
+```
+\lim_{x \to 2} f(x) = 5
 ```
 
 多行公式堆积(nonumber 代表没有公式编号)
@@ -516,6 +542,19 @@ Predicted sequences: $\hat{Y}$
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
+```
+
+#### 代码
+```
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+\begin{Verbatim}[numbers=left, frame=single, formatcom=\color{black}]
+#include <iostream>    
+int main() {
+    std::cout << "Hello, world!" << std::endl;
+    return 0;
+}
+\end{Verbatim}
 ```
 
 #### 引用
