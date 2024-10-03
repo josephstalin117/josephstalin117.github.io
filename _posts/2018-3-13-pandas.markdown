@@ -740,7 +740,7 @@ import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
 
-df = pd.read_excel('File.xlsx', sheetname='Sheet1')
+df = pd.read_excel('File.xlsx', sheet_name='Sheet1')
 
 #Column headings
 print(df.columns)
