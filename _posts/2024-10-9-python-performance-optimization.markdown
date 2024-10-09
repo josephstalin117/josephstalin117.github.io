@@ -1,0 +1,129 @@
+---
+layout: post
+title:  "python性能优化"
+date:   2024-10-9 20:35:35 +0800
+categories: command
+---
+
+# 生成18万条随机数据
+
+```
+import pandas as pd
+import numpy as np
+ 
+ 
+def gen_big_data(csv_file: str, big_data_count=90000):
+    chars = 'abcdefghijklmnopqrstuvwxyz'
+    dates = pd.date_range(start='2020-01-01', periods=big_data_count, freq='30s')
+    big_data_cols = ['Name']
+    for group in range(1, 31):
+        big_data_cols.extend([f'date str {group}',
+                              f'bool {group}',
+                              f'int {group}',
+                              f'float {group}',
+                              f'str {group}'])
+    big_data = []
+    for i in range(0, big_data_count):
+        row = [f'Name Item {(i + 1)}']
+        for _ in range(0, 30):
+            row.extend([str(dates[i]),
+                        i % 2 == 0,
+                        np.random.randint(10000, 100000),
+                        10000 * np.random.random(),
+                        chars[np.random.randint(0, 26)] * 15])
+        big_data.append(row)
+    df = pd.DataFrame(data=big_data, columns=big_data_cols)
+    df.to_csv(csv_file, index=None)
+ 
+ 
+if __name__ == '__main__':
+    # 修改存放路径以及模拟数据量(默认9万)
+    gen_big_data('./files/custom_big_data.csv', 180000)
+```
+
+# 内存占用查询
+
+```
+# 查看内存占用
+df.info(memory_usage='deep')
+
+# 查看数据类型内存占用
+for d_type in ['bool', 'float64', 'int64', 'object']:
+    d_type_selected = df.select_dtypes(include=[d_type])
+    mem_mean_bit = d_type_selected.memory_usage(deep=True).mean()
+    mem_mean_mb = mem_mean_bit / 1024 ** 2
+    print(f'mean memory usage: {d_type:<7} - {mem_mean_mb:.3f} M')
+```
+
+查看某类型内存占用
+```
+def info_mem_usage_mb(pd_obj):
+    if isinstance(pd_obj, pd.DataFrame):
+        mem_usage = pd_obj.memory_usage(deep=True).sum()
+    else:
+        mem_usage = pd_obj.memory_usage(deep=True)
+    # 转换为MB返回
+    return f'{mem_usage / 1024 ** 2:02.3f} MB'
+```
+
+# 数据类型优化
+
+## 优化int&float数据类型
+
+对于`int`和`float`类型的数据，Pandas加载到内存中的数据，默认是int64和float64。一般场景下的数据，用int32和float32就足够了，用numpy.iinfo和numpy.finfo可以打印对应类型的取值范围
+```
+def optimize_int_and_float():
+    df_int = df.select_dtypes(include=['int64'])
+    df_int_converted = df_int.apply(pd.to_numeric, downcast='unsigned')
+    df_float = df.select_dtypes(include=['float64'])
+    df_float_converted = df_float.apply(pd.to_numeric, downcast='float')
+ 
+    print('int before     ', info_mem_usage_mb(df_int))
+    print('int converted  ', info_mem_usage_mb(df_int_converted))
+ 
+    print('float before   ', info_mem_usage_mb(df_float))
+    print('float converted', info_mem_usage_mb(df_float_converted))
+```
+
+## 优化object类型
+
+获取`object`类型数据，并调用describe()展示统计信息
+```
+df_object = df.select_dtypes(include=['object])
+df_object.describe()
+```
+对于区分度较低的`str`，一共只有26个可能的值，可以考虑转换为`Pandas`中的`categroy`类型，这里将区分度小于40%的列转换为`category`类型
+```
+def optimize_obj():
+    df_obj = df.select_dtypes(include=['object'])
+    df_obj_converted = pd.DataFrame()
+    for col in df_obj.columns:
+        unique_count = len(df_obj[col].unique())
+        total_count = len(df_obj[col])
+        # 将区分度小于40%的列转换为category类型
+        if unique_count / total_count <= 0.4:
+            df_obj_converted.loc[:, col] = df_obj[col].astype('category')
+        else:
+            df_obj_converted.loc[:, col] = df_obj[col]
+ 
+    print('object before   ', info_mem_usage_mb(df_obj))
+    print('object converted', info_mem_usage_mb(self.df_obj_converted))
+```
+
+## 优化date数据
+将`date`字符串转换为`date`类型
+```
+def optimize_date_str():
+    df_date = pd.DataFrame()
+    df_date_converted = pd.DataFrame()
+    for col_name in df.columns:
+        if col_name.startswith('date str'):
+            df_date.loc[:, col_name] = df[col_name]
+            df_date_converted.loc[:, col_name] = pd.to_datetime(df[col_name])
+ 
+    print('date before   ', info_mem_usage_mb(df_date))
+    print('date converted', info_mem_usage_mb(df_date_converted))
+```
+
+
+
