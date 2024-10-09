@@ -70,6 +70,8 @@ def info_mem_usage_mb(pd_obj):
 
 ## 优化int&float数据类型
 
+优化数据类型可以减少内存使用。对于数值数据，可以选择使用内存占用更小的数值类型，如int8或float32，而非默认的int64或float64。同样，对于值重复率高的字符串列，将其转换为category类型可以显著降低内存使用。日期和时间数据最好使用专门的datetime类型。
+
 对于`int`和`float`类型的数据，Pandas加载到内存中的数据，默认是int64和float64。一般场景下的数据，用int32和float32就足够了，用numpy.iinfo和numpy.finfo可以打印对应类型的取值范围
 ```
 def optimize_int_and_float():
@@ -83,6 +85,10 @@ def optimize_int_and_float():
  
     print('float before   ', info_mem_usage_mb(df_float))
     print('float converted', info_mem_usage_mb(df_float_converted))
+
+
+df['A'] = df['A'].astype('int8')  # 更小的整数类型
+df['B'] = df['B'].astype('category')  # 分类类型
 ```
 
 ## 优化object类型
@@ -125,5 +131,53 @@ def optimize_date_str():
     print('date converted', info_mem_usage_mb(df_date_converted))
 ```
 
+# 向量化操作
+尽量使用`Pandas`的内置向量化操作而非循环。向量化操作通常更高效。`Pandas`提供了大量的向量化操作，可以提高数据操作的效率。如`sum()`、`mean()`、`max()`等函数可以直接作用于整个`DataFrame` 或`Series`，而不需要使用循环。可以显著提高数据处理的速度和效率，特别是在处理大型数据集时。它们利用了`Pandas`和`NumPy`库的内部优化，使得操作更加高效，避免了相对开销较大的`Python`循环。
+```
+```
+
+# 优化文件读取
+
+指定读取文件数据类型
+```
+def big_data_optimized_read_csv(self):
+    d_type_dict = {}
+    date_indexes = []
+    for i in range(1, 31):
+        d_type_dict[f'int {i}'] = 'int32'
+        d_type_dict[f'float {i}'] = 'float32'
+        d_type_dict[f'str {i}'] = 'category'
+ 
+        date_indexes.append(5 * (i - 1) + 1)
+    self.df = pd.read_csv(self.csv_file, dtype=d_type_dict, parse_dates=date_indexes)
+    print('optimized read_csv: ', self.info_mem_usage_mb(self.df))
+```
+
+# 并行运行
+
+对于大型操作，考虑使用并行处理来加速。使用并行处理是一个有效的优化技巧。尽管`Pandas`本身不是为并行处理而设计的，但可以通过一些方法来利用多核处理器的能力，从而加速数据处理任务。`Dask`提供了一个与`Pandas`类似的大型并行`DataFrame`，适用于处理大数据集；`Joblib`可以高效运行多个`Python`进程，适合简单的并行化任务；而`Python`的`multiprocessing`模块允许手动创建并行任务，通过将大型`DataFrame`分割成多个小块，在每个处理器核心上并行处理这些块。
+```
+import pandas as pd
+import numpy as np
+from multiprocessing import Pool
+
+# 示例函数，对数据进行某种复杂计算
+def my_complex_function(data_chunk):
+    return data_chunk.apply(np.sin)
+
+# 创建一个大型 DataFrame
+df = pd.DataFrame(np.random.rand(1000000, 4), columns=['A', 'B', 'C', 'D'])
+
+# 将 DataFrame 分割成多个小块
+data_chunks = np.array_split(df, 4)
+
+# 创建一个进程池并并行处理每个数据块
+with Pool(4) as pool:
+    results = pool.map(my_complex_function, data_chunks)
+
+# 合并结果
+final_result = pd.concat(results)
+print(final_result)
+```
 
 
