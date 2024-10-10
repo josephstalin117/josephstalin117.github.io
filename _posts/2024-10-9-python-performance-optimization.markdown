@@ -70,9 +70,9 @@ def info_mem_usage_mb(pd_obj):
 
 ## 优化int&float数据类型
 
-优化数据类型可以减少内存使用。对于数值数据，可以选择使用内存占用更小的数值类型，如int8或float32，而非默认的int64或float64。同样，对于值重复率高的字符串列，将其转换为category类型可以显著降低内存使用。日期和时间数据最好使用专门的datetime类型。
+优化数据类型可以减少内存使用。对于数值数据，可以选择使用内存占用更小的数值类型，如`int8`或`float32`，而非默认的`int64`或`float64`。同样，对于值重复率高的字符串列，将其转换为`category`类型可以显著降低内存使用。日期和时间数据最好使用专门的`datetime`类型。
 
-对于`int`和`float`类型的数据，Pandas加载到内存中的数据，默认是int64和float64。一般场景下的数据，用int32和float32就足够了，用numpy.iinfo和numpy.finfo可以打印对应类型的取值范围
+对于`int`和`float`类型的数据，`Pandas`加载到内存中的数据，默认是`int64`和`float64`。一般场景下的数据，用`int32`和`float32`就足够了，用`numpy.iinfo`和`numpy.finfo`可以打印对应类型的取值范围
 ```
 def optimize_int_and_float():
     df_int = df.select_dtypes(include=['int64'])
@@ -93,7 +93,7 @@ df['B'] = df['B'].astype('category')  # 分类类型
 
 ## 优化object类型
 
-获取`object`类型数据，并调用describe()展示统计信息
+获取`object`类型数据，并调用`describe()`展示统计信息
 ```
 df_object = df.select_dtypes(include=['object])
 df_object.describe()
@@ -134,6 +134,38 @@ def optimize_date_str():
 # 向量化操作
 尽量使用`Pandas`的内置向量化操作而非循环。向量化操作通常更高效。`Pandas`提供了大量的向量化操作，可以提高数据操作的效率。如`sum()`、`mean()`、`max()`等函数可以直接作用于整个`DataFrame` 或`Series`，而不需要使用循环。可以显著提高数据处理的速度和效率，特别是在处理大型数据集时。它们利用了`Pandas`和`NumPy`库的内部优化，使得操作更加高效，避免了相对开销较大的`Python`循环。
 ```
+import pandas as pd
+import numpy as np
+
+# 创建示例 DataFrame
+df = pd.DataFrame({
+    'column1': [1, 2, -3, 4, -5],
+    'column2': [5, 6, 7, -8, -9]
+})
+
+# 向量化操作
+df['sum'] = df['column1'] + df['column2']
+
+# 使用 apply() 方法
+df['transformed_column1'] = df.apply(lambda x: x['column1'] * 2 if x['column2'] > 0 else x['column1'], axis=1)
+
+# 使用 map() 和 applymap()
+df['mapped_column1'] = df['column1'].map(lambda x: x * 2)
+df = df.applymap(lambda x: x * 2 if isinstance(x, int) else x)
+
+# 使用 groupby() 进行分组操作
+grouped_sum = df.groupby('mapped_column1').sum()
+
+# 使用 Pandas 的内置函数
+total_column1 = df['column1'].sum()
+
+# 使用条件表达式
+df['new_column'] = np.where(df['column2'] > 0, 'positive', 'non-positive')
+
+# 显示结果
+print("DataFrame with Applied Operations:\n", df)
+print("\nGrouped Sum:\n", grouped_sum)
+print("\nTotal of 'column1':", total_column1)
 ```
 
 # 优化文件读取
