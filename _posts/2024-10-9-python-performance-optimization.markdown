@@ -284,6 +284,23 @@ df['TradingPhaseCode'] = np.select(
     default=-1
 )
 ```
+例子2
+```
+df['TempTradingTime'] = pd.to_datetime(df['TradingTime'], format='%Y-%m-%d %H:%M:%S.%f')
+# Check if TradingTime is between 9:25 and 9:30
+mask = (df['TempTradingTime'].dt.time >= pd.to_datetime('09:25:00').time()) & (df['TempTradingTime'].dt.time < pd.to_datetime('09:30:00').time())
+
+# Create a temporary TradingPhaseCode column
+df['TempTradingPhaseCode'] = '2'  # Set to '2' for times between 9:25 and 9:30
+
+# For times outside 9:25-9:30, use the existing logic
+if market == 'SH':
+    df.loc[~mask, 'TempTradingPhaseCode'] = df.loc[~mask, 'TradeStatus'].map(sh_phase_mapping).fillna('-1')
+else:  # For 'SZ' market
+    df.loc[~mask, 'TempTradingPhaseCode'] = df.loc[~mask, 'SecurityPhaseTag'].apply(lambda x: sz_phase_mapping.get(x[0], '-1'))
+# Assign the temporary column to TradingPhaseCode
+df['TradingPhaseCode'] = df['TempTradingPhaseCode']
+```
 
 # 向量化操作
 尽量使用`Pandas`的内置向量化操作而非循环。向量化操作通常更高效。`Pandas`提供了大量的向量化操作，可以提高数据操作的效率。如`sum()`、`mean()`、`max()`等函数可以直接作用于整个`DataFrame` 或`Series`，而不需要使用循环。可以显著提高数据处理的速度和效率，特别是在处理大型数据集时。它们利用了`Pandas`和`NumPy`库的内部优化，使得操作更加高效，避免了相对开销较大的`Python`循环。
