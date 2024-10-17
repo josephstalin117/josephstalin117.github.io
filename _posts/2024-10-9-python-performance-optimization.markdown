@@ -100,7 +100,7 @@ print(memory_usage_before, memory_usage_after)
 ```
 
 
-## 优化int&float数据类型
+### 优化int&float数据类型
 
 优化数据类型可以减少内存使用。对于数值数据，可以选择使用内存占用更小的数值类型，如`int8`或`float32`，而非默认的`int64`或`float64`。同样，对于值重复率高的字符串列，将其转换为`category`类型可以显著降低内存使用。日期和时间数据最好使用专门的`datetime`类型。
 
@@ -123,7 +123,7 @@ df['A'] = df['A'].astype('int8')  # 更小的整数类型
 df['B'] = df['B'].astype('category')  # 分类类型
 ```
 
-## 优化object类型
+### 优化object类型
 
 获取`object`类型数据，并调用`describe()`展示统计信息
 ```
@@ -148,7 +148,7 @@ def optimize_obj():
     print('object converted', info_mem_usage_mb(self.df_obj_converted))
 ```
 
-## 优化date数据
+### 优化date数据
 将`date`字符串转换为`date`类型
 ```
 def optimize_date_str():
@@ -262,6 +262,27 @@ df['vectorized_result'] = df['column'] * df['column'] - df['column'] + 2
 
 # 显示 DataFrame 结果
 print(df)
+```
+
+### 布尔掩码
+对于耗时量大的`apply`方法，可以考虑使用布尔掩码的方式进行判断，提升效率非常明显
+```
+df['TempTradingTime'] = pd.to_datetime(df['TradingTime'])
+
+# Create boolean masks for each condition
+mask_1 = (df['TempTradingTime'].dt.time >= pd.to_datetime('09:15:00').time()) & (df['TempTradingTime'].dt.time < pd.to_datetime('09:25:00').time())
+mask_2 = (df['TempTradingTime'].dt.time >= pd.to_datetime('09:25:00').time()) & (df['TempTradingTime'].dt.time < pd.to_datetime('09:30:00').time())
+mask_3 = ((df['TempTradingTime'].dt.time >= pd.to_datetime('09:30:00').time()) & (df['TempTradingTime'].dt.time < pd.to_datetime('11:30:00').time())) | \
+            ((df['TempTradingTime'].dt.time >= pd.to_datetime('13:00:00').time()) & (df['TempTradingTime'].dt.time < pd.to_datetime('14:57:00').time()))
+mask_4 = (df['TempTradingTime'].dt.time >= pd.to_datetime('11:30:00').time()) & (df['TempTradingTime'].dt.time < pd.to_datetime('13:00:00').time())
+mask_5 = (df['TempTradingTime'].dt.time >= pd.to_datetime('14:57:00').time()) & (df['TempTradingTime'].dt.time < pd.to_datetime('15:00:00').time())
+
+# Use numpy.select to assign values based on masks
+df['TradingPhaseCode'] = np.select(
+    [mask_1, mask_2, mask_3, mask_4, mask_5],
+    [1, 2, 3, 4, 5],
+    default=-1
+)
 ```
 
 # 向量化操作
