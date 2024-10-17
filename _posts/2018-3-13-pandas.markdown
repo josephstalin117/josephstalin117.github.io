@@ -550,6 +550,16 @@ Year
 2017   739.00
 Name: Points, dtype: float64
 
+
+# 合并多个行
+# Group by TradingTime and aggregate BuyOrderQueue and SellOrderQueue
+grouped = orderqueue_df.groupby('TradingTime').agg({
+   'BuyOrderQueue': lambda x: [item for item in x if isinstance(item, list)],
+   'SellOrderQueue': lambda x: [item for item in x if isinstance(item, list)]
+})
+
+grouped['BuyOrderQueue'] = grouped['BuyOrderQueue'].apply(lambda x: x[0] if x else [])
+grouped['SellOrderQueue'] = grouped['SellOrderQueue'].apply(lambda x: x[0] if x else [])
 ```
 
 #### COMBINING DATASETS合并数据
