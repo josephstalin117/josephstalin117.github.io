@@ -66,6 +66,19 @@ def info_mem_usage_mb(pd_obj):
     return f'{mem_usage / 1024 ** 2:02.3f} MB'
 ```
 
+查看所有类型内存占用
+```
+print(f"Memory usage before optimization: {memory_usage_before:.2f} MB")
+# Calculate and display memory usage for each column
+for col in df.columns:
+    col_memory = df[col].memory_usage(deep=True) / 1024 / 1024  # Convert to MB
+    print(f"Memory usage of '{col}': {col_memory:.2f} MB")
+
+# Calculate and display total memory usage
+total_memory = df.memory_usage(deep=True).sum() / 1024 / 1024  # Convert to MB
+print(f"Total memory usage: {total_memory:.2f} MB")
+```
+
 # 数据类型优化
 优化内存使用是提高效率和性能的一个重要方面。尤其在处理大型数据集时，有效管理内存是至关重要的。通过`df.memory_usage(deep=True)`可以检查`DataFrame`的每列占用的内存量。
 
