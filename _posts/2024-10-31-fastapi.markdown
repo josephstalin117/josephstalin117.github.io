@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "fastapi"
+date:   2024-10-31 20:35:35 +0800
+categories: command
+---
+
+# 启动fastapi
+
+```
+fastapi dev main.py
+```
+
+# 查看fastapi文档
+
+```
+http://127.0.0.1:8000/docs
+```
+
