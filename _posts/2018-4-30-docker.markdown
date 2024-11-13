@@ -21,6 +21,17 @@ sudo systemctl start docker
 docker ps
 ```
 
+序列化输出dockerps
+```
+alias dockerps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
+```
+
+docker ps format
+```
+docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}\t{{.Mounts}}\t{{.Command}}"
+docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"
+```
+
 docker镜像构建
 ```
 # 使用当前目录的 Dockerfile 创建镜像，标签为 runoob/ubuntu:v1。
@@ -121,7 +132,12 @@ docker image pull library/hello-world
 # docker 中国官方源加速
 docker pull registry.docker-cn.com/library/ubuntu:16.04
 
-# 修改docker镜像存储位置
+# 使用docker info查看root位置
+docker info
+```
+
+修改docker镜像存储位置
+```
 # 停止docker服务
 systemctl stop docker
 # 修改/lib/systemd/system/docker.service
@@ -134,9 +150,6 @@ systemctl daemon-reload
 
 # start docker daemon
 systemctl start docker
-
-# 使用docker info查看root位置
-docker info
 ```
 
 # container 容器管理
@@ -177,7 +190,7 @@ docker container start [containerID]
 # 终止容器运行
 docker container stop [containerID]
 
-# 查看docker容器的输出
+# 查看docker容器的log输出
 docker logs [containerID]
 
 # 查看最新的docker容器输出
@@ -237,8 +250,10 @@ ENV NAME World
 
 # 当容器启动时运行 app.py 
 CMD ["python", "app.py"]
+```
 
-# Dockerfile例子
+Dockerfile例子
+```
 FROM python:3.7.3
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
@@ -285,15 +300,6 @@ lamp docker
 docker run -it --rm fauria/lamp bash
 # create a container to debug a web app
 docker run --rm -p 8080:80 -e LOG_STDOUT=true -e LOG_STDERR=true -e LOG_LEVEL=debug -v /my/data/directory:/var/www/html fauria/lamp
-```
-
-docker compose
-```
-# Make sure you are in the same directory as docker-compose.yml
-docker-compose up -d
-
-# 关闭docker compose
-docker compose stop
 ```
 
 # 代理设置
@@ -416,7 +422,17 @@ docker system df
 docker system prune -a
 ```
 
+# docker compose
 
+docker-compose 操作
+```
+# Make sure you are in the same directory as docker-compose.yml
+# 启动docker-compose
+docker-compose up -d
+
+# 关闭docker compose
+docker compose stop
+```
 
 docker-compose.yaml
 ```
@@ -431,35 +447,6 @@ services:
             - "6075:5000"
         volumes:
             - ./twe:/app
-        depends_on:
-            twe-mysql:
-                condition: service_started
-            twe-redis:
-                condition: service_started
-            twe-neo4j:
-                condition: service_started
-            geoserver:
-                condition: service_started
-            twe-postgis:
-                condition: service_started
-        links:
-            - twe-mysql
-            - twe-redis
-            - twe-neo4j
-            - geoserver
-            - twe-postgis
-        networks:
-            default:
-                aliases:
-                    - api.water.bjut.com
-    twe_master:
-        image: water_twe
-        container_name: twe_master
-        restart: always
-        ports:
-            - "10075:5000"
-        volumes:
-            - ./twe_master:/app
         depends_on:
             twe-mysql:
                 condition: service_started
@@ -576,30 +563,6 @@ services:
                 aliases:
                     - api.water.bjut.com
 
-    # crontab 定时任务
-    twe_crontab:
-        image: water_twe_crontab
-        container_name: twe-crontab
-        restart: always
-        links:
-            - twe-mysql:db
-            - geoserver
-            - twe-calsp
-            - twe-brain
-            - twe
-        depends_on:
-            twe-mysql:
-                condition: service_started
-            geoserver:
-                condition: service_started
-            twe-calsp:
-                condition: service_started
-        volumes:
-            - ./crontab:/app
-        networks:
-            default:
-                aliases:
-                    - api.water.bjut.com
 
     # water brain 训练平台
     twe-brain:
@@ -744,9 +707,5 @@ networks:
             - subnet: 10.103.0.1/16
 ```
 
-docker ps format
-```
-docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}\t{{.Mounts}}\t{{.Command}}"
-docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"
-```
+
 
