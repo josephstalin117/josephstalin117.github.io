@@ -145,7 +145,7 @@ ps -ef |grep vsftpd
 # 查看服务
 service vsftpd
 
-# list stystem opened files，列出系统中打开的所有文件，因为linux上一切都是文件
+# list stystem opened files, 列出系统中打开的所有文件, 因为linux上一切都是文件
 # 查看端口
 lsof -i:80
 
@@ -172,13 +172,16 @@ free -h
 top -p ppid
 
 # top 以内存占用排名
-top -o ％MEM
+top -o %MEM
 
 # 查看特定用户的进程
 top -u josep
 
 # 查看内存占用前10的进程
 ps aux | sort -k4,4nr | head -n 10
+
+# 查看系统日志
+sudo cat syslog
 
 # 停止gdm服务
 sudo systemctl stop gdm3
