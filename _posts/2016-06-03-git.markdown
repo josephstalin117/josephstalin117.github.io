@@ -10,7 +10,7 @@ categories: command
 
 基本配置
 ```
-# 初始化本地git仓库（创建新仓库）
+# 初始化本地git仓库(创建新仓库)
 git init
 
 # 配置用户名
@@ -51,7 +51,13 @@ git commit -m [message]
 git commit [file1] [file2] ... -m [message]
 
 # 向上一个commit提交内容
-git commit --amend -C head
+git commit --amend
+
+# 修改已经提交的commit内容(前提是没有提交到远端主分支)
+git rebase -i <需要修改的前一个commid id>
+
+# 合并最近三次提交(前提是没有提交到远端主分支)
+git rebase -i HEAD~3
 
 # 上传本地指定分支到远程仓库
 git push [remote] [branch]
@@ -113,7 +119,7 @@ Use `<rev>^<n>` to select the n-th immediate parent of merge commit rev.
 # 撤销文件a的修改(没有被git add)
 git checkout a
 
-# 撤销文件a的修改(已经被git add，但没有commit)
+# 撤销文件a的修改(已经被git add, 但没有commit)
 git reset HEAD a
 git checkout a
 
@@ -156,9 +162,9 @@ git pull
 
 
 
-分支与master冲突（避免`git merge master`）
+分支与master冲突(避免`git merge master`)
 ```
-# 从上游分支获取最新commit信息，并有机的将当前分支和上游分支合并
+# 从上游分支获取最新commit信息, 并有机的将当前分支和上游分支合并
 git rebase master
 ```
 
