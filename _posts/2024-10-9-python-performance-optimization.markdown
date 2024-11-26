@@ -487,4 +487,11 @@ if __name__ == "__main__":
    main()
 ```
 
-
+# 增加虚拟内存
+```
+# 创建swap文件
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```

@@ -177,6 +177,9 @@ top -o %MEM
 # 查看特定用户的进程
 top -u josep
 
+# VIRT代表进程当前时刻有多少内存可以访问
+# ES 意味驻留内存大小, 是当前进程真正占用物理内存的精确反映.
+
 # 查看内存占用前10的进程
 ps aux | sort -k4,4nr | head -n 10
 
@@ -338,6 +341,16 @@ update-alternatives --install /usr/bin/java java /usr/local/java/jdk-9/bin/java 
 
 # remove参数用于删除一个命令的link值，其附带的slave也将一起删除。
 update-alternatives –remove java /usr/local/jre1.6.0_20/bin/java
+```
+
+
+添加虚拟内存
+```
+# 创建swap文件
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
 ```
 
 库的软链接指令速查
