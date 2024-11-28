@@ -528,6 +528,9 @@ head -n 10 file.txt
 
 # 查看后几行
 tail -n 10 file.txt
+
+# 查看特定的行数
+sed -n '1000,2000p' filename.csv
 ```
 
 nohup
