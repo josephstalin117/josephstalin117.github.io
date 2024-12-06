@@ -21,6 +21,11 @@ sudo systemctl start docker
 docker ps
 ```
 
+查看docker资源使用
+```
+docker stats
+```
+
 序列化输出dockerps
 ```
 alias dockerps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
