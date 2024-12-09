@@ -442,6 +442,50 @@ docker compose stop
 docker-compose up -d clickhouse
 ```
 
+docker-compose挂载容器配置文件时出现了问题，确实需要自定义config.xml和users.xml，建议先运行容器让它生成默认配置，然后复制出来修改，再重新挂载。
+```
+# 简化docker-compose.yml配置, 仅保留基本的运行配置:
+# ClickHouse
+clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: cj_clickhouse
+    restart: always
+    ports:
+        - "8123:8123"
+        - "9000:9000"
+    volumes:
+        - ./clickhouse/db:/var/lib/clickhouse:rw
+        - /etc/localtime:/etc/localtime:ro
+    networks:
+        default:
+            aliases:
+                - clickhouse.cj.com
+
+# 复制配置文件
+docker cp cj_clickhouse:/etc/clickhouse-server/config.xml clickhouse/config.xml
+docker cp cj_clickhouse:/etc/clickhouse-server/users.xml clickhouse/users.xml
+
+# 然后更新docker-compose.yml添加这些配置文件的挂载:
+# ClickHouse
+clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: cj_clickhouse
+    restart: always
+    ports:
+        - "8123:8123"
+        - "9000:9000"
+    volumes:
+        - ./clickhouse/db:/var/lib/clickhouse:rw
+        - ./clickhouse/config.xml:/etc/clickhouse-server/config.xml:rw
+        - ./clickhouse/users.xml:/etc/clickhouse-server/users.xml:rw
+        - /etc/localtime:/etc/localtime:ro
+    networks:
+        default:
+            aliases:
+                - clickhouse.cj.com
+```
+
+
 docker-compose.yaml
 ```
 version: '2.2'
