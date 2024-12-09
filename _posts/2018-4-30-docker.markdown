@@ -437,6 +437,9 @@ docker-compose up -d
 
 # 关闭docker compose
 docker compose stop
+
+# 启动单个容器
+docker-compose up -d clickhouse
 ```
 
 docker-compose.yaml
