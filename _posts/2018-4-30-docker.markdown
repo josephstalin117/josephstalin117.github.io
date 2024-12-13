@@ -77,6 +77,9 @@ docker port bf08b7f2cd89
 # 查看日志
 docker logs -f bf08b7f2cd89
 
+# 查看日志的最后部分
+docker logs -f --tail 1000 <container_name>
+
 # 查看容器进程
 docker top wizardly_chandrasekhar
 
