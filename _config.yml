@@ -20,3 +20,7 @@ markdown: kramdown
 theme: jekyll-theme-cayman
 # permalink: none
 permalink: /:title:output_ext
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
