@@ -17,6 +17,18 @@ categories: command
 ({SEQ chapter \c}-{SEQ equation})
 ```
 
+图片编号
+```
+{SEQ chapter \c}-{SEQ fig}
+{SEQ chapter \c}-{SEQ fig2}
+```
+
+表格编号
+```
+{SEQ chapter \c}-{SEQ tab}
+{SEQ chapter \c}-{SEQ tab2}
+```
+
 交叉引用
 
 选中公式两个域代码及其中间的横线

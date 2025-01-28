@@ -1,219 +1,219 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+      xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9
+            https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
-  <loc>http://josephlin.org/</loc>
+  <loc>https://josephlin.org/</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/about/</loc>
+  <loc>https://josephlin.org/about/</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/miracle-landscape.html</loc>
+  <loc>https://josephlin.org/miracle-landscape.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/overall.html</loc>
+  <loc>https://josephlin.org/overall.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/R.html</loc>
+  <loc>https://josephlin.org/R.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/windows.html</loc>
+  <loc>https://josephlin.org/windows.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/markdown.html</loc>
+  <loc>https://josephlin.org/markdown.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/jd.html</loc>
+  <loc>https://josephlin.org/jd.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/java.html</loc>
+  <loc>https://josephlin.org/java.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/value.html</loc>
+  <loc>https://josephlin.org/value.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/jetbrains.html</loc>
+  <loc>https://josephlin.org/jetbrains.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/Matplotlib.html</loc>
+  <loc>https://josephlin.org/Matplotlib.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/latex.html</loc>
+  <loc>https://josephlin.org/latex.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/tensorflow.html</loc>
+  <loc>https://josephlin.org/tensorflow.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/c.html</loc>
+  <loc>https://josephlin.org/c.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/sed.html</loc>
+  <loc>https://josephlin.org/sed.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/opencv.html</loc>
+  <loc>https://josephlin.org/opencv.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/caffe.html</loc>
+  <loc>https://josephlin.org/caffe.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/docker.html</loc>
+  <loc>https://josephlin.org/docker.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/games.html</loc>
+  <loc>https://josephlin.org/games.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/emacs.html</loc>
+  <loc>https://josephlin.org/emacs.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/pandas.html</loc>
+  <loc>https://josephlin.org/pandas.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/numpy.html</loc>
+  <loc>https://josephlin.org/numpy.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/matlab.html</loc>
+  <loc>https://josephlin.org/matlab.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/excel.html</loc>
+  <loc>https://josephlin.org/excel.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/persistence.html</loc>
+  <loc>https://josephlin.org/persistence.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/poetry.html</loc>
+  <loc>https://josephlin.org/poetry.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/gettysburg-address.html</loc>
+  <loc>https://josephlin.org/gettysburg-address.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/python.html</loc>
+  <loc>https://josephlin.org/python.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/centos.html</loc>
+  <loc>https://josephlin.org/centos.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/hping3.html</loc>
+  <loc>https://josephlin.org/hping3.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/two-directions.html</loc>
+  <loc>https://josephlin.org/two-directions.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/study.html</loc>
+  <loc>https://josephlin.org/study.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/bash.html</loc>
+  <loc>https://josephlin.org/bash.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/nginx.html</loc>
+  <loc>https://josephlin.org/nginx.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/vim.html</loc>
+  <loc>https://josephlin.org/vim.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/mac.html</loc>
+  <loc>https://josephlin.org/mac.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/git.html</loc>
+  <loc>https://josephlin.org/git.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/mysql.html</loc>
+  <loc>https://josephlin.org/mysql.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/linux.html</loc>
+  <loc>https://josephlin.org/linux.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/chess.html</loc>
+  <loc>https://josephlin.org/chess.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://josephlin.org/communist-manifesto.html</loc>
+  <loc>https://josephlin.org/communist-manifesto.html</loc>
   <lastmod>2018-11-29T04:00:30+00:00</lastmod>
   <priority>0.80</priority>
 </url>
