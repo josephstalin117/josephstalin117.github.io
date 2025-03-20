@@ -402,6 +402,11 @@ find . -name "arima*.json" -exec grep -lv "algo_name" /dev/null {} +
 find . -name "arima*.json" -exec grep -lv "algo_name" /dev/null {} + | wc -l
 ```
 
+计算目录中文件的数量
+```
+ls -l | grep "^-" | wc -l
+```
+
 sort & uniq
 ```
 # 正排序
