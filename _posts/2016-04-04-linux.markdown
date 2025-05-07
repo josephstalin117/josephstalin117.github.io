@@ -769,15 +769,24 @@ sz
 md5sum file
 ```
 
-
-
 tree
 ```
-#Tee command is used to store and view (both at the same time) the output of any other command.
+# Tee command is used to store and view (both at the same time) the output of any other command.
 ls | tee file
+
+# 显示所有文件及目录
+-a
+# 只显示目录
+-d
+# 如遇到符号链接的目录，直接列出所指向的目录结构
+-l
+# 在每个文件前显示完整的路径
+-f
+# 限制目录显示层级
+-L level
+# 忽略目录下的文件夹或目录
+-I
 ```
-
-
 
 crontab
 ```
