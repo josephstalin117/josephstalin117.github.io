@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "redis"
+date:   2025-5-7 20:35:35 +0800
+categories: command
+---
+
+查看服务器版本
+```
+redis-server -v
+```
+
+查看客户端版本
+```
+redis-cli -v
+```
+
+查看redis连接
+```
+$ redis-cli
+127.0.0.1:6379> ping
+PONG
+```
+
+连续统计模式
+```
+redis-cli --stat
+```
