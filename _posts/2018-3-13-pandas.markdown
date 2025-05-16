@@ -788,6 +788,14 @@ setting
 ```
 # display all text in a cell without truncation
 pd.set_option('display.max_colwidth', -1)
+
+# 设置pandas显示选项
+pd.set_option('display.max_columns', None)  # 显示所有列
+pd.set_option('display.width', None)  # 不限制显示宽度
+pd.set_option('display.max_rows', 5)  # 显示前5行
+
+# 漂亮的表格显示
+display(df.head(5))
 ```
 
 plot
