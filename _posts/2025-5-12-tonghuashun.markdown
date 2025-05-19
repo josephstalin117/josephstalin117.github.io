@@ -19,3 +19,8 @@ categories: command
 ```
 空格
 ```
+
+F10
+```
+查看详情
+```

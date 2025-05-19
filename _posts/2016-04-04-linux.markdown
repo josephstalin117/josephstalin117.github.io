@@ -46,6 +46,9 @@ pkill -kill -t tty
 # 停用用户所有进程
 pkill -u user
 
+# kill掉进程为test.py
+ps -ef|grep test.py|grep -v grep|awk '{print $2}'|xargs kill -9
+
 # 显示文件最后5行内容
 tail -n 5 test.log
 
