@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "polars"
+date:   2025-5-13 20:35:35 +0800
+categories: command
+---
+
+表达式
+```
+# 选择foo列，给foo排序，然后取排序后的前两个值
+pl.col("foo").sort().head(2)
+```
+
+过滤特征
+```
+# 过滤正常交易状态
+source_df = source_df.filter(pl.col('TRADESTATUS') == '正常交易')
+```
