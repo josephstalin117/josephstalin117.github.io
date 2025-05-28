@@ -180,6 +180,23 @@ top -p ppid
 # top 以内存占用排名
 top -o %MEM
 
+# top命令中使用shift+m，内存按百分比排序显示
+
+# 查看特定进程的内存和cpu
+ps -aux | grep kafka
+
+# 查看使用内存最多的前五个程序
+ps aux | sort -rnk 4 | head -5
+
+RSS是内存占用率，单位是k
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+nemo       400  3.4  9.2 3309580 563336 ?      Sl   08:59   1:36 /usr/lib/firefox/firefox -contentproc -childID 6 -isForBrowser -prefsLen 9086 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 32469 true tab
+nemo     32469  8.2  7.7 3492840 469516 ?      Sl   08:54   4:15 /usr/lib/firefox/firefox -new-window
+nemo     32542  8.9  7.6 2875428 462720 ?      Sl   08:55   4:36 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 1 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 32469 true tab
+nemo       342  9.9  5.9 2854664 363528 ?      Sl   08:59   4:44 /usr/lib/firefox/firefox -contentproc -childID 5 -isForBrowser -prefsLen 8763 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 32469 true tab
+nemo      2389 39.5  3.8 1774412 236116 pts/1  Sl+  09:15  12:21 vlc videos/edge_computing.mp4
+
+
 # 查看特定用户的进程
 top -u josep
 

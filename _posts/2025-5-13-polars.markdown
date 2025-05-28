@@ -16,3 +16,11 @@ pl.col("foo").sort().head(2)
 # 过滤正常交易状态
 source_df = source_df.filter(pl.col('TRADESTATUS') == '正常交易')
 ```
+
+类型转换
+```
+df.with_columns(df["column_name"].cast(new_dtype))
+
+# 整数转浮点数
+df = df.with_columns(df["int_column"].cast(pl.Float64))
+```
