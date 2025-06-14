@@ -941,6 +941,12 @@ rsync -av --include="*.txt" --exclude='*' source/ destination
 rsync -av source/ username@remote_host:destination
 ```
 
+SCP
+```
+# 远程拷贝文件夹
+scp -r user@your.server.example.com:/path/to/foo /home/user/Desktop/
+```
+
 
 SSH
 ```
