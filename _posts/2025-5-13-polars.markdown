@@ -11,6 +11,17 @@ categories: command
 pl.col("foo").sort().head(2)
 ```
 
+基础操作
+```
+# 数据访问
+# pandas写法df['column'].iloc[0] 
+df.select('column').item(0, 0)
+
+# 生成列表
+# pandas写法df['column'].tolist()
+df.select('column').to_series().to_list()
+```
+
 过滤特征
 ```
 # 过滤正常交易状态

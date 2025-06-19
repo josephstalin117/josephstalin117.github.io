@@ -91,3 +91,9 @@ ctrl+p
 @functionName
 ```
 
+命令面板
+```
+ctrl+shift+p
+
+
+```

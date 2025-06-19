@@ -123,6 +123,24 @@ cat docker/ubuntu.tar | docker import - test/ubuntu:v1
 docker inspect [id] | grep "IPAddress"
 ```
 
+docker容器清理
+
+首先找到docker占用较大的目录，例如`/var/lib/docker/containers/`，删除特定容器的日志
+```
+truncate -s 0 /var/lib/docker/containers/<container_id>/<container_id>-json.log
+```
+
+限制日志大小，修改`/etc/docker/daemon.json`
+```
+{
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "10m",
+    "max-file": "3"
+  }
+}
+```
+
 # docker 镜像管理
 
 images文件管理
@@ -766,6 +784,4 @@ networks:
             config:
             - subnet: 10.103.0.1/16
 ```
-
-
 
