@@ -93,6 +93,16 @@ SELECT User FROM mysql.user;
 REVOKE ALL PRIVILEGES ON phpmyadmin.* FROM 'phpmyadmin'@'localhost';
 ```
 
+#### 查询语句
+
+查询指定日期是否存在数据
+```
+SELECT COUNT(*) AS count 
+FROM your_table
+WHERE date = '2023-11-15';
+```
+
+
 #### 导入导出
 
 ```
