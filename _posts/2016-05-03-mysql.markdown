@@ -102,6 +102,12 @@ FROM your_table
 WHERE date = '2023-11-15';
 ```
 
+查询已经存在的日期列表
+```
+SELECT DISTINCT DATE(date_column) AS unique_dates
+FROM your_table
+ORDER BY unique_dates;
+```
 
 #### 导入导出
 
