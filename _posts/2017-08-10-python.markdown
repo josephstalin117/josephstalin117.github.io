@@ -756,6 +756,12 @@ with open(target_file, 'w', encoding='UTF-8') as outfile:
                 outfile.write(line)
 ```
 
+生成日期格式的文件
+```
+tradeday = datetime.datetime.today()
+filename = tradeday.strftime(config['pos_diff_filename'])
+```
+
 file io
 ```
 #'a' is for append, or use

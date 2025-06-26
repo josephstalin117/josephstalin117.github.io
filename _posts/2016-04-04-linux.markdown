@@ -532,7 +532,7 @@ anon_root=/var/ftp
 ftp
 ```
 # connect ftp
-ftp 192.168.4.25
+ftp -p 192.168.4.25 22
 
 # 匿名用户
 anonymous 
@@ -697,6 +697,24 @@ curl baidu.com
 
 # curl 代理
 curl -x http://172.18.10.204:8119 baidu.com
+```
+
+wget
+```
+# -P指定下载目录
+wget -P /path/to/save/ http://example.com/file.zip
+
+# -O指定完整下载路径和文件名
+wget -O /path/to/save/filename.ext http://example.com/file.zip
+
+# 指定端口
+wget ftp://example.com:2121/path/to/file.tx
+
+# -r递归下载
+wget -r --ftp-user=用户名 --ftp-password=密码 ftp://example.com/path/to/directory/
+
+# 递归下载时的断点续传
+wget -c -r ftp://example.com/directory/
 ```
 
 ufw
