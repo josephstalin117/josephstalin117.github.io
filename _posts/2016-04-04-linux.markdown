@@ -834,9 +834,22 @@ rz
 
 # 下载
 sz
+```
 
-# md5 校验
+md5校验
+```
+# md5校验文件
 md5sum file
+
+# md5校验文件夹，生成folder.md5校验文件
+find /path/to/folder -type f -exec md5sum {} + > folder.md5
+
+# 检查文件的MD5是否匹配
+md5sum -c folder.md5
+
+# 重新计算并对比MD5
+find /path/to/folder -type f -exec md5sum {} + > new_check.md5
+diff folder.md5 new_check.md5
 ```
 
 tree
