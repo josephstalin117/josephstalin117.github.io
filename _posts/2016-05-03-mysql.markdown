@@ -109,6 +109,19 @@ FROM your_table
 ORDER BY unique_dates;
 ```
 
+查询后缀为.SZ的日期为2025-07-01的数据
+```
+SELECT *
+FROM your_table
+WHERE date = '2025-07-01' AND SUBSTRING_INDEX(code, '.', -1) = 'SZ';
+```
+
+删除日期为2025年7月1日的所有数据
+```
+DELETE FROM your_table
+WHERE date = '2025-07-01';
+```
+
 #### 导入导出
 
 ```
