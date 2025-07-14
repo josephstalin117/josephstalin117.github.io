@@ -48,6 +48,20 @@ curl -x socks5://myproxy.com:8080 https://www.example.com
 
 # ipv6 访问
 curl -g -6 byr.pt
+
+# 测试延迟
+curl -o /dev/null -x socks5://127.0.0.1:1086 -s -w %{time_namelookup}---%{time_connect}---%{time_starttransfer}---%{time_total}---%{speed_download}"\n" baidu.com
+0.000072---0.020414---0.587005---0.587225---4056.000
+
+# 0.000072: DNS 服务器解析域名的时间单位是0.000072s
+# 0.020414: client发出请求，到c/s 建立TCP 的时间；里面包括DNS解析的时间
+# 0.587005: client发出请求；到s响应发出第一个字节开始的时间；包括前面的2个时间
+# 0.587225: client发出请求；到s把响应的数据全部发送给client；并关闭connect的时间
+# 4056.000 ：下载数据的速度
+
+建立TCP连接到server返回client第一个字节的时间：0.587005s – 0.020414s = 0.566591s
+
+server把响应数据发送给client的时间：0.587225s – 0.587005s = 0.00022s
 ```
 
 telnet

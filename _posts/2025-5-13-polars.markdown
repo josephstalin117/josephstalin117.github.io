@@ -25,7 +25,10 @@ df.select('column').to_series().to_list()
 过滤特征
 ```
 # 过滤正常交易状态
-source_df = source_df.filter(pl.col('TRADESTATUS') == '正常交易')
+df = df.filter(pl.col('交易状态') == '正常交易')
+
+# 过滤时间范围
+df.filter((pl.col('Time') >= 92600000) & (pl.col('Time') <= 93100000))
 ```
 
 类型转换

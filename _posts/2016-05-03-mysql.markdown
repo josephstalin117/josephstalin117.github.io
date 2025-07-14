@@ -122,6 +122,14 @@ DELETE FROM your_table
 WHERE date = '2025-07-01';
 ```
 
+查询日期范围
+```
+SELECT COUNT(*) AS count
+FROM calendar
+WHERE dates >= '20210301' 
+  AND dates <= '20210331';
+```
+
 #### 导入导出
 
 ```

@@ -9,3 +9,8 @@ categories: command
 ```
 ![Alt text](http://www.izhangbo.cn/wp-content/themes/minty/img/logo.png "Optional title")
 ```
+
+删除线
+```
+~~世界是平坦的。~~
+```
