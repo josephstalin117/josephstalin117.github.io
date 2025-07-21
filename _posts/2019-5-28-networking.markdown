@@ -32,6 +32,15 @@ arp -a
 cat /proc/net/arp
 ```
 
+iperf3网速测试
+```
+# server
+iperf3 -s
+
+# client
+iperf3 -c <服务器IP地址>
+```
+
 curl
 ```
 # 只打印响应头部信息

@@ -141,6 +141,8 @@ truncate -s 0 /var/lib/docker/containers/<container_id>/<container_id>-json.log
 }
 ```
 
+
+
 # docker 镜像管理
 
 images文件管理

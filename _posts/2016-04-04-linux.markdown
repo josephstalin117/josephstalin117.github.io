@@ -715,6 +715,9 @@ wget -r --ftp-user=用户名 --ftp-password=密码 ftp://example.com/path/to/dir
 
 # 递归下载时的断点续传
 wget -c -r ftp://example.com/directory/
+
+# 测试下载速度
+wget https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/plucky/ubuntu-25.04-live-server-amd64.iso
 ```
 
 ufw
