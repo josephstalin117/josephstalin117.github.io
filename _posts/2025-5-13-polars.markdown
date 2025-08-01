@@ -17,6 +17,9 @@ pl.col("foo").sort().head(2)
 # pandas写法df['column'].iloc[0] 
 df.select('column').item(0, 0)
 
+# 获取第一行数据
+df.first()
+
 # 生成列表
 # pandas写法df['column'].tolist()
 df.select('column').to_series().to_list()
