@@ -1062,3 +1062,9 @@ sudo apt-get install wakeonlan
 # 网络唤醒
 wakeonlan xx:xx:xx:xx:xx:xx 
 ```
+
+
+在`Windows`中修改的`shell`脚本上传到`Linux`后出现乱码
+```
+dos2unix your_script.sh
+```
