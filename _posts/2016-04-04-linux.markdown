@@ -441,6 +441,9 @@ grep -o 'matchcontent=[]'
 # 取反
 grep -v 'matchcontent'
 
+# 查询时取行号
+grep -n 'test'
+
 # 查看当前目录文件名中含有nout4的文件
 ls | grep nout4
 
