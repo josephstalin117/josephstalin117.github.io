@@ -16,6 +16,12 @@ $ awk '{print $1,$4}' log.txt
 $ awk '{printf "%-8s %-10s\n",$1,$4}' log.txt
 ```
 
+csv文件处理
+```
+# 打印匹配行的第3,4,5列 (price, volume, amount)
+awk -F ',' '$1 == "000001.SZ" && $2 == "093000" {print $3, $4, $5}' data.csv
+```
+
 指定分割符
 ```
 awk -F  #-F相当于内置变量FS, 指定分割字符

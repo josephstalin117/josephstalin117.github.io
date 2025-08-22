@@ -17,12 +17,19 @@ pl.col("foo").sort().head(2)
 # pandas写法df['column'].iloc[0] 
 df.select('column').item(0, 0)
 
+# 选择多列数据
+print(df.select(['SecurityId', 'MDDate']).head(10))
+
 # 获取第一行数据
 df.first()
 
 # 生成列表
 # pandas写法df['column'].tolist()
 df.select('column').to_series().to_list()
+
+# polars.lit根据常量值创建文字表达式
+# Add a new column with a constant string value
+df_with_literal = df.with_columns(pl.lit("constant_value").alias("new_col"))
 ```
 
 过滤特征

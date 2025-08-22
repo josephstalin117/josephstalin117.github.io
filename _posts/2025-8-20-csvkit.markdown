@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "CSVKIT"
+date:   2025-8-20 20:35:35 +0800
+categories: command
+---
+
+筛选行： 使用`csvgrep`工具来过滤行。
+
+`-c` 或 `--columns`：指定要匹配的列。
+
+`-m` 或 `--match`：指定要匹配的确切值。
+
+提取列： 使用`csvcut`工具从筛选后的结果中截取需要的列。
+
+`-c` 或 `--columns`：指定要保留的列（按名称或索引）。
+
+先筛选出符合条件的行，然后提取指定的列
+```
+csvgrep -c code -m "000001.SZ" data.csv | csvgrep -c time -m "093000" | csvcut -c price,volume,amount
+```
