@@ -16,8 +16,18 @@ $ awk '{print $1,$4}' log.txt
 $ awk '{printf "%-8s %-10s\n",$1,$4}' log.txt
 ```
 
-csv文件处理
+csv数据查找
 ```
+# 找到匹配行的位置
+head -n 1 data.csv | tr ',' '\n' | nl
+
+1  code
+2  time
+3  price
+4  volume
+5  amount
+
+
 # 打印匹配行的第3,4,5列 (price, volume, amount)
 awk -F ',' '$1 == "000001.SZ" && $2 == "093000" {print $3, $4, $5}' data.csv
 ```

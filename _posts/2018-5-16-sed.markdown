@@ -5,8 +5,13 @@ date:   2018-5-16 20:35:35 +0800
 categories: command
 ---
 
-文本替换
+读取某行
+```
+# 读取第5行（单行）
+sed -n '5p' filename.csv
+```
 
+文本替换
 ```
 # my 替换成 Hao chen's /g 指所有行
 sed "s/my/Hao Chen's/g" pets.txt
