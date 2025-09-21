@@ -29,7 +29,7 @@ head -n 1 data.csv | tr ',' '\n' | nl
 
 
 # 打印匹配行的第3,4,5列 (price, volume, amount)
-awk -F ',' '$1 == "000001.SZ" && $2 == "093000" {print $3, $4, $5}' data.csv
+awk -F ',' '$1 == "000001.SZ" && $3 == "093000000" {print $3, $4, $5}' data.csv
 ```
 
 指定分割符
