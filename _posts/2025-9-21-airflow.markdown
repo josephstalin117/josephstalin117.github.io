@@ -28,7 +28,11 @@ airflow webserver --port 8080
 
 # 启动调度器
 airflow scheduler
+
+# 单点模式启动
+airflow standalone
 ```
+
 
 第一个DAG命令
 ```
