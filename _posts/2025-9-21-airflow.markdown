@@ -33,6 +33,32 @@ airflow scheduler
 airflow standalone
 ```
 
+配置文件修改
+```
+# airflow.cfg
+# 修改为你的自定义路径
+dags_folder = /path/to/your/dags/directory
+
+```
+
+常用任务命令
+```
+# 查看任务队列
+airflow dags list-runs my_first_dag
+
+# 查看当前dags列表
+airflow dags list | grep my_first
+
+# 检查调度器
+airflow jobs check --job-type SchedulerJob
+
+# 查看任务
+airflow tasks list my_first_dag
+
+# 启动调度器
+airflow scheduler --daemon
+```
+
 
 第一个DAG命令
 ```
