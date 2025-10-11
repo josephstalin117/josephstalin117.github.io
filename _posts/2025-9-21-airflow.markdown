@@ -49,6 +49,12 @@ airflow dags list-runs my_first_dag
 # 查看当前dags列表
 airflow dags list | grep my_first
 
+# 查看当前运行的任务实例
+airflow tasks list daily_datacheck
+
+# 查看特定运行的任务状态
+airflow dags state daily_datacheck
+
 # 检查调度器
 airflow jobs check --job-type SchedulerJob
 
@@ -57,6 +63,36 @@ airflow tasks list my_first_dag
 
 # 启动调度器
 airflow scheduler --daemon
+
+# 检查引用错误
+airflow dags list-import-errors
+
+# 暂停任务
+airflow dags pause daily_datacheck
+```
+
+测试
+```
+# 语法测试
+python -m py_compile datacheck/mincheck_smk_dag.py
+
+# 查看DAG详情
+airflow dags show daily_mincheck_smk
+
+# 查看任务列表
+airflow tasks list daily_mincheck_smk
+
+# 测试特定任务（不实际运行）
+airflow tasks test daily_datacheck check_prerequisites 2025-09-30
+
+# 完整测试运行
+airflow dags test daily_datacheck 2025-09-30
+
+# 手动触发运行
+airflow dags trigger daily_mincheck_smk
+
+# 查看运行状态
+airflow dags list-runs daily_mincheck_smk
 ```
 
 
