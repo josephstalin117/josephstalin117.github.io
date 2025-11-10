@@ -721,6 +721,9 @@ wget -c -r ftp://example.com/directory/
 
 # 测试下载速度
 wget https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/plucky/ubuntu-25.04-live-server-amd64.iso
+
+# 指定下载目录
+wget -P ./ --ftp-user=admin --ftp-password=pwd ftp://download.com
 ```
 
 ufw
