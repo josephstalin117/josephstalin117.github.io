@@ -69,6 +69,9 @@ airflow dags list-import-errors
 
 # 暂停任务
 airflow dags pause daily_datacheck
+
+# dag检测
+airflow dags reserialize
 ```
 
 测试
