@@ -140,6 +140,8 @@ categories: command
 
 足迹图
 
+![images](/source/odds.jpg)
+
 为什么在足迹图或微观盘口分析中，我们通常把某个价格的买盘`Bid`和斜上方的`Ask`比较，而不是只看同一价格的`Ask`?
 
 ### `Bid`与同价位`Ask`的关系
