@@ -283,6 +283,13 @@ echo log > /dev/null 2>&1
 &
 ```
 
+查看文件占用大小
+
+```
+# cd到根目录
+sudo find / -xdev -type f -printf '%s\t%p\n' 2>/dev/null   | sort -nr | head -n 50   | awk '{printf "%.2f GB\t%s\n", $1/1024/1024/1024, $2}'
+```
+
 # 系统设置
 
 环境变量
@@ -1005,6 +1012,9 @@ rsync -av --include="*.txt" --exclude='*' source/ destination
 
 # 远程同步
 rsync -av source/ username@remote_host:destination
+
+# 文件传输
+rsync -avP ./source data02@192.168.1.16:/destination
 ```
 
 SCP
