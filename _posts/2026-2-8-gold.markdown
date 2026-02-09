@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MkDocs"
+title:  "黄金配置逻辑"
 date:   2026-2-8 20:35:35 +0800
 categories: command
 ---
