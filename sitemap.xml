@@ -1,222 +1,1024 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
 
-
 <url>
-  <loc>http://josephlin.org/</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/about/</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/miracle-landscape.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/overall.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/R.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/windows.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/markdown.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/jd.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/java.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/value.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/jetbrains.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/Matplotlib.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/latex.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/tensorflow.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/c.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/sed.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/opencv.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/caffe.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/docker.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/games.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/emacs.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/pandas.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/numpy.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/matlab.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/excel.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/persistence.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/poetry.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/gettysburg-address.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/python.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/centos.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/hping3.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/two-directions.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/study.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/bash.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/nginx.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/vim.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/mac.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/git.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/mysql.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/linux.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/chess.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://josephlin.org/communist-manifesto.html</loc>
-  <lastmod>2018-11-29T04:00:30+00:00</lastmod>
-  <priority>0.80</priority>
+ <loc>https://josephlin.org/</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
 </url>
 
+<url>
+ <loc>https://josephlin.org/about</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/airflow.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/microstructure.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/bullmarket.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/liberalism.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/csvkit.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/hf.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/polars.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/tonghuashun.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/redis.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/wealth.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/foreign-powers.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/how-to-make-money.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/poor-education.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/what-to-do.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/influxdb.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/dolphindb.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/fastapi.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/python-performance-optimization.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/photoshop.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/great-rejuvenation.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/web3.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/av.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/quant.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/copilot.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/classification.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/run.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/zerotier.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/macd.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/debt.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/intelligence.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/political-economy.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/modern-finance.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/investment-strategy.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/no-tea.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/english.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/estate.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/bitcoin.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/nightclub.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/academic-english.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/fake-patriotism.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/the-powerlessness-of-life.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/class-jump.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/sqlite.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/scrapy.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/beautifulsoup.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/gost.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/accounting.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/wanmen.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/pt.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/zotero.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/miner.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/reference-format.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/manim.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/apache.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/tensorboard.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/screen.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/neo4j.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/unix-philosophy.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/vue.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/javascript.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/tampermonkey.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/api.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/youtube-dl.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/frp.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/python-docx.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/raspberry.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/response-letter.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/gitlab.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/non-predicate-verb.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/smart-people.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/word.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/grammar.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/hairui.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/involute.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/harmgames.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/reallearning.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/student-thinking.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/adb.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/aria2.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/iptables.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/git-styleguide.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/awk.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/01knapsack.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/plantuml.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/flask.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/tmux.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/nvidia.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/kvm.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/vscode.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/composition.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/networking.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/php.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/grub.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/TikZ.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/scipy.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/pytorch.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/phoenixman.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/regex.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/statsmodels.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/sklearn.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/svn.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/how-to-program.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/miracle-landscape.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/overall.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/R.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/windows.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/markdown.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/jd.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/java.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/value.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/jetbrains.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/Matplotlib.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/latex.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/tensorflow.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/c.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/sed.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/opencv.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/caffe.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/docker.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/games.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/emacs.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/pandas.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/numpy.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/matlab.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/excel.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/persistence.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/poetry.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/gettysburg-address.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/python.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/centos.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/hping3.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/two-directions.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/study.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/bash.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/nginx.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/vim.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/mac.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/git.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/mysql.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/linux.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/chess.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/communist-manifesto.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
+
+<url>
+ <loc>https://josephlin.org/cdn-cgi/l/email-protection</loc>
+ <priority>0.3</priority>
+ <lastmod>2025-09-29</lastmod>
+ <changefreq>weekly</changefreq>
+</url>
 
 </urlset>

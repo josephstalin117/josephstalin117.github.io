@@ -35,3 +35,12 @@ ps aux | grep gitlab
 ```
 sudo gitlab-rake "gitlab:password:reset[johndoe]"
 ```
+
+docker中停止gitlab服务器
+```
+# 先进入gitlab镜像中
+docker exec -it gitlab_instance bash
+# 停止gitlab服务器
+gitlab-ctl stop
+exit
+```

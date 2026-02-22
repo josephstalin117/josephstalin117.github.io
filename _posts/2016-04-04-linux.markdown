@@ -46,6 +46,9 @@ pkill -kill -t tty
 # 停用用户所有进程
 pkill -u user
 
+# kill掉进程为test.py
+ps -ef|grep test.py|grep -v grep|awk '{print $2}'|xargs kill -9
+
 # 显示文件最后5行内容
 tail -n 5 test.log
 
@@ -145,7 +148,7 @@ ps -ef |grep vsftpd
 # 查看服务
 service vsftpd
 
-# list stystem opened files，列出系统中打开的所有文件，因为linux上一切都是文件
+# list stystem opened files, 列出系统中打开的所有文件, 因为linux上一切都是文件
 # 查看端口
 lsof -i:80
 
@@ -172,10 +175,42 @@ free -h
 top -p ppid
 
 # top 以内存占用排名
-top -o ％MEM
+top -o %MEM
+
+# top命令中使用shift+m，内存按百分比排序显示
+
+# 查看特定进程的内存和cpu
+ps -aux | grep kafka
+
+# 查看使用内存最多的前五个程序
+ps aux | sort -rnk 4 | head -5
+
+RSS是内存占用率，单位是k
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+nemo       400  3.4  9.2 3309580 563336 ?      Sl   08:59   1:36 /usr/lib/firefox/firefox -contentproc -childID 6 -isForBrowser -prefsLen 9086 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 32469 true tab
+nemo     32469  8.2  7.7 3492840 469516 ?      Sl   08:54   4:15 /usr/lib/firefox/firefox -new-window
+nemo     32542  8.9  7.6 2875428 462720 ?      Sl   08:55   4:36 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 1 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 32469 true tab
+nemo       342  9.9  5.9 2854664 363528 ?      Sl   08:59   4:44 /usr/lib/firefox/firefox -contentproc -childID 5 -isForBrowser -prefsLen 8763 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 32469 true tab
+nemo      2389 39.5  3.8 1774412 236116 pts/1  Sl+  09:15  12:21 vlc videos/edge_computing.mp4
+
+
+# 查看特定用户的进程
+top -u josep
+
+# TIME进程使用的CPU时间总计，单位秒
+# TIME+进程使用的CPU时间总计，单位1/100秒
+# VIRT代表进程当前时刻有多少内存可以访问，进程使用的虚拟内存总量，单位kb，VIRT=SWAP+RES
+# RES意味驻留内存大小, 是当前进程真正占用物理内存的精确反映，单位kb
+# SWAP进程使用的虚拟内存中，被换出的大小，单位kb
+# shift +< 上一页，shift +> 下一页
+# P按进程cpu的使用率排序（默认情况）
+# 1查看所有cpu的占用情况
 
 # 查看内存占用前10的进程
 ps aux | sort -k4,4nr | head -n 10
+
+# 查看系统日志
+sudo cat syslog
 
 # 停止gdm服务
 sudo systemctl stop gdm3
@@ -187,7 +222,7 @@ a 自动排序
 c 按CPU使用率排序
 m 按内存占用排序
 i 按io速率排序进程
-n 显示或吟唱网络流量统计
+n 显示网络流量统计
 
 
 # fuser 报告进程使用的文件和网络套接字
@@ -203,6 +238,35 @@ fuser -m -v /dev/sdb1
 
 ```
 
+
+查看硬盘读写io
+```
+# 使用命令
+iostat -x
+```
+
+`tps`表示每秒向设备发出的传输（I/O请求）次数；
+
+`kB_read/s`表示从设备读取的数据量，以每秒块数（千字节、兆字节）表示。 块相当于扇区，因此大小为 512 字节；
+
+`kB_wrtn/s`表示写入设备的数据量，以每秒块数（千字节、兆字节）表示；
+
+`kB_read`表示读取的块总数（千字节、兆字节）；
+
+`kB_wrtn`表示写入的块总数（千字节、兆字节）。
+
+`rrqm/s`表示每秒被合并的读操作数目（文件系统会对读取同一block块的请求进行合并）；
+
+`wrqm/s`表示每秒被合并的写操作数目；
+
+`r/s`表示每秒完成读I/O设备的次数；
+
+`w/s`表示每秒完成写I/O设备的次数；
+
+`rsec/s`表示每秒读取的扇区数；
+
+`wsec/s`表示每秒写入的扇区数。
+
 标准输入输出
 ```
 echo log > /dev/null 2>&1
@@ -217,6 +281,13 @@ echo log > /dev/null 2>&1
 2
 # 表示等同于的意思，2>&1，表示2的输出重定向等同于1
 &
+```
+
+查看文件占用大小
+
+```
+# cd到根目录
+sudo find / -xdev -type f -printf '%s\t%p\n' 2>/dev/null   | sort -nr | head -n 50   | awk '{printf "%.2f GB\t%s\n", $1/1024/1024/1024, $2}'
 ```
 
 # 系统设置
@@ -334,6 +405,16 @@ update-alternatives --install /usr/bin/java java /usr/local/java/jdk-9/bin/java 
 update-alternatives –remove java /usr/local/jre1.6.0_20/bin/java
 ```
 
+
+添加虚拟内存
+```
+# 创建swap文件
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```
+
 库的软链接指令速查
 ```
 # locate 定位库的信息  
@@ -367,6 +448,9 @@ grep -o 'matchcontent=[]'
 # 取反
 grep -v 'matchcontent'
 
+# 查询时取行号
+grep -n 'test'
+
 # 查看当前目录文件名中含有nout4的文件
 ls | grep nout4
 
@@ -378,6 +462,11 @@ find . -name "arima*.json" -exec grep -lv "algo_name" /dev/null {} +
 
 # 查找当前目录中不含有algo_name文本的文本文件，并将计算文件的个数
 find . -name "arima*.json" -exec grep -lv "algo_name" /dev/null {} + | wc -l
+```
+
+计算目录中文件的数量
+```
+ls -l | grep "^-" | wc -l
 ```
 
 sort & uniq
@@ -453,7 +542,7 @@ anon_root=/var/ftp
 ftp
 ```
 # connect ftp
-ftp 192.168.4.25
+ftp -p 192.168.4.25 22
 
 # 匿名用户
 anonymous 
@@ -509,6 +598,9 @@ head -n 10 file.txt
 
 # 查看后几行
 tail -n 10 file.txt
+
+# 查看特定的行数
+sed -n '1000,2000p' filename.csv
 ```
 
 nohup
@@ -523,6 +615,7 @@ command >& file.txt(或者file.log) &
 
 使用图形界面打开文件
 ```
+# 提前安装xming软件
 # 配置
 # vim /etc/ssh/sshd_config
 AllowTcpForwarding yes
@@ -614,6 +707,30 @@ curl baidu.com
 
 # curl 代理
 curl -x http://172.18.10.204:8119 baidu.com
+```
+
+wget
+```
+# -P指定下载目录
+wget -P /path/to/save/ http://example.com/file.zip
+
+# -O指定完整下载路径和文件名
+wget -O /path/to/save/filename.ext http://example.com/file.zip
+
+# 指定端口
+wget ftp://example.com:2121/path/to/file.tx
+
+# -r递归下载
+wget -r --ftp-user=用户名 --ftp-password=密码 ftp://example.com/path/to/directory/
+
+# 递归下载时的断点续传
+wget -c -r ftp://example.com/directory/
+
+# 测试下载速度
+wget https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/plucky/ubuntu-25.04-live-server-amd64.iso
+
+# 指定下载目录
+wget -P ./ --ftp-user=admin --ftp-password=pwd ftp://download.com
 ```
 
 ufw
@@ -733,20 +850,42 @@ rz
 
 # 下载
 sz
-
-# md5 校验
-md5sum file
 ```
 
+md5校验
+```
+# md5校验文件
+md5sum file
 
+# md5校验文件夹，生成folder.md5校验文件
+find /path/to/folder -type f -exec md5sum {} + > folder.md5
+
+# 检查文件的MD5是否匹配
+md5sum -c folder.md5
+
+# 重新计算并对比MD5
+find /path/to/folder -type f -exec md5sum {} + > new_check.md5
+diff folder.md5 new_check.md5
+```
 
 tree
 ```
-#Tee command is used to store and view (both at the same time) the output of any other command.
+# Tee command is used to store and view (both at the same time) the output of any other command.
 ls | tee file
+
+# 显示所有文件及目录
+-a
+# 只显示目录
+-d
+# 如遇到符号链接的目录，直接列出所指向的目录结构
+-l
+# 在每个文件前显示完整的路径
+-f
+# 限制目录显示层级
+-L level
+# 忽略目录下的文件夹或目录
+-I
 ```
-
-
 
 crontab
 ```
@@ -762,11 +901,20 @@ sudo vim /etc/crontab
 # 每天8:30分执行一次
 30 8 * * * user command
 # 每小时的30和50分各执行一次
-30,50 * * * * user command（,表示并列）
+30,50 * * * * user command(,表示并列)
 # 每个月的3号到6号的8:30执行一次
-30 8 3-6 * * user command （-表示范围）
+30 8 3-6 * * user command (-表示范围)
 # 每个星期一的8:30执行一次
-30 8 * * 1 user command （周的范围为0-7,0和7代表周日）
+30 8 * * 1 user command (周的范围为0-7,0和7代表周日)
+```
+
+修改管道系统的管道缓冲区大小
+```
+# 查看管道系统的管道缓冲区大小
+sysctl fs.pipe-max-size
+
+# 增加管道系统的管道缓冲区大小
+sudo sysctl -w fs.pipe-max-size=536870912
 ```
 
 
@@ -864,6 +1012,15 @@ rsync -av --include="*.txt" --exclude='*' source/ destination
 
 # 远程同步
 rsync -av source/ username@remote_host:destination
+
+# 文件传输
+rsync -avP ./source data02@192.168.1.16:/destination
+```
+
+SCP
+```
+# 远程拷贝文件夹
+scp -r user@your.server.example.com:/path/to/foo /home/user/Desktop/
 ```
 
 
@@ -920,4 +1077,10 @@ sudo apt-get install wakeonlan
 
 # 网络唤醒
 wakeonlan xx:xx:xx:xx:xx:xx 
+```
+
+
+在`Windows`中修改的`shell`脚本上传到`Linux`后出现乱码
+```
+dos2unix your_script.sh
 ```

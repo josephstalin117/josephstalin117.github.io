@@ -93,6 +93,43 @@ SELECT User FROM mysql.user;
 REVOKE ALL PRIVILEGES ON phpmyadmin.* FROM 'phpmyadmin'@'localhost';
 ```
 
+#### 查询语句
+
+查询指定日期是否存在数据
+```
+SELECT COUNT(*) AS count 
+FROM your_table
+WHERE date = '2023-11-15';
+```
+
+查询已经存在的日期列表
+```
+SELECT DISTINCT DATE(date_column) AS unique_dates
+FROM your_table
+ORDER BY unique_dates;
+```
+
+查询后缀为.SZ的日期为2025-07-01的数据
+```
+SELECT *
+FROM your_table
+WHERE date = '2025-07-01' AND SUBSTRING_INDEX(code, '.', -1) = 'SZ';
+```
+
+删除日期为2025年7月1日的所有数据
+```
+DELETE FROM your_table
+WHERE date = '2025-07-01';
+```
+
+查询日期范围
+```
+SELECT COUNT(*) AS count
+FROM calendar
+WHERE dates >= '20210301' 
+  AND dates <= '20210331';
+```
+
 #### 导入导出
 
 ```
@@ -171,3 +208,12 @@ mysql> flush privileges;
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'mypwd' WITH GRANT OPTION;
 mysql> flush privileges;
 ```
+
+#### 时间类型
+
+在MySQL中，`datetime `数据类型的范围限制如下：
+支持的范围：`1000-01-01 00:00:00`到`9999-12-31 23:59:59`，格式：`YYYY-MM-DD HH:MM:SS`
+
+当你使用 datetime 类型时：不能使用小于`1000`年的日期，不能使用大于`9999`年的日期，时间部分必须在 00:00:00 到 23:59:59 之间
+
+`timestamp`类型，它的范围是`1970-01-01 00:00:01`UTC到`2038-01-19 03:14:07`UTC

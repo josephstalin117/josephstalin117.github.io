@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "polars"
+date:   2025-5-13 20:35:35 +0800
+categories: command
+---
+
+表达式
+```
+# 选择foo列，给foo排序，然后取排序后的前两个值
+pl.col("foo").sort().head(2)
+```
+
+基础操作
+```
+# 数据访问
+# pandas写法df['column'].iloc[0] 
+df.select('column').item(0, 0)
+
+# 选择多列数据
+print(df.select(['SecurityId', 'MDDate']).head(10))
+
+# 获取第一行数据
+df.first()
+
+# 生成列表
+# pandas写法df['column'].tolist()
+df.select('column').to_series().to_list()
+
+# polars.lit根据常量值创建文字表达式
+# Add a new column with a constant string value
+df_with_literal = df.with_columns(pl.lit("constant_value").alias("new_col"))
+```
+
+过滤特征
+```
+# 过滤正常交易状态
+df = df.filter(pl.col('交易状态') == '正常交易')
+
+# 过滤时间范围
+df.filter((pl.col('Time') >= 92600000) & (pl.col('Time') <= 93100000))
+```
+
+类型转换
+```
+df.with_columns(df["column_name"].cast(new_dtype))
+
+# 整数转浮点数
+df = df.with_columns(df["int_column"].cast(pl.Float64))
+```
+
+完整打印行和列
+```
+with pl.Config(set_tbl_width_chars=1000, set_tbl_cols=-1, set_tbl_rows=-1):
+    print(df.select(['code', 'datetime', 'SellPrice1', 'SellPrice2', 'SellPrice3', 'SellPrice4', 'SellPrice5', 'SellPrice6', 'SellPrice7', 'SellPrice8', 'SellPrice9', 'SellPrice10', 'SellVolume1', 'SellVolume2', 'SellVolume3', 'SellVolume4', 'SellVolume5', 'SellVolume6', 'SellVolume7', 'SellVolume8', 'SellVolume9', 'SellVolume10']).tail(10))
+```

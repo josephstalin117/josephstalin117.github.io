@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "fastapi"
+date:   2024-10-31 20:35:35 +0800
+categories: command
+---
+
+# 启动fastapi
+
+```
+fastapi dev main.py
+```
+
+# 查看fastapi文档
+
+```
+http://127.0.0.1:8000/docs
+```
+
+# 测试
+使用pytest对接口进行测试
+```
+# 运行所有测试
+pytest tests/test_file1.py
+
+# 显示详细的测试输出
+pytest -v tests/test_file2.py
+
+# 显示测试覆盖率报告
+pytest --cov=app tests/test_file1.py
+
+# 运行单个测试函数
+pytest tests/test_strategy_ctl.py::test_create_strategy
+
+# 运行包含特定名称的测试
+pytest -k "create" tests/test_strategy_ctl.py
+```
+

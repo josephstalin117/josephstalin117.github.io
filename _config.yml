@@ -10,7 +10,7 @@ title: josephlin
 email: josephlin117@hotmail.com
 description: josephlin's blog
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://josephlin.org" # the base hostname & protocol for your site
+url: "https://josephlin.org" # the base hostname & protocol for your site
 twitter_username: josephstalin117 
 github_username:  josephstalin117
 
@@ -20,3 +20,7 @@ markdown: kramdown
 theme: jekyll-theme-cayman
 # permalink: none
 permalink: /:title:output_ext
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap

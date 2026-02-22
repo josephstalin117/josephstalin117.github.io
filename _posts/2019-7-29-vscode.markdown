@@ -42,7 +42,7 @@ wrap
 复制当前行：shift + alt +up/down
 删除当前行：shift + ctrl + k
 控制台终端显示与隐藏：ctrl + ~
-查找文件/安装vs code 插件地址：ctrl + p
+显示相关插件的命令(如：git log)：ctrl + shift + p
 代码格式化：shift + alt +f
 新建一个窗口 : ctrl + shift + n
 行增加缩进: ctrl + [
@@ -55,7 +55,6 @@ wrap
 关闭所有窗口 : ctrl + k + w
 显示git : ctrl + shift + g
 全局查找文件：ctrl + shift + f
-显示相关插件的命令(如：git log)：ctrl + shift + p
 选中文字：shift + left / right / up / down
 折叠代码： ctrl + k + 0-9 (0是完全折叠)
 展开代码： ctrl + k + j (完全展开代码)
@@ -63,7 +62,7 @@ wrap
 快速切换主题：ctrl + k / ctrl + t
 快速回到顶部 ： ctrl + home
 快速回到底部 : ctrl + end
-格式化选定代码 ：ctrl + k / ctrl +f
+格式化选定代码 ：ctrl + k / ctrl + f
 选中代码 ： shift + 鼠标左键
 多行同时添加内容（光标） ：ctrl + alt + up/down
 全局替换：ctrl + shift + h
@@ -78,4 +77,23 @@ wrap
 >developer: open process explorer
 
 查找cpu和内存占用最高的进程，禁用扩展插件
+```
+
+快速搜索
+```
+# 启动快速搜索，打开特定的文件
+ctrl+p
+
+# 跳转到指定行号
+:行号
+
+# 符号跳转，快速跳转到文件内的函数、类或变量定义
+@functionName
+```
+
+命令面板
+```
+ctrl+shift+p
+
+
 ```

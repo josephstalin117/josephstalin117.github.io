@@ -756,6 +756,14 @@ with open(target_file, 'w', encoding='UTF-8') as outfile:
                 outfile.write(line)
 ```
 
+生成日期格式的文件
+```
+tradeday = datetime.datetime.today()
+filename = tradeday.strftime(config['pos_diff_filename'])
+
+csv_filename = os.path.join(results_file_path, f'vdbench_{test_name}_stats_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv')
+```
+
 file io
 ```
 #'a' is for append, or use
@@ -1179,6 +1187,27 @@ class TestDict(unittest.TestCase):
 ```
 if __name__ == '__main__':
     unittest.main()
+```
+
+# 性能测试
+
+整体性能测试
+```
+# 终端使用python -m cProfile命令
+python -m cProfile -o output.prof your_script.py
+
+# 查看性能图表
+pip install snakeviz
+snakeviz output.prof
+```
+
+使用line_profiler深入分析特定函数
+```
+# 使用 line_profiler 或 memory_profiler
+pip install line_profiler memory_profiler
+
+# 在代码中添加装饰器@profile到你想分析的函数
+kernprof -l -v your_script.py
 ```
 
 

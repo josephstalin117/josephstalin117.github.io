@@ -5,8 +5,13 @@ date:   2018-5-16 20:35:35 +0800
 categories: command
 ---
 
-文本替换
+读取某行
+```
+# 读取第5行（单行）
+sed -n '5p' filename.csv
+```
 
+文本替换
 ```
 # my 替换成 Hao chen's /g 指所有行
 sed "s/my/Hao Chen's/g" pets.txt
@@ -43,6 +48,13 @@ sed "/fish/c This is my monkey, my monkey's name is wukong" my.txt
 sed '/fish/d' my.txt
 
 ```
+
+获取特定范围的行数
+在这个命令中，`-n`选项告诉`sed`只打印那些被特别指定的行，`'1000,2000p'`指定了要打印的行的范围, `filename.csv`是`CSV`文件的名字。
+```
+sed -n '1000,2000p' filename.csv
+```
+
 
 正则表达式
 

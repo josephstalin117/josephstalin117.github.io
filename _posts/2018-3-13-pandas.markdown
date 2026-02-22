@@ -109,6 +109,44 @@ df.index = df.index + 1  # shifting index
 df = df.sort_index()  # sorting by index
 ```
 
+#### 数据透视表
+数据分析中经常需要进行“行列转化”。`pandas.melt()`函数可以实现将 “宽数据” → “长数据”的一种列转行变换。类似于`Excel`中的透视表`pivot`和逆透视表的操作。
+```
+# 构建测试数据集
+import pandas as pd
+df = pd.DataFrame({'A': {0: 'a', 1: 'b', 2: 'c'},
+                   'B': {0: 1, 1: 3, 2: 5},
+                   'C': {0: 2, 1: 4, 2: 6}
+                   })
+df
+'''
+   A  B  C
+0  a  1  2
+1  b  3  4
+2  c  5  6
+'''
+
+# 默认转换
+pd.melt(df, id_vars=['A'], value_vars=['B'])
+'''
+   A variable  value
+0  a        B      1
+1  b        B      3
+2  c        B      5
+'''
+
+pd.melt(df, id_vars=['A'], value_vars=['B', 'C'])
+'''
+   A variable  value
+0  a        B      1
+1  b        B      3
+2  c        B      5
+3  a        C      2
+4  b        C      4
+5  c        C      6
+'''
+```
+
 ## 数据处理
 get data from column & row 数据过滤
 ```
@@ -246,6 +284,18 @@ unique_index.get_loc('b')
 for col in data.columns:
     print(col)
 ```
+
+lambda
+```
+df = pd.DataFrame([[1, 2.12], [3.356, 4.567]])
+df.map(lambda x: len(str(x)))
+
+# 忽略nan
+df_copy = df.copy()
+df_copy.iloc[0, 0] = pd.NA
+df_copy.map(lambda x: len(str(x)), na_action="ignore")
+```
+
 
 平均划分20份
 ```
@@ -538,6 +588,16 @@ Year
 2017   739.00
 Name: Points, dtype: float64
 
+
+# 合并多个行
+# Group by TradingTime and aggregate BuyOrderQueue and SellOrderQueue
+grouped = orderqueue_df.groupby('TradingTime').agg({
+   'BuyOrderQueue': lambda x: [item for item in x if isinstance(item, list)],
+   'SellOrderQueue': lambda x: [item for item in x if isinstance(item, list)]
+})
+
+grouped['BuyOrderQueue'] = grouped['BuyOrderQueue'].apply(lambda x: x[0] if x else [])
+grouped['SellOrderQueue'] = grouped['SellOrderQueue'].apply(lambda x: x[0] if x else [])
 ```
 
 #### COMBINING DATASETS合并数据
@@ -728,6 +788,14 @@ setting
 ```
 # display all text in a cell without truncation
 pd.set_option('display.max_colwidth', -1)
+
+# 设置pandas显示选项
+pd.set_option('display.max_columns', None)  # 显示所有列
+pd.set_option('display.width', None)  # 不限制显示宽度
+pd.set_option('display.max_rows', 5)  # 显示前5行
+
+# 漂亮的表格显示
+display(df.head(5))
 ```
 
 plot
