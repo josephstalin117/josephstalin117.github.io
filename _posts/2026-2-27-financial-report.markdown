@@ -155,7 +155,7 @@ categories: command
 
 以某湖股份的公告为例：
 
-![images](/source/financial-report1.png)
+![images](/source/financial-report1.jpg)
 
 发了一份业绩预告，最重要的几个数字：
 
@@ -173,7 +173,7 @@ categories: command
 
 纵向尺子：和公司前三季度纵向对比
 
-![images](/source/financial-report2.png)
+![images](/source/financial-report2.jpg)
 
 前三季度一共盈利45亿。
 
@@ -191,13 +191,13 @@ categories: command
 
 研报的挑选尽量要时间距离近一点。
 
-![images](/source/financial-report3.png)
+![images](/source/financial-report3.jpg)
 
 现在的时间点是三季报以后，四季报之前，所以研报就要挑三季报以后出的，更能代表市场的一致性预期。
 
 比如：
 
-![images](/source/financial-report4.png)
+![images](/source/financial-report4.jpg)
 
 GX的研报给了67亿的预期。
 
@@ -212,7 +212,7 @@ GX的研报给了67亿的预期。
 
 需要我们仔细分析公告中的每一句话。
 
-![images](/source/financial-report5.png)
+![images](/source/financial-report5.jpg)
 
 > “报告期，公司主营业务保持稳健，氯化钾产量约 490 万吨，销量约381.43 万吨；碳酸锂产量约 4.65 万吨，销量约 4.56 万吨；两钾（氢氧化钾、碳酸钾）合计产量约 38.22 万吨，销量约 38.89 万吨。报告期内，氯化钾产品价较上年同期有所上升，碳酸锂产品价格虽波动较大，但下半年逐步回暖，整体带动公司业绩同比实现增长”
 
@@ -232,7 +232,7 @@ GX的研报给了67亿的预期。
 
 在后一句中，前半句对氯化钾的价格描述是“有所上升”，这个表述从语气来说是比较保守的。
 
-![images](/source/financial-report6.png)
+![images](/source/financial-report6.jpg)
 
 事实上，根据我对氯化钾价格追踪的结果，25年下半年特别是四季度的价格虽然较24年同期有所提升，但是整体还是比较平稳的，对业绩有一定的利好加持，但可能不是主因。
 
@@ -246,7 +246,7 @@ GX的研报给了67亿的预期。
 
 我们冷静分析一下的话：
 
-![images](/source/financial-report7.png)
+![images](/source/financial-report7.jpg)
 
 以碳酸锂的月K，即使2025年四季度走势强劲，相比2024年的均价，2025年高不了多少。
 
