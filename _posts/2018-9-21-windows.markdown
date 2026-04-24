@@ -62,3 +62,10 @@ route -f
 taskkill /f /im python.exe
 ```
 
+快捷键
+
+快速切换桌面
+```
+Ctrl+Win+左箭头
+```
+
