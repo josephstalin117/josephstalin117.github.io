@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Dollar Is Not the Treasury"
-date:   2026-6-9 20:35:35 +0800
+date:   2026-6-8 20:35:35 +0800
 categories: command
 ---
 
